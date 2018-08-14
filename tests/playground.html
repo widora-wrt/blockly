@@ -24,6 +24,7 @@
 <script src="../generators/python/variables.js"></script>
 <script src="../generators/python/variables_dynamic.js"></script>
 <script src="../generators/python/procedures.js"></script>
+<script src="../generators/python/pins.js"></script>
 <script src="../generators/php.js"></script>
 <script src="../generators/php/logic.js"></script>
 <script src="../generators/php/loops.js"></script>
@@ -64,6 +65,7 @@
 <script src="../blocks/variables.js"></script>
 <script src="../blocks/variables_dynamic.js"></script>
 <script src="../blocks/procedures.js"></script>
+<script src="../blocks/pins.js"></script>
 <script src="blocks/test_blocks.js"></script>
 <script>
 'use strict';
@@ -218,15 +220,11 @@ h1 {
   font-family: monospace;
 }
 
-.ioLabel>.blocklyFlyoutLabelText {
-  font-style: italic;
-}
-
 </style>
 </head>
 <body onload="start()">
  
-  <div >
+  <div style="height: 22px;">
       <div align="left" style="float:left">Wifi-Python</div>
        <div align="right">
           &nbsp;<input type="button" value="To Python" onclick="toCode('Python')">
@@ -243,6 +241,15 @@ h1 {
   Variables category uses untyped variable blocks.
   See https://developers.google.com/blockly/guides/create-custom-blocks/variables#untyped_variable_blocks for more information. -->
   <xml id="toolbox-categories" style="display: none">
+      <category name="Pins" colour="%{BKY_PINS_HUE}">
+          <block type="pins_set">
+              <value name="NUM">
+                  <shadow type="math_number">
+                    <field name="VALUE">45</field>
+                  </shadow>
+              </value>
+            </block>
+        </category>
     <category name="Logic" colour="%{BKY_LOGIC_HUE}">
       <block type="controls_if"></block>
       <block type="logic_compare"></block>
@@ -308,7 +315,7 @@ h1 {
       <block type="math_trig">
         <value name="NUM">
           <shadow type="math_number">
-            <field name="NUM">45</field>
+            <field name="NUM">44</field>
           </shadow>
         </value>
       </block>
@@ -1033,9 +1040,6 @@ h1 {
       <block type="emoji_label_robot_face"></block>
       <block type="text">
         <field name="TEXT">Robot face in text field: &#x1f916;</field>
-      </block>
-      <block type="text">
-        <field name="TEXT">Zalgo in text field: B&#776;&#788;&#862;&#795;&#842;&#827;&#806;&#837;&#812;&#792;&#816;&#846;&#805;l&#771;&#832;&#833;&#864;&#849;&#849;&#789;&#861;&#801;&#854;&#863;&#811;&#826;&#812;&#790;&#803;&#819;o&#843;&#777;&#778;&#785;&#831;&#829;&#794;&#825;&#857;&#814;&#802;&#811;&#852;c&#843;&#786;&#849;&#778;&#861;&#775;&#825;&#825;&#796;&#857;&#825;&#800;&#824;k&#778;&#850;&#833;&#774;&#772;&#782;&#862;&#770;&#789;&#788;&#841;&#801;&#811;&#860;&#839;&#790;&#819;&#854;l&#832;&#774;&#836;&#831;&#776;&#787;&#855;&#816;&#793;&#798;&#819;&#809;&#800;&#854;&#815;y&#864;&#783;&#856;&#773;&#832;&#808;&#799;&#839;&#814;&#840;&#812;&#793;&#818;&#801;</field>
       </block>
     </category>
   </xml>
