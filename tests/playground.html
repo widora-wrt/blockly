@@ -24,6 +24,7 @@
 <script src="../generators/python/variables.js"></script>
 <script src="../generators/python/variables_dynamic.js"></script>
 <script src="../generators/python/procedures.js"></script>
+<script src="../generators/python/pins.js"></script>
 <script src="../generators/php.js"></script>
 <script src="../generators/php/logic.js"></script>
 <script src="../generators/php/loops.js"></script>
@@ -64,6 +65,7 @@
 <script src="../blocks/variables.js"></script>
 <script src="../blocks/variables_dynamic.js"></script>
 <script src="../blocks/procedures.js"></script>
+<script src="../blocks/pins.js"></script>
 <script src="blocks/test_blocks.js"></script>
 <script>
 'use strict';
@@ -72,17 +74,7 @@ var workspace = null;
 function start() {
   setBackgroundColor();
 
-  // Parse the URL arguments.
-  var match = location.search.match(/dir=([^&]+)/);
-  var rtl = match && match[1] == 'rtl';
-  document.forms.options.elements.dir.selectedIndex = Number(rtl);
   var toolbox = getToolboxElement();
-  document.forms.options.elements.toolbox.selectedIndex =
-      getToolboxFormIndex(toolbox.id);
-  match = location.search.match(/side=([^&]+)/);
-  var side = match ? match[1] : 'start';
-  document.forms.options.elements.side.value = side;
-  // Create main workspace.
   workspace = Blockly.inject('blocklyDiv',
       {
         comments: true,
@@ -95,15 +87,12 @@ function start() {
             colour: '#ccc',
             snap: true
           },
-        horizontalLayout: side == 'top' || side == 'bottom',
         maxBlocks: Infinity,
         media: '../media/',
         oneBasedIndex: true,
         readOnly: false,
-        rtl: rtl,
         scrollbars: true,
         toolbox: toolbox,
-        toolboxPosition: side == 'top' || side == 'start' ? 'start' : 'end',
         zoom:
           {
             controls: true,
@@ -151,17 +140,6 @@ function getToolboxElement() {
   return document.getElementById('toolbox-' + toolboxSuffix);
 }
 
-function getToolboxFormIndex(id) {
-  if (id == 'toolbox-categories') {
-    return 0;
-  } else if (id == 'toolbox-categories-typed-variables') {
-    return 1;
-  } else if (id == 'toolbox-simple') {
-    return 2;
-  }
-  // Didn't recognize it.
-  return 0;
-}
 
 function toXml() {
   var output = document.getElementById('importExport');
@@ -218,67 +196,6 @@ function logger(e) {
   console.log(e);
 }
 
-function airstrike(n) {
-  var prototypes = [];
-  var toolbox = getToolboxElement();
-  var blocks = toolbox.getElementsByTagName('block');
-  for (var i = 0, block; block = blocks[i]; i++) {
-    prototypes.push(block.getAttribute('type'));
-  }
-  for (var i = 0; i < n; i++) {
-    var prototype = prototypes[Math.floor(Math.random() * prototypes.length)];
-    var block = workspace.newBlock(prototype);
-    block.initSvg();
-    block.getSvgRoot().setAttribute('transform', 'translate(' +
-        Math.round(Math.random() * 450 + 40) + ', ' +
-        Math.round(Math.random() * 600 + 40) + ')');
-    block.render();
-  }
-}
-
-function spaghetti(n) {
-  var xml = spaghettiXml;
-  for(var i = 0; i < n; i++) {
-    xml = xml.replace(/(<(statement|next)( name="DO0")?>)<\//g,
-        '$1' + spaghettiXml + '</');
-  }
-  xml = '<xml xmlns="http://www.w3.org/1999/xhtml">' + xml + '</xml>';
-  var dom = Blockly.Xml.textToDom(xml);
-  console.time('Spaghetti domToWorkspace');
-  Blockly.Xml.domToWorkspace(dom, workspace);
-  console.timeEnd('Spaghetti domToWorkspace');
-}
-var spaghettiXml = [
-  '  <block type="controls_if">',
-  '    <value name="IF0">',
-  '      <block type="logic_compare">',
-  '        <field name="OP">EQ</field>',
-  '        <value name="A">',
-  '          <block type="math_arithmetic">',
-  '            <field name="OP">MULTIPLY</field>',
-  '            <value name="A">',
-  '              <block type="math_number">',
-  '                <field name="NUM">6</field>',
-  '              </block>',
-  '            </value>',
-  '            <value name="B">',
-  '              <block type="math_number">',
-  '                <field name="NUM">7</field>',
-  '              </block>',
-  '            </value>',
-  '          </block>',
-  '        </value>',
-  '        <value name="B">',
-  '          <block type="math_number">',
-  '            <field name="NUM">42</field>',
-  '          </block>',
-  '        </value>',
-  '      </block>',
-  '    </value>',
-  '    <statement name="DO0"></statement>',
-  '    <next></next>',
-  '  </block>'].join('\n');
-
 </script>
 
 <style>
@@ -295,112 +212,45 @@ h1 {
   font-size: 140%;
 }
 #blocklyDiv {
-  float: right;
-  height: 95%;
-  width: 70%;
+  float: left;
+  height: 100%;
+  width: 75%;
 }
 #importExport {
   font-family: monospace;
 }
 
-.ioLabel>.blocklyFlyoutLabelText {
-  font-style: italic;
-}
-
 </style>
 </head>
 <body onload="start()">
-
+ 
+  <div style="height: 22px;">
+      <div align="left" style="float:left">Wifi-Python</div>
+       <div align="right">
+          &nbsp;<input type="button" value="To Python" onclick="toCode('Python')">
+          &nbsp;<input type="button" value="To PHP" onclick="toCode('PHP')">
+          &nbsp;<input type="button" value="To Lua" onclick="toCode('Lua')">
+          &nbsp;<input type="button" value="To Dart" onclick="toCode('Dart')">
+       </div>
+</div>
   <div id="blocklyDiv"></div>
-
-  <h1>Blockly Playground</h1>
-
-  <p><a href="javascript:void(workspace.setVisible(true))">Show</a>
-   - <a href="javascript:void(workspace.setVisible(false))">Hide</a></p>
-
-  <form id="options">
-    <select name="dir" onchange="document.forms.options.submit()">
-      <option value="ltr">LTR</option>
-      <option value="rtl">RTL</option>
-    </select>
-    <select name="toolbox" onchange="document.forms.options.submit()">
-      <option value="categories">Categories (untyped variables)</option>
-      <option value="categories-typed-variables">Categories (typed variables)</option>
-      <option value="simple">Simple</option>
-      <option value="test-blocks">Test Blocks</option>
-    </select>
-    <select name="side" onchange="document.forms.options.submit()">
-      <option value="start">Start</option>
-      <option value="end">End</option>
-      <option value="top">Top</option>
-      <option value="bottom">Bottom</option>
-    </select>
-  </form>
-
-  <p>
-    <input type="button" value="Export to XML" onclick="toXml()">
-    &nbsp;
-    <input type="button" value="Import from XML" onclick="fromXml()" id="import">
-    <br>
-    <input type="button" value="To JavaScript" onclick="toCode('JavaScript')">
-    &nbsp;
-    <input type="button" value="To Python" onclick="toCode('Python')">
-    &nbsp;
-    <input type="button" value="To PHP" onclick="toCode('PHP')">
-    &nbsp;
-    <input type="button" value="To Lua" onclick="toCode('Lua')">
-    &nbsp;
-    <input type="button" value="To Dart" onclick="toCode('Dart')">
-    <br>
-    <textarea id="importExport" style="width: 26%; height: 12em"
-      onchange="taChange();" onkeyup="taChange()"></textarea>
-  </p>
-
-  <p>
-    Stress test: &nbsp;
-    <input type="button" value="Airstrike!" onclick="airstrike(100)">
-    <input type="button" value="Spaghetti!" onclick="spaghetti(8)">
-  </p>
-  <p>
-    Log events: &nbsp;
-    <input type="checkbox" onclick="logEvents(this.checked)" id="logCheck">
-  </p>
-
-  <!-- The next three blocks of XML are sample toolboxes for testing basic
-  configurations.  For more information on building toolboxes, see https://developers.google.com/blockly/guides/configure/web/toolbox -->
-
-  <!-- toolbox-simple is an always-open flyout with no category menu.
-  Always-open flyouts are a good idea if you have a small number of blocks. -->
-  <xml id="toolbox-simple" style="display: none">
-    <block type="controls_ifelse"></block>
-    <block type="logic_compare"></block>
-    <!-- <block type="control_repeat"></block> -->
-    <block type="logic_operation"></block>
-    <block type="controls_repeat_ext">
-      <value name="TIMES">
-        <shadow type="math_number">
-          <field name="NUM">10</field>
-        </shadow>
-      </value>
-    </block>
-    <block type="logic_operation"></block>
-    <block type="logic_negate"></block>
-    <block type="logic_boolean"></block>
-    <block type="logic_null" disabled="true"></block>
-    <block type="logic_ternary"></block>
-    <block type="text_charAt">
-      <value name="VALUE">
-        <block type="variables_get">
-          <field name="VAR">text</field>
-        </block>
-      </value>
-    </block>
-  </xml>
+  <textarea id="importExport" style="width: 24%; height:100%"
+  onchange="taChange();" onkeyup="taChange()"></textarea>
 
   <!-- toolbox-categories has a category menu and an auto-closing flyout.  The
   Variables category uses untyped variable blocks.
   See https://developers.google.com/blockly/guides/create-custom-blocks/variables#untyped_variable_blocks for more information. -->
   <xml id="toolbox-categories" style="display: none">
+      <category name="Pins" colour="%{BKY_PINS_HUE}">
+          <block type="pins_picker"></block>
+          <block type="pins_set">
+              <value name="NUM">
+                  <shadow type="math_number">
+                    <field name="VALUE">45</field>
+                  </shadow>
+              </value>
+            </block>
+        </category>
     <category name="Logic" colour="%{BKY_LOGIC_HUE}">
       <block type="controls_if"></block>
       <block type="logic_compare"></block>
@@ -466,7 +316,7 @@ h1 {
       <block type="math_trig">
         <value name="NUM">
           <shadow type="math_number">
-            <field name="NUM">45</field>
+            <field name="NUM">44</field>
           </shadow>
         </value>
       </block>
@@ -1131,18 +981,10 @@ h1 {
     </category>
     <category name="Fields">
       <label text="Numbers"></label>
-      <block type="test_number">
-        <field name="NUM">123.456</field>
-      </block>
-      <block type="test_integer">
-        <field name="NUM">123.456</field>
-      </block>
-      <block type="test_number_hundredths">
-        <field name="NUM">123.456</field>
-      </block>
-      <block type="test_integer_bounded">
-        <field name="NOTE">60</field>
-      </block>
+      <block type="test_number"></block>
+      <block type="test_integer"></block>
+      <block type="test_number_hundredths"></block>
+      <block type="test_integer_bounded"></block>
       <label text="Drop-downs"></label>
       <block type="example_dropdown_long"></block>
       <block type="example_dropdown_images"></block>
@@ -1199,9 +1041,6 @@ h1 {
       <block type="emoji_label_robot_face"></block>
       <block type="text">
         <field name="TEXT">Robot face in text field: &#x1f916;</field>
-      </block>
-      <block type="text">
-        <field name="TEXT">Zalgo in text field: B&#776;&#788;&#862;&#795;&#842;&#827;&#806;&#837;&#812;&#792;&#816;&#846;&#805;l&#771;&#832;&#833;&#864;&#849;&#849;&#789;&#861;&#801;&#854;&#863;&#811;&#826;&#812;&#790;&#803;&#819;o&#843;&#777;&#778;&#785;&#831;&#829;&#794;&#825;&#857;&#814;&#802;&#811;&#852;c&#843;&#786;&#849;&#778;&#861;&#775;&#825;&#825;&#796;&#857;&#825;&#800;&#824;k&#778;&#850;&#833;&#774;&#772;&#782;&#862;&#770;&#789;&#788;&#841;&#801;&#811;&#860;&#839;&#790;&#819;&#854;l&#832;&#774;&#836;&#831;&#776;&#787;&#855;&#816;&#793;&#798;&#819;&#809;&#800;&#854;&#815;y&#864;&#783;&#856;&#773;&#832;&#808;&#799;&#839;&#814;&#840;&#812;&#793;&#818;&#801;</field>
       </block>
     </category>
   </xml>
