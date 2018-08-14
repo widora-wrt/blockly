@@ -62,5 +62,17 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     "colour": "%{BKY_PINS_HUE}",
     "previousStatement": null,
     "nextStatement": null,
-  }
+  },
+  {
+    "type": "pins_picker",
+    "message0": "%1",
+    "args0": [
+      {
+        "type": "field_colour",
+        "name": "COLOUR",
+        "colour": "#ff0000"
+      }
+    ],
+    "output": "Colour",
+  },
 ]);  // END JSON EXTRACT (Do not delete this comment.)
