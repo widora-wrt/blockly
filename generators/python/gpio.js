@@ -34,6 +34,7 @@ Blockly.Python['gpio_set'] = function(block) {
   var value_iovalue = Blockly.Python.valueToCode(block, 'IOVALUE', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
   var code =dropdown_name+"mraa"+dropdown_name+".Gpio("+value_iovalue+")";
+  Blockly.Python.definitions_['import_mraa'] = 'import mraa';
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_NONE];
 };
