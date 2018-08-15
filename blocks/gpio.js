@@ -43,7 +43,7 @@ goog.require('Blockly');
 Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
   {
     "type": "gpio_set",
-    "message0": " %1 %2",
+    "message0": "set %1 %2",
     "args0": [
       {
         "type": "field_dropdown",
@@ -65,24 +65,38 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
       },
       {
         "type": "input_value",
-        "name": "IOVALUE",
+        "name": "NAME",
         "check": "Boolean"
       }
     ],
-    "inputsInline": true,
-    "output": "Boolean",
+    "inputsInline": false,
+    "previousStatement": null,
+    "nextStatement": null,
     "colour": "%{BKY_GPIO_HUE}",
     "tooltip": "",
     "helpUrl": ""
   },
   {
     "type": "gpio_get",
-    "message0": " %1",
+    "message0": "%1",
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "IOVALUE",
-        "options": [["GPIO0", "0"], ["GPIO1", "1"], ["GPIO2", "2"]]
+        "name": "NAME",
+        "options": [
+          [
+            "GPIO0",
+            "0"
+          ],
+          [
+            "GPIO1",
+            "1"
+          ],
+          [
+            "GPIO2",
+            "2"
+          ]
+        ]
       }
     ],
     "inputsInline": true,
