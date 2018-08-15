@@ -51,7 +51,7 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
       {
         "type": "field_colour",
         "name": "COLOUR",
-        "colour": "#ff0000"
+        "colour": "#ffff00"
       }
     ],
     "output": "Colour",

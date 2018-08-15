@@ -583,6 +583,7 @@ Blockly.isNumber = function(str) {
  * @package
  */
 Blockly.checkBlockColourConstants = function() {
+
   Blockly.checkBlockColourConstant_(
       'LOGIC_HUE', ['Blocks', 'logic', 'HUE'], undefined);
   Blockly.checkBlockColourConstant_(

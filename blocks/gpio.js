@@ -29,8 +29,8 @@
  */
 'use strict';
 
-goog.provide('Blockly.Blocks.pins');  // Deprecated
-goog.provide('Blockly.Constants.Pins');  // deprecated, 2018 April 5
+goog.provide('Blockly.Blocks.gpio');  // Deprecated
+goog.provide('Blockly.Constants.Gpio');  // deprecated, 2018 April 5
 
 goog.require('Blockly.Blocks');
 goog.require('Blockly');
@@ -40,11 +40,9 @@ goog.require('Blockly');
  * Unused constant for the common HSV hue for all blocks in this category.
  * @deprecated Use Blockly.Msg['COLOUR_HUE']. (2018 April 5)
  */
-Blockly.Constants.Pins.HUE = 66;
-
 Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
   {
-    "type": "pins_set",
+    "type": "gpio_set",
     "message0": "%1 %2",
     "args0": [
       {
@@ -73,12 +71,12 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     ],
     "inputsInline": true,
     "output": "Boolean",
-    "colour": 20,
+    "colour": "%{BKY_GPIO_HUE}",
     "tooltip": "",
     "helpUrl": ""
   },
   {
-    "type": "pins_get",
+    "type": "gpio_get",
     "message0": " %1",
     "args0": [
       {
@@ -89,7 +87,7 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     ],
     "inputsInline": true,
     "output": "Boolean",
-    "colour": 20,
+    "colour": "%{BKY_GPIO_HUE}",
     "tooltip": "",
     "helpUrl": ""
   }
