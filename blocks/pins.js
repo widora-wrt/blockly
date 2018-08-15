@@ -45,34 +45,52 @@ Blockly.Constants.Pins.HUE = 66;
 Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
   {
     "type": "pins_set",
-    "message0": "setpin %1 to %2",
+    "message0": "%1 %2",
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "MODE",
-        "options": [["GPIO0", "0"], ["GPIO1", "1"], ["GPIO2", "2"]]
+        "name": "NAME",
+        "options": [
+          [
+            "GPIO0",
+            "0"
+          ],
+          [
+            "GPIO1",
+            "1"
+          ],
+          [
+            "GPIO2",
+            "2"
+          ]
+        ]
       },
       {
         "type": "input_value",
-        "name": "VALUE",
+        "name": "IOVALUE",
         "check": "Boolean"
       }
     ],
-    
-    "colour": "%{BKY_PINS_HUE}",
-    "previousStatement": null,
-    "nextStatement": null,
+    "inputsInline": true,
+    "output": "Boolean",
+    "colour": 20,
+    "tooltip": "",
+    "helpUrl": ""
   },
   {
-    "type": "pins_picker",
-    "message0": "%1",
+    "type": "pins_get",
+    "message0": " %1",
     "args0": [
       {
-        "type": "field_colour",
-        "name": "COLOUR",
-        "colour": "#ff0000"
+        "type": "field_dropdown",
+        "name": "IOVALUE",
+        "options": [["GPIO0", "0"], ["GPIO1", "1"], ["GPIO2", "2"]]
       }
     ],
-    "output": "Colour",
-  },
+    "inputsInline": true,
+    "output": "Boolean",
+    "colour": 20,
+    "tooltip": "",
+    "helpUrl": ""
+  }
 ]);  // END JSON EXTRACT (Do not delete this comment.)

@@ -242,14 +242,9 @@ h1 {
   See https://developers.google.com/blockly/guides/create-custom-blocks/variables#untyped_variable_blocks for more information. -->
   <xml id="toolbox-categories" style="display: none">
       <category name="Pins" colour="%{BKY_PINS_HUE}">
-          <block type="pins_picker"></block>
-          <block type="pins_set">
-              <value name="NUM">
-                  <shadow type="math_number">
-                    <field name="VALUE">45</field>
-                  </shadow>
-              </value>
-            </block>
+          <block type="pins_set"></block>
+        <block type="pins_get"></block>
+      
         </category>
     <category name="Logic" colour="%{BKY_LOGIC_HUE}">
       <block type="controls_if"></block>

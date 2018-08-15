@@ -30,12 +30,10 @@ goog.require('Blockly.Python');
 
 
 Blockly.Python['pins_set'] = function(block) {
-    var code ='pin=True';
+  var dropdown_name = block.getFieldValue('NAME');
+  var value_iovalue = Blockly.Python.valueToCode(block, 'IOVALUE', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code =dropdown_name+value_iovalue;
+  // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_NONE];
 };
-Blockly.Python['pins_picker'] = function(block) {
-  // Colour picker.
-var code = '\'#ff0000\'';
-return [code, Blockly.Python.ORDER_ATOMIC];
-};
-
