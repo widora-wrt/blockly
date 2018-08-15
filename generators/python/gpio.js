@@ -29,11 +29,11 @@ goog.provide('Blockly.Python.pins');
 goog.require('Blockly.Python');
 
 
-Blockly.Python['inout_set'] = function(block) {
+Blockly.Python['gpio_set'] = function(block) {
   var dropdown_name = block.getFieldValue('NAME');
   var value_iovalue = Blockly.Python.valueToCode(block, 'IOVALUE', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code =dropdown_name+value_iovalue;
+  var code =dropdown_name+"mraa"+dropdown_name+".Gpio("+value_iovalue+")";
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_NONE];
 };
