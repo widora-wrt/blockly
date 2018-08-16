@@ -42,8 +42,8 @@ goog.require('Blockly');
  */
 Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
   {
-    "type": "gpio_set",
-    "message0": "set %1 %2",
+    "type": "gpio_write",
+    "message0": "write %1 to %2",
     "args0": [
       {
         "type": "field_dropdown",
@@ -77,8 +77,8 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     "helpUrl": ""
   },
   {
-    "type": "gpio_get",
-    "message0": "%1",
+    "type": "gpio_read",
+    "message0": "read %1",
     "args0": [
       {
         "type": "field_dropdown",
@@ -101,6 +101,73 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     ],
     "inputsInline": true,
     "output": "Boolean",
+    "colour": "%{BKY_GPIO_HUE}",
+    "tooltip": "",
+    "helpUrl": ""
+  },
+  {
+    "type": "gpio_mode",
+    "message0": "set %1 to %2",
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "NAME",
+        "options": [
+          [
+            "GPIO0",
+            "0"
+          ],
+          [
+            "GPIO1",
+            "1"
+          ],
+          [
+            "GPIO2",
+            "2"
+          ]
+        ]
+      },
+      {
+        "type": "field_dropdown",
+        "name": "VALUE",
+        "options": [
+          [
+            "OUT",
+            "DIR_OUT"
+          ],
+          [
+            "IN",
+            "DIR_IN"
+          ]
+        ]
+      }
+    ],
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": "%{BKY_GPIO_HUE}",
+    "tooltip": "",
+    "helpUrl": ""
+  },
+  {
+    "type": "gpio_value",
+    "message0": "%1",
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "VALUE",
+        "options": [
+          [
+            "HIGH",
+            "1"
+          ],
+          [
+            "LOW",
+            "0"
+          ]
+        ]
+      }
+    ],
+    "output": null,
     "colour": "%{BKY_GPIO_HUE}",
     "tooltip": "",
     "helpUrl": ""

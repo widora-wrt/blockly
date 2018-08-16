@@ -81,8 +81,11 @@
 
   <xml id="toolbox" style="display: none">
     <category name="%{BKY_CATGPIO}"colour="%{BKY_GPIO_HUE}">
-        <block type="gpio_set"></block>
-      <block type="gpio_get"></block>
+        <block type="gpio_write"></block>
+      <block type="gpio_read"></block>
+      <block type="gpio_mode"></block>
+      <block type="gpio_value"></block>
+
       </category>
     <category name="%{BKY_CATLOGIC}" colour="%{BKY_LOGIC_HUE}">
       <block type="controls_if"></block>
