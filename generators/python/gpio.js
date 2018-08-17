@@ -31,9 +31,9 @@ goog.require('Blockly.Python');
 
 Blockly.Python['gpio_write'] = function(block) {
   var dropdown_name = block.getFieldValue('NAME');
-  var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
+  var value_name = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = '...\n';
+  var code = "gpio"+dropdown_name+".write("+value_name+")\n";
   Blockly.Python.definitions_['import_mraa'] = 'import mraa';
   return code;
 };
@@ -51,13 +51,14 @@ Blockly.Python['gpio_mode'] = function(block) {
   var dropdown_name = block.getFieldValue('NAME');
   var dropdown_value = block.getFieldValue('VALUE');
   // TODO: Assemble Python into code variable.
-  var code = '...\n';
+  Blockly.Python.definitions_['import_mraa'] = 'import mraa';
+  var code ="gpio"+dropdown_name+".dir(mraa."+dropdown_value+")\n";
   return code;
 };
 Blockly.Python['gpio_value'] = function(block) {
   var dropdown_value = block.getFieldValue('VALUE');
   // TODO: Assemble Python into code variable.
-  var code = '...';
+  var code = dropdown_value;
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_NONE];
 };
