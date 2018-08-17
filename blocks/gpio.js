@@ -48,20 +48,10 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
       {
         "type": "field_dropdown",
         "name": "NAME",
-        "options": [
-          [
-            "GPIO0",
-            "0"
-          ],
-          [
-            "GPIO1",
-            "1"
-          ],
-          [
-            "GPIO2",
-            "2"
-          ]
-        ]
+        "options": [["GPIO0","0"],
+                    ["GPIO1","1"],
+                    ["GPIO2","2"]
+                   ]
       },
       {
         "type": "input_value",
@@ -83,20 +73,10 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
       {
         "type": "field_dropdown",
         "name": "NAME",
-        "options": [
-          [
-            "GPIO0",
-            "0"
-          ],
-          [
-            "GPIO1",
-            "1"
-          ],
-          [
-            "GPIO2",
-            "2"
-          ]
-        ]
+        "options": [["GPIO0","0"],
+                    ["GPIO1","1"],
+                    ["GPIO2","2"]
+                   ]
       }
     ],
     "inputsInline": true,
@@ -112,33 +92,15 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
       {
         "type": "field_dropdown",
         "name": "NAME",
-        "options": [
-          [
-            "GPIO0",
-            "0"
-          ],
-          [
-            "GPIO1",
-            "1"
-          ],
-          [
-            "GPIO2",
-            "2"
-          ]
-        ]
+        "options": [["GPIO0","0"],
+                    ["GPIO1","1"],
+                    ["GPIO2","2"]
+                   ]
       },
       {
         "type": "field_dropdown",
         "name": "VALUE",
-        "options": [
-          [
-            "OUT",
-            "DIR_OUT"
-          ],
-          [
-            "IN",
-            "DIR_IN"
-          ]
+        "options": [["OUT","DIR_OUT"],["IN","DIR_IN"]
         ]
       }
     ],
@@ -155,16 +117,7 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
       {
         "type": "field_dropdown",
         "name": "VALUE",
-        "options": [
-          [
-            "HIGH",
-            "1"
-          ],
-          [
-            "LOW",
-            "0"
-          ]
-        ]
+        "options": [["HIGH","1"],["LOW","0"]]
       }
     ],
     "output": null,

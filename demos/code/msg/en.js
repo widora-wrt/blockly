@@ -7,6 +7,7 @@ var MSG = {
   timeout: "Maximum execution iterations exceeded.",
   trashTooltip: "Discard all blocks.",
   catGpio: "Gpio",
+  catControl: "Control",
   catLogic: "Logic",
   catLoops: "Loops",
   catMath: "Math",

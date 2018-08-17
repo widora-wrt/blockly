@@ -585,6 +585,10 @@ Blockly.isNumber = function(str) {
 Blockly.checkBlockColourConstants = function() {
 
   Blockly.checkBlockColourConstant_(
+      'GPIO_HUE', ['Blocks', 'logic', 'HUE'], undefined);
+Blockly.checkBlockColourConstant_(
+      'GPIO_HUE', ['Constants', 'Logic', 'HUE'], 22);
+  Blockly.checkBlockColourConstant_(
       'LOGIC_HUE', ['Blocks', 'logic', 'HUE'], undefined);
   Blockly.checkBlockColourConstant_(
       'LOGIC_HUE', ['Constants', 'Logic', 'HUE'], 210);

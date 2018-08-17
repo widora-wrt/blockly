@@ -34,6 +34,9 @@ Blockly.Python['gpio_write'] = function(block) {
   var value_name = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
   var code = "gpio"+dropdown_name+".write("+value_name+")\n";
+  var def ="gpio"+dropdown_name+"=mraa.Gpio("+dropdown_name+")";
+  // TODO: Change ORDER_NONE to the correct strength.
+  Blockly.Python.definitions_[def] = def;
   Blockly.Python.definitions_['import_mraa'] = 'import mraa';
   return code;
 };

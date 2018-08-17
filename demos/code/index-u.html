@@ -14,7 +14,9 @@
   <script src="../../dart_compressed.js"></script>
   <script src="../../dart_compressed.js"></script>
   <script src="../../blocks/gpio.js"></script>
+  <script src="../../blocks/control.js"></script>
   <script src="../../generators/python/gpio.js"></script>
+  <script src="../../generators/python/control.js"></script>
   <script src="../../msg/messages.js"></script>
   <script src="../../core/variables.js"></script>
   <script src="../../core/procedures.js"></script> 
@@ -86,6 +88,10 @@
       <block type="gpio_mode"></block>
       <block type="gpio_value"></block>
 
+      </category>
+      <category name="%{BKY_CATCONTROL}"colour="%{BKY_CONTROL_HUE}">
+        <block type="control_delay"></block>
+        <block type="control_break"></block>
       </category>
     <category name="%{BKY_CATLOGIC}" colour="%{BKY_LOGIC_HUE}">
       <block type="controls_if"></block>

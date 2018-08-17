@@ -67,6 +67,8 @@
 <script src="../blocks/procedures.js"></script>
 <script src="../blocks/pins.js"></script>
 <script src="blocks/test_blocks.js"></script>
+<script src="../blocks/gpio.js"></script>
+<script src="../generators/python/gpio.js"></script>
 <script>
 'use strict';
 var workspace = null;
@@ -241,10 +243,12 @@ h1 {
   Variables category uses untyped variable blocks.
   See https://developers.google.com/blockly/guides/create-custom-blocks/variables#untyped_variable_blocks for more information. -->
   <xml id="toolbox-categories" style="display: none">
-      <category name="Pins" colour="%{BKY_PINS_HUE}">
-          <block type="pins_set"></block>
-        <block type="pins_get"></block>
-      
+      <category name="%{BKY_CATGPIO}"colour="%{BKY_GPIO_HUE}">
+          <block type="gpio_write"></block>
+        <block type="gpio_read"></block>
+        <block type="gpio_mode"></block>
+        <block type="gpio_value"></block>
+  
         </category>
     <category name="Logic" colour="%{BKY_LOGIC_HUE}">
       <block type="controls_if"></block>
