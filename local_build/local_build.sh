@@ -49,21 +49,20 @@ function_core()
 {
 rm $1 2> /dev/null
 echo Compiling Blockly core...
-rm ../blockly_compressed.js 2> /dev/null
-echo Compiling Blockly core...
 java -jar $COMPILER \
   --js='../core/**.js' \
   --js='../../closure-library/closure/goog/**.js' \
   --js='../../closure-library/third_party/closure/goog/**.js' \
   --generate_exports \
+  --externs ../externs/svg-externs.js \
   --warning_level='DEFAULT' \
   --compilation_level SIMPLE_OPTIMIZATIONS \
   --dependency_mode=STRICT \
   --entry_point=Blockly \
-  --js_output_file ../blockly_compressed.js
+  --js_output_file $1
 
 if [ -s ../blockly_compressed.js ]; then
-  echo Compilation OK.
+  echo Compilation $1 OK.
 else
   echo Compilation FAIL.
   exit 1
@@ -79,6 +78,7 @@ java -jar $COMPILER \
   --js='../../closure-library/closure/goog/**.js' \
   --js='../../closure-library/third_party/closure/goog/**.js' \
   --generate_exports \
+  --externs ../externs/svg-externs.js \
   --warning_level='DEFAULT' \
   --compilation_level SIMPLE_OPTIMIZATIONS \
   --dependency_mode=STRICT \
@@ -101,6 +101,7 @@ java -jar $COMPILER \
   --js='../../closure-library/closure/goog/**.js' \
   --js='../../closure-library/third_party/closure/goog/**.js' \
   --generate_exports \
+  --externs ../externs/svg-externs.js \
   --warning_level='DEFAULT' \
   --compilation_level SIMPLE_OPTIMIZATIONS \
   --dependency_mode=STRICT \
@@ -124,6 +125,8 @@ java -jar $COMPILER \
   --js='../../closure-library/closure/goog/**.js' \
   --js='../../closure-library/third_party/closure/goog/**.js' \
   --generate_exports \
+  --externs ../externs/svg-externs.js \
+  --warning_level='DEFAULT' \
   --compilation_level ADVANCED_OPTIMIZATIONS \
   --dependency_mode=STRICT \
   --entry_point=Main \
@@ -175,6 +178,6 @@ case $1 in
     echo core
     echo accessible
     echo blocks
-    echo lua dart python javascript  
+    echo lua dart python javascript php
     ;;
 esac
