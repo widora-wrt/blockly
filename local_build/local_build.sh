@@ -54,7 +54,6 @@ java -jar $COMPILER \
   --js='../../closure-library/closure/goog/**.js' \
   --js='../../closure-library/third_party/closure/goog/**.js' \
   --generate_exports \
-  --externs ../externs/svg-externs.js \
   --warning_level='DEFAULT' \
   --compilation_level SIMPLE_OPTIMIZATIONS \
   --dependency_mode=STRICT \
@@ -78,7 +77,6 @@ java -jar $COMPILER \
   --js='../../closure-library/closure/goog/**.js' \
   --js='../../closure-library/third_party/closure/goog/**.js' \
   --generate_exports \
-  --externs ../externs/svg-externs.js \
   --warning_level='DEFAULT' \
   --compilation_level SIMPLE_OPTIMIZATIONS \
   --dependency_mode=STRICT \
@@ -101,7 +99,6 @@ java -jar $COMPILER \
   --js='../../closure-library/closure/goog/**.js' \
   --js='../../closure-library/third_party/closure/goog/**.js' \
   --generate_exports \
-  --externs ../externs/svg-externs.js \
   --warning_level='DEFAULT' \
   --compilation_level SIMPLE_OPTIMIZATIONS \
   --dependency_mode=STRICT \
@@ -125,7 +122,6 @@ java -jar $COMPILER \
   --js='../../closure-library/closure/goog/**.js' \
   --js='../../closure-library/third_party/closure/goog/**.js' \
   --generate_exports \
-  --externs ../externs/svg-externs.js \
   --warning_level='DEFAULT' \
   --compilation_level ADVANCED_OPTIMIZATIONS \
   --dependency_mode=STRICT \

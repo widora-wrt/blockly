@@ -22,7 +22,8 @@
  * @author fraser@google.com (Neil Fraser)
  */
 'use strict';
-
+goog.require('Blockly');
+//goog.provide('Blockly.Xml');
 /**
  * Create a namespace for the application.
  */
