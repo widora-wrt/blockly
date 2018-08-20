@@ -34,7 +34,9 @@
 #   found.
 
 # Find the Closure Compiler.
-if [ -f "$(npm root)/google-closure-compiler/compiler.jar" ]; then
+if [ -f "../node_modules/google-closure-compiler/compiler.jar" ]; then
+  COMPILER="../node_modules/google-closure-compiler/compiler.jar"
+elif [ -f "$(npm root)/google-closure-compiler/compiler.jar" ]; then
   COMPILER="$(npm root)/google-closure-compiler/compiler.jar"
 elif [ -f closure-compiler*.jar ]; then
   COMPILER="closure-compiler*.jar"
@@ -98,6 +100,9 @@ echo Compiling Blockly blocks...
 java -jar $COMPILER \
   --js='generators/blocks.js' \
   --js='../blocks/**.js' \
+  --js='../core/**.js' \
+  --js='../generators/**.js' \
+  --js='../msg/js/**.js' \
   --js='../../closure-library/closure/goog/**.js' \
   --js='../../closure-library/third_party/closure/goog/**.js' \
   --generate_exports \
