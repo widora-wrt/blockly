@@ -35,6 +35,7 @@ goog.require('Blockly.Events');
 goog.require('Blockly.FieldAngle');
 goog.require('Blockly.FieldCheckbox');
 goog.require('Blockly.FieldColour');
+goog.require('Blockly.WorkspaceAudio');
 // Date picker commented out since it increases footprint by 60%.
 // Add it only if you need it.
 //goog.require('Blockly.FieldDate');
@@ -53,7 +54,6 @@ goog.require('Blockly.WorkspaceSvg');
 goog.require('Blockly.constants');
 goog.require('Blockly.inject');
 goog.require('Blockly.utils');
-
 goog.require('goog.color');
 
 
@@ -387,9 +387,10 @@ Blockly.prompt = function(message, defaultValue, callback) {
  */
 Blockly.jsonInitFactory_ = function(jsonDef) {
   /** @this Blockly.Block */
-  return function() {
+  function dd() {
     this.jsonInit(jsonDef);
   };
+  return dd;
 };
 
 /**
