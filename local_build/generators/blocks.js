@@ -15,3 +15,4 @@ goog.require('Blockly.Blocks.variables');  // Deprecated.
 goog.require('Blockly.Constants.Variables');
 goog.require('Blockly.Blocks.colour');  // Deprecated
 goog.require('Blockly.Constants.Colour');  // deprecated, 2018 April 5
+goog.require('Blockly.BlockSvg');

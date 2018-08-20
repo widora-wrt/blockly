@@ -47,6 +47,33 @@ else
   echo "https://dl.google.com/closure-compiler/compiler-latest.zip"
   exit 1
 fi
+function_one()
+{
+rm $1 2> /dev/null
+echo Compiling Blockly one...
+java -jar $COMPILER \
+  --js='../demos/gide/code.js' \
+  --js='../blocks/**.js' \
+  --js='../core/**.js' \
+  --js='../generators/**.js' \
+  --js='../msg/js/**.js' \
+  --js='../../closure-library/closure/goog/**.js' \
+  --js='../../closure-library/third_party/closure/goog/**.js' \
+  --generate_exports \
+  --externs ../externs/svg-externs.js \
+  --warning_level='DEFAULT' \
+  --compilation_level SIMPLE_OPTIMIZATIONS \
+  --dependency_mode=STRICT \
+  --entry_point=Main \
+  --js_output_file $1
+
+if [ -s $1 ]; then
+  echo Compilation OK.
+else
+  echo Compilation FAIL.
+  exit 1
+fi
+}
 function_core()
 {
 rm $1 2> /dev/null
@@ -63,7 +90,7 @@ java -jar $COMPILER \
   --js_output_file $1
 
 if [ -s $1 ]; then
-  echo Compilation OK.
+  echo Compilation $1 OK.
 else
   echo Compilation FAIL.
   exit 1
@@ -96,15 +123,15 @@ function_blocks()
 rm $1 2> /dev/null
 echo Compiling Blockly blocks...
 java -jar $COMPILER \
-  --js='generators/blocks.js' \
   --js='../blocks/**.js' \
   --js='../core/**.js' \
   --js='../generators/**.js' \
   --js='../msg/js/**.js' \
   --js='../../closure-library/closure/goog/**.js' \
   --js='../../closure-library/third_party/closure/goog/**.js' \
+  --js='generators/blocks.js' \
   --generate_exports \
-  --warning_level='DEFAULT' \
+  --warning_level='VERBOSE' \
   --compilation_level SIMPLE_OPTIMIZATIONS \
   --dependency_mode=STRICT \
   --entry_point=Main \
@@ -121,13 +148,16 @@ function_generators()
 rm $2 2> /dev/null
 echo Compiling Blockly generators $1...
 java -jar $COMPILER \
+  --js='../blocks/**.js' \
+  --js='../core/**.js' \
   --js='generators/'$1'.js' \
   --js='../generators/'$1'.js' \
   --js='../generators/'$1'/**.js' \
+  --js='../msg/js/**.js' \
   --js='../../closure-library/closure/goog/**.js' \
   --js='../../closure-library/third_party/closure/goog/**.js' \
   --generate_exports \
-  --compilation_level ADVANCED_OPTIMIZATIONS \
+  --compilation_level SIMPLE_OPTIMIZATIONS \
   --dependency_mode=STRICT \
   --entry_point=Main \
   --js_output_file $2
@@ -140,6 +170,9 @@ fi
 }
 echo Using $COMPILER as the compiler.
 case $1 in
+    one)
+    function_one ../one_compressed.js  
+    ;;
     core)
     function_core ../blockly_compressed.js  
     ;;

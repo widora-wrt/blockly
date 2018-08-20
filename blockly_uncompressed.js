@@ -75,7 +75,7 @@ goog.addDependency("../../../" + dir + "/core/generator.js", ['Blockly.Generator
 goog.addDependency("../../../" + dir + "/core/gesture.js", ['Blockly.Gesture'], ['Blockly.BlockAnimations', 'Blockly.BlockDragger', 'Blockly.BubbleDragger', 'Blockly.constants', 'Blockly.Events.Ui', 'Blockly.FlyoutDragger', 'Blockly.Tooltip', 'Blockly.Touch', 'Blockly.utils', 'Blockly.WorkspaceDragger', 'goog.math.Coordinate']);
 goog.addDependency("../../../" + dir + "/core/grid.js", ['Blockly.Grid'], ['Blockly.utils', 'goog.userAgent']);
 goog.addDependency("../../../" + dir + "/core/icon.js", ['Blockly.Icon'], ['Blockly.utils', 'goog.math.Coordinate']);
-goog.addDependency("../../../" + dir + "/core/inject.js", ['Blockly.inject'], ['Blockly.BlockDragSurfaceSvg', 'Blockly.Css', 'Blockly.Grid', 'Blockly.Options', 'Blockly.utils', 'Blockly.WorkspaceSvg', 'Blockly.WorkspaceDragSurfaceSvg', 'goog.dom', 'goog.ui.Component', 'goog.userAgent']);
+goog.addDependency("../../../" + dir + "/core/inject.js", ['Blockly.inject'], ['Blockly.BlockDragSurfaceSvg', 'Blockly.Css', 'Blockly.Grid', 'Blockly.Options', 'Blockly.utils', 'Blockly.WorkspaceSvg', 'Blockly.WorkspaceDragSurfaceSvg', 'goog.ui.Component', 'goog.userAgent']);
 goog.addDependency("../../../" + dir + "/core/input.js", ['Blockly.Input'], ['Blockly.Connection', 'Blockly.FieldLabel']);
 goog.addDependency("../../../" + dir + "/core/msg.js", ['Blockly.Msg'], []);
 goog.addDependency("../../../" + dir + "/core/mutator.js", ['Blockly.Mutator'], ['Blockly.Bubble', 'Blockly.Events.BlockChange', 'Blockly.Events.Ui', 'Blockly.Icon', 'Blockly.utils', 'Blockly.WorkspaceSvg', 'goog.dom']);
@@ -84,7 +84,7 @@ goog.addDependency("../../../" + dir + "/core/options.js", ['Blockly.Options'], 
 goog.addDependency("../../../" + dir + "/core/procedures.js", ['Blockly.Procedures'], ['Blockly.Blocks', 'Blockly.constants', 'Blockly.Events.BlockChange', 'Blockly.Field', 'Blockly.Names', 'Blockly.Workspace', 'goog.dom']);
 goog.addDependency("../../../" + dir + "/core/rendered_connection.js", ['Blockly.RenderedConnection'], ['Blockly.Connection', 'Blockly.utils', 'goog.math.Coordinate']);
 goog.addDependency("../../../" + dir + "/core/scrollbar.js", ['Blockly.Scrollbar', 'Blockly.ScrollbarPair'], ['Blockly.utils', 'goog.events.BrowserFeature', 'goog.math.Coordinate']);
-goog.addDependency("../../../" + dir + "/core/toolbox.js", ['Blockly.Toolbox'], ['Blockly.Events.Ui', 'Blockly.Flyout', 'Blockly.HorizontalFlyout', 'Blockly.Touch', 'Blockly.utils', 'Blockly.VerticalFlyout', 'goog.dom', 'goog.events', 'goog.events.BrowserFeature', 'goog.html.SafeHtml', 'goog.html.SafeStyle', 'goog.math.Rect', 'goog.style', 'goog.ui.tree.TreeControl', 'goog.ui.tree.TreeNode']);
+goog.addDependency("../../../" + dir + "/core/toolbox.js", ['Blockly.Toolbox'], ['Blockly.Events.Ui', 'Blockly.Flyout', 'Blockly.HorizontalFlyout', 'Blockly.Touch', 'Blockly.utils', 'Blockly.VerticalFlyout', 'goog.events', 'goog.events.BrowserFeature', 'goog.html.SafeHtml', 'goog.html.SafeStyle', 'goog.math.Rect', 'goog.style', 'goog.ui.tree.TreeControl', 'goog.ui.tree.TreeNode']);
 goog.addDependency("../../../" + dir + "/core/tooltip.js", ['Blockly.Tooltip'], ['Blockly.utils', 'goog.dom']);
 goog.addDependency("../../../" + dir + "/core/touch.js", ['Blockly.Touch'], ['Blockly.utils', 'goog.events.BrowserFeature']);
 goog.addDependency("../../../" + dir + "/core/touch_gesture.js", ['Blockly.TouchGesture'], ['Blockly.Gesture', 'Blockly.utils', 'goog.math.Coordinate']);
@@ -103,7 +103,7 @@ goog.addDependency("../../../" + dir + "/core/workspace.js", ['Blockly.Workspace
 goog.addDependency("../../../" + dir + "/core/workspace_audio.js", ['Blockly.WorkspaceAudio'], ['goog.userAgent']);
 goog.addDependency("../../../" + dir + "/core/workspace_comment.js", ['Blockly.WorkspaceComment'], ['Blockly.Events.CommentChange', 'Blockly.Events.CommentCreate', 'Blockly.Events.CommentDelete', 'Blockly.Events.CommentMove', 'Blockly.utils', 'goog.dom', 'goog.math.Coordinate']);
 goog.addDependency("../../../" + dir + "/core/workspace_comment_render_svg.js", ['Blockly.WorkspaceCommentSvg.render'], ['Blockly.utils', 'Blockly.WorkspaceCommentSvg', 'goog.math.Coordinate']);
-goog.addDependency("../../../" + dir + "/core/workspace_comment_svg.js", ['Blockly.WorkspaceCommentSvg'], ['Blockly.Events.CommentCreate', 'Blockly.Events.CommentDelete', 'Blockly.Events.CommentMove', 'Blockly.utils', 'Blockly.WorkspaceComment', 'goog.dom', 'goog.math.Coordinate']);
+goog.addDependency("../../../" + dir + "/core/workspace_comment_svg.js", ['Blockly.WorkspaceCommentSvg'], ['Blockly.Events.CommentCreate', 'Blockly.Events.CommentDelete', 'Blockly.Events.CommentMove', 'Blockly.utils', 'Blockly.WorkspaceComment', 'goog.math.Coordinate']);
 goog.addDependency("../../../" + dir + "/core/workspace_drag_surface_svg.js", ['Blockly.WorkspaceDragSurfaceSvg'], ['Blockly.utils']);
 goog.addDependency("../../../" + dir + "/core/workspace_dragger.js", ['Blockly.WorkspaceDragger'], ['goog.math.Coordinate']);
 goog.addDependency("../../../" + dir + "/core/workspace_svg.js", ['Blockly.WorkspaceSvg'], ['Blockly.ConnectionDB', 'Blockly.constants', 'Blockly.Events.BlockCreate', 'Blockly.Gesture', 'Blockly.Grid', 'Blockly.Options', 'Blockly.ScrollbarPair', 'Blockly.Touch', 'Blockly.TouchGesture', 'Blockly.Trashcan', 'Blockly.utils', 'Blockly.VariablesDynamic', 'Blockly.Workspace', 'Blockly.WorkspaceAudio', 'Blockly.WorkspaceComment', 'Blockly.WorkspaceCommentSvg', 'Blockly.WorkspaceCommentSvg.render', 'Blockly.WorkspaceDragSurfaceSvg', 'Blockly.Xml', 'Blockly.ZoomControls', 'goog.dom', 'goog.math.Coordinate']);
@@ -112,6 +112,18 @@ goog.addDependency("../../../" + dir + "/core/xml.js", ['Blockly.Xml'], ['Blockl
 goog.addDependency("../../../" + dir + "/core/zoom_controls.js", ['Blockly.ZoomControls'], ['Blockly.Touch', 'Blockly.utils']);
 goog.addDependency("../../alltests.js", [], []);
 goog.addDependency("../../browser_capabilities.js", [], []);
+goog.addDependency("../../closure-deps/bin/closuremakedeps.js", [], []);
+goog.addDependency("../../closure-deps/bin/getjsversion.js", [], []);
+goog.addDependency("../../closure-deps/index.js", [], []);
+goog.addDependency("../../closure-deps/lib/depfile.js", [], []);
+goog.addDependency("../../closure-deps/lib/depgraph.js", [], []);
+goog.addDependency("../../closure-deps/lib/parser.js", [], []);
+goog.addDependency("../../closure-deps/lib/sourceerror.js", [], []);
+goog.addDependency("../../closure-deps/spec/tests/closuremakedeps_test.js", [], []);
+goog.addDependency("../../closure-deps/spec/tests/depfile_test.js", [], []);
+goog.addDependency("../../closure-deps/spec/tests/depgraph_test.js", [], []);
+goog.addDependency("../../closure-deps/spec/tests/parser_test.js", [], []);
+goog.addDependency("../../closure-deps/spec/tests/readme_test.js", [], []);
 goog.addDependency("../../doc/js/article.js", [], []);
 goog.addDependency("../../protractor.conf.js", [], []);
 goog.addDependency("../../protractor_spec.js", [], []);
