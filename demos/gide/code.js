@@ -200,7 +200,7 @@ Code.bindClick = function(el, func) {
  */
 Code.importPrettify = function() {
   var script = document.createElement('script');
-  script.setAttribute('src', '../../node_modules/patch/run_prettify.js');
+  script.setAttribute('src', '../../patch/run_prettify.js');
   document.head.appendChild(script);
 };
 
