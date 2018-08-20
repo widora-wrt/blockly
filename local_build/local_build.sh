@@ -51,8 +51,6 @@ function_core()
 {
 rm $1 2> /dev/null
 echo Compiling Blockly core...
-rm ../blockly_compressed.js 2> /dev/null
-echo Compiling Blockly core...
 java -jar $COMPILER \
   --js='../core/**.js' \
   --js='../../closure-library/closure/goog/**.js' \
@@ -62,9 +60,9 @@ java -jar $COMPILER \
   --compilation_level SIMPLE_OPTIMIZATIONS \
   --dependency_mode=STRICT \
   --entry_point=Blockly \
-  --js_output_file ../blockly_compressed.js
+  --js_output_file $1
 
-if [ -s ../blockly_compressed.js ]; then
+if [ -s $1 ]; then
   echo Compilation OK.
 else
   echo Compilation FAIL.

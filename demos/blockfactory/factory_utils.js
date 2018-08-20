@@ -773,6 +773,7 @@ FactoryUtils.generateCategoryXml = function(blocks, categoryName) {
 
     // Get preview block XML.
     var blockXml = Blockly.Xml.blockToDom(block);
+    alert(blockXml);
     blockXml.removeAttribute('id');
 
     // Add block to category and category to XML.

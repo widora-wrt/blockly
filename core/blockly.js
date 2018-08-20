@@ -387,9 +387,10 @@ Blockly.prompt = function(message, defaultValue, callback) {
  */
 Blockly.jsonInitFactory_ = function(jsonDef) {
   /** @this Blockly.Block */
-  return function() {
+  var temp=function() {
     this.jsonInit(jsonDef);
   };
+  return temp();
 };
 
 /**
