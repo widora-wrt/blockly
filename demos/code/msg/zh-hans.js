@@ -1,11 +1,12 @@
 var MSG = {
-  title: "代码",
+  title: "GIDE",
   blocks: "块",
   linkTooltip: "保存模块并生成链接。",
   runTooltip: "于工作区中运行块所定义的程式。",
   badCode: "程序错误：\n%1",
   timeout: "超过最大执行行数。",
   trashTooltip: "放弃所有块。",
+  catGpio:"端口",
   catLogic: "逻辑",
   catLoops: "循环",
   catMath: "数学",

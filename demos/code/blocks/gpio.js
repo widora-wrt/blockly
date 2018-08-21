@@ -62,7 +62,7 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     "inputsInline": false,
     "previousStatement": null,
     "nextStatement": null,
-    "colour": 12,
+    "colour": "%{BKY_GPIO_HUE}",
     "tooltip": "",
     "helpUrl": ""
   },
@@ -81,7 +81,7 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     ],
     "inputsInline": true,
     "output": "Boolean",
-    "colour": 12,
+    "colour": "%{BKY_GPIO_HUE}",
     "tooltip": "",
     "helpUrl": ""
   },
@@ -106,7 +106,7 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     ],
     "previousStatement": null,
     "nextStatement": null,
-    "colour": 12,
+    "colour": "%{BKY_GPIO_HUE}",
     "tooltip": "",
     "helpUrl": ""
   },
@@ -121,7 +121,7 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
       }
     ],
     "output": null,
-    "colour": 12,
+    "colour": "%{BKY_GPIO_HUE}",
     "tooltip": "",
     "helpUrl": ""
   }
