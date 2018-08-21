@@ -65,6 +65,7 @@
 	"COLOUR_BLEND_TOOLTIP": "用一個給定的比率（0.0-1.0）混合兩種顏色。",
 	"CONTROLS_REPEAT_HELPURL": "https://zh.wikipedia.org/wiki/For迴圈",
 	"CONTROLS_REPEAT_TITLE": "重複%1次",
+	"CONTROLS_SLEEP_TITLE": "睡眠%1秒",
 	"CONTROLS_REPEAT_INPUT_DO": "執行",
 	"CONTROLS_REPEAT_TOOLTIP": "重複執行指定的陳述式多次。",
 	"CONTROLS_WHILEUNTIL_OPERATOR_WHILE": "重複 當",

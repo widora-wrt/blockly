@@ -56,6 +56,7 @@ Blockly.Msg["CONTROLS_REPEAT_HELPURL"] = "http://he.wikipedia.org/wiki/בקרת_
 Blockly.Msg["CONTROLS_REPEAT_INPUT_DO"] = "תעשה";
 Blockly.Msg["CONTROLS_REPEAT_TITLE"] = "חזור על הפעולה %1 פעמים";
 Blockly.Msg["CONTROLS_REPEAT_TOOLTIP"] = "לעשות כמה פעולות מספר פעמים.";
+Blockly.Msg["CONTROLS_SLEEP_TITLE"] = "sleep %1 s";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_HELPURL"] = "https://github.com/google/blockly/wiki/Loops#repeat";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_UNTIL"] = "חזור עד ש...";
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_WHILE"] = "חזור כל עוד";

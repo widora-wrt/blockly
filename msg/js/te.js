@@ -56,6 +56,7 @@ Blockly.Msg["CONTROLS_REPEAT_HELPURL"] = "https://te.wikipedia.org/wiki/For_loop
 Blockly.Msg["CONTROLS_REPEAT_INPUT_DO"] = "చేయు";
 Blockly.Msg["CONTROLS_REPEAT_TITLE"] = "%1 సార్లు మళ్ళీ కొనసాగించు";
 Blockly.Msg["CONTROLS_REPEAT_TOOLTIP"] = "కొన్ని నివేదికలు లేదా ప్రతిపాదనలు అనేక మార్లు చెయ్యండి.";
+Blockly.Msg["CONTROLS_SLEEP_TITLE"] = "sleep %1 s";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_HELPURL"] = "https://github.com/google/blockly/wiki/Loops#repeat";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_UNTIL"] = "అంతవరకు మళ్ళీ కొనసాగించండి";
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_WHILE"] = "repeat while";  // untranslated

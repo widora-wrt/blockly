@@ -56,6 +56,7 @@ Blockly.Msg["CONTROLS_REPEAT_HELPURL"] = "https://de.wikipedia.org/wiki/For-Schl
 Blockly.Msg["CONTROLS_REPEAT_INPUT_DO"] = "mache";
 Blockly.Msg["CONTROLS_REPEAT_TITLE"] = "wiederhole %1 mal:";
 Blockly.Msg["CONTROLS_REPEAT_TOOLTIP"] = "Eine Anweisung mehrfach ausführen.";
+Blockly.Msg["CONTROLS_SLEEP_TITLE"] = "sleep %1 s";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_HELPURL"] = "https://de.wikipedia.org/wiki/Schleife_%28Programmierung%29";
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_UNTIL"] = "wiederhole bis";
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_WHILE"] = "wiederhole solange";

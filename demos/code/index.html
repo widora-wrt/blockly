@@ -19,19 +19,17 @@
   <script src="code.js"></script>
 </head>
 <body>
+
+  <table  width="100%" height="30px" align="center" class="titleSide">
+    <tr >
+        <td width="30%" id="title" class="leftSide" ></td>
+        <td width="30%" class="centerSide"  align="center"><span id="copyright" style="font-family:arial;font-size:12px;color:#999;">copyright</span></td>
+        <td width="40%" class="rightSide"align="right"><select id="languageMenu" class="rightSide" ></select></td>
+      </tr>
+  </table>
+
   <table width="100%" height="100%">
-    <tr>
-      <td>
-        <h1><a href="https://developers.google.com/blockly/">Blockly </a>>
-          <a href="../index.html">Demos</a>&rlm; &gt;
-          <span id="title">...</span>
-        </h1>
-      </td>
-      <td class="farSide">
-        <select id="languageMenu"></select>
-      </td>
-    </tr>
-    <tr>
+    <tr  width="100%" >
       <td colspan=2>
         <table width="100%">
           <tr id="tabRow" height="1em">
@@ -48,12 +46,16 @@
             <td id="tab_dart" class="taboff">Dart</td>
             <td class="tabmin">&nbsp;</td>
             <td id="tab_xml" class="taboff">XML</td>
-            <td class="tabmax">
+  
+            <td class="tabmax">        
                 <button id="trashButton" class="notext" title="...">
                 <img src='../../media/1x1.gif' class="trash icon21">
               </button>
               <button id="linkButton" class="notext" title="...">
                 <img src='../../media/1x1.gif' class="link icon21">
+              </button>
+              <button id="runButton" class="notext primary" title="...">
+                <img src='../../media/1x1.gif' class="run icon21">
               </button>
               <button id="runButton" class="notext primary" title="...">
                 <img src='../../media/1x1.gif' class="run icon21">
@@ -79,7 +81,6 @@
   <xml id="toolbox" style="display: none">
   <category name="%{BKY_CATGPIO}" colour="%{BKY_GPIO_HUE}">
       <block type="gpio_write"></block>
-      <block type="gpio_write"></block>
       <block type="gpio_mode"></block>
       <block type="gpio_value"></block>
     </category>
@@ -100,6 +101,13 @@
           </shadow>
         </value>
       </block>
+      <block type="controls_sleep">
+          <value name="NAME">
+              <shadow type="math_number">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+          </block>
       <block type="controls_whileUntil"></block>
       <block type="controls_for">
         <value name="FROM">

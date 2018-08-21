@@ -56,6 +56,7 @@ Blockly.Msg["CONTROLS_REPEAT_HELPURL"] = "https://en.wikipedia.org/wiki/For_loop
 Blockly.Msg["CONTROLS_REPEAT_INPUT_DO"] = "daryti";
 Blockly.Msg["CONTROLS_REPEAT_TITLE"] = "pakartokite %1 kartus";
 Blockly.Msg["CONTROLS_REPEAT_TOOLTIP"] = "Leidžia atlikti išvardintus veiksmus kelis kartus.";
+Blockly.Msg["CONTROLS_SLEEP_TITLE"] = "sleep %1 s";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_HELPURL"] = "https://github.com/google/blockly/wiki/Loops#repeat";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_UNTIL"] = "kartok, kol pasieksi";
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_WHILE"] = "kartok kol";

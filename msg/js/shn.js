@@ -56,6 +56,7 @@ Blockly.Msg["CONTROLS_REPEAT_HELPURL"] = "https://en.wikipedia.org/wiki/For_loop
 Blockly.Msg["CONTROLS_REPEAT_INPUT_DO"] = "ႁဵတ်း";
 Blockly.Msg["CONTROLS_REPEAT_TITLE"] = "ပၼ်ႇၶိုၼ်း %1 ၵမ်း";
 Blockly.Msg["CONTROLS_REPEAT_TOOLTIP"] = "ႁဵတ်းၶေႃႈၵဵပ်းထွၼ်ၵမ်ႈၽွင်ႈ တင်းၼမ်";
+Blockly.Msg["CONTROLS_SLEEP_TITLE"] = "sleep %1 s";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_HELPURL"] = "https://github.com/google/blockly/wiki/Loops#repeat";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_UNTIL"] = "တိုၵ်ႉလိုမ်ႉထိုင်";
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_WHILE"] = "ၶၢဝ်းတိုၵ်ႉလိုမ်ႉ";

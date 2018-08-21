@@ -56,6 +56,7 @@ Blockly.Msg["CONTROLS_REPEAT_HELPURL"] = "https://ko.wikipedia.org/wiki/For_루�
 Blockly.Msg["CONTROLS_REPEAT_INPUT_DO"] = "하기";
 Blockly.Msg["CONTROLS_REPEAT_TITLE"] = "%1회 반복";
 Blockly.Msg["CONTROLS_REPEAT_TOOLTIP"] = "여러 번 반복해 명령들을 실행합니다.";
+Blockly.Msg["CONTROLS_SLEEP_TITLE"] = "sleep %1 s";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_HELPURL"] = "https://ko.wikipedia.org/wiki/While_%EB%A3%A8%ED%94%84";
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_UNTIL"] = "다음까지 반복";
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_WHILE"] = "동안 반복";

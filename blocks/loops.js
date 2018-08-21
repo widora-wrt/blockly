@@ -86,6 +86,23 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     "tooltip": "%{BKY_CONTROLS_REPEAT_TOOLTIP}",
     "helpUrl": "%{BKY_CONTROLS_REPEAT_HELPURL}"
   },
+  {
+    "type": "controls_sleep",
+    "message0": "%{BKY_CONTROLS_SLEEP_TITLE}",
+    "args0": [
+      {
+        "type": "input_value",
+        "name": "NAME",
+        "check": "Number",
+      }
+    ],
+    "inputsInline": true,
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": "%{BKY_LOOPS_HUE}",
+    "tooltip": "%{BKY_CONTROLS_REPEAT_TOOLTIP}",
+    "helpUrl": "%{BKY_CONTROLS_REPEAT_HELPURL}"
+  },
   // Block for 'do while/until' loop.
   {
     "type": "controls_whileUntil",

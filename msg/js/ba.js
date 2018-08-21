@@ -56,6 +56,7 @@ Blockly.Msg["CONTROLS_REPEAT_HELPURL"] = "https://en.wikipedia.org/wiki/Цикл
 Blockly.Msg["CONTROLS_REPEAT_INPUT_DO"] = "үтәргә";
 Blockly.Msg["CONTROLS_REPEAT_TITLE"] = " %1 тапҡыр ҡабатларға";
 Blockly.Msg["CONTROLS_REPEAT_TOOLTIP"] = "Командаларҙы бер нисә тапҡыр үтәй.";
+Blockly.Msg["CONTROLS_SLEEP_TITLE"] = "sleep %1 s";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_HELPURL"] = "https://github.com/google/blockly/wiki/Loops#repeat";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_UNTIL"] = "ҡабатларға, әлегә юҡ";
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_WHILE"] = "ҡабатларға, әлегә";

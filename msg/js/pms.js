@@ -56,6 +56,7 @@ Blockly.Msg["CONTROLS_REPEAT_HELPURL"] = "https://en.wikipedia.org/wiki/For_loop
 Blockly.Msg["CONTROLS_REPEAT_INPUT_DO"] = "fé";
 Blockly.Msg["CONTROLS_REPEAT_TITLE"] = "arpete %1 vire";
 Blockly.Msg["CONTROLS_REPEAT_TOOLTIP"] = "Eseguì chèiche anstrussion vàire vire.";
+Blockly.Msg["CONTROLS_SLEEP_TITLE"] = "sleep %1 s";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_HELPURL"] = "https://github.com/google/blockly/wiki/Loops#repeat";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_UNTIL"] = "arpete fin-a a";
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_WHILE"] = "arpete antramentre che";

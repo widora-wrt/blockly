@@ -32,7 +32,10 @@ var Code = {};
  * Lookup for names of supported languages.  Keys should be in ISO 639 format.
  */
 Code.LANGUAGE_NAME = {
-  'ar': 'العربية',
+  'en': 'English',
+  'zh-hans': '简体中文',
+  'zh-hant': '正體中文'
+  /*'ar': 'العربية',
   'be-tarask': 'Taraškievica',
   'br': 'Brezhoneg',
   'ca': 'Català',
@@ -73,9 +76,7 @@ Code.LANGUAGE_NAME = {
   'tlh': 'tlhIngan Hol',
   'tr': 'Türkçe',
   'uk': 'Українська',
-  'vi': 'Tiếng Việt',
-  'zh-hans': '简体中文',
-  'zh-hant': '正體中文'
+  'vi': 'Tiếng Việt'*/
 };
 
 /**
@@ -503,7 +504,7 @@ Code.initLanguage = function() {
 
   // Inject language strings.
   document.title += ' ' + MSG['title'];
-  //document.getElementById('title').textContent = MSG['title'];
+  document.getElementById('title').textContent = MSG['title'];
   document.getElementById('tab_blocks').textContent = MSG['blocks'];
 
   document.getElementById('linkButton').title = MSG['linkTooltip'];

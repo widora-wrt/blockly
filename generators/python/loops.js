@@ -69,7 +69,13 @@ Blockly.Python['controls_whileUntil'] = function(block) {
   }
   return 'while ' + argument0 + ':\n' + branch;
 };
-
+Blockly.Python['controls_sleep'] = function(block) {
+  var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = 'time.sleep('+value_name+')\n';
+  Blockly.Python.definitions_['import_time'] = 'import time';
+  return code;
+};
 Blockly.Python['controls_for'] = function(block) {
   // For loop.
   var variable0 = Blockly.Python.variableDB_.getName(

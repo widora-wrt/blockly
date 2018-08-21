@@ -56,6 +56,7 @@ Blockly.Msg["CONTROLS_REPEAT_HELPURL"] = "https://zh.wikipedia.org/wiki/For循�
 Blockly.Msg["CONTROLS_REPEAT_INPUT_DO"] = "执行";
 Blockly.Msg["CONTROLS_REPEAT_TITLE"] = "重复 %1 次";
 Blockly.Msg["CONTROLS_REPEAT_TOOLTIP"] = "多次执行一些语句。";
+Blockly.Msg["CONTROLS_SLEEP_TITLE"] = "睡眠 %1 秒";
 Blockly.Msg["CONTROLS_WHILEUNTIL_HELPURL"] = "https://github.com/google/blockly/wiki/Loops#repeat";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_UNTIL"] = "重复直到条件满足";
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_WHILE"] = "当条件满足时重复";

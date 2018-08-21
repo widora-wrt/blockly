@@ -56,6 +56,7 @@ Blockly.Msg["CONTROLS_REPEAT_HELPURL"] = "https://en.wikipedia.org/wiki/For_loop
 Blockly.Msg["CONTROLS_REPEAT_INPUT_DO"] = "eg";
 Blockly.Msg["CONTROLS_REPEAT_TITLE"] = "Ales %1 n tikal";
 Blockly.Msg["CONTROLS_REPEAT_TOOLTIP"] = "Selkem ddeqs n tinaḍin ddeqs n tikal.";
+Blockly.Msg["CONTROLS_SLEEP_TITLE"] = "sleep %1 s";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_HELPURL"] = "https://github.com/google/blockly/wiki/Loops#repeat";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_UNTIL"] = "ales arama";
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_WHILE"] = "ales skud";

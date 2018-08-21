@@ -56,6 +56,7 @@ Blockly.Msg["CONTROLS_REPEAT_HELPURL"] = "https://en.wikipedia.org/wiki/For_loop
 Blockly.Msg["CONTROLS_REPEAT_INPUT_DO"] = "tee";
 Blockly.Msg["CONTROLS_REPEAT_TITLE"] = "toista %1 kertaa";
 Blockly.Msg["CONTROLS_REPEAT_TOOLTIP"] = "Suorita joukko lausekkeita useampi kertaa.";
+Blockly.Msg["CONTROLS_SLEEP_TITLE"] = "sleep %1 s";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_HELPURL"] = "https://github.com/google/blockly/wiki/Loops#repeat";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_UNTIL"] = "toista kunnes";
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_WHILE"] = "toista niin kauan kuin";

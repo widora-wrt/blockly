@@ -124,5 +124,22 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     "colour": "%{BKY_GPIO_HUE}",
     "tooltip": "",
     "helpUrl": ""
+  },
+  {
+    "type": "gpio_delay",
+    "message0": "delay %1 s",
+    "args0": [
+      {
+        "type": "input_value",
+        "name": "NAME",
+        "check": "Number",
+      }
+    ],
+    "inputsInline": true,
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour":"%{BKY_GPIO_HUE}",
+    "tooltip": "",
+    "helpUrl": ""
   }
 ]);  // END JSON EXTRACT (Do not delete this comment.)

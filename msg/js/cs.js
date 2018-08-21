@@ -56,6 +56,7 @@ Blockly.Msg["CONTROLS_REPEAT_HELPURL"] = "https://cs.wikipedia.org/wiki/Cyklus_p
 Blockly.Msg["CONTROLS_REPEAT_INPUT_DO"] = "dělej";
 Blockly.Msg["CONTROLS_REPEAT_TITLE"] = "opakuj %1 krát";
 Blockly.Msg["CONTROLS_REPEAT_TOOLTIP"] = "Proveď určité příkazy několikrát.";
+Blockly.Msg["CONTROLS_SLEEP_TITLE"] = "sleep %1 s";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_HELPURL"] = "https://github.com/google/blockly/wiki/Loops#repeat";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_UNTIL"] = "opakovat dokud";
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_WHILE"] = "opakovat když";

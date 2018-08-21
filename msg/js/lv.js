@@ -56,6 +56,7 @@ Blockly.Msg["CONTROLS_REPEAT_HELPURL"] = "https://lv.wikipedia.org/wiki/Cikls";
 Blockly.Msg["CONTROLS_REPEAT_INPUT_DO"] = "izpildi";
 Blockly.Msg["CONTROLS_REPEAT_TITLE"] = "atkārtot %1 reizes";
 Blockly.Msg["CONTROLS_REPEAT_TOOLTIP"] = "Izpildīt komandas vairākas reizes.";
+Blockly.Msg["CONTROLS_SLEEP_TITLE"] = "sleep %1 s";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_HELPURL"] = "https://github.com/google/blockly/wiki/Loops#repeat";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_UNTIL"] = "atkārtot līdz";
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_WHILE"] = "atkārtot kamēr";

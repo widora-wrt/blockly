@@ -56,6 +56,7 @@ Blockly.Msg["CONTROLS_REPEAT_HELPURL"] = "https://bn.wikipedia.org/wiki/প্�
 Blockly.Msg["CONTROLS_REPEAT_INPUT_DO"] = "করুন";
 Blockly.Msg["CONTROLS_REPEAT_TITLE"] = "%1 বার পুনরাবৃত্তি করো";
 Blockly.Msg["CONTROLS_REPEAT_TOOLTIP"] = "কিছু বিবরণ বারবার দিন।";
+Blockly.Msg["CONTROLS_SLEEP_TITLE"] = "sleep %1 s";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_HELPURL"] = "https://github.com/google/blockly/wiki/Loops#repeat";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_UNTIL"] = "অাবার করুন যতক্ষণ না";
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_WHILE"] = "অাবার করুন যখন";

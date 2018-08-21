@@ -56,6 +56,7 @@ Blockly.Msg["CONTROLS_REPEAT_HELPURL"] = "https://bg.wikipedia.org/wiki/Цикъ
 Blockly.Msg["CONTROLS_REPEAT_INPUT_DO"] = "изпълни";
 Blockly.Msg["CONTROLS_REPEAT_TITLE"] = "Повтори %1 пъти";
 Blockly.Msg["CONTROLS_REPEAT_TOOLTIP"] = "Изпълнява команди няколко пъти.";
+Blockly.Msg["CONTROLS_SLEEP_TITLE"] = "sleep %1 s";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_HELPURL"] = "https://github.com/google/blockly/wiki/Loops#repeat";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_UNTIL"] = "повтаряй докато";
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_WHILE"] = "повтаряй докато е вярно, че";

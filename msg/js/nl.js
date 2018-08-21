@@ -56,6 +56,7 @@ Blockly.Msg["CONTROLS_REPEAT_HELPURL"] = "https://nl.wikipedia.org/wiki/Repetiti
 Blockly.Msg["CONTROLS_REPEAT_INPUT_DO"] = "voer uit";
 Blockly.Msg["CONTROLS_REPEAT_TITLE"] = "%1 keer herhalen";
 Blockly.Msg["CONTROLS_REPEAT_TOOLTIP"] = "Voer een aantal opdrachten meerdere keren uit.";
+Blockly.Msg["CONTROLS_SLEEP_TITLE"] = "sleep %1 s";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_HELPURL"] = "https://github.com/google/blockly/wiki/Loops#repeat";
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_UNTIL"] = "herhalen totdat";
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_WHILE"] = "herhalen zolang";

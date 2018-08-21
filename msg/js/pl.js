@@ -56,6 +56,7 @@ Blockly.Msg["CONTROLS_REPEAT_HELPURL"] = "https://en.wikipedia.org/wiki/For_loop
 Blockly.Msg["CONTROLS_REPEAT_INPUT_DO"] = "wykonaj";
 Blockly.Msg["CONTROLS_REPEAT_TITLE"] = "powtórz %1 razy";
 Blockly.Msg["CONTROLS_REPEAT_TOOLTIP"] = "Wykonaj niektóre instrukcje kilka razy.";
+Blockly.Msg["CONTROLS_SLEEP_TITLE"] = "sleep %1 s";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_HELPURL"] = "https://github.com/google/blockly/wiki/Loops#repeat";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_UNTIL"] = "powtarzaj aż do";
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_WHILE"] = "powtarzaj dopóki";

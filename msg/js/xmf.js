@@ -56,6 +56,7 @@ Blockly.Msg["CONTROLS_REPEAT_HELPURL"] = "https://ru.wikipedia.org/wiki/ცი�
 Blockly.Msg["CONTROLS_REPEAT_INPUT_DO"] = "რსულება";
 Blockly.Msg["CONTROLS_REPEAT_TITLE"] = "%1 შა გომაჟირაფა";
 Blockly.Msg["CONTROLS_REPEAT_TOOLTIP"] = "მუსხირენ ზოჯუაშ მუსხირენშა რსულება.";
+Blockly.Msg["CONTROLS_SLEEP_TITLE"] = "sleep %1 s";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_HELPURL"] = "https://github.com/google/blockly/wiki/Loops#repeat";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_UNTIL"] = "გომაჟირაფა, სოიშახ ვა";
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_WHILE"] = "გომაჟირაფა, სოიშახ";

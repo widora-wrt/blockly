@@ -56,6 +56,7 @@ Blockly.Msg["CONTROLS_REPEAT_HELPURL"] = "https://az.wikipedia.org/wiki/For_loop
 Blockly.Msg["CONTROLS_REPEAT_INPUT_DO"] = "icra et";
 Blockly.Msg["CONTROLS_REPEAT_TITLE"] = "%1 dəfə təkrar et";
 Blockly.Msg["CONTROLS_REPEAT_TOOLTIP"] = "Bəzi əmrləri bir neçə dəfə yerinə yetir.";
+Blockly.Msg["CONTROLS_SLEEP_TITLE"] = "sleep %1 s";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_HELPURL"] = "https://github.com/google/blockly/wiki/Loops#repeat";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_UNTIL"] = "təkrar et, ta ki";
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_WHILE"] = "təkrar et, hələ ki";

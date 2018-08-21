@@ -56,6 +56,7 @@ Blockly.Msg["CONTROLS_REPEAT_HELPURL"] = "https://sr.wikipedia.org/wiki/For_пе
 Blockly.Msg["CONTROLS_REPEAT_INPUT_DO"] = "изврши";
 Blockly.Msg["CONTROLS_REPEAT_TITLE"] = "понови %1 пута";
 Blockly.Msg["CONTROLS_REPEAT_TOOLTIP"] = "Одрадити неке наредбе неколико пута.";
+Blockly.Msg["CONTROLS_SLEEP_TITLE"] = "sleep %1 s";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_HELPURL"] = "https://github.com/google/blockly/wiki/Loops#repeat";  // untranslated
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_UNTIL"] = "понављати до";
 Blockly.Msg["CONTROLS_WHILEUNTIL_OPERATOR_WHILE"] = "понављати док";
