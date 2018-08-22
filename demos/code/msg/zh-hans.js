@@ -21,5 +21,12 @@ var MSG = {
   linkAlert: "通过这个链接分享您的模块：\n\n%1",
   hashError: "对不起，没有任何已保存的程序对应'%1' 。",
   xmlError: "无法载入您保存的文件。您是否使用其他版本的Blockly创建该文件的？",
-  badXml: "XML解析错误：\n%1\n\n选择“确定”以取消您对XML的修改，或选择“取消”以继续编辑XML。"
+  badXml: "XML解析错误：\n%1\n\n选择“确定”以取消您对XML的修改，或选择“取消”以继续编辑XML。",
+  catGpio_write_title:"写端口 %1 为 %2",
+  catGpio_read_title:"读端口 %1",
+  catGpio_mode_title:"设置端口 %1 为 %2",
+  catGpio_value_high:"高",
+  catGpio_value_low:"低",
+  catGpio_mode_out:"输出",
+  catGpio_mode_in:"输入",
 };

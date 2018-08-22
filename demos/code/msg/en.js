@@ -21,5 +21,12 @@ var MSG = {
   linkAlert: "Share your blocks with this link:\n\n%1",
   hashError: "Sorry, '%1' doesn't correspond with any saved program.",
   xmlError: "Could not load your saved file. Perhaps it was created with a different version of Blockly?",
-  badXml: "Error parsing XML:\n%1\n\nSelect 'OK' to abandon your changes or 'Cancel' to further edit the XML."
+  badXml: "Error parsing XML:\n%1\n\nSelect 'OK' to abandon your changes or 'Cancel' to further edit the XML.",
+  catGpio_write_title:"write io %1 to %2",
+  catGpio_read_title:"read io %1",
+  catGpio_mode_title:"set io %1 to %2",
+  catGpio_value_high:"HIGH",
+  catGpio_value_low:"LOW",
+  catGpio_mode_out:"OUT",
+  catGpio_mode_in:"IN",
 };

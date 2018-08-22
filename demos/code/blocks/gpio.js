@@ -35,7 +35,7 @@ goog.provide('Blockly.Constants.Gpio');  // deprecated, 2018 April 5
 goog.require('Blockly.Blocks');
 goog.require('Blockly');
 
-
+Blockly.Msg.GPIO_HUE = '99';
 /**
  * Unused constant for the common HSV hue for all blocks in this category.
  * @deprecated Use Blockly.Msg['COLOUR_HUE']. (2018 April 5)
@@ -43,15 +43,12 @@ goog.require('Blockly');
 Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
   {
     "type": "gpio_write",
-    "message0": "write %1 to %2",
+    "message0": "%{BKY_CATGPIO_WRITE_TITLE}",
     "args0": [
       {
-        "type": "field_dropdown",
+        "type": "input_value",
         "name": "NAME",
-        "options": [["GPIO0","0"],
-                    ["GPIO1","1"],
-                    ["GPIO2","2"]
-                   ]
+        "check": ["Number", "1"]
       },
       {
         "type": "input_value",
@@ -59,24 +56,21 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
         "check": "Boolean"
       }
     ],
-    "inputsInline": false,
+    "inputsInline": true,
     "previousStatement": null,
     "nextStatement": null,
     "colour": "%{BKY_GPIO_HUE}",
-    "tooltip": "",
+    "tooltip":"",
     "helpUrl": ""
   },
   {
     "type": "gpio_read",
-    "message0": "read %1",
+    "message0": "%{BKY_CATGPIO_READ_TITLE}",
     "args0": [
       {
-        "type": "field_dropdown",
-        "name": "NAME",
-        "options": [["GPIO0","0"],
-                    ["GPIO1","1"],
-                    ["GPIO2","2"]
-                   ]
+        "type": "input_value",
+        "name": "VALUE",
+        "check": "Number"
       }
     ],
     "inputsInline": true,
@@ -87,20 +81,17 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
   },
   {
     "type": "gpio_mode",
-    "message0": "set %1 to %2",
+    "message0":"%{BKY_CATGPIO_MODE_TITLE}",
     "args0": [
       {
-        "type": "field_dropdown",
+        "type": "input_value",
         "name": "NAME",
-        "options": [["GPIO0","0"],
-                    ["GPIO1","1"],
-                    ["GPIO2","2"]
-                   ]
+        "check": "Number"
       },
       {
         "type": "field_dropdown",
         "name": "VALUE",
-        "options": [["OUT","DIR_OUT"],["IN","DIR_IN"]
+        "options": [["%{BKY_CATGPIO_MODE_OUT}","DIR_OUT"],["%{BKY_CATGPIO_MODE_IN}","DIR_IN"]
         ]
       }
     ],
@@ -117,28 +108,28 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
       {
         "type": "field_dropdown",
         "name": "VALUE",
-        "options": [["HIGH","1"],["LOW","0"]]
+        "options": [["%{BKY_CATGPIO_VALUE_HIGH}","1"],["%{BKY_CATGPIO_VALUE_LOW}","0"]]
       }
     ],
-    "output": null,
+    "output": "Boolean",
     "colour": "%{BKY_GPIO_HUE}",
     "tooltip": "",
     "helpUrl": ""
   },
   {
-    "type": "gpio_delay",
-    "message0": "delay %1 s",
+    "type": "gpio_list",
+    "message0": "%1",
     "args0": [
       {
-        "type": "input_value",
+        "type": "field_dropdown",
         "name": "NAME",
-        "check": "Number",
+        "options": [["GPIO0","0"],
+                    ["GPIO1","1"],
+                    ["GPIO2","2"]]
       }
     ],
-    "inputsInline": true,
-    "previousStatement": null,
-    "nextStatement": null,
-    "colour":"%{BKY_GPIO_HUE}",
+    "output": "Number",
+    "colour": "%{BKY_GPIO_HUE}",
     "tooltip": "",
     "helpUrl": ""
   }

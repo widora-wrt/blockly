@@ -47,7 +47,6 @@ goog.require('Blockly.Msg');
  * message descriptor.  The build process extracts these descriptors, adds
  * them to msg/json/qqq.json, and they show up in the translation console.
  */
-
 /// {{Notranslate}} Hue value for all logic blocks.
 Blockly.Msg.LOGIC_HUE = '210';
 /// {{Notranslate}} Hue value for all loop blocks.

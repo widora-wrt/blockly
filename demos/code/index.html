@@ -35,9 +35,9 @@
           <tr id="tabRow" height="1em">
             <td id="tab_blocks" class="tabon">...</td>
             <td class="tabmin">&nbsp;</td>
-            <td id="tab_javascript" class="taboff">JavaScript</td>
-            <td class="tabmin">&nbsp;</td>
             <td id="tab_python" class="taboff">Python</td>
+            <td class="tabmin">&nbsp;</td>
+            <td id="tab_javascript" class="taboff">JavaScript</td>
             <td class="tabmin">&nbsp;</td>
             <td id="tab_php" class="taboff">PHP</td>
             <td class="tabmin">&nbsp;</td>
@@ -71,8 +71,8 @@
     </tr>
   </table>
   <div id="content_blocks" class="content"></div>
-  <pre id="content_javascript" class="content"></pre>
   <pre id="content_python" class="content"></pre>
+  <pre id="content_javascript" class="content"></pre>
   <pre id="content_php" class="content"></pre>
   <pre id="content_lua" class="content"></pre>
   <pre id="content_dart" class="content"></pre>
@@ -80,9 +80,17 @@
 
   <xml id="toolbox" style="display: none">
   <category name="%{BKY_CATGPIO}" colour="%{BKY_GPIO_HUE}">
-      <block type="gpio_write"></block>
-      <block type="gpio_mode"></block>
       <block type="gpio_value"></block>
+      <block type="gpio_write">
+          <value name="NAME"><shadow type="gpio_list"></shadow></value>
+          <value name="VALUE"><shadow type="gpio_value"></shadow></value>
+      </block>
+      <block type="gpio_read">
+          <value name="VALUE"><shadow type="gpio_list"></shadow></value>
+      </block>
+      <block type="gpio_mode">
+          <value name="NAME"><shadow type="gpio_list"></shadow></value>
+      </block>
     </category>
     <category name="%{BKY_CATLOGIC}" colour="%{BKY_LOGIC_HUE}">
       <block type="controls_if"></block>

@@ -33,9 +33,9 @@ var Code = {};
  */
 Code.LANGUAGE_NAME = {
   'en': 'English',
-  'zh-hans': '简体中文',
-  'zh-hant': '正體中文'
-  /*'ar': 'العربية',
+  'zh-hans': '简体中文'
+  /*'zh-hant': '正體中文'
+  'ar': 'العربية',
   'be-tarask': 'Taraškievica',
   'br': 'Brezhoneg',
   'ca': 'Català',
