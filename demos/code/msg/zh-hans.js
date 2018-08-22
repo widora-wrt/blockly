@@ -33,7 +33,7 @@ var MSG = {
   catGPio_interrupt_title:"设置中断 %1 %2",
   catPwm_period_ms_title:"设置 %1 脉冲周期 %2 毫秒",
   catPwm_cycle_title:"设置 %1 占空比 %2 /1",
-  catPwm_enable_title:"%2 %1 输出",
+  catPwm_enable_title:"设置 %1 %2 ",
   catPwm_value_enable:"允许",
   catPwm_value_disenable:"禁止",
 };

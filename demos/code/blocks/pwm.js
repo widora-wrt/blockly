@@ -87,7 +87,7 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
   },
   {
     "type": "pwm_enable",
-    "message0": "set pwm %1 %2",
+    "message0": "%{BKY_CATPWM_ENABLE_TITLE}",
     "args0": [
       {
         "type": "input_value",
@@ -113,7 +113,7 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     "args0": [
       {
         "type": "field_dropdown",
-        "name": "VALUE",
+        "name": "NAME",
         "options": [["%{BKY_CATPWM_VALUE_ENABLE}","True"],["%{BKY_CATPWM_VALUE_DISENABLE}","False"]]
       }
     ],

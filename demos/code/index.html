@@ -82,7 +82,6 @@
 
   <xml id="toolbox" style="display: none">
   <category name="%{BKY_CATGPIO}" colour="%{BKY_GPIO_HUE}">
-      <block type="gpio_value"></block>
       <block type="gpio_write">
           <value name="NAME"><shadow type="gpio_list"></shadow></value>
           <value name="VALUE"><shadow type="gpio_value"></shadow></value>
@@ -96,6 +95,8 @@
       <block type="gpio_interrupt">
           <value name="NAME"><shadow type="gpio_list"></shadow></value>
       </block>
+      <block type="gpio_value"></block>
+      <block type="gpio_list"></block>
     </category>
     <category name="%{BKY_CATPWM}" colour="%{BKY_PWM_HUE}">
       <block type="pwm_period_ms">
@@ -109,7 +110,9 @@
      <block type="pwm_enable">
         <value name="NAME"><shadow type="pwm_list"></shadow></value>
         <value name="VALUE"><shadow type="pwm_value"></shadow></value>
-   </block>
+     </block>
+     <block type="pwm_value"></block>
+     <block type="pwm_list"></block>
     </category>
     <category name="%{BKY_CATLOGIC}" colour="%{BKY_LOGIC_HUE}">
       <block type="controls_if"></block>
