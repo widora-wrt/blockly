@@ -48,7 +48,7 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
       {
         "type": "input_value",
         "name": "NAME",
-        "check": ["Number", "1"]
+        "check": "Number"
       },
       {
         "type": "input_value",
@@ -69,7 +69,7 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     "args0": [
       {
         "type": "input_value",
-        "name": "VALUE",
+        "name": "NAME",
         "check": "Number"
       }
     ],
@@ -131,6 +131,26 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     "output": "Number",
     "colour": "%{BKY_GPIO_HUE}",
     "tooltip": "",
+    "helpUrl": ""
+  },
+  {
+    "type": "gpio_interrupt",
+    "message0": "%{BKY_CATGPIO_INTERRUPT_TITLE}",
+    "args0": [
+      {
+        "type": "input_value",
+        "name": "NAME",
+        "check": "Number"
+      },
+      {
+        "type": "input_statement",
+        "name": "FUNC"
+      }
+    ],
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": "%{BKY_GPIO_HUE}",
+    "tooltip":  "",
     "helpUrl": ""
   }
 ]);  // END JSON EXTRACT (Do not delete this comment.)

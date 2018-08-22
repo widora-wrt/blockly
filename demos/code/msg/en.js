@@ -7,6 +7,7 @@ var MSG = {
   timeout: "Maximum execution iterations exceeded.",
   trashTooltip: "Discard all blocks.",
   catGpio:"Gpio",
+  catPwm:"PWM",
   catLogic: "Logic",
   catLoops: "Loops",
   catMath: "Math",
@@ -29,4 +30,9 @@ var MSG = {
   catGpio_value_low:"LOW",
   catGpio_mode_out:"OUT",
   catGpio_mode_in:"IN",
+  catGPio_interrupt_title:"set interrupt %1  %2",
+  catPwm_period_ms_title:"set pwm %1 period %2 ms",
+  catPwm_cycle_title:"set pwm %1 cycle %2 /1",
+  catPwm_value_enable:"ENABLE",
+  catPwm_value_disenable:"DISENABLE",
 };

@@ -14,7 +14,9 @@
   <script src="../../lua_compressed.js"></script>
   <script src="../../dart_compressed.js"></script>
   <script src="blocks/gpio.js"></script>
+  <script src="blocks/pwm.js"></script>
   <script src="generator/python/gpio.js"></script>
+  <script src="generator/python/pwm.js"></script>
   <script src="messages.js"></script>
   <script src="code.js"></script>
 </head>
@@ -86,11 +88,28 @@
           <value name="VALUE"><shadow type="gpio_value"></shadow></value>
       </block>
       <block type="gpio_read">
-          <value name="VALUE"><shadow type="gpio_list"></shadow></value>
+          <value name="NAME"><shadow type="gpio_list"></shadow></value>
       </block>
       <block type="gpio_mode">
           <value name="NAME"><shadow type="gpio_list"></shadow></value>
       </block>
+      <block type="gpio_interrupt">
+          <value name="NAME"><shadow type="gpio_list"></shadow></value>
+      </block>
+    </category>
+    <category name="%{BKY_CATPWM}" colour="%{BKY_PWM_HUE}">
+      <block type="pwm_period_ms">
+           <value name="NAME"><shadow type="pwm_list"></shadow></value>
+           <value name="VALUE"><shadow type="math_number"><field name="NUM">2</field></shadow></value>
+      </block>
+      <block type="pwm_cycle">
+          <value name="NAME"><shadow type="pwm_list"></shadow></value>
+          <value name="VALUE"><shadow type="math_number"><field name="NUM">0.25</field></shadow></value>
+     </block>
+     <block type="pwm_enable">
+        <value name="NAME"><shadow type="pwm_list"></shadow></value>
+        <value name="VALUE"><shadow type="pwm_value"></shadow></value>
+   </block>
     </category>
     <category name="%{BKY_CATLOGIC}" colour="%{BKY_LOGIC_HUE}">
       <block type="controls_if"></block>

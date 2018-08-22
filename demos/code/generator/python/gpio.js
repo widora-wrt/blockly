@@ -36,7 +36,6 @@ Blockly.Python['gpio_write'] = function(block) {
     }catch(exception) {
       dropdown_name="0";
     }
-  
   var value_name = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_NONE);
   // TODO: Assemble Python into code variable.
   var code = "gpio"+dropdown_name+".write("+value_name+")\n";
@@ -47,8 +46,12 @@ Blockly.Python['gpio_write'] = function(block) {
   return code;
 };
 Blockly.Python['gpio_read'] = function(block) {
-  var dropdown_name = block.getFieldValue('NAME');
-  // TODO: Assemble Python into code variable.
+  var dropdown_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_NONE);
+    try  {
+     dropdown_name=eval(dropdown_name);
+    }catch(exception) {
+      dropdown_name="0";
+    }
   var code = "gpio"+dropdown_name+".read()";
   var def ="gpio"+dropdown_name+"=mraa.Gpio("+dropdown_name+")";
   // TODO: Change ORDER_NONE to the correct strength.
@@ -77,4 +80,19 @@ Blockly.Python['gpio_list'] = function(block) {
   var code = dropdown_name;
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_NONE];
+};
+Blockly.Python['gpio_interrupt'] = function(block) {
+  var dropdown_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_NONE);
+    try  {
+     dropdown_name=eval(dropdown_name);
+    }catch(exception) {
+      dropdown_name="0";
+    }
+  var statements_func = Blockly.Python.statementToCode(block, 'FUNC');
+  // TODO: Assemble Python into code variable.
+  Blockly.Python.definitions_['import_mraa'] = 'import mraa';
+  var func="def gpio"+dropdown_name+"_callback(userdata):\n"+statements_func;
+  Blockly.Python.definitions_[func] = func;
+  var code ="gpio"+dropdown_name+".isr(mraa.EDGE_BOTH,gpio"+dropdown_name+"_callback,None)";
+  return code;
 };

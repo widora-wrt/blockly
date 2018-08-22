@@ -7,6 +7,7 @@ var MSG = {
   timeout: "超过最大执行行数。",
   trashTooltip: "放弃所有块。",
   catGpio:"端口",
+  catPwm:"脉冲",
   catLogic: "逻辑",
   catLoops: "循环",
   catMath: "数学",
@@ -29,4 +30,10 @@ var MSG = {
   catGpio_value_low:"低",
   catGpio_mode_out:"输出",
   catGpio_mode_in:"输入",
+  catGPio_interrupt_title:"设置中断 %1 %2",
+  catPwm_period_ms_title:"设置 %1 脉冲周期 %2 毫秒",
+  catPwm_cycle_title:"设置 %1 占空比 %2 /1",
+  catPwm_enable_title:"%2 %1 输出",
+  catPwm_value_enable:"允许",
+  catPwm_value_disenable:"禁止",
 };
