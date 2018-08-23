@@ -128,6 +128,7 @@ Code.isRtl = function() {
  * @param {string} defaultXml Text representation of default blocks.
  */
 Code.loadBlocks = function(defaultXml) {
+ // alert( window.sessionStorage.loadOnceBlocks);
   try {
     var loadOnce = window.sessionStorage.loadOnceBlocks;
   } catch(e) {
@@ -137,6 +138,7 @@ Code.loadBlocks = function(defaultXml) {
   }
   if ('BlocklyStorage' in window && window.location.hash.length > 1) {
     // An href with #key trigers an AJAX call to retrieve saved blocks.
+    
     BlocklyStorage.retrieveXml(window.location.hash.substring(1));
   } else if (loadOnce) {
     // Language switching stores the blocks during the reload.
@@ -162,10 +164,11 @@ Code.changeLanguage = function() {
   // MSIE 11 does not support sessionStorage on file:// URLs.
   if (window.sessionStorage) {
     var xml = Blockly.Xml.workspaceToDom(Code.workspace);
+    
     var text = Blockly.Xml.domToText(xml);
     window.sessionStorage.loadOnceBlocks = text;
+    alert(text);
   }
-
   var languageMenu = document.getElementById('languageMenu');
   var newLang = encodeURIComponent(
       languageMenu.options[languageMenu.selectedIndex].value);
@@ -367,7 +370,6 @@ Code.checkAllGeneratorFunctionsDefined = function(generator) {
  */
 Code.init = function() {
   Code.initLanguage();
-
   var rtl = Code.isRtl();
   var container = document.getElementById('content_area');
   var onresize = function(e) {
@@ -442,6 +444,7 @@ Code.init = function() {
   Code.bindClick('trashButton',
       function() {Code.discard(); Code.renderContent();});
   Code.bindClick('runButton', Code.runJS);
+  Code.bindClick('saveButton', Code.saveJS);
   // Disable the link button if page isn't backed by App Engine storage.
   var linkButton = document.getElementById('linkButton');
   if ('BlocklyStorage' in window) {
@@ -532,7 +535,9 @@ Code.runJS = function() {
     alert(MSG['badCode'].replace('%1', e));
   }
 };
-
+Code.saveJS = function() {
+  alert("dddd");
+};
 /**
  * Discard all blocks from the workspace.
  */
