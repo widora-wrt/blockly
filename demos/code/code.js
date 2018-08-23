@@ -535,7 +535,7 @@ Code.runJS = function() {
   }
 };
 Code.saveJS = function() {
-  alert("dddd");
+  alert("save");
 };
 /**
  * Discard all blocks from the workspace.
