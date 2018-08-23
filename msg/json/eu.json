@@ -47,6 +47,7 @@
 	"COLOUR_BLEND_TOOLTIP": "Bi koloreko nahasketak erlazio jakin batekin nahasten ditu (0.0-1.0)",
 	"CONTROLS_REPEAT_HELPURL": "https://eu.wikipedia.org/wiki/For_begizta",
 	"CONTROLS_REPEAT_TITLE": "errepikatu %1 aldiz",
+	"CONTROLS_SLEEP_TITLE": "sleep %1 s",
 	"CONTROLS_REPEAT_INPUT_DO": "egin",
 	"CONTROLS_REPEAT_TOOLTIP": "Adierazpen batzuk hainbat aldiz egin.",
 	"CONTROLS_WHILEUNTIL_OPERATOR_WHILE": "bitartean errepikatu",

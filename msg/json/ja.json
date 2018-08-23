@@ -67,6 +67,7 @@
 	"COLOUR_BLEND_TOOLTIP": "2色を与えられた比率（0.0～1.0）で混ぜます。",
 	"CONTROLS_REPEAT_HELPURL": "https://ja.wikipedia.org/wiki/for文",
 	"CONTROLS_REPEAT_TITLE": "%1 回繰り返す",
+	"CONTROLS_SLEEP_TITLE": "sleep %1 s",
 	"CONTROLS_REPEAT_INPUT_DO": "実行",
 	"CONTROLS_REPEAT_TOOLTIP": "いくつかのステートメントを数回実行します。",
 	"CONTROLS_WHILEUNTIL_OPERATOR_WHILE": "繰り返す：続ける条件",

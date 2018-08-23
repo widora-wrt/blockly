@@ -50,6 +50,7 @@
 	"COLOUR_BLEND_TOOLTIP": "Змешвае два колеры разам у паказаных суадносінах (0.0 - 1.0).",
 	"CONTROLS_REPEAT_HELPURL": "https://be.wikipedia.org/wiki/Цыкл_(праграмаванне)",
 	"CONTROLS_REPEAT_TITLE": "паўтарыць %1 разоў",
+	"CONTROLS_SLEEP_TITLE": "sleep %1 s",
 	"CONTROLS_REPEAT_INPUT_DO": "выканаць",
 	"CONTROLS_REPEAT_TOOLTIP": "Выканаць пэўныя дзеянні некалькі разоў.",
 	"CONTROLS_WHILEUNTIL_OPERATOR_WHILE": "паўтараць, пакуль",

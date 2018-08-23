@@ -44,6 +44,7 @@
 	"COLOUR_BLEND_TOOLTIP": "ປະສົມສອງສີເຂົ້າກັນດ້ວຍອັດຕາສ່ວນ (0.0 - 1.0).",
 	"CONTROLS_REPEAT_HELPURL": "https://en.wikipedia.org/wiki/For_loop",
 	"CONTROLS_REPEAT_TITLE": "ເຮັດຄືນ %1 ຄັ້ງ",
+	"CONTROLS_SLEEP_TITLE": "sleep %1 s",
 	"CONTROLS_REPEAT_INPUT_DO": "ເຮັດ",
 	"CONTROLS_REPEAT_TOOLTIP": "ເຮັດຄຳສັ່ງບາງຄຳສັ່ງຄືນຫຼາຍໆຄັ້ງ.",
 	"CONTROLS_WHILEUNTIL_OPERATOR_WHILE": "ເຮັດຄືນຂະນະທີ່",

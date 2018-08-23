@@ -44,6 +44,7 @@
 	"COLOUR_BLEND_RATIO": "аҧштәы 1 ахәҭа",
 	"CONTROLS_REPEAT_HELPURL": "https://ru.wikipedia.org/wiki/Ацикл_(апрограммаркра)",
 	"CONTROLS_REPEAT_TITLE": "инагӡалатәуп %1 - нтә",
+	"CONTROLS_SLEEP_TITLE": "sleep %1 s",
 	"CONTROLS_REPEAT_INPUT_DO": "инагӡатәуп",
 	"CONTROLS_REPEAT_TOOLTIP": "Инанагӡоит акомандақәа кырынтә",
 	"CONTROLS_WHILEUNTIL_OPERATOR_WHILE": "инагӡалатәуп акәзар",
@@ -123,6 +124,7 @@
 	"MATH_IS_NEGATIVE": "иҵоурам",
 	"MATH_IS_DIVISIBLE_BY": "ишоит ала",
 	"MATH_CHANGE_TITLE": "иеизырҳатәуп %1 %2 рыла",
+	
 	"MATH_CHANGE_TOOLTIP": "Иацнаҵоит ахыҧхьаӡара аҽеиҭак'%1' ахь.",
 	"MATH_ROUND_HELPURL": "https://ru.wikipedia.org/wiki/Ахыркәшара",
 	"MATH_ROUND_OPERATOR_ROUND": "ихыркәшатәуп",

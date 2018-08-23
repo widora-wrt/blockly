@@ -51,6 +51,7 @@
 	"COLOUR_BLEND_TOOLTIP": "दियाका अनुपात (0.0 - 1.0) का साथ दुई रंगहरूको मिश्रण गरन्छ ।",
 	"CONTROLS_REPEAT_HELPURL": "https://en.wikipedia.org/wiki/Color",
 	"CONTROLS_REPEAT_TITLE": "%1 पल्ट दोसराओ",
+	"CONTROLS_SLEEP_TITLE": "sleep %1 s",
 	"CONTROLS_REPEAT_INPUT_DO": "डू",
 	"CONTROLS_REPEAT_TOOLTIP": "क्यै स्टेट्मन्ट कैयों पल्ट चलाओ ।",
 	"CONTROLS_WHILEUNTIL_OPERATOR_WHILE": "दोहराओ जब की",

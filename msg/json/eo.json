@@ -48,6 +48,7 @@
 	"COLOUR_BLEND_COLOUR2": "koloro 2",
 	"COLOUR_BLEND_RATIO": "proporcio",
 	"CONTROLS_REPEAT_TITLE": "ripeti %1 fojojn",
+	"CONTROLS_SLEEP_TITLE": "sleep %1 s",
 	"CONTROLS_REPEAT_INPUT_DO": "fari",
 	"CONTROLS_REPEAT_TOOLTIP": "Plenumi kelkajn ordonojn plurfoje.",
 	"CONTROLS_WHILEUNTIL_OPERATOR_WHILE": "ripeti dum",

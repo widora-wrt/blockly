@@ -47,9 +47,9 @@ goog.require('Blockly.Msg');
  * message descriptor.  The build process extracts these descriptors, adds
  * them to msg/json/qqq.json, and they show up in the translation console.
  */
-Blockly.Msg.PWM_HUE = '33';
+
 /// {{Notranslate}} Hue value for all logic blocks.
-Blockly.Msg.PWM_HUE = '210';
+Blockly.Msg.LOGIC_HUE = '210';
 /// {{Notranslate}} Hue value for all loop blocks.
 Blockly.Msg.LOOPS_HUE = '120';
 /// {{Notranslate}} Hue value for all math blocks.
@@ -189,6 +189,7 @@ Blockly.Msg.COLOUR_BLEND_TOOLTIP = 'Blends two colours together with a given rat
 Blockly.Msg.CONTROLS_REPEAT_HELPURL = 'https://en.wikipedia.org/wiki/For_loop';
 /// block input text - Title of [https://github.com/google/blockly/wiki/Loops#repeat repeat block].\n\nParameters:\n* %1 - the number of times the body of the loop should be repeated.
 Blockly.Msg.CONTROLS_REPEAT_TITLE = 'repeat %1 times';
+/// block text - Preceding the blocks in the body of the loop.  See [https://github.com/google/blockly/wiki/Loops https://github.com/google/blockly/wiki/Loops].\n{{Identical|Do}}
 Blockly.Msg.CONTROLS_SLEEP_TITLE = 'sleep %1 s';
 /// block text - Preceding the blocks in the body of the loop.  See [https://github.com/google/blockly/wiki/Loops https://github.com/google/blockly/wiki/Loops].\n{{Identical|Do}}
 Blockly.Msg.CONTROLS_REPEAT_INPUT_DO = 'do';

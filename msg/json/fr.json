@@ -265,6 +265,7 @@
 	"LISTS_CREATE_WITH_ITEM_TOOLTIP": "Ajouter un élément à la liste.",
 	"LISTS_REPEAT_TOOLTIP": "Crée une liste consistant en la valeur fournie répétée le nombre de fois indiqué.",
 	"LISTS_REPEAT_TITLE": "créer une liste avec l’élément %1 répété %2 fois",
+	"CONTROLS_SLEEP_TITLE": "sleep %1 s",
 	"LISTS_LENGTH_TITLE": "longueur de %1",
 	"LISTS_LENGTH_TOOLTIP": "Renvoie la longueur d’une liste.",
 	"LISTS_ISEMPTY_TITLE": "%1 est vide",

@@ -59,6 +59,7 @@
 	"COLOUR_BLEND_TOOLTIP": "İki rəngi verilmiş nisbətdə (0,0 - 1,0) qarışdırır.",
 	"CONTROLS_REPEAT_HELPURL": "https://az.wikipedia.org/wiki/For_loop",
 	"CONTROLS_REPEAT_TITLE": "%1 dəfə təkrar et",
+	"CONTROLS_SLEEP_TITLE": "sleep %1 s",
 	"CONTROLS_REPEAT_INPUT_DO": "icra et",
 	"CONTROLS_REPEAT_TOOLTIP": "Bəzi əmrləri bir neçə dəfə yerinə yetir.",
 	"CONTROLS_WHILEUNTIL_OPERATOR_WHILE": "təkrar et, hələ ki",

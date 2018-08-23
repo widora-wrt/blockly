@@ -66,6 +66,7 @@
 	"COLOUR_BLEND_TOOLTIP": "Sekoittaa kaksi väriä keskenään annetussa suhteessa (0.0 - 1.0).",
 	"CONTROLS_REPEAT_HELPURL": "https://en.wikipedia.org/wiki/For_loop",
 	"CONTROLS_REPEAT_TITLE": "toista %1 kertaa",
+	"CONTROLS_SLEEP_TITLE": "sleep %1 s",
 	"CONTROLS_REPEAT_INPUT_DO": "tee",
 	"CONTROLS_REPEAT_TOOLTIP": "Suorita joukko lausekkeita useampi kertaa.",
 	"CONTROLS_WHILEUNTIL_OPERATOR_WHILE": "toista niin kauan kuin",

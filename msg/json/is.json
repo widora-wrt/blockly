@@ -53,6 +53,7 @@
 	"COLOUR_BLEND_TOOLTIP": "Blandar tveimur litum í gefnu hlutfalli (0.0 - 1.0).",
 	"CONTROLS_REPEAT_HELPURL": "https://en.wikipedia.org/wiki/For_loop",
 	"CONTROLS_REPEAT_TITLE": "endurtaka %1 sinnum",
+	"CONTROLS_SLEEP_TITLE": "sleep %1 s",
 	"CONTROLS_REPEAT_INPUT_DO": "gera",
 	"CONTROLS_REPEAT_TOOLTIP": "Gera eitthvað aftur og aftur.",
 	"CONTROLS_WHILEUNTIL_HELPURL": "https://github.com/google/blockly/wiki/Loops#repeat",

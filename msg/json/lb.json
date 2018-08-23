@@ -41,6 +41,7 @@
 	"COLOUR_BLEND_COLOUR2": "Faarf 2",
 	"COLOUR_BLEND_RATIO": "ratio",
 	"CONTROLS_REPEAT_TITLE": "%1-mol widderhuelen",
+	"CONTROLS_SLEEP_TITLE": "sleep %1 s",
 	"CONTROLS_REPEAT_INPUT_DO": "maach",
 	"CONTROLS_WHILEUNTIL_OPERATOR_WHILE": "Widderhuel soulaang",
 	"CONTROLS_WHILEUNTIL_OPERATOR_UNTIL": "widderhuele bis",

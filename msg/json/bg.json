@@ -55,6 +55,7 @@
 	"COLOUR_BLEND_TOOLTIP": "Смесва два цвят в дадено съотношение (0.0 - 1.0).",
 	"CONTROLS_REPEAT_HELPURL": "https://bg.wikipedia.org/wiki/Цикъл_(програмиране)#For_.D1.86.D0.B8.D0.BA.D1.8A.D0.BB.D1.8A.D1.82",
 	"CONTROLS_REPEAT_TITLE": "Повтори %1 пъти",
+	"CONTROLS_SLEEP_TITLE": "sleep %1 s",
 	"CONTROLS_REPEAT_INPUT_DO": "изпълни",
 	"CONTROLS_REPEAT_TOOLTIP": "Изпълнява команди няколко пъти.",
 	"CONTROLS_WHILEUNTIL_OPERATOR_WHILE": "повтаряй докато е вярно, че",

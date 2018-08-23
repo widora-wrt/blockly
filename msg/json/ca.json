@@ -60,6 +60,7 @@
 	"COLOUR_BLEND_TOOLTIP": "Barreja dos colors amb una proporció donada (0,0 - 1,0).",
 	"CONTROLS_REPEAT_HELPURL": "https://ca.wikipedia.org/wiki/Bucle_For",
 	"CONTROLS_REPEAT_TITLE": "repetir %1 vegades",
+	"CONTROLS_SLEEP_TITLE": "sleep %1 s",
 	"CONTROLS_REPEAT_INPUT_DO": "fer",
 	"CONTROLS_REPEAT_TOOLTIP": "Executar unes sentències diverses vegades.",
 	"CONTROLS_WHILEUNTIL_OPERATOR_WHILE": "repetir mentre",

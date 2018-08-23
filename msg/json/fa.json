@@ -59,6 +59,7 @@
 	"COLOUR_BLEND_TOOLTIP": "دو رنگ را با نسبت مشخص‌شده مخلوط می‌کند (۰٫۰ - ۱٫۰)",
 	"CONTROLS_REPEAT_HELPURL": "https://fa.wikipedia.org/wiki/%D8%AD%D9%84%D9%82%D9%87_%D9%81%D9%88%D8%B1",
 	"CONTROLS_REPEAT_TITLE": "%1 بار تکرار",
+	"CONTROLS_SLEEP_TITLE": "sleep %1 s",
 	"CONTROLS_REPEAT_INPUT_DO": "انجام",
 	"CONTROLS_REPEAT_TOOLTIP": "انجام چند عبارت چندین بار.",
 	"CONTROLS_WHILEUNTIL_OPERATOR_WHILE": "تکرار در حالی که",

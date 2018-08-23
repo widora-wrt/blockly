@@ -64,6 +64,7 @@
 	"COLOUR_BLEND_TOOLTIP": "Két színt kever össze a megadott arányban (0.0 - 1.0).",
 	"CONTROLS_REPEAT_HELPURL": "https://hu.wikipedia.org/wiki/Ciklus_(programoz%C3%A1s)#Sz.C3.A1ml.C3.A1l.C3.B3s_.28FOR.29_ciklus",
 	"CONTROLS_REPEAT_TITLE": "ismételd %1 alkalommal",
+	"CONTROLS_SLEEP_TITLE": "sleep %1 s",
 	"CONTROLS_REPEAT_INPUT_DO": "",
 	"CONTROLS_REPEAT_TOOLTIP": "Megadott kódrészlet ismételt végrehajtása.",
 	"CONTROLS_WHILEUNTIL_OPERATOR_WHILE": "ismételd amíg",
