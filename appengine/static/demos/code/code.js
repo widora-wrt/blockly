@@ -32,10 +32,9 @@ var Code = {};
  * Lookup for names of supported languages.  Keys should be in ISO 639 format.
  */
 Code.LANGUAGE_NAME = {
+  'zh-hans': '简体中文',
   'en': 'English',
-  'zh-hans': '简体中文'
-  /*'zh-hant': '正體中文'
-  'ar': 'العربية',
+  /*'ar': 'العربية',
   'be-tarask': 'Taraškievica',
   'br': 'Brezhoneg',
   'ca': 'Català',
@@ -76,7 +75,9 @@ Code.LANGUAGE_NAME = {
   'tlh': 'tlhIngan Hol',
   'tr': 'Türkçe',
   'uk': 'Українська',
-  'vi': 'Tiếng Việt'*/
+  'vi': 'Tiếng Việt',*/
+  //'zh-hans': '简体中文',
+  //'zh-hant': '正體中文'
 };
 
 /**
@@ -535,7 +536,7 @@ Code.runJS = function() {
   }
 };
 Code.saveJS = function() {
-  alert("dddd");
+  alert("save");
 };
 /**
  * Discard all blocks from the workspace.

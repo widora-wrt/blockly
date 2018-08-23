@@ -33,9 +33,7 @@ var Code = {};
  */
 Code.LANGUAGE_NAME = {
   'en': 'English',
-  'zh-hans': '简体中文'
-  /*'zh-hant': '正體中文'
-  'ar': 'العربية',
+  /*'ar': 'العربية',
   'be-tarask': 'Taraškievica',
   'br': 'Brezhoneg',
   'ca': 'Català',
@@ -76,7 +74,9 @@ Code.LANGUAGE_NAME = {
   'tlh': 'tlhIngan Hol',
   'tr': 'Türkçe',
   'uk': 'Українська',
-  'vi': 'Tiếng Việt'*/
+  'vi': 'Tiếng Việt',*/
+  'zh-hans': '简体中文',
+  'zh-hant': '正體中文'
 };
 
 /**

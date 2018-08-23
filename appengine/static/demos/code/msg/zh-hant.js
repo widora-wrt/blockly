@@ -22,5 +22,17 @@ var MSG = {
   hashError: "對不起，「%1」並未對應任何已保存的程式。",
   xmlError: "未能載入您保存的檔案。或許它是由其他版本的Blockly創建？",
   badXml: "解析 XML 時出現錯誤：\n%1\n\n選擇'確定'以放棄您的更改，或選擇'取消'以進一步編輯 XML。",
-  
+  catGpio_write_title:"写端口 %1 为 %2",
+  catGpio_read_title:"读端口 %1",
+  catGpio_mode_title:"设置端口 %1 为 %2",
+  catGpio_value_high:"高",
+  catGpio_value_low:"低",
+  catGpio_mode_out:"输出",
+  catGpio_mode_in:"输入",
+  catGPio_interrupt_title:"设置中断 %1 %2",
+  catPwm_period_ms_title:"设置 %1 脉冲周期 %2 毫秒",
+  catPwm_cycle_title:"设置 %1 占空比 %2 /1",
+  catPwm_enable_title:"设置 %1 %2 ",
+  catPwm_value_enable:"允许",
+  catPwm_value_disenable:"禁止",
 };
