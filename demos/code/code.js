@@ -167,7 +167,6 @@ Code.changeLanguage = function() {
     
     var text = Blockly.Xml.domToText(xml);
     window.sessionStorage.loadOnceBlocks = text;
-    alert(text);
   }
   var languageMenu = document.getElementById('languageMenu');
   var newLang = encodeURIComponent(
