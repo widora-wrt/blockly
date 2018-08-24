@@ -27,3 +27,42 @@
 goog.provide('Blockly.Python.i2c');
 
 goog.require('Blockly.Python');
+
+Blockly.Python['i2c_list'] = function(block) {
+    var dropdown_name = block.getFieldValue('NAME');
+    // TODO: Assemble Python into code variable.
+    var code = dropdown_name;
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_NONE];
+  };
+Blockly.Python['i2c_address'] = function(block) {
+    var dropdown_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_NONE);
+      try  {
+       dropdown_name=eval(dropdown_name);
+      }catch(exception) {
+        dropdown_name="0";
+      }
+    var value_name =block.getFieldValue('VALUE');
+    // TODO: Assemble Python into code variable.
+    var code = "i2c"+dropdown_name+".address("+value_name+")\n";
+    var def ="i2c"+dropdown_name+"=mraa.I2c("+dropdown_name+")";
+    // TODO: Change ORDER_NONE to the correct strength.
+    Blockly.Python.definitions_[def] = def;
+    Blockly.Python.definitions_['import_mraa'] = 'import mraa';
+    return code;
+  };
+  Blockly.Python['i2c_readreg'] = function(block) {
+    var dropdown_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_NONE);
+      try  {
+       dropdown_name=eval(dropdown_name);
+      }catch(exception) {
+        dropdown_name="0";
+      }
+    var address_name =block.getFieldValue('VALUE');
+    var code = "i2c"+dropdown_name+".readReg("+address_name+")";
+    var def ="i2c"+dropdown_name+"=mraa.I2c("+dropdown_name+")";
+    // TODO: Change ORDER_NONE to the correct strength.
+    Blockly.Python.definitions_[def] = def;
+    Blockly.Python.definitions_['import_mraa'] = 'import mraa';
+    return [code, Blockly.Python.ORDER_NONE];
+  };

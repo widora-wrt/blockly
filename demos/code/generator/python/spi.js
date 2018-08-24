@@ -27,3 +27,29 @@
 goog.provide('Blockly.Python.spi');
 
 goog.require('Blockly.Python');
+
+Blockly.Python['spi_list'] = function(block) {
+    var dropdown_name = block.getFieldValue('NAME');
+    // TODO: Assemble Python into code variable.
+    var code = dropdown_name;
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_NONE];
+  };
+Blockly.Python['spi_writeread'] = function(block) {
+    var dropdown_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_NONE);
+    try  {
+     dropdown_name=eval(dropdown_name);
+    }catch(exception) {
+      dropdown_name="0";
+    }
+    var value_name = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC);
+
+    // TODO: Assemble Python into code variable.
+    var code = "spi"+dropdown_name+".write("+value_name+")\n";
+    var def ="spi"+dropdown_name+"=mraa.Spi("+dropdown_name+")";
+    // TODO: Change ORDER_NONE to the correct strength.
+    Blockly.Python.definitions_[def] = def;
+    Blockly.Python.definitions_['import_mraa'] = 'import mraa';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_NONE];
+  };

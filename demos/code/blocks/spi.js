@@ -41,4 +41,40 @@ Blockly.Msg.SPI_HUE = '190';
  * @deprecated Use Blockly.Msg['COLOUR_HUE']. (2018 April 5)
  */
 Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
+    {
+        "type": "spi_list",
+        "message0": "%1",
+        "args0": [
+          {
+            "type": "field_dropdown",
+            "name": "NAME",
+            "options": [["SPI0","0"]]
+          }
+        ],
+        "output": "Number",
+        "colour": "%{BKY_SPI_HUE}",
+        "tooltip": "",
+        "helpUrl": ""
+    },
+    {
+        "type": "spi_writeread",
+        "message0": "%1 %2",
+        "args0": [
+          {
+            "type": "input_value",
+            "name": "NAME",
+            "check": "Number"
+          },
+          {
+            "type": "input_value",
+            "name": "VALUE",
+            "check": "Array"
+          }
+        ],
+        "inputsInline": true,
+        "output": "Array",
+        "colour":  "%{BKY_SPI_HUE}",
+        "tooltip": "",
+        "helpUrl": ""
+    }
 ]);

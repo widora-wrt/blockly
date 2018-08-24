@@ -40,6 +40,7 @@ Blockly.Msg.I2C_HUE = '146';
  * Unused constant for the common HSV hue for all blocks in this category.
  * @deprecated Use Blockly.Msg['COLOUR_HUE']. (2018 April 5)
  */
+
 Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     {
         "type": "i2c_list",
@@ -48,16 +49,15 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
           {
             "type": "field_dropdown",
             "name": "NAME",
-            "options": [["I2C0","0"],
-                        ["I2C1","1"]]
+            "options": [["I2C0","0"]]
           }
         ],
         "output": "Number",
         "colour": "%{BKY_I2C_HUE}",
         "tooltip": "",
         "helpUrl": ""
-      },
-      {
+    },
+    {
         "type": "i2c_address",
         "message0": "create %1 address %2",
         "args0": [
@@ -67,14 +67,38 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
             "check": "Number"
           },
           {
-            "type": "field_input",
+            "type": "field_number",
             "name": "VALUE",
-            "text": "0x52"
+            "value": 52,
+            "min": 0,
+            "max": 255
           }
         ],
         "inputsInline": true,
         "previousStatement": null,
         "nextStatement": null,
+        "colour": "%{BKY_I2C_HUE}",
+        "tooltip": "",
+        "helpUrl": ""
+    },
+    {
+        "type": "i2c_readreg",
+        "message0": "read %1 reg %2",
+        "args0": [
+          {
+            "type": "input_value",
+            "name": "NAME",
+            "check": "Number"
+          },
+          {
+            "type": "field_number",
+            "name": "VALUE",
+            "value": 0,
+            "min": 0,
+            "max": 255
+          }
+        ],
+        "output": "Number",
         "colour": "%{BKY_I2C_HUE}",
         "tooltip": "",
         "helpUrl": ""

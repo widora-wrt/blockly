@@ -10,6 +10,7 @@ var MSG = {
   catPwm:"脉冲",
   catI2c:"总线",
   catSpi:"通信",
+  catIic:"IIC",
   catSerial:"串口",
   catLogic: "逻辑",
   catLoops: "循环",

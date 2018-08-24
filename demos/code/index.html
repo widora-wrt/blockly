@@ -103,10 +103,10 @@
       <block type="gpio_list"></block>
     </category>
     <category name="%{BKY_CATPWM}" colour="%{BKY_PWM_HUE}">
-      <block type="pwm_period_ms">
-           <value name="NAME"><shadow type="pwm_list"></shadow></value>
-           <value name="VALUE"><shadow type="math_number"><field name="NUM">2</field></shadow></value>
-      </block>
+     <block type="pwm_period_ms">
+          <value name="NAME"><shadow type="pwm_list"></shadow></value>
+          <value name="VALUE"><shadow type="math_number"><field name="NUM">2</field></shadow></value>
+     </block>
       <block type="pwm_cycle">
           <value name="NAME"><shadow type="pwm_list"></shadow></value>
           <value name="VALUE"><shadow type="math_number"><field name="NUM">0.25</field></shadow></value>
@@ -121,11 +121,17 @@
     <category name="%{BKY_CATI2C}" colour="%{BKY_I2C_HUE}">
       <block type="i2c_address">
         <value name="NAME"><shadow type="i2c_list"></shadow></value>
-        <value name="VALUE"><shadow type="math_number"><field name="NUM">0x52</field></shadow></value>
+      </block>
+      <block type="i2c_readreg">
+        <value name="NAME"><shadow type="i2c_list"></shadow></value>
       </block>
       <block type="i2c_list"></block>
     </category>
     <category name="%{BKY_CATSPI}" colour="%{BKY_SPI_HUE}">
+      <block type="spi_writeread">
+        <value name="NAME"><shadow type="spi_list"></shadow></value>
+      </block>
+      <block type="spi_list"></block>
     </category>
     <sep></sep>
     <category name="%{BKY_CATLOGIC}" colour="%{BKY_LOGIC_HUE}">

@@ -49,4 +49,4 @@ goog.require('Blockly.Msg');
  */
 
 /// {{Notranslate}} Hue value for all logic blocks.
-Blockly.Msg.GPIO_HUE = '44';
+Blockly.Msg.IIC_HUE = '210';
