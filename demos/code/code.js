@@ -512,6 +512,15 @@ Code.initLanguage = function() {
   document.getElementById('linkButton').title = MSG['linkTooltip'];
   document.getElementById('runButton').title = MSG['runTooltip'];
   document.getElementById('trashButton').title = MSG['trashTooltip'];
+
+  var cp = require('child_process'); //子进程  
+  cp.exec("ls", function(error, stdout, stderr) {  
+    alert(error);
+    alert(stdout);
+    console.log(stdout);
+    alert(stderr);
+  }); 
+  alert("ddd");
 };
 
 /**
