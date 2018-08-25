@@ -29,52 +29,40 @@
  */
 'use strict';
 
-goog.provide('Blockly.Blocks.spi');  // Deprecated
-goog.provide('Blockly.Constants.Spc');  // deprecated, 2018 April 5
+goog.provide('Blockly.Blocks.pwm');  // Deprecated
+goog.provide('Blockly.Constants.Sound');  // deprecated, 2018 April 5
 
 goog.require('Blockly.Blocks');
 goog.require('Blockly');
 
-Blockly.Msg.SPI_HUE = '190';
+Blockly.Msg.SOUND_HUE = '99';
 /**
  * Unused constant for the common HSV hue for all blocks in this category.
  * @deprecated Use Blockly.Msg['COLOUR_HUE']. (2018 April 5)
  */
 Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     {
-        "type": "spi_list",
-        "message0": "%1",
+        "type": "sound_music",
+        "message0": "%{BKY_CATSOUND_MUSIC_TITLE}",
         "args0": [
           {
             "type": "field_dropdown",
             "name": "NAME",
-            "options": [["SPI0","0"]]
-          }
-        ],
-        "output": "Number",
-        "colour": "%{BKY_SPI_HUE}",
-        "tooltip": "",
-        "helpUrl": ""
-    },
-    {
-        "type": "spi_writeread",
-        "message0": "%{BKY_CATSPI_READWRITE_TITLE}",
-        "args0": [
-          {
-            "type": "input_value",
-            "name": "NAME",
-            "check": "Number"
+            "options": [["music0","music0.mp3"],
+                        ["music1","music1.mp3"],
+                        ["music2","music2.mp3"]]
           },
           {
             "type": "input_value",
             "name": "VALUE",
-            "check": "Array"
+            "check": "Boolean"
           }
         ],
         "inputsInline": true,
-        "output": "Array",
-        "colour":  "%{BKY_SPI_HUE}",
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": "%{BKY_SOUND_HUE}",
         "tooltip": "",
         "helpUrl": ""
-    }
+      }
 ]);

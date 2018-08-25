@@ -29,36 +29,38 @@
  */
 'use strict';
 
-goog.provide('Blockly.Blocks.spi');  // Deprecated
-goog.provide('Blockly.Constants.Spc');  // deprecated, 2018 April 5
+goog.provide('Blockly.Blocks.serial');  // Deprecated
+goog.provide('Blockly.Constants.Serial');  // deprecated, 2018 April 5
 
 goog.require('Blockly.Blocks');
 goog.require('Blockly');
 
-Blockly.Msg.SPI_HUE = '190';
+Blockly.Msg.SERIAL_HUE = '189';
 /**
  * Unused constant for the common HSV hue for all blocks in this category.
  * @deprecated Use Blockly.Msg['COLOUR_HUE']. (2018 April 5)
  */
 Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     {
-        "type": "spi_list",
+        "type": "serial_list",
         "message0": "%1",
         "args0": [
           {
             "type": "field_dropdown",
             "name": "NAME",
-            "options": [["SPI0","0"]]
+            "options": [["Serial0","0"],
+                        ["Serial1","1"],
+                        ["Serial2","2"]]
           }
         ],
         "output": "Number",
-        "colour": "%{BKY_SPI_HUE}",
+        "colour": "%{BKY_SERIAL_HUE}",
         "tooltip": "",
         "helpUrl": ""
     },
     {
-        "type": "spi_writeread",
-        "message0": "%{BKY_CATSPI_READWRITE_TITLE}",
+        "type": "serial_write",
+        "message0": "%{BKY_CATGPIO_WRITE_TITLE}",
         "args0": [
           {
             "type": "input_value",
@@ -68,13 +70,15 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
           {
             "type": "input_value",
             "name": "VALUE",
-            "check": "Array"
+            "check": "Boolean"
           }
         ],
         "inputsInline": true,
-        "output": "Array",
-        "colour":  "%{BKY_SPI_HUE}",
-        "tooltip": "",
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": "%{BKY_GPIO_HUE}",
+        "tooltip":"",
         "helpUrl": ""
-    }
+      },
+
 ]);

@@ -59,7 +59,7 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     },
     {
         "type": "i2c_address",
-        "message0": "create %1 address %2",
+        "message0": "%{BKY_CATI2C_ADDRESS_TITLE}",
         "args0": [
           {
             "type": "input_value",
@@ -83,7 +83,7 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     },
     {
         "type": "i2c_readreg",
-        "message0": "read %1 reg %2",
+        "message0":"%{BKY_CATI2C_READREG_TITLE}",
         "args0": [
           {
             "type": "input_value",

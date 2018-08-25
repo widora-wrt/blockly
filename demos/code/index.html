@@ -18,10 +18,14 @@
   <script src="blocks/pwm.js"></script>
   <script src="blocks/i2c.js"></script>
   <script src="blocks/spi.js"></script>
+  <script src="blocks/sound.js"></script>
+  <script src="blocks/serial.js"></script>
   <script src="generator/python/gpio.js"></script>
   <script src="generator/python/pwm.js"></script>
   <script src="generator/python/i2c.js"></script>
   <script src="generator/python/spi.js"></script>
+  <script src="generator/python/sound.js"></script>
+  <script src="generator/python/serial.js"></script>
   <script src="code.js"></script>
 </head>
 <body>
@@ -132,6 +136,15 @@
         <value name="NAME"><shadow type="spi_list"></shadow></value>
       </block>
       <block type="spi_list"></block>
+    </category>
+    <category name="%{BKY_CATSERIAL}" colour="%{BKY_SERIAL_HUE}">
+        </block>
+        <block type="serial_list"></block>
+      </category>
+    <category name="%{BKY_CATSOUND}" colour="%{BKY_SOUND_HUE}">
+      <block type="sound_music">
+        <value name="VALUE"><shadow type="logic_boolean"></shadow></value>
+      </block>
     </category>
     <sep></sep>
     <category name="%{BKY_CATLOGIC}" colour="%{BKY_LOGIC_HUE}">

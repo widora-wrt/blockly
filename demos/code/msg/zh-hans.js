@@ -12,6 +12,7 @@ var MSG = {
   catSpi:"通信",
   catIic:"IIC",
   catSerial:"串口",
+  catSound:"声音",
   catLogic: "逻辑",
   catLoops: "循环",
   catMath: "数学",
@@ -40,4 +41,8 @@ var MSG = {
   catPwm_enable_title:"设置 %1 %2 ",
   catPwm_value_enable:"允许",
   catPwm_value_disenable:"禁止",
+  catSound_music_title:"播放 %1 直到停止 %2",
+  catI2c_address_title:"创建设备 %1 地址 %2",
+  catI2c_readreg_title:"读取 %1 寄存器 %2",
+  catSpi_readwrite_title:"读 %1 写 %2",
 };
