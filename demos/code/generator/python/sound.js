@@ -33,6 +33,6 @@ Blockly.Python['sound_music'] = function(block) {
     var dropdown_name = block.getFieldValue('NAME');
     var value_name = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC);
     Blockly.Python.definitions_['import_sound'] = 'import sound';
-    var code ="sound.play('"+dropdown_name+"',"+value_name+")";
+    var code ="sound.play('"+dropdown_name+"',"+value_name+")\n";
     return code;
   };

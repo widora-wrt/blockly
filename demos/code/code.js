@@ -535,7 +535,9 @@ Code.runJS = function() {
   }
 };
 Code.saveJS = function() {
-  alert("save");
+
+  var code= Blockly.Python.workspaceToCode(Code.workspace); 
+  　BlocklyStorage.makePost("/cgi-bin/test.lua",code);
 };
 /**
  * Discard all blocks from the workspace.

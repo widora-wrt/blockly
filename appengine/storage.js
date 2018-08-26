@@ -125,6 +125,21 @@ BlocklyStorage.makeRequest_ = function(url, name, content, workspace) {
   BlocklyStorage.httpRequest_.workspace = workspace;
 };
 
+
+BlocklyStorage.httpPost_ = null;
+BlocklyStorage.makePost = function(url,content) {
+  if (BlocklyStorage.httpPost_) {
+    // AJAX call is in-flight.
+    BlocklyStorage.httpPost_.abort();
+  }
+  BlocklyStorage.httpPost_ = new XMLHttpRequest();
+  BlocklyStorage.httpPost_.name = name;
+  BlocklyStorage.httpPost_.onreadystatechange =
+      BlocklyStorage.httpPost_;
+  BlocklyStorage.httpPost_.open('POST', url);
+  BlocklyStorage.httpPost_.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+  BlocklyStorage.httpPost_.send(content);
+};
 /**
  * Callback function for AJAX call.
  * @private

@@ -125,7 +125,8 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
         "name": "NAME",
         "options": [["GPIO0","0"],
                     ["GPIO1","1"],
-                    ["GPIO2","2"]]
+                    ["GPIO2","2"],
+                    ["GPIO18","18"]]
       }
     ],
     "output": "Number",
