@@ -64,5 +64,97 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
         "colour": "%{BKY_SOUND_HUE}",
         "tooltip": "",
         "helpUrl": ""
-      }
+      },
+      {
+        "type": "sound_piano",
+        "message0": "钢琴 %1 调 %2 节拍",
+        "args0": [
+          {
+            "type": "field_dropdown",
+            "name": "NAME",
+            "options": [["C1","0"],
+                        ["C2","1"],
+                        ["C3","2"],
+                        ["C4","3"],
+                        ["C5","4"],
+                       ]
+          },
+          {
+            "type": "field_dropdown",
+            "name": "VALUE",
+            "options":  [["1/4","0"],
+                         ["2/4","1"],
+                         ["3/4","2"],
+                         ["4/4","3"],
+                         ["5/4","4"],
+           ]
+          }
+        ],
+        "inputsInline": true,
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": "%{BKY_SOUND_HUE}",
+        "tooltip": "",
+        "helpUrl": ""
+      },
+      {
+        "type": "sound_marimba",
+        "message0": "马琳巴 %1",
+        "args0": [
+          {
+            "type": "field_dropdown",
+            "name": "NAME",
+            "options": [
+              [
+                "马林巴1",
+                "1"
+              ],
+              [
+                "马林巴2",
+                "2"
+              ],
+              [
+                "马林巴3",
+                "3"
+              ]
+            ]
+          }
+        ],
+        "inputsInline": true,
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour":  "%{BKY_SOUND_HUE}",
+        "tooltip": "",
+        "helpUrl": ""
+      },
+      {
+        "type": "sound_effect",
+        "message0": "音效 %1",
+        "args0": [
+          {
+            "type": "field_dropdown",
+            "name": "NAME",
+            "options": [
+              [
+                "鼓掌",
+                "1"
+              ],
+              [
+                "拜拜",
+                "2"
+              ],
+              [
+                "失败",
+                "3"
+              ]
+            ]
+          }
+        ],
+        "inputsInline": true,
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour":  "%{BKY_SOUND_HUE}",
+        "tooltip": "",
+        "helpUrl": ""
+      },
 ]);
