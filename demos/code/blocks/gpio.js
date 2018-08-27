@@ -124,9 +124,19 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
         "type": "field_dropdown",
         "name": "NAME",
         "options": [["GPIO0","0"],
-                    ["GPIO1","1"],
-                    ["GPIO2","2"],
-                    ["GPIO18","18"]]
+                    ["GPIO14","14"],
+                    ["GPIO15","15"],
+                    ["GPIO16","16"],
+                    ["GPIO17","17"],
+                    ["GPIO18(PWM18)","18"],
+                    ["GPIO19(PWM19)","19"],
+                    ["GPIO20","20"],
+                    ["GPIO21","21"],
+                    ["GPIO39","29"],
+                    ["GPIO40","40"],
+                    ["GPIO41","41"],
+                    ["GPIO42","42"],
+                    ]
       }
     ],
     "output": "Number",

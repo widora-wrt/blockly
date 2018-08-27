@@ -37,3 +37,31 @@ Blockly.Python['serial_list'] = function(block) {
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.Python.ORDER_NONE];
   };
+  Blockly.Python['serial_write'] = function(block) {
+    var dropdown_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_NONE);
+    try  {
+     dropdown_name=eval(dropdown_name);
+    }catch(exception) {
+      dropdown_name="0";
+    }
+    var dropdown_value = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_NONE);
+    var code ="serial"+dropdown_name+".write(bytearray("+dropdown_value+"))\n";
+    var def ="serial"+dropdown_name+"=mraa.Uart("+dropdown_name+")";
+    Blockly.Python.definitions_['import_mraa'] = 'import mraa';
+    Blockly.Python.definitions_[def]=def;
+    return code;
+  };
+  Blockly.Python['serial_writebyte'] = function(block) {
+    var dropdown_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_NONE);
+    try  {
+     dropdown_name=eval(dropdown_name);
+    }catch(exception) {
+      dropdown_name="0";
+    }
+    var dropdown_value = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_NONE);
+    var code ="serial"+dropdown_name+".write(bytearray("+dropdown_value+"))\n";
+    var def ="serial"+dropdown_name+"=mraa.Uart("+dropdown_name+")";
+    Blockly.Python.definitions_['import_mraa'] = 'import mraa';
+    Blockly.Python.definitions_[def]=def;
+    return code;
+  };

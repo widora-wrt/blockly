@@ -180,8 +180,8 @@ Code.changeLanguage = function() {
     search = search.replace(/\?/, '?lang=' + newLang + '&');
   }
 
-  window.location = window.location.protocol + '//' +
-      window.location.host + window.location.pathname + search;
+  window.location = window.location.protocol + '//' +window.location.host + window.location.pathname + search;
+    
 };
 
 /**
@@ -443,18 +443,14 @@ Code.init = function() {
   Code.bindClick('trashButton',
       function() {Code.discard(); Code.renderContent();});
   Code.bindClick('runButton', Code.runJS);
-  Code.bindClick('saveButton', Code.saveJS);
+  Code.bindClick('likeButton', Code.likeJS);
   // Disable the link button if page isn't backed by App Engine storage.
-  var linkButton = document.getElementById('linkButton');
+  //var linkButton = document.getElementById('linkButton');
   if ('BlocklyStorage' in window) {
     BlocklyStorage['HTTPREQUEST_ERROR'] = MSG['httpRequestError'];
     BlocklyStorage['LINK_ALERT'] = MSG['linkAlert'];
     BlocklyStorage['HASH_ERROR'] = MSG['hashError'];
     BlocklyStorage['XML_ERROR'] = MSG['xmlError'];
-    Code.bindClick(linkButton,
-        function() {BlocklyStorage.link(Code.workspace);});
-  } else if (linkButton) {
-    linkButton.className = 'disabled';
   }
 
   for (var i = 0; i < Code.TABS_.length; i++) {
@@ -509,7 +505,7 @@ Code.initLanguage = function() {
   document.getElementById('title').textContent = MSG['title'];
   document.getElementById('tab_blocks').textContent = MSG['blocks'];
 
-  document.getElementById('linkButton').title = MSG['linkTooltip'];
+ // document.getElementById('linkButton').title = MSG['linkTooltip'];
   document.getElementById('runButton').title = MSG['runTooltip'];
   document.getElementById('trashButton').title = MSG['trashTooltip'];
 };
@@ -526,18 +522,19 @@ Code.runJS = function() {
       throw MSG['timeout'];
     }
   };
-  var code = Blockly.JavaScript.workspaceToCode(Code.workspace);
+  var code= Blockly.Python.workspaceToCode(Code.workspace); 
+  alert(code);
   Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
   try {
-    eval(code);
+    BlocklyStorage.makePost("/cgi-bin/test.lua",code);
   } catch (e) {
     alert(MSG['badCode'].replace('%1', e));
   }
 };
-Code.saveJS = function() {
+Code.likeJS = function() {
 
-  var code= Blockly.Python.workspaceToCode(Code.workspace); 
-  　BlocklyStorage.makePost("/cgi-bin/test.lua",code);
+  alert("like");
+  　
 };
 /**
  * Discard all blocks from the workspace.

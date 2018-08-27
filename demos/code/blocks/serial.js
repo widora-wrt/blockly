@@ -60,7 +60,7 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     },
     {
         "type": "serial_write",
-        "message0": "%{BKY_CATGPIO_WRITE_TITLE}",
+        "message0": "%{BKY_CATSERIAL_WRITE_TITLE}",
         "args0": [
           {
             "type": "input_value",
@@ -70,13 +70,34 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
           {
             "type": "input_value",
             "name": "VALUE",
-            "check": "Boolean"
+            "check": "String"
           }
         ],
         "inputsInline": true,
         "previousStatement": null,
         "nextStatement": null,
-        "colour": "%{BKY_GPIO_HUE}",
+        "colour": "%{BKY_SERIAL_HUE}",
+        "tooltip":"",
+        "helpUrl": ""
+      },
+      {
+        "type": "serial_writebyte",
+        "message0": "%{BKY_CATSERIAL_WRITE_ARRAY_TITLE}",
+        "args0": [
+          {
+            "type": "input_value",
+            "name": "NAME",
+            "check": "Number"
+          },
+          {
+            "type": "input_value",
+            "name": "VALUE",     
+          }
+        ],
+        "inputsInline": true,
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": "%{BKY_SERIAL_HUE}",
         "tooltip":"",
         "helpUrl": ""
       },

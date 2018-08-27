@@ -58,17 +58,14 @@
             <td id="tab_xml" class="taboff">XML</td>
   
             <td class="tabmax">        
-                <button id="trashButton" class="notext primary" title="...">
+                <button id="trashButton" class="notext" title="...">
                 <img src='../../media/1x1.gif' class="trash icon21">
               </button>
-              <button id="linkButton" class="notext" title="...">
-                <img src='../../media/1x1.gif' class="link icon21">
+              <button id="likeButton" class="notext" title="...">
+                <img src='../../media/1x1.gif' class="like icon21">
               </button>
-              <button id="runButton" class="notext" title="...">
+              <button id="runButton" class="notext green" title="...">
                 <img src='../../media/1x1.gif' class="run icon21">
-              </button>
-              <button id="saveButton" class="notext green" title="...">
-                <img src='../../media/1x1.gif' class="save icon21">
               </button>
             </td>
           </tr>
@@ -138,6 +135,13 @@
       <block type="spi_list"></block>
     </category>
     <category name="%{BKY_CATSERIAL}" colour="%{BKY_SERIAL_HUE}">
+        <block type="serial_write">
+         <value name="NAME"><shadow type="serial_list"></shadow></value>
+         <value name="VALUE"><shadow type="text"><field name="TEXT">abc</field>
+        </block>
+         <block type="serial_writebyte">
+         <value name="NAME"><shadow type="serial_list"></shadow></value>
+         <value name="VALUE"><shadow type="math_number"><field name="NUM">255</field>
         </block>
         <block type="serial_list"></block>
       </category>

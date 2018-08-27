@@ -45,4 +45,6 @@ var MSG = {
   catI2c_address_title:"create %1 address %2",
   catI2c_readreg_title:"read %1 reg %2",
   catSpi_readwrite_title:"read %1 write %2",
+  catSerial_write_title:"send %1 context %2",
+  catSerial_write_byte_title:"send %1 array %2",
 };

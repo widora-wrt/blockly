@@ -45,4 +45,6 @@ var MSG = {
   catI2c_address_title:"创建设备 %1 地址 %2",
   catI2c_readreg_title:"读取 %1 寄存器 %2",
   catSpi_readwrite_title:"读 %1 写 %2",
+  catSerial_write_title:"发送 %1 内容 %2",
+  catSerial_write_array_title:"发送 %1 数组 %2",
 };
