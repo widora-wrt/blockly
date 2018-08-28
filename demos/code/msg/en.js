@@ -1,8 +1,9 @@
 var MSG = {
   title: "GIDE (v00.01.01)",
   blocks: "Blocks",
-  linkTooltip: "Save and link to blocks.",
-  runTooltip: "Run the program defined by the blocks in the workspace.",
+  likeTooltip: "Save as a sample.",
+  likeinputtitle:"New template name:",
+  runTooltip: "Program to run the workspace on the target board.",
   badCode: "Program error:\n%1",
   timeout: "Maximum execution iterations exceeded.",
   trashTooltip: "Discard all blocks.",

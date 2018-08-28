@@ -129,9 +129,11 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
       {
         "type": "field_dropdown",
         "name": "NAME",
-        "options": [["PWM0","0"],
-                    ["PWM1","1"],
-                    ["PWM2","2"]]
+        "options": [["PWM0(GPIO18)","18"],
+                    ["PWM1(GPIO19)","19"],
+                    ["PWM2(GPIO20/TX2)","20"],
+                    ["PWM3(GPIO21/RX2)","21"],
+                    ]
       }
     ],
     "output": "Number",

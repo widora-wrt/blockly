@@ -180,8 +180,7 @@ Code.changeLanguage = function() {
     search = search.replace(/\?/, '?lang=' + newLang + '&');
   }
 
-  window.location = window.location.protocol + '//' +
-      window.location.host + window.location.pathname + search;
+  window.location = window.location.protocol + '//' +window.location.host + window.location.pathname + search;
 };
 
 /**
@@ -369,6 +368,7 @@ Code.checkAllGeneratorFunctionsDefined = function(generator) {
  */
 Code.init = function() {
   Code.initLanguage();
+  Code.initTemplate();
   var rtl = Code.isRtl();
   var container = document.getElementById('content_area');
   var onresize = function(e) {
@@ -443,18 +443,14 @@ Code.init = function() {
   Code.bindClick('trashButton',
       function() {Code.discard(); Code.renderContent();});
   Code.bindClick('runButton', Code.runJS);
-  Code.bindClick('saveButton', Code.saveJS);
+  Code.bindClick('likeButton', Code.likeJS);
   // Disable the link button if page isn't backed by App Engine storage.
-  var linkButton = document.getElementById('linkButton');
+  //var linkButton = document.getElementById('linkButton');
   if ('BlocklyStorage' in window) {
     BlocklyStorage['HTTPREQUEST_ERROR'] = MSG['httpRequestError'];
     BlocklyStorage['LINK_ALERT'] = MSG['linkAlert'];
     BlocklyStorage['HASH_ERROR'] = MSG['hashError'];
     BlocklyStorage['XML_ERROR'] = MSG['xmlError'];
-    Code.bindClick(linkButton,
-        function() {BlocklyStorage.link(Code.workspace);});
-  } else if (linkButton) {
-    linkButton.className = 'disabled';
   }
 
   for (var i = 0; i < Code.TABS_.length; i++) {
@@ -509,11 +505,18 @@ Code.initLanguage = function() {
   document.getElementById('title').textContent = MSG['title'];
   document.getElementById('tab_blocks').textContent = MSG['blocks'];
 
-  document.getElementById('linkButton').title = MSG['linkTooltip'];
+ // document.getElementById('linkButton').title = MSG['linkTooltip'];
   document.getElementById('runButton').title = MSG['runTooltip'];
   document.getElementById('trashButton').title = MSG['trashTooltip'];
+  document.getElementById('likeButton').title = MSG['likeTooltip'];
 };
-
+Code.initTemplate = function() {
+  var objSelect = document.getElementById("TemplateMenu");
+  for(var i=1;i<5;i++){
+    var new_opt = new Option("Template"+i);      
+    objSelect.options.add(new_opt);
+    }
+  }
 /**
  * Execute the user's code.
  * Just a quick and dirty eval.  Catch infinite loops.
@@ -526,16 +529,17 @@ Code.runJS = function() {
       throw MSG['timeout'];
     }
   };
-  var code = Blockly.JavaScript.workspaceToCode(Code.workspace);
+  var code= Blockly.Python.workspaceToCode(Code.workspace); 
   Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
   try {
-    eval(code);
+    BlocklyStorage.makePost("/cgi-bin/test.lua",code);
   } catch (e) {
     alert(MSG['badCode'].replace('%1', e));
   }
 };
-Code.saveJS = function() {
-  alert("save");
+Code.likeJS = function() {
+  age=prompt(MSG['likeinputtitle']); 
+  alert(age)
 };
 /**
  * Discard all blocks from the workspace.
@@ -557,3 +561,4 @@ document.write('<script src="msg/' + Code.LANG + '.js"></script>\n');
 document.write('<script src="../../msg/js/' + Code.LANG + '.js"></script>\n');
 
 window.addEventListener('load', Code.init);
+

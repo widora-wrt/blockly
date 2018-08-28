@@ -163,12 +163,14 @@ pre.content {
   margin-left: 4px;
   margin-right: 15px;
   margin-top: 5px;
+  font-size:14px;
 }
 #TemplateMenu {
   vertical-align: top;
   margin-left: 6px;
   margin-right: 4px;
   margin-top: 5px;
+  font-size:14px;
 }
 /* Buttons */
 button {

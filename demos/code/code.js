@@ -508,6 +508,7 @@ Code.initLanguage = function() {
  // document.getElementById('linkButton').title = MSG['linkTooltip'];
   document.getElementById('runButton').title = MSG['runTooltip'];
   document.getElementById('trashButton').title = MSG['trashTooltip'];
+  document.getElementById('likeButton').title = MSG['likeTooltip'];
 };
 Code.initTemplate = function() {
   var objSelect = document.getElementById("TemplateMenu");
@@ -537,9 +538,8 @@ Code.runJS = function() {
   }
 };
 Code.likeJS = function() {
-
-  alert("like");
-  　
+  var age=prompt(MSG['likeinputtitle']); 
+  alert(age);
 };
 /**
  * Discard all blocks from the workspace.
@@ -561,3 +561,4 @@ document.write('<script src="msg/' + Code.LANG + '.js"></script>\n');
 document.write('<script src="../../msg/js/' + Code.LANG + '.js"></script>\n');
 
 window.addEventListener('load', Code.init);
+

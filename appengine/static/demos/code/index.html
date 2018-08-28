@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="google" value="notranslate">
-  <title>Blockly Demo:</title>
+  <title>Demo:</title>
   <link rel="stylesheet" href="style.css">
   <script src="/storage.js"></script>
   <script src="../../blockly_compressed.js"></script>
@@ -20,21 +20,23 @@
   <script src="blocks/spi.js"></script>
   <script src="blocks/sound.js"></script>
   <script src="blocks/serial.js"></script>
+  <script src="blocks/analog.js"></script>
   <script src="generator/python/gpio.js"></script>
   <script src="generator/python/pwm.js"></script>
   <script src="generator/python/i2c.js"></script>
   <script src="generator/python/spi.js"></script>
   <script src="generator/python/sound.js"></script>
   <script src="generator/python/serial.js"></script>
+  <script src="generator/python/analog.js"></script>
   <script src="code.js"></script>
 </head>
 <body>
-
   <table  width="100%" height="30px" align="center" class="titleSide">
     <tr >
         <td width="30%" id="title" class="leftSide" ></td>
         <td width="30%" class="centerSide"  align="center"><span id="copyright" style="font-family:arial;font-size:12px;color:#999;">copyright</span></td>
-        <td width="40%" class="rightSide"align="right"><select id="languageMenu" class="rightSide" ></select></td>
+        <td width="40%" class="rightSide"align="right"><select id="TemplateMenu"></select></td>
+        <td width="40%" class="rightSide"align="right"><select id="languageMenu"></select></td>
       </tr>
   </table>
 
@@ -61,13 +63,10 @@
                 <button id="trashButton" class="notext" title="...">
                 <img src='../../media/1x1.gif' class="trash icon21">
               </button>
-              <button id="linkButton" class="notext" title="...">
-                <img src='../../media/1x1.gif' class="link icon21">
+              <button id="likeButton" class="notext" title="...">
+                <img src='../../media/1x1.gif' class="like icon21">
               </button>
-              <button id="runButton" class="notext primary" title="...">
-                <img src='../../media/1x1.gif' class="run icon21">
-              </button>
-              <button id="saveButton" class="notext primary" title="...">
+              <button id="runButton" class="notext green" title="...">
                 <img src='../../media/1x1.gif' class="run icon21">
               </button>
             </td>
@@ -106,6 +105,15 @@
       <block type="gpio_value"></block>
       <block type="gpio_list"></block>
     </category>
+    <category name="%{BKY_CATANALOG}" colour="%{BKY_ANALOG_HUE}">
+      <block type="analog_read_int">
+          <value name="NAME"><shadow type="analog_list"></shadow></value>
+      </block>
+      <block type="analog_read_float">
+          <value name="NAME"><shadow type="analog_list"></shadow></value>
+      </block>
+      <block type="analog_list"></block>
+    </category>
     <category name="%{BKY_CATPWM}" colour="%{BKY_PWM_HUE}">
      <block type="pwm_period_ms">
           <value name="NAME"><shadow type="pwm_list"></shadow></value>
@@ -138,13 +146,23 @@
       <block type="spi_list"></block>
     </category>
     <category name="%{BKY_CATSERIAL}" colour="%{BKY_SERIAL_HUE}">
+
+
+        <block type="serial_write">
+         <value name="NAME"><shadow type="serial_list"></shadow></value>
+         <value name="VALUE"><shadow type="text"><field name="TEXT">abc</field>
+        </block>
+         <block type="serial_writebyte">
+         <value name="NAME"><shadow type="serial_list"></shadow></value>
+         <value name="VALUE"><shadow type="math_number"><field name="NUM">255</field>
         </block>
         <block type="serial_list"></block>
       </category>
     <category name="%{BKY_CATSOUND}" colour="%{BKY_SOUND_HUE}">
-      <block type="sound_music">
-        <value name="VALUE"><shadow type="logic_boolean"></shadow></value>
-      </block>
+      <block type="sound_play"></block>
+      <block type="sound_piano"></block>
+      <block type="sound_melody"></block>
+      <block type="sound_effect"></block>
     </category>
     <sep></sep>
     <category name="%{BKY_CATLOGIC}" colour="%{BKY_LOGIC_HUE}">

@@ -24,7 +24,7 @@
  */
 'use strict';
 
-goog.provide('Blockly.Python.pins');
+goog.provide('Blockly.Python.gpio');
 
 goog.require('Blockly.Python');
 

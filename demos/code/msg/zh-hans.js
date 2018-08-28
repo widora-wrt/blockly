@@ -1,8 +1,9 @@
 var MSG = {
   title: "极客虫 (v00.01.01)",
   blocks: "块",
-  linkTooltip: "保存模块并生成链接。",
-  runTooltip: "于工作区中运行块所定义的程式。",
+  likeTooltip: "保存为样本。",
+  likeinputtitle:"新样本名字:",
+  runTooltip: "于目标板运行工作区的程序。",
   badCode: "程序错误：\n%1",
   timeout: "超过最大执行行数。",
   trashTooltip: "放弃所有块。",
