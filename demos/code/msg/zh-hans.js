@@ -51,6 +51,7 @@ var MSG = {
   catSound_piano_title:"钢琴 %1 节拍 %2",
   catSound_melody_title:"旋律 %1",
   catSound_effect_title:"音效 %1",
+  catSound_dance_title:"舞蹈 %1",
   catAnalog_read_int_title:"读取 %1 模拟量",
   catAnalog_read_float_title:"读取 %1 电压",
 };

@@ -54,3 +54,9 @@ Blockly.Python['sound_play'] = function(block) {
     var code ="sound.play('"+dropdown_name+"')\n";
     return code;
   };
+  Blockly.Python['sound_dance'] = function(block) {
+    var dropdown_name = block.getFieldValue('NAME');
+    Blockly.Python.definitions_['import_sound'] = 'import sound';
+    var code ="sound.play('"+dropdown_name+"')\n";
+    return code;
+  };
