@@ -160,11 +160,16 @@ pre.content {
 }
 #languageMenu {
   vertical-align: top;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 4px;
+  margin-right: 15px;
   margin-top: 5px;
 }
-
+#TemplateMenu {
+  vertical-align: top;
+  margin-left: 6px;
+  margin-right: 4px;
+  margin-top: 5px;
+}
 /* Buttons */
 button {
   padding: 1px 10px;

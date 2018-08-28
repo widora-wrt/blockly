@@ -181,7 +181,6 @@ Code.changeLanguage = function() {
   }
 
   window.location = window.location.protocol + '//' +window.location.host + window.location.pathname + search;
-    
 };
 
 /**
@@ -369,6 +368,7 @@ Code.checkAllGeneratorFunctionsDefined = function(generator) {
  */
 Code.init = function() {
   Code.initLanguage();
+  Code.initTemplate();
   var rtl = Code.isRtl();
   var container = document.getElementById('content_area');
   var onresize = function(e) {
@@ -509,7 +509,13 @@ Code.initLanguage = function() {
   document.getElementById('runButton').title = MSG['runTooltip'];
   document.getElementById('trashButton').title = MSG['trashTooltip'];
 };
-
+Code.initTemplate = function() {
+  var objSelect = document.getElementById("TemplateMenu");
+  for(var i=1;i<5;i++){
+    var new_opt = new Option("Template"+i);      
+    objSelect.options.add(new_opt);
+    }
+  }
 /**
  * Execute the user's code.
  * Just a quick and dirty eval.  Catch infinite loops.

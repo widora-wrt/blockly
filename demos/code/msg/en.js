@@ -1,5 +1,5 @@
 var MSG = {
-  title: "GIDE",
+  title: "GIDE (v00.01.01)",
   blocks: "Blocks",
   linkTooltip: "Save and link to blocks.",
   runTooltip: "Run the program defined by the blocks in the workspace.",
@@ -41,10 +41,13 @@ var MSG = {
   catPwm_enable_title:"set pwm %1 %2 ",
   catPwm_value_enable:"ENABLE",
   catPwm_value_disenable:"DISENABLE",
-  catSound_music_title:"play %1 while stop %2",
+  catSound_play_title:"play %1",
   catI2c_address_title:"create %1 address %2",
   catI2c_readreg_title:"read %1 reg %2",
   catSpi_readwrite_title:"read %1 write %2",
   catSerial_write_title:"send %1 context %2",
-  catSerial_write_byte_title:"send %1 array %2",
+  catSerial_write_array_title:"send %1 array %2",
+  catSound_piano_title:"piano %1 beat %2",
+  catSound_melody_title:"melody %1",
+  catSound_effect_title:"effect %1",
 };

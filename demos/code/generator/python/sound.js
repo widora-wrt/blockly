@@ -29,10 +29,28 @@ goog.provide('Blockly.Python.sound');
 goog.require('Blockly.Python');
 
 
-Blockly.Python['sound_music'] = function(block) {
+Blockly.Python['sound_play'] = function(block) {
     var dropdown_name = block.getFieldValue('NAME');
-    var value_name = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC);
     Blockly.Python.definitions_['import_sound'] = 'import sound';
-    var code ="sound.play('"+dropdown_name+"',"+value_name+")\n";
+    var code ="sound.play('"+dropdown_name+"')\n";
+    return code;
+  };
+  Blockly.Python['sound_piano'] = function(block) {
+    var dropdown_name = block.getFieldValue('NAME');
+    var dropdown_value = block.getFieldValue('VALUE');
+    Blockly.Python.definitions_['import_sound'] = 'import sound';
+    var code ="sound.play('"+dropdown_name+"',"+dropdown_value+")\n";
+    return code;
+  };
+  Blockly.Python['sound_melody'] = function(block) {
+    var dropdown_name = block.getFieldValue('NAME');
+    Blockly.Python.definitions_['import_sound'] = 'import sound';
+    var code ="sound.play('"+dropdown_name+"')\n";
+    return code;
+  };
+  Blockly.Python['sound_effect'] = function(block) {
+    var dropdown_name = block.getFieldValue('NAME');
+    Blockly.Python.definitions_['import_sound'] = 'import sound';
+    var code ="sound.play('"+dropdown_name+"')\n";
     return code;
   };

@@ -1,5 +1,5 @@
 var MSG = {
-  title: "极客虫",
+  title: "极客虫 (v00.01.01)",
   blocks: "块",
   linkTooltip: "保存模块并生成链接。",
   runTooltip: "于工作区中运行块所定义的程式。",
@@ -41,10 +41,13 @@ var MSG = {
   catPwm_enable_title:"设置 %1 %2 ",
   catPwm_value_enable:"允许",
   catPwm_value_disenable:"禁止",
-  catSound_music_title:"播放 %1 直到停止 %2",
+  catSound_play_title:"播放 %1",
   catI2c_address_title:"创建设备 %1 地址 %2",
   catI2c_readreg_title:"读取 %1 寄存器 %2",
   catSpi_readwrite_title:"读 %1 写 %2",
   catSerial_write_title:"发送 %1 内容 %2",
   catSerial_write_array_title:"发送 %1 数组 %2",
+  catSound_piano_title:"钢琴 %1 节拍 %2",
+  catSound_melody_title:"旋律 %1",
+  catSound_effect_title:"音效 %1",
 };

@@ -42,20 +42,19 @@ Blockly.Msg.SOUND_HUE = '99';
  */
 Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     {
-        "type": "sound_music",
-        "message0": "%{BKY_CATSOUND_MUSIC_TITLE}",
+        "type": "sound_play",
+        "message0": "%{BKY_CATSOUND_PLAY_TITLE}",
         "args0": [
           {
             "type": "field_dropdown",
             "name": "NAME",
             "options": [["music1","music1.mp3"],
                         ["music2","music2.mp3"],
-                        ["music3","music3.mp3"]]
-          },
-          {
-            "type": "input_value",
-            "name": "VALUE",
-            "check": "Boolean"
+                        ["music3","music3.mp3"],
+                        ["music4","music4.mp3"],
+                        ["music5","music5.mp3"],
+                        ["music6","music6.mp3"]
+                       ]
           }
         ],
         "inputsInline": true,
@@ -67,26 +66,28 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
       },
       {
         "type": "sound_piano",
-        "message0": "钢琴 %1 调 %2 节拍",
+        "message0": "%{BKY_CATSOUND_PIANO_TITLE}",
         "args0": [
           {
             "type": "field_dropdown",
             "name": "NAME",
-            "options": [["C1","0"],
-                        ["C2","1"],
-                        ["C3","2"],
-                        ["C4","3"],
-                        ["C5","4"],
+            "options": [["do","hC1.mp3"],
+                        ["re","hD2.mp3"],
+                        ["mi","hE3.mp3"],
+                        ["fa","hF4.mp3"],
+                        ["sol","hG5.mp3"],
+                        ["la","hA6.mp3"],
+                        ["si","hB7.mp3"],
                        ]
           },
           {
             "type": "field_dropdown",
             "name": "VALUE",
-            "options":  [["1/4","0"],
-                         ["2/4","1"],
-                         ["3/4","2"],
-                         ["4/4","3"],
-                         ["5/4","4"],
+            "options":  [["1/4","1"],
+                         ["2/4","2"],
+                         ["3/4","3"],
+                         ["4/4","4"],
+                         ["5/4","5"],
            ]
           }
         ],
@@ -98,26 +99,19 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
         "helpUrl": ""
       },
       {
-        "type": "sound_marimba",
-        "message0": "马琳巴 %1",
+        "type": "sound_melody",
+        "message0": "%{BKY_CATSOUND_MELODY_TITLE}",
         "args0": [
           {
             "type": "field_dropdown",
             "name": "NAME",
-            "options": [
-              [
-                "马林巴1",
-                "1"
-              ],
-              [
-                "马林巴2",
-                "2"
-              ],
-              [
-                "马林巴3",
-                "3"
-              ]
-            ]
+            "options": [["melody1","melody1.mp3"],
+                        ["melody2","melody2.mp3"],
+                        ["melody3","melody3.mp3"],
+                        ["melody4","melody4.mp3"],
+                        ["melody5","melody5.mp3"],
+                        ["melody6","melody6.mp3"],
+                       ]
           }
         ],
         "inputsInline": true,
@@ -129,25 +123,18 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
       },
       {
         "type": "sound_effect",
-        "message0": "音效 %1",
+        "message0": "%{BKY_CATSOUND_EFFECT_TITLE}",
         "args0": [
           {
             "type": "field_dropdown",
             "name": "NAME",
-            "options": [
-              [
-                "鼓掌",
-                "1"
-              ],
-              [
-                "拜拜",
-                "2"
-              ],
-              [
-                "失败",
-                "3"
-              ]
-            ]
+            "options": [["effect1","effect1.mp3"],
+                        ["effect2","effect2.mp3"],
+                        ["effect3","effect3.mp3"],
+                        ["effect4","effect4.mp3"],
+                        ["effect5","effect5.mp3"],
+                        ["effect6","effect6.mp3"],
+                       ]
           }
         ],
         "inputsInline": true,

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="google" value="notranslate">
-  <title>Blockly Demo:</title>
+  <title>Demo:</title>
   <link rel="stylesheet" href="style.css">
   <script src="/storage.js"></script>
   <script src="../../blockly_compressed.js"></script>
@@ -33,8 +33,8 @@
     <tr >
         <td width="30%" id="title" class="leftSide" ></td>
         <td width="30%" class="centerSide"  align="center"><span id="copyright" style="font-family:arial;font-size:12px;color:#999;">copyright</span></td>
-        <td width="40%" class="rightSide"align="right"><select id="languageMenu" class="rightSide" ></select>
-        </td>
+        <td width="40%" class="rightSide"align="right"><select id="TemplateMenu"></select></td>
+        <td width="40%" class="rightSide"align="right"><select id="languageMenu"></select></td>
       </tr>
   </table>
 
@@ -135,6 +135,8 @@
       <block type="spi_list"></block>
     </category>
     <category name="%{BKY_CATSERIAL}" colour="%{BKY_SERIAL_HUE}">
+
+
         <block type="serial_write">
          <value name="NAME"><shadow type="serial_list"></shadow></value>
          <value name="VALUE"><shadow type="text"><field name="TEXT">abc</field>
@@ -146,11 +148,9 @@
         <block type="serial_list"></block>
       </category>
     <category name="%{BKY_CATSOUND}" colour="%{BKY_SOUND_HUE}">
-      <block type="sound_music">
-        <value name="VALUE"><shadow type="logic_boolean"></shadow></value>
-      </block>
+      <block type="sound_play"></block>
       <block type="sound_piano"></block>
-      <block type="sound_marimba"></block>
+      <block type="sound_melody"></block>
       <block type="sound_effect"></block>
     </category>
     <sep></sep>
