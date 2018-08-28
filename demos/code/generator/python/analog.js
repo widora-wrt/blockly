@@ -28,3 +28,38 @@ goog.provide('Blockly.Python.analog');
 
 goog.require('Blockly.Python');
 
+Blockly.Python['analog_list'] = function(block) {
+    var dropdown_name = block.getFieldValue('NAME');
+    // TODO: Assemble Python into code variable.
+    var code = dropdown_name;
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_NONE];
+  };
+Blockly.Python['analog_read_int'] = function(block) {
+    var dropdown_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_NONE);
+      try  {
+       dropdown_name=eval(dropdown_name);
+      }catch(exception) {
+        dropdown_name="0";
+      }
+    var code = "analog"+dropdown_name+".read()";
+    var def ="analog"+dropdown_name+"=mraa.Aio("+dropdown_name+")";
+    // TODO: Change ORDER_NONE to the correct strength.
+    Blockly.Python.definitions_[def] = def;
+    Blockly.Python.definitions_['import_mraa'] = 'import mraa';
+    return [code, Blockly.Python.ORDER_NONE];
+  };
+  Blockly.Python['analog_read_float'] = function(block) {
+    var dropdown_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_NONE);
+      try  {
+       dropdown_name=eval(dropdown_name);
+      }catch(exception) {
+        dropdown_name="0";
+      }
+    var code = "analog"+dropdown_name+".readFloat()";
+    var def ="analog"+dropdown_name+"=mraa.Aio("+dropdown_name+")";
+    // TODO: Change ORDER_NONE to the correct strength.
+    Blockly.Python.definitions_[def] = def;
+    Blockly.Python.definitions_['import_mraa'] = 'import mraa';
+    return [code, Blockly.Python.ORDER_NONE];
+  };

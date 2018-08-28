@@ -11,7 +11,6 @@ var MSG = {
   catAnalog:"Analog input",
   catI2c:"I2c",
   catSpi:"Spi",
-  catIic:"IIC",
   catSerial:"Serial",
   catSound:"Sound",
   catLogic: "Logic",
