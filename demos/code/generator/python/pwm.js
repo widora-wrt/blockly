@@ -55,7 +55,7 @@ Blockly.Python['pwm_period_ms'] = function(block) {
   Blockly.Python.definitions_['import_mraa'] = 'import mraa';
   var def="pwm"+dropdown_name+"=mraa.Pwm("+dropdown_name+")";
   Blockly.Python.definitions_[def] =def;
-  var code ="pwm"+dropdown_name+".pwm_period_ms("+dropdown_value+")\n";
+  var code ="pwm"+dropdown_name+".period_ms("+dropdown_value+")\n";
   return code;
 };
 Blockly.Python['pwm_cycle'] = function(block) {
@@ -70,7 +70,7 @@ Blockly.Python['pwm_cycle'] = function(block) {
   Blockly.Python.definitions_['import_mraa'] = 'import mraa';
   var def="pwm"+dropdown_name+"=mraa.Pwm("+dropdown_name+")";
   Blockly.Python.definitions_[def] =def;
-  var code ="pwm"+dropdown_name+".cycle("+dropdown_value+")\n";
+  var code ="pwm"+dropdown_name+".write("+dropdown_value+")\n";
   return code;
 };
 Blockly.Python['pwm_value'] = function(block) {

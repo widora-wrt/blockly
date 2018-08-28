@@ -37,7 +37,7 @@ var MSG = {
   catGpio_mode_in:"IN",
   catGPio_interrupt_title:"set interrupt %1  %2",
   catPwm_period_ms_title:"set pwm %1 period %2 ms",
-  catPwm_cycle_title:"set pwm %1 cycle %2 /1",
+  catPwm_cycle_title:"write pwm %1 cycle %2 /1",
   catPwm_enable_title:"set pwm %1 %2 ",
   catPwm_value_enable:"ENABLE",
   catPwm_value_disenable:"DISENABLE",

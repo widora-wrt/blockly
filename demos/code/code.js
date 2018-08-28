@@ -523,7 +523,6 @@ Code.runJS = function() {
     }
   };
   var code= Blockly.Python.workspaceToCode(Code.workspace); 
-  alert(code);
   Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
   try {
     BlocklyStorage.makePost("/cgi-bin/test.lua",code);

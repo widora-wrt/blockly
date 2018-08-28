@@ -48,9 +48,9 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
           {
             "type": "field_dropdown",
             "name": "NAME",
-            "options": [["music0","music0.mp3"],
-                        ["music1","music1.mp3"],
-                        ["music2","music2.mp3"]]
+            "options": [["music1","music1.mp3"],
+                        ["music2","music2.mp3"],
+                        ["music3","music3.mp3"]]
           },
           {
             "type": "input_value",
