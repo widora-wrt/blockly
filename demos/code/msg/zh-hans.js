@@ -8,6 +8,7 @@ var MSG = {
   trashTooltip: "放弃所有块。",
   catGpio:"端口",
   catPwm:"脉冲",
+  catAnalog:"模拟输入",
   catI2c:"总线",
   catSpi:"通信",
   catIic:"IIC",
@@ -50,4 +51,6 @@ var MSG = {
   catSound_piano_title:"钢琴 %1 节拍 %2",
   catSound_melody_title:"旋律 %1",
   catSound_effect_title:"音效 %1",
+  catAnalog_read_int_title:"读取 %1 模拟量",
+  catAnalog_read_float_title:"读取 %1 电压",
 };

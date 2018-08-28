@@ -8,6 +8,7 @@ var MSG = {
   trashTooltip: "Discard all blocks.",
   catGpio:"Gpio",
   catPwm:"Pwm",
+  catAnalog:"Analog input",
   catI2c:"I2c",
   catSpi:"Spi",
   catIic:"IIC",
@@ -50,4 +51,6 @@ var MSG = {
   catSound_piano_title:"piano %1 beat %2",
   catSound_melody_title:"melody %1",
   catSound_effect_title:"effect %1",
+  catAnalog_read_int_title:"read %1 analog",
+  catAnalog_read_float_title:"read %1 voltage",
 };

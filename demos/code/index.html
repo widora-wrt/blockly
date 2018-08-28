@@ -20,12 +20,14 @@
   <script src="blocks/spi.js"></script>
   <script src="blocks/sound.js"></script>
   <script src="blocks/serial.js"></script>
+  <script src="blocks/analog.js"></script>
   <script src="generator/python/gpio.js"></script>
   <script src="generator/python/pwm.js"></script>
   <script src="generator/python/i2c.js"></script>
   <script src="generator/python/spi.js"></script>
   <script src="generator/python/sound.js"></script>
   <script src="generator/python/serial.js"></script>
+  <script src="generator/python/analog.js"></script>
   <script src="code.js"></script>
 </head>
 <body>
@@ -102,6 +104,15 @@
       </block>
       <block type="gpio_value"></block>
       <block type="gpio_list"></block>
+    </category>
+    <category name="%{BKY_CATANALOG}" colour="%{BKY_ANALOG_HUE}">
+      <block type="analog_read_int">
+          <value name="NAME"><shadow type="analog_list"></shadow></value>
+      </block>
+      <block type="analog_read_float">
+          <value name="NAME"><shadow type="analog_list"></shadow></value>
+      </block>
+      <block type="analog_list"></block>
     </category>
     <category name="%{BKY_CATPWM}" colour="%{BKY_PWM_HUE}">
      <block type="pwm_period_ms">
