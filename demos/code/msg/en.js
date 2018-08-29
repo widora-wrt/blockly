@@ -1,6 +1,9 @@
 var MSG = {
   title: "GIDE (v00.01.01)",
   blocks: "Blocks",
+  debug: "Debug",
+  code: "Code",
+  copyright:"Copyright © 300 Edu Tech  www.trtos.com",
   likeTooltip: "Save as a sample.",
   likeinputtitle:"New template name:",
   runTooltip: "Program to run the workspace on the target board.",

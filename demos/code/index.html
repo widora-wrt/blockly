@@ -36,7 +36,7 @@
   <table  width="100%" height="30px" align="center" class="titleSide">
     <tr >
         <td width="30%" id="title" class="leftSide" ></td>
-        <td width="30%" class="centerSide"  align="center"><span id="copyright" style="font-family:arial;font-size:12px;color:#999;">copyright</span></td>
+        <td width="50%" class="centerSide"  align="center"><span id="copyright" style="font-family:arial;font-size:12px;color:#999;">copyright</span></td>
         <td width="40%" class="rightSide"align="right"><select id="TemplateMenu"></select></td>
         <td width="40%" class="rightSide"align="right"><select id="languageMenu"></select></td>
       </tr>
@@ -51,6 +51,8 @@
             <td class="tabmin">&nbsp;</td>
             <td id="tab_python" class="taboff">Python</td>
             <td class="tabmin">&nbsp;</td>
+            <td id="tab_debug" class="taboff">Debug</td>
+            <td class="tabmin">&nbsp;</td>
             <td id="tab_javascript" class="taboff">JavaScript</td>
             <td class="tabmin">&nbsp;</td>
             <td id="tab_php" class="taboff">PHP</td>
@@ -60,7 +62,6 @@
             <td id="tab_dart" class="taboff">Dart</td>
             <td class="tabmin">&nbsp;</td>
             <td id="tab_xml" class="taboff">XML</td>
-  
             <td class="tabmax">        
                 <button id="trashButton" class="notext" title="...">
                 <img src='../../media/1x1.gif' class="trash icon21">
@@ -77,18 +78,18 @@
       </td>
     </tr>
     <tr>
-      <td height="99%" colspan=2 id="content_area">
+      <td height="100%" colspan=2 id="content_area">
       </td>
     </tr>
   </table>
   <div id="content_blocks" class="content"></div>
   <pre id="content_python" class="content"></pre>
+  <pre id="content_debug" class="content"></pre>
   <pre id="content_javascript" class="content"></pre>
   <pre id="content_php" class="content"></pre>
   <pre id="content_lua" class="content"></pre>
   <pre id="content_dart" class="content"></pre>
   <textarea id="content_xml" class="content" wrap="off"></textarea>
-
   <xml id="toolbox" style="display: none">
   <category name="%{BKY_CATGPIO}" colour="%{BKY_GPIO_HUE}">
       <block type="gpio_write">

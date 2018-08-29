@@ -1,6 +1,9 @@
 var MSG = {
   title: "极客虫 (v00.01.01)",
   blocks: "块",
+  debug: "调试",
+  code: "代码",
+  copyright:"Copyright © 叁百教育科技  www.trtos.com",
   likeTooltip: "保存为样本。",
   likeinputtitle:"新样本名字:",
   runTooltip: "于目标板运行工作区的程序。",

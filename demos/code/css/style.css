@@ -92,6 +92,7 @@ h1 {
 #tabRow>td {
   border: 1px solid #ccc;
   border-bottom: none;
+  white-space:nowrap;
 }
 td.tabon {
   border-bottom-color: #ddd !important;

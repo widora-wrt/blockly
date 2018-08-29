@@ -160,6 +160,7 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
       }
     ],
     "previousStatement": null,
+    "inputsInline": true,
     "nextStatement": null,
     "colour": "%{BKY_GPIO_HUE}",
     "tooltip":  "",

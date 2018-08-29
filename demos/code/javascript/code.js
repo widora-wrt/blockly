@@ -240,7 +240,7 @@ Code.LANG = Code.getLang();
  * List of tab names.
  * @private
  */
-Code.TABS_ = ['blocks', 'javascript', 'php', 'python', 'dart', 'lua', 'xml'];
+Code.TABS_ = ['blocks', 'javascript', 'php', 'python', 'dart','debug', 'lua', 'xml'];
 
 Code.selected = 'blocks';
 
@@ -504,7 +504,9 @@ Code.initLanguage = function() {
   document.title += ' ' + MSG['title'];
   document.getElementById('title').textContent = MSG['title'];
   document.getElementById('tab_blocks').textContent = MSG['blocks'];
-
+  document.getElementById('tab_debug').textContent = MSG['debug'];
+  document.getElementById('tab_python').textContent = MSG['code'];
+  document.getElementById('copyright').textContent = MSG['copyright'];
  // document.getElementById('linkButton').title = MSG['linkTooltip'];
   document.getElementById('runButton').title = MSG['runTooltip'];
   document.getElementById('trashButton').title = MSG['trashTooltip'];
@@ -536,10 +538,19 @@ Code.runJS = function() {
   } catch (e) {
     alert(MSG['badCode'].replace('%1', e));
   }
+  Code.tabClick("debug");
+  var content = document.getElementById('content_debug');
+  for(var i=0;i<100;i++)
+  {
+    content.textContent += 'dddd\n';
+  }
 };
 Code.likeJS = function() {
-  var age=prompt(MSG['likeinputtitle']); 
-  alert(age);
+  var name=prompt(MSG['likeinputtitle']); 
+  var objSelect = document.getElementById("TemplateMenu");   
+  var new_opt = new Option(name+".t");  
+  objSelect.options.add(new_opt);
+  
 };
 /**
  * Discard all blocks from the workspace.
