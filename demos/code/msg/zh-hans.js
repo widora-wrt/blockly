@@ -17,6 +17,7 @@ var MSG = {
   catSpi:"SPI通信",
   catSerial:"串口",
   catSound:"声音",
+  catEthernet:"以太网",
   catLogic: "逻辑",
   catLoops: "循环",
   catMath: "数学",

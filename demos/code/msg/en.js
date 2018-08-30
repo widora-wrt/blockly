@@ -17,6 +17,7 @@ var MSG = {
   catSpi:"Spi",
   catSerial:"Serial",
   catSound:"Sound",
+  catEthernet:"Ethernet",
   catLogic: "Logic",
   catLoops: "Loops",
   catMath: "Math",
