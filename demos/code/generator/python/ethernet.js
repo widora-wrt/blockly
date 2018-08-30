@@ -29,11 +29,9 @@ goog.provide('Blockly.Python.ethernet');
 goog.require('Blockly.Python');
 
 Blockly.Python['ethernet_ipaddress'] = function(block) {
-    var text_name = block.getFieldValue('NAME');
-    var number_port = block.getFieldValue('PORT');
-    // TODO: Assemble Python into code variable.
-    var code = "('"+text_name+"',"+number_port+")";
-    // TODO: Change ORDER_NONE to the correct strength.
+    var text_name =  Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
+    var number_port =  Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC);
+    var code = text_name+","+number_port;
     return [code, Blockly.Python.ORDER_NONE];
   };
   Blockly.Python['ethernet_connect'] = function(block) {
@@ -41,7 +39,27 @@ Blockly.Python['ethernet_ipaddress'] = function(block) {
     var value_name = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
     var value = dropdown_name.replace(/[^0-9]/ig,""); 
-    var code ="connect_"+value+".connect("+dropdown_name+value_name+")";
-    // TODO: Change ORDER_NONE to the correct strength.
+    var code ="connect_"+value+".connect("+dropdown_name+value_name+")\n";
+    var def = "connect_"+value+"=socket.socket(socket.AF_INET, socket.SOCK_STREAM)";
+    Blockly.Python.definitions_['import_socket'] = 'import socket';
+    Blockly.Python.definitions_[def] = def;
+    return code;
+  };
+  Blockly.Python['ethernet_send'] = function(block) {
+    var dropdown_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
+    var value_name = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var value = dropdown_name.replace(/[^0-9]/ig,""); 
+    var code ="connect_"+value+".sendall(str("+value_name+"))\n";
+    Blockly.Python.definitions_['import_socket'] = 'import socket';
+    return code;
+  };
+  Blockly.Python['ethernet_recv'] = function(block) {
+    var dropdown_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
+    var value_name = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var value = dropdown_name.replace(/[^0-9]/ig,""); 
+    var code ="connect_"+value+".recv("+value_name+")\n";
+    Blockly.Python.definitions_['import_socket'] = 'import socket';
     return [code, Blockly.Python.ORDER_NONE];
   };

@@ -240,7 +240,7 @@ Code.LANG = Code.getLang();
  * List of tab names.
  * @private
  */
-Code.TABS_ = ['blocks', 'javascript', 'php', 'python', 'dart','debug', 'lua', 'xml'];
+Code.TABS_ = ['blocks', 'javascript', 'php', 'python','debug', 'lua', 'xml'];
 
 Code.selected = 'blocks';
 
@@ -311,8 +311,6 @@ Code.renderContent = function() {
     Code.attemptCodeGeneration(Blockly.Python, 'py');
   } else if (content.id == 'content_php') {
     Code.attemptCodeGeneration(Blockly.PHP, 'php');
-  } else if (content.id == 'content_dart') {
-    Code.attemptCodeGeneration(Blockly.Dart, 'dart');
   } else if (content.id == 'content_lua') {
     Code.attemptCodeGeneration(Blockly.Lua, 'lua');
   }
@@ -531,7 +529,7 @@ Code.runJS = function() {
       throw MSG['timeout'];
     }
   };
-  var code= Blockly.Python.workspaceToCode(Code.workspace); 
+  var code="# -*- coding: utf-8 -*-\n"+Blockly.Python.workspaceToCode(Code.workspace); 
   Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
   try {
     BlocklyStorage.makePost("/cgi-bin/test.lua",code);
@@ -540,10 +538,7 @@ Code.runJS = function() {
   }
   Code.tabClick("debug");
   var content = document.getElementById('content_debug');
-  for(var i=0;i<100;i++)
-  {
-    content.textContent += 'dddd\n';
-  }
+  content.textContent +=code;
 };
 Code.likeJS = function() {
   var name=prompt(MSG['likeinputtitle']); 

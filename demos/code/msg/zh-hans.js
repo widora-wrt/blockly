@@ -18,6 +18,7 @@ var MSG = {
   catSerial:"串口",
   catSound:"声音",
   catEthernet:"以太网",
+  catPrint:"打印",
   catLogic: "逻辑",
   catLoops: "循环",
   catMath: "数学",
@@ -58,4 +59,10 @@ var MSG = {
   catSound_dance_title:"舞蹈 %1",
   catAnalog_read_int_title:"读取 %1 模拟量",
   catAnalog_read_float_title:"读取 %1 电压",
+  catEthernet_ipaddress_title: "地址 %1 端口 %2",
+  catEthernet_connect_title: "连接服务器 %1",
+  catEthernet_send_title: "发送 %1 内容 %2",
+  catEthernet_revice_title: "接收 %1 长度 %2",
+  catPrint_to_title: "打印 %1 到 %2",
+  catPrint_console_title: "控制台",
 };

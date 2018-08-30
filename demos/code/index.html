@@ -24,6 +24,7 @@
   <script src="blocks/serial.js"></script>
   <script src="blocks/analog.js"></script>
   <script src="blocks/ethernet.js"></script>
+  <script src="blocks/print.js"></script>
   <script src="generator/python/gpio.js"></script>
   <script src="generator/python/pwm.js"></script>
   <script src="generator/python/i2c.js"></script>
@@ -32,6 +33,7 @@
   <script src="generator/python/serial.js"></script>
   <script src="generator/python/analog.js"></script>
   <script src="generator/python/ethernet.js"></script>
+  <script src="generator/python/print.js"></script>
   <script src="javascript/code.js"></script>
 </head>
 <body>
@@ -61,8 +63,6 @@
             <td class="tabmin">&nbsp;</td>
             <td id="tab_lua" class="taboff">Lua</td>
             <td class="tabmin">&nbsp;</td>
-            <td id="tab_dart" class="taboff">Dart</td>
-            <td class="tabmin">&nbsp;</td>
             <td id="tab_xml" class="taboff">XML</td>
             <td class="tabmax">        
                 <button id="trashButton" class="notext" title="...">
@@ -90,10 +90,9 @@
   <pre id="content_javascript" class="content"></pre>
   <pre id="content_php" class="content"></pre>
   <pre id="content_lua" class="content"></pre>
-  <pre id="content_dart" class="content"></pre>
   <textarea id="content_xml" class="content" wrap="off"></textarea>
   <xml id="toolbox" style="display: none">
-  <category name="%{BKY_CATGPIO}" colour="%{BKY_GPIO_HUE}">
+  <category name="%{BKY_CATGPIO}" colour="%{BKY_GPIO_HUE}" icon='css/icon.png'>
       <block type="gpio_write">
           <value name="NAME"><shadow type="gpio_list"></shadow></value>
           <value name="VALUE"><shadow type="gpio_value"></shadow></value>
@@ -153,20 +152,30 @@
     <category name="%{BKY_CATSERIAL}" colour="%{BKY_SERIAL_HUE}">
         <block type="serial_write">
          <value name="NAME"><shadow type="serial_list"></shadow></value>
-         <value name="VALUE"><shadow type="text"><field name="TEXT">abc</field>
+         <value name="VALUE"><shadow type="text"><field name="TEXT">abc</field></value>
         </block>
          <block type="serial_writebyte">
          <value name="NAME"><shadow type="serial_list"></shadow></value>
-         <value name="VALUE"><shadow type="math_number"><field name="NUM">255</field>
+         <value name="VALUE"><shadow type="math_number"><field name="NUM">255</field></value>
         </block>
         <block type="serial_list"></block>
       </category>
     <category name="%{BKY_CATETHERNET}" colour="%{BKY_ETHERNET_HUE}">
-      <block type="ethernet_ipaddress"></block>
-      <block type="ethernet_connect"></block>
-      <block type="sound_melody"></block>
-      <block type="sound_effect"></block>
-      <block type="sound_dance"></block>
+      <block type="ethernet_ipaddress">
+         <value name="NAME"><shadow type="text"><field name="TEXT">192.168.1.1</field></value>
+         <value name="VALUE"><shadow type="math_number"><field name="NUM">8080</field></value>
+      </block>
+      <block type="ethernet_connect">
+         <value name="NAME"><shadow type="ethernet_ipaddress"></shadow></value>
+      </block>
+      <block type="ethernet_send">
+         <value name="NAME"><shadow type="ethernet_ipaddress"></shadow></value>
+         <value name="VALUE"><shadow type="text"><field name="TEXT">abc</field>
+      </block>
+      <block type="ethernet_recv">
+         <value name="NAME"><shadow type="ethernet_ipaddress"></shadow></value>
+         <value name="VALUE"><shadow type="math_number"><field name="NUM">1024</field></value>
+      </block>
     </category>
     <category name="%{BKY_CATSOUND}" colour="%{BKY_SOUND_HUE}">
       <block type="sound_play"></block>
@@ -175,6 +184,16 @@
       <block type="sound_effect"></block>
       <block type="sound_dance"></block>
     </category>
+     <category name="%{BKY_CATPRINT}" colour="%{BKY_PRINT_HUE}">
+      <block type="print_to">
+         <value name="NAME"><shadow type="text"><field name="TEXT">abc</field>
+      </block>
+     <block type="print_console"></block>
+      <block type="ethernet_ipaddress">
+         <value name="NAME"><shadow type="text"><field name="TEXT">192.168.1.1</field></value>
+         <value name="VALUE"><shadow type="math_number"><field name="NUM">8080</field></value>
+      </block>
+     </category>
     <sep></sep>
     <category name="%{BKY_CATLOGIC}" colour="%{BKY_LOGIC_HUE}">
       <block type="controls_if"></block>

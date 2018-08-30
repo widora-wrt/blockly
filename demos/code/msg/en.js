@@ -18,6 +18,7 @@ var MSG = {
   catSerial:"Serial",
   catSound:"Sound",
   catEthernet:"Ethernet",
+  catPrint:"Print",
   catLogic: "Logic",
   catLoops: "Loops",
   catMath: "Math",
@@ -58,4 +59,11 @@ var MSG = {
   catSound_dance_title:"dance %1",
   catAnalog_read_int_title:"read %1 analog",
   catAnalog_read_float_title:"read %1 voltage",
+  catEthernet_ipaddress_title: "ipaddress %1 port %2",
+  catEthernet_connect_title: "connect server %1",
+  catEthernet_send_title: "send %1 context %2",
+  catEthernet_revice_title: "revice %1 length %2",
+  catPrint_to_title: "print %1 to %2",
+  catPrint_console_title: "Console",
+
 };
