@@ -34,7 +34,7 @@ Blockly.Python['analog_list'] = function(block) {
     var code = dropdown_name;
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.Python.ORDER_NONE];
-  };
+};
 Blockly.Python['analog_read_int'] = function(block) {
     var dropdown_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_NONE);
       try  {
