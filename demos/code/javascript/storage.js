@@ -129,6 +129,7 @@ BlocklyStorage.makeRequest_ = function(url, name, content, workspace) {
   BlocklyStorage.httpRequest_.workspace = workspace;
 };
 BlocklyStorage.httpPost_ = null;
+
 BlocklyStorage.handlePost_ = function() {
   if (BlocklyStorage.httpPost_.readyState == 4) {
     if (BlocklyStorage.httpPost_.status != 200) {
@@ -138,7 +139,7 @@ BlocklyStorage.handlePost_ = function() {
       var data = BlocklyStorage.httpPost_.responseText.trim();
       //alert("zzz"+data);
       var content = document.getElementById('content_debug');
-      content.textContent +=data;
+      content.textContent +=data+"r\r\n";
     }
     BlocklyStorage.httpPost_ = null;
   }
