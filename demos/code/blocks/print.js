@@ -53,7 +53,7 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
       {
         "type": "input_value",
         "name": "VALUE",
-        "check": ["Ipaddress", "Console"],
+        "check": ["Ethernet", "Console"],
       }
     ],
     "inputsInline": true,
@@ -65,9 +65,25 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
   },
   {
     "type": "print_console",
-    "message0":  "%{BKY_CATPRINT_CONSOLE_TITLE}",
-    "output":"Console",
+    "message0": "%{BKY_CATPRINT_CONSOLE_TITLE}",
+    "output": null,
     "colour": "%{BKY_PRINT_HUE}",
+    "tooltip": "",
+    "helpUrl": ""
+  },
+  {
+  "type": "print_ethernet",
+    "message0": "网络 %1",
+    "args0": [
+      {
+        "type": "input_value",
+        "name": "NAME",
+        "check": "Ipaddress",
+      }
+    ],
+    "inputsInline": true,
+    "output": "Ethernet",
+    "colour": "%{BKY_ETHERNET_HUE}",
     "tooltip": "",
     "helpUrl": ""
   },

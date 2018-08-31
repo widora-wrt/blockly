@@ -29,16 +29,21 @@ goog.provide('Blockly.Python.print');
 goog.require('Blockly.Python');
 
 Blockly.Python['print_console'] = function(block) {
-    // TODO: Assemble Python into code variable.
-    var code = "main";
-    // TODO: Change ORDER_NONE to the correct strength.
-    return code;
-  };
+  // TODO: Assemble Python into code variable.
+  var code = 'print';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_NONE];
+};
+Blockly.Python['print_ethernet'] = function(block) {
+  var text_name =  Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
+  var code = text_name;
+  var value ="connect_"+code.replace(/[^0-9]/ig,"")+".sendall"; 
+  Blockly.Python.definitions_['import_socket'] = 'import socket';
+  return [value, Blockly.Python.ORDER_NONE];
+};
   Blockly.Python['print_to'] = function(block) {
-    var dropdown_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
-    var value_name = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC);
-    var code = dropdown_name+value_name;
-    alert(value_name);
-    // TODO: Change ORDER_NONE to the correct strength.
+    var dropdown_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_NONE);
+    var value_name =Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_NONE);
+    var code =value_name+ "("+ dropdown_name +")\n";
     return code;
   };

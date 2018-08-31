@@ -539,6 +539,7 @@ Code.runJS = function() {
   Code.tabClick("debug");
   var content = document.getElementById('content_debug');
   //content.textContent +=code;
+
 };
 Code.likeJS = function() {
   var name=prompt(MSG['likeinputtitle']); 
