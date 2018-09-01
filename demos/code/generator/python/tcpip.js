@@ -24,17 +24,17 @@
  */
 'use strict';
 
-goog.provide('Blockly.Python.ethernet');
+goog.provide('Blockly.Python.tcpip');
 
 goog.require('Blockly.Python');
 
-Blockly.Python['ethernet_ipaddress'] = function(block) {
+Blockly.Python['tcpip_ipaddress'] = function(block) {
     var text_name =  Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
     var number_port =  Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC);
     var code = text_name+","+number_port;
     return [code, Blockly.Python.ORDER_NONE];
   };
-  Blockly.Python['ethernet_connect'] = function(block) {
+  Blockly.Python['tcpip_connect'] = function(block) {
     var dropdown_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
     var value_name = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
@@ -45,7 +45,7 @@ Blockly.Python['ethernet_ipaddress'] = function(block) {
     Blockly.Python.definitions_[def] = def;
     return code;
   };
-  Blockly.Python['ethernet_send'] = function(block) {
+  Blockly.Python['tcpip_send'] = function(block) {
     var dropdown_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
     var value_name = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
@@ -54,7 +54,7 @@ Blockly.Python['ethernet_ipaddress'] = function(block) {
     Blockly.Python.definitions_['import_socket'] = 'import socket';
     return code;
   };
-  Blockly.Python['ethernet_recv'] = function(block) {
+  Blockly.Python['tcpip_recv'] = function(block) {
     var dropdown_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
     var value_name = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.

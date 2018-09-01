@@ -517,6 +517,8 @@ Code.initTemplate = function() {
     objSelect.options.add(new_opt);
     }
   }
+
+
 /**
  * Execute the user's code.
  * Just a quick and dirty eval.  Catch infinite loops.
@@ -532,9 +534,16 @@ Code.runJS = function() {
   var code="# -*- coding: utf-8 -*-\n"+Blockly.Python.workspaceToCode(Code.workspace); 
   Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
   try {
-    BlocklyStorage.makePost("/cgi-bin/test.lua",code);
+    if(document.getElementById("runButton").innerHTML.indexOf("run") != -1 )
+    {
+      var content = document.getElementById('content_debug');
+      content.textContent=MSG["start"];
+      BlocklyStorage.makeGet("/cgi-bin/api.lua",code);
+    }else
+    BlocklyStorage.makeGet("/cgi-bin/kill.lua","");
   } catch (e) {
     alert(MSG['badCode'].replace('%1', e));
+    
   }
   Code.tabClick("debug");
   var content = document.getElementById('content_debug');
@@ -551,7 +560,14 @@ Code.likeJS = function() {
 /**
  * Discard all blocks from the workspace.
  */
+var ssesource;
 Code.discard = function() {
+  if(Code.selected=="debug")
+  {
+    var content = document.getElementById('content_debug');
+    content.textContent=null;
+    return;
+  }
   var count = Code.workspace.getAllBlocks().length;
   if (count < 2 ||
       window.confirm(Blockly.Msg['DELETE_ALL_BLOCKS'].replace('%1', count))) {

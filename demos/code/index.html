@@ -23,7 +23,7 @@
   <script src="blocks/sound.js"></script>
   <script src="blocks/serial.js"></script>
   <script src="blocks/analog.js"></script>
-  <script src="blocks/ethernet.js"></script>
+  <script src="blocks/tcpip.js"></script>
   <script src="blocks/print.js"></script>
   <script src="generator/python/gpio.js"></script>
   <script src="generator/python/pwm.js"></script>
@@ -32,7 +32,7 @@
   <script src="generator/python/sound.js"></script>
   <script src="generator/python/serial.js"></script>
   <script src="generator/python/analog.js"></script>
-  <script src="generator/python/ethernet.js"></script>
+  <script src="generator/python/tcpip.js"></script>
   <script src="generator/python/print.js"></script>
   <script src="javascript/code.js"></script>
 </head>
@@ -71,7 +71,7 @@
               <button id="likeButton" class="notext" title="...">
                 <img src='../../media/1x1.gif' class="like icon21">
               </button>
-              <button id="runButton" class="notext green" title="...">
+              <button id="runButton" class="notext primary" title="...">
                 <img src='../../media/1x1.gif' class="run icon21">
               </button>
             </td>
@@ -160,20 +160,20 @@
         </block>
         <block type="serial_list"></block>
       </category>
-    <category name="%{BKY_CATETHERNET}" colour="%{BKY_ETHERNET_HUE}">
-      <block type="ethernet_ipaddress">
+    <category name="%{BKY_CATTCPIP}" colour="%{BKY_TCPIP_HUE}">
+      <block type="tcpip_ipaddress">
          <value name="NAME"><shadow type="text"><field name="TEXT">193.112.211.120</field></value>
          <value name="VALUE"><shadow type="math_number"><field name="NUM">8081</field></value>
       </block>
-      <block type="ethernet_connect">
-         <value name="NAME"><shadow type="ethernet_ipaddress"></shadow></value>
+      <block type="tcpip_connect">
+         <value name="NAME"><shadow type="tcpip_ipaddress"></shadow></value>
       </block>
-      <block type="ethernet_send">
-         <value name="NAME"><shadow type="ethernet_ipaddress"></shadow></value>
+      <block type="tcpip_send">
+         <value name="NAME"><shadow type="tcpip_ipaddress"></shadow></value>
          <value name="VALUE"><shadow type="text"><field name="TEXT">abc</field>
       </block>
-      <block type="ethernet_recv">
-         <value name="NAME"><shadow type="ethernet_ipaddress"></shadow></value>
+      <block type="tcpip_recv">
+         <value name="NAME"><shadow type="tcpip_ipaddress"></shadow></value>
          <value name="VALUE"><shadow type="math_number"><field name="NUM">1024</field></value>
       </block>
     </category>
@@ -189,8 +189,8 @@
          <value name="NAME"><shadow type="text"><field name="TEXT">abc</field>
       </block>
      <block type="print_console"></block>
-      <block type="print_ethernet">
-      <value name="NAME"><shadow type="ethernet_ipaddress"></shadow></value>
+      <block type="print_tcpip">
+      <value name="NAME"><shadow type="tcpip_ipaddress"></shadow></value>
       </block>
      </category>
     <sep></sep>

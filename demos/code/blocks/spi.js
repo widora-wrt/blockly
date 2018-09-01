@@ -35,7 +35,7 @@ goog.provide('Blockly.Constants.Spc');  // deprecated, 2018 April 5
 goog.require('Blockly.Blocks');
 goog.require('Blockly');
 
-Blockly.Msg.SPI_HUE = '190';
+Blockly.Msg.SPI_HUE = '350';
 /**
  * Unused constant for the common HSV hue for all blocks in this category.
  * @deprecated Use Blockly.Msg['COLOUR_HUE']. (2018 April 5)

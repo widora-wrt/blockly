@@ -29,21 +29,21 @@
  */
 'use strict';
 
-goog.provide('Blockly.Blocks.ethernet');  // Deprecated
-goog.provide('Blockly.Constants.Ethernet');  // deprecated, 2018 April 5
+goog.provide('Blockly.Blocks.tcpip');  // Deprecated
+goog.provide('Blockly.Constants.Tcpip');  // deprecated, 2018 April 5
 
 goog.require('Blockly.Blocks');
 goog.require('Blockly');
 
 
-Blockly.Msg.ETHERNET_HUE = '260';
+Blockly.Msg.TCPIP_HUE = '260';
 /**
  * Unused constant for the common HSV hue for all blocks in this category.
  * @deprecated Use Blockly.Msg['COLOUR_HUE']. (2018 April 5)
  */
 Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
 {
-    "type": "ethernet_ipaddress",
+    "type": "tcpip_ipaddress",
     "message0": "%{BKY_CATETHERNET_IPADDRESS_TITLE}",
     "args0": [
       {
@@ -59,12 +59,12 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     ],
     "inputsInline": true,
     "output": "Ipaddress",
-    "colour": "%{BKY_ETHERNET_HUE}",
+    "colour": "%{BKY_TCPIP_HUE}",
     "tooltip": "",
     "helpUrl": ""
   },
   {
-    "type": "ethernet_connect",
+    "type": "tcpip_connect",
     "message0": "%{BKY_CATETHERNET_CONNECT_TITLE}",
     "args0": [
       {
@@ -77,12 +77,12 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     "inputsInline": true,
     "previousStatement": null,
     "nextStatement": null,
-    "colour": "%{BKY_ETHERNET_HUE}",
+    "colour": "%{BKY_TCPIP_HUE}",
     "tooltip": "",
     "helpUrl": ""
   },
   {
-    "type": "ethernet_send",
+    "type": "tcpip_send",
     "message0": "%{BKY_CATETHERNET_SEND_TITLE}",
     "args0": [
       {
@@ -98,12 +98,12 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     "inputsInline": true,
     "previousStatement": null,
     "nextStatement": null,
-    "colour": "%{BKY_ETHERNET_HUE}",
+    "colour": "%{BKY_TCPIP_HUE}",
     "tooltip": "",
     "helpUrl": ""
    },
    {
-    "type": "ethernet_recv",
+    "type": "tcpip_recv",
     "message0":"%{BKY_CATETHERNET_REVICE_TITLE}",
     "args0": [
       {
@@ -119,7 +119,7 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     ],
     "inputsInline": true,
     "output": null,
-    "colour": "%{BKY_ETHERNET_HUE}",
+    "colour": "%{BKY_TCPIP_HUE}",
     "tooltip": "",
     "helpUrl": ""
    }

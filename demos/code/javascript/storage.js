@@ -130,6 +130,7 @@ BlocklyStorage.makeRequest_ = function(url, name, content, workspace) {
 };
 BlocklyStorage.httpPost_ = null;
 
+var zzzzz=0;
 BlocklyStorage.handlePost_ = function() {
   if (BlocklyStorage.httpPost_.readyState == 4) {
     if (BlocklyStorage.httpPost_.status != 200) {
@@ -137,9 +138,8 @@ BlocklyStorage.handlePost_ = function() {
           'httpPost_.status: ' + BlocklyStorage.httpPost_.status);
     } else {
       var data = BlocklyStorage.httpPost_.responseText.trim();
-      //alert("zzz"+data);
       var content = document.getElementById('content_debug');
-      content.textContent +=data+"r\r\n";
+      content.textContent +=data+zzzzz+++"\r\n";
     }
     BlocklyStorage.httpPost_ = null;
   }
@@ -154,8 +154,46 @@ BlocklyStorage.makePost = function(url,content) {
   BlocklyStorage.httpPost_.name = name;
   BlocklyStorage.httpPost_.onreadystatechange =BlocklyStorage.handlePost_;
   BlocklyStorage.httpPost_.open('POST', url);
-  BlocklyStorage.httpPost_.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+ // BlocklyStorage.httpPost_.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+  BlocklyStorage.httpPost_.setRequestHeader('Content-Type','text/event-stream');
   BlocklyStorage.httpPost_.send(content);
+};
+
+BlocklyStorage.httpGet_ = null;
+BlocklyStorage.handleGet_ = function() {
+  var content = document.getElementById('content_debug');
+  if (BlocklyStorage.httpGet_.readyState == 4) {
+    if (BlocklyStorage.httpGet_.status != 200) {
+     // BlocklyStorage.alert(BlocklyStorage.HTTPREQUEST_ERROR + '\n' +'httpGet_.status: ' + BlocklyStorage.httpGet_.status);
+     document.getElementById("runButton").innerHTML="<img src='../../media/1x1.gif' class='run icon21'>";
+    } else {
+      var data = BlocklyStorage.httpGet_.responseText.trim();
+      content.textContent+=MSG["stop"];
+      document.getElementById("runButton").innerHTML="<img src='../../media/1x1.gif' class='run icon21'>";
+    }
+    BlocklyStorage.httpGet_ = null;
+  }else
+  if (BlocklyStorage.httpGet_.readyState == 3) {
+    var data = BlocklyStorage.httpGet_.responseText.trim();
+      content.textContent=MSG["start"]+data;
+  }else
+  {
+      document.getElementById("runButton").innerHTML="<img src='../../media/1x1.gif' class='stop icon21'>";
+      content.textContent=MSG["start"];
+  }
+};
+BlocklyStorage.makeGet = function(url,content) {
+  if (BlocklyStorage.httpGet_) {
+    // AJAX call is in-flight.
+    BlocklyStorage.httpGet_.abort();
+  }
+  BlocklyStorage.httpGet_ = new XMLHttpRequest();
+  BlocklyStorage.httpGet_.name = name;
+  BlocklyStorage.httpGet_.onreadystatechange =BlocklyStorage.handleGet_;
+  BlocklyStorage.httpGet_.open('POST', url);
+ // BlocklyStorage.httpPost_.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+  BlocklyStorage.httpGet_.setRequestHeader('Content-Type','text/event-stream');
+  BlocklyStorage.httpGet_.send(content);
 };
 
 /**

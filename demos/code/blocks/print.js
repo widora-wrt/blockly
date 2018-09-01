@@ -53,7 +53,7 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
       {
         "type": "input_value",
         "name": "VALUE",
-        "check": ["Ethernet", "Console"],
+        "check": ["Tcpip", "Console"],
       }
     ],
     "inputsInline": true,
@@ -72,7 +72,7 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     "helpUrl": ""
   },
   {
-  "type": "print_ethernet",
+  "type": "print_tcpip",
     "message0": "网络 %1",
     "args0": [
       {
@@ -82,8 +82,8 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
       }
     ],
     "inputsInline": true,
-    "output": "Ethernet",
-    "colour": "%{BKY_ETHERNET_HUE}",
+    "output": "Tcpip",
+    "colour": "%{BKY_TCPIP_HUE}",
     "tooltip": "",
     "helpUrl": ""
   },
