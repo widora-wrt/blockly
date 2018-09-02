@@ -150,13 +150,25 @@
       <block type="spi_list"></block>
     </category>
     <category name="%{BKY_CATSERIAL}" colour="%{BKY_SERIAL_HUE}">
+        <block type="serial_setbaudrate">
+            <value name="NAME"><shadow type="serial_list"></shadow></value>
+            <value name="VALUE"><shadow type="math_number"><field name="NUM">115200</field></value>
+          </block>
         <block type="serial_write">
          <value name="NAME"><shadow type="serial_list"></shadow></value>
          <value name="VALUE"><shadow type="text"><field name="TEXT">abc</field></value>
         </block>
+        <block type="serial_writeline">
+          <value name="NAME"><shadow type="serial_list"></shadow></value>
+          <value name="VALUE"><shadow type="text"><field name="TEXT">abc</field></value>
+         </block>
          <block type="serial_writebyte">
          <value name="NAME"><shadow type="serial_list"></shadow></value>
          <value name="VALUE"><shadow type="math_number"><field name="NUM">255</field></value>
+        </block>
+        <block type="serial_readstr">
+            <value name="NAME"><shadow type="serial_list"></shadow></value>
+            <value name="VALUE"><shadow type="math_number"><field name="NUM">1</field></value>
         </block>
         <block type="serial_list"></block>
       </category>
