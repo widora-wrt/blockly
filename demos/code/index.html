@@ -93,14 +93,14 @@
   <textarea id="content_xml" class="content" wrap="off"></textarea>
   <xml id="toolbox" style="display: none">
   <category name="%{BKY_CATGPIO}" colour="%{BKY_GPIO_HUE}" icon='css/icon.png'>
+      <block type="gpio_mode">
+          <value name="NAME"><shadow type="gpio_list"></shadow></value>
+      </block>
       <block type="gpio_write">
           <value name="NAME"><shadow type="gpio_list"></shadow></value>
           <value name="VALUE"><shadow type="gpio_value"></shadow></value>
       </block>
       <block type="gpio_read">
-          <value name="NAME"><shadow type="gpio_list"></shadow></value>
-      </block>
-      <block type="gpio_mode">
           <value name="NAME"><shadow type="gpio_list"></shadow></value>
       </block>
       <block type="gpio_interrupt">

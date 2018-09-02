@@ -536,6 +536,7 @@ Code.runJS = function() {
   try {
     if(document.getElementById("runButton").innerHTML.indexOf("run") != -1 )
     {
+      Code.tabClick("debug");
       var content = document.getElementById('content_debug');
       content.textContent=MSG["start"];
       BlocklyStorage.makeGet("/cgi-bin/api.lua",code);
@@ -545,10 +546,7 @@ Code.runJS = function() {
     alert(MSG['badCode'].replace('%1', e));
     
   }
-  Code.tabClick("debug");
-  var content = document.getElementById('content_debug');
-  //content.textContent +=code;
-
+  
 };
 Code.likeJS = function() {
   var name=prompt(MSG['likeinputtitle']); 
