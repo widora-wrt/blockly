@@ -521,11 +521,12 @@ Code.changeTemplate = function() {
 
   var templateMenu = document.getElementById('TemplateMenu');
   var name=templateMenu.options[templateMenu.selectedIndex].value;
+  localStorage.setItem("gide.select",name);
   var valueLocal = localStorage.getItem("gide."+name);
   Code.workspace.clear();
   var xml = Blockly.Xml.textToDom(valueLocal);
   Blockly.Xml.domToWorkspace(xml, Code.workspace);
-  localStorage.setItem("gide.select",name);
+  
   window.location = window.location.protocol + '//' +window.location.host + window.location.pathname;
 };
 Code.initTemplate = function() {
@@ -586,8 +587,10 @@ Code.likeJS = function() {
   objSelect.options.add(new_opt);
   var xml = Blockly.Xml.workspaceToDom(Code.workspace);
   var text = Blockly.Xml.domToText(xml);
+  localStorage.setItem("gide.select",name+".t");
   name="gide."+name+".t";
   localStorage.setItem(name,text); 
+  window.location = window.location.protocol + '//' +window.location.host + window.location.pathname;
 };
 /**
  * Discard all blocks from the workspace.
@@ -609,6 +612,7 @@ Code.discard = function() {
         if (window.location.hash) window.location.hash = '';
        var templateMenu = document.getElementById('TemplateMenu');
        var name="gide."+templateMenu.options[templateMenu.selectedIndex].value;
+       localStorage.removeItem("gide.select");
        localStorage.removeItem(name);
        window.location = window.location.protocol + '//' +window.location.host + window.location.pathname;
   }
