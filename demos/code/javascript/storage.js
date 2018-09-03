@@ -33,7 +33,6 @@ var BlocklyStorage = {};
  * @private
  */
 BlocklyStorage.backupBlocks_ = function(workspace) {
-  alert("ddd0");
   if ('localStorage' in window) {
     var xml = Blockly.Xml.workspaceToDom(workspace);
     // Gets the current URL, not including the hash.
@@ -46,17 +45,21 @@ BlocklyStorage.backupBlocks_ = function(workspace) {
  * Bind the localStorage backup function to the unload event.
  * @param {Blockly.WorkspaceSvg=} opt_workspace Workspace.
  */
+function reddd(){
+  alert("reddd");
+}
 BlocklyStorage.backupOnUnload = function(opt_workspace) {
+  
   var workspace = opt_workspace || Blockly.getMainWorkspace();
-  window.addEventListener('unload',
-      function() {BlocklyStorage.backupBlocks_(workspace);}, false);
+  window.addEventListener('unload',function() {BlocklyStorage.backupBlocks_(workspace);}, false);
+  Window.onbeforeunload =reddd;
 };
 
 /**
  * Restore code blocks from localStorage.
  * @param {Blockly.WorkspaceSvg=} opt_workspace Workspace.
  */
-BlocklyStorage.restoreBlocks = function(opt_workspace) {
+BlocklyStorage.restoreBlocks= function(opt_workspace) {
   var url = window.location.href.split('#')[0];
   if ('localStorage' in window && window.localStorage[url]) {
     var workspace = opt_workspace || Blockly.getMainWorkspace();
@@ -70,7 +73,7 @@ BlocklyStorage.restoreBlocks = function(opt_workspace) {
  * @param {Blockly.WorkspaceSvg=} opt_workspace Workspace.
  */
 BlocklyStorage.link = function(opt_workspace) {
-  alert("ddd2");
+  alert("BlocklyStorage");
   var workspace = opt_workspace || Blockly.getMainWorkspace();
   var xml = Blockly.Xml.workspaceToDom(workspace, true);
   // Remove x/y coordinates from XML if there's only one block stack.
@@ -93,7 +96,7 @@ BlocklyStorage.link = function(opt_workspace) {
  */
 BlocklyStorage.retrieveXml = function(key, opt_workspace) {
   var workspace = opt_workspace || Blockly.getMainWorkspace();
-  alert("ddd");
+  alert("retrieveXml");
   BlocklyStorage.makeRequest_('/storage', 'key', key, workspace);
 };
 
@@ -113,7 +116,7 @@ BlocklyStorage.httpRequest_ = null;
  * @private
  */
 BlocklyStorage.makeRequest_ = function(url, name, content, workspace) {
-  alert("ddd");
+  alert("makeRequest_");
   if (BlocklyStorage.httpRequest_) {
     // AJAX call is in-flight.
     BlocklyStorage.httpRequest_.abort();
@@ -166,6 +169,7 @@ BlocklyStorage.handleGet_ = function() {
     if (BlocklyStorage.httpGet_.status != 200) {
      // BlocklyStorage.alert(BlocklyStorage.HTTPREQUEST_ERROR + '\n' +'httpGet_.status: ' + BlocklyStorage.httpGet_.status);
      document.getElementById("runButton").innerHTML="<img src='../../media/1x1.gif' class='run icon21'>";
+     content.textContent+=MSG["fail"];
     } else {
       var data = BlocklyStorage.httpGet_.responseText.trim();
       content.textContent+=MSG["stop"];
@@ -202,6 +206,7 @@ BlocklyStorage.makeGet = function(url,content) {
  */
 BlocklyStorage.handleRequest_ = function() {
 
+  alert("zzz");
   if (BlocklyStorage.httpRequest_.readyState == 4) {
     if (BlocklyStorage.httpRequest_.status != 200) {
       BlocklyStorage.alert(BlocklyStorage.HTTPREQUEST_ERROR + '\n' +

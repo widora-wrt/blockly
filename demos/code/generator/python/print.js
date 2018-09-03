@@ -34,7 +34,7 @@ Blockly.Python['print_console'] = function(block) {
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_NONE];
 };
-Blockly.Python['print_ethernet'] = function(block) {
+Blockly.Python['print_tcpip'] = function(block) {
   var text_name =  Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
   var code = text_name;
   var value ="connect_"+code.replace(/[^0-9]/ig,"")+".sendall"; 

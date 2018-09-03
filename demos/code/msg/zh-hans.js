@@ -3,6 +3,7 @@ var MSG = {
   blocks: "块",
   debug: "调试",
   code: "代码",
+  fail: "失败",
   start: ":启动\r\n",
   stop: "\r\n:停止",
   copyright:"Copyright © 叁百教育科技  www.trtos.com",

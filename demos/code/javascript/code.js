@@ -107,10 +107,11 @@ Code.getStringParamFromUrl = function(name, defaultValue) {
  * @return {string} User's language.
  */
 Code.getLang = function() {
-  var lang = Code.getStringParamFromUrl('lang', '');
+ // var lang = Code.getStringParamFromUrl('lang', '');
+  var lang=localStorage.getItem("gide.lang");
   if (Code.LANGUAGE_NAME[lang] === undefined) {
-    // Default to English.
     lang = 'en';
+    localStorage.setItem("gide.lang",lang);
   }
   return lang;
 };
@@ -128,7 +129,6 @@ Code.isRtl = function() {
  * @param {string} defaultXml Text representation of default blocks.
  */
 Code.loadBlocks = function(defaultXml) {
- // alert( window.sessionStorage.loadOnceBlocks);
   try {
     var loadOnce = window.sessionStorage.loadOnceBlocks;
   } catch(e) {
@@ -136,9 +136,9 @@ Code.loadBlocks = function(defaultXml) {
     // Restarting Firefox fixes this, so it looks like a bug.
     var loadOnce = null;
   }
+  
   if ('BlocklyStorage' in window && window.location.hash.length > 1) {
     // An href with #key trigers an AJAX call to retrieve saved blocks.
-    
     BlocklyStorage.retrieveXml(window.location.hash.substring(1));
   } else if (loadOnce) {
     // Language switching stores the blocks during the reload.
@@ -162,25 +162,10 @@ Code.loadBlocks = function(defaultXml) {
 Code.changeLanguage = function() {
   // Store the blocks for the duration of the reload.
   // MSIE 11 does not support sessionStorage on file:// URLs.
-  if (window.sessionStorage) {
-    var xml = Blockly.Xml.workspaceToDom(Code.workspace);
-    
-    var text = Blockly.Xml.domToText(xml);
-    window.sessionStorage.loadOnceBlocks = text;
-  }
   var languageMenu = document.getElementById('languageMenu');
-  var newLang = encodeURIComponent(
-      languageMenu.options[languageMenu.selectedIndex].value);
-  var search = window.location.search;
-  if (search.length <= 1) {
-    search = '?lang=' + newLang;
-  } else if (search.match(/[?&]lang=[^&]*/)) {
-    search = search.replace(/([?&]lang=)[^&]*/, '$1' + newLang);
-  } else {
-    search = search.replace(/\?/, '?lang=' + newLang + '&');
-  }
-
-  window.location = window.location.protocol + '//' +window.location.host + window.location.pathname + search;
+  var newLang = encodeURIComponent(languageMenu.options[languageMenu.selectedIndex].value);
+  localStorage.setItem("gide.lang",newLang);
+  window.location = window.location.protocol + '//' +window.location.host + window.location.pathname;
 };
 
 /**
@@ -360,11 +345,31 @@ Code.checkAllGeneratorFunctionsDefined = function(generator) {
   }
   return valid;
 };
+function checkStorageSupport()
+{
+   
+ 
+    // localStorage
+    if (window.localStorage) {
+        return true;
+    } else {
+        alert("No suport localStorage");
+        return false;
+    }
+     // sessionStorage
+     if (window.sessionStorage) {
 
+      return true;
+  } else {
+      alert("No suport sessionStorage");
+      return false;
+  }
+}
 /**
  * Initialize Blockly.  Called on page load.
  */
 Code.init = function() {
+  checkStorageSupport();
   Code.initLanguage();
   Code.initTemplate();
   var rtl = Code.isRtl();
@@ -510,13 +515,31 @@ Code.initLanguage = function() {
   document.getElementById('trashButton').title = MSG['trashTooltip'];
   document.getElementById('likeButton').title = MSG['likeTooltip'];
 };
+/**
+ * Save the blocks and reload with a different language.
+ */
+Code.changeTemplate = function() {
+
+  var templateMenu = document.getElementById('TemplateMenu');
+  var valueLocal = localStorage.getItem("gide."+templateMenu.options[templateMenu.selectedIndex].value);
+  Code.workspace.clear();
+  var xml = Blockly.Xml.textToDom(valueLocal);
+  Blockly.Xml.domToWorkspace(xml, Code.workspace);
+};
 Code.initTemplate = function() {
   var objSelect = document.getElementById("TemplateMenu");
-  for(var i=1;i<5;i++){
-    var new_opt = new Option("Template"+i);      
-    objSelect.options.add(new_opt);
-    }
+  for(var i = 0; i < localStorage.length; i++)
+  {
+      if(localStorage.key(i).indexOf(".t")>0)
+      {
+        var name=localStorage.key(i);
+        name=name.replace("gide.","");
+        var new_opt = new Option(name);   
+        objSelect.options.add(new_opt);
+      }
   }
+  objSelect.addEventListener('change', Code.changeTemplate, true);
+}
 
 
 /**
@@ -553,12 +576,15 @@ Code.likeJS = function() {
   var objSelect = document.getElementById("TemplateMenu");   
   var new_opt = new Option(name+".t");  
   objSelect.options.add(new_opt);
-  
+  var xml = Blockly.Xml.workspaceToDom(Code.workspace);
+  var text = Blockly.Xml.domToText(xml);
+  name="gide."+name+".t";
+  localStorage.setItem(name,text); 
 };
 /**
  * Discard all blocks from the workspace.
  */
-var ssesource;
+
 Code.discard = function() {
   if(Code.selected=="debug")
   {
@@ -574,6 +600,9 @@ Code.discard = function() {
       window.location.hash = '';
     }
   }
+  var templateMenu = document.getElementById('TemplateMenu');
+  var name="gide."+templateMenu.options[templateMenu.selectedIndex].value;
+  localStorage.removeItem(name);
 };
 
 // Load the Code demo's language strings.

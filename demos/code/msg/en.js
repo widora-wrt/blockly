@@ -3,6 +3,7 @@ var MSG = {
   blocks: "Blocks",
   debug: "Debug",
   code: "Code",
+  fail: "Fail",
   start: ":Start\r\n",
   stop: "\r\n:Stop",
   copyright:"Copyright © 300 Edu Tech  www.trtos.com",
