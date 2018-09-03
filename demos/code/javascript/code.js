@@ -160,8 +160,7 @@ Code.loadBlocks = function(defaultXml) {
  * Save the blocks and reload with a different language.
  */
 Code.changeLanguage = function() {
-  // Store the blocks for the duration of the reload.
-  // MSIE 11 does not support sessionStorage on file:// URLs.
+
   var languageMenu = document.getElementById('languageMenu');
   var newLang = encodeURIComponent(languageMenu.options[languageMenu.selectedIndex].value);
   localStorage.setItem("gide.lang",newLang);
@@ -521,13 +520,16 @@ Code.initLanguage = function() {
 Code.changeTemplate = function() {
 
   var templateMenu = document.getElementById('TemplateMenu');
-  var valueLocal = localStorage.getItem("gide."+templateMenu.options[templateMenu.selectedIndex].value);
+  var name=templateMenu.options[templateMenu.selectedIndex].value;
+  var valueLocal = localStorage.getItem("gide."+name);
   Code.workspace.clear();
   var xml = Blockly.Xml.textToDom(valueLocal);
   Blockly.Xml.domToWorkspace(xml, Code.workspace);
+  localStorage.setItem("gide.select",name);
 };
 Code.initTemplate = function() {
   var objSelect = document.getElementById("TemplateMenu");
+  var sname=localStorage.getItem("gide.select");
   for(var i = 0; i < localStorage.length; i++)
   {
       if(localStorage.key(i).indexOf(".t")>0)
@@ -535,6 +537,9 @@ Code.initTemplate = function() {
         var name=localStorage.key(i);
         name=name.replace("gide.","");
         var new_opt = new Option(name);   
+        if (name ==sname) {
+          new_opt.selected = true;
+        }
         objSelect.options.add(new_opt);
       }
   }
