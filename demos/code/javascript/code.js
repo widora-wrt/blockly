@@ -526,6 +526,7 @@ Code.changeTemplate = function() {
   var xml = Blockly.Xml.textToDom(valueLocal);
   Blockly.Xml.domToWorkspace(xml, Code.workspace);
   localStorage.setItem("gide.select",name);
+  window.location = window.location.protocol + '//' +window.location.host + window.location.pathname;
 };
 Code.initTemplate = function() {
   var objSelect = document.getElementById("TemplateMenu");
@@ -577,7 +578,8 @@ Code.runJS = function() {
   
 };
 Code.likeJS = function() {
-  var name=prompt(MSG['likeinputtitle']); 
+  var sname=localStorage.getItem("gide.select");
+  var name=prompt(MSG['likeinputtitle'],sname.replace(".t","")); 
   var objSelect = document.getElementById("TemplateMenu");   
   var new_opt = new Option(name+".t");  
   objSelect.options.add(new_opt);
@@ -591,6 +593,7 @@ Code.likeJS = function() {
  */
 
 Code.discard = function() {
+  var sname=localStorage.getItem("gide.select");
   if(Code.selected=="debug")
   {
     var content = document.getElementById('content_debug');
@@ -598,16 +601,16 @@ Code.discard = function() {
     return;
   }
   var count = Code.workspace.getAllBlocks().length;
-  if (count < 2 ||
-      window.confirm(Blockly.Msg['DELETE_ALL_BLOCKS'].replace('%1', count))) {
-    Code.workspace.clear();
-    if (window.location.hash) {
-      window.location.hash = '';
-    }
+  if (window.confirm(MSG['deletethiscontext'].replace('%1', sname).replace("%2",count))) 
+      {
+        Code.workspace.clear();
+        if (window.location.hash) window.location.hash = '';
+       var templateMenu = document.getElementById('TemplateMenu');
+       var name="gide."+templateMenu.options[templateMenu.selectedIndex].value;
+       localStorage.removeItem(name);
+       window.location = window.location.protocol + '//' +window.location.host + window.location.pathname;
   }
-  var templateMenu = document.getElementById('TemplateMenu');
-  var name="gide."+templateMenu.options[templateMenu.selectedIndex].value;
-  localStorage.removeItem(name);
+  
 };
 
 // Load the Code demo's language strings.

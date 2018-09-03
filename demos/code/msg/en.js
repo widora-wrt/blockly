@@ -32,6 +32,7 @@ var MSG = {
   catFunctions: "Functions",
   listVariable: "list",
   textVariable: "text",
+  deletethiscontext:"Delete %1 all %2 blocks?",
   httpRequestError: "There was a problem with the request.",
   linkAlert: "Share your blocks with this link:\n\n%1",
   hashError: "Sorry, '%1' doesn't correspond with any saved program.",
