@@ -70,7 +70,27 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
           {
             "type": "input_value",
             "name": "VALUE",
-            "check": "String"
+          }
+        ],
+        "inputsInline": true,
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": "%{BKY_SERIAL_HUE}",
+        "tooltip":"",
+        "helpUrl": ""
+      },
+      {
+        "type": "serial_writeline",
+        "message0": "%{BKY_CATSERIAL_WRITELINE_TITLE}",
+        "args0": [
+          {
+            "type": "input_value",
+            "name": "NAME",
+            "check": "Number"
+          },
+          {
+            "type": "input_value",
+            "name": "VALUE",
           }
         ],
         "inputsInline": true,
@@ -97,6 +117,49 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
         "inputsInline": true,
         "previousStatement": null,
         "nextStatement": null,
+        "colour": "%{BKY_SERIAL_HUE}",
+        "tooltip":"",
+        "helpUrl": ""
+      },
+      {
+        "type": "serial_setbaudrate",
+        "message0": "%{BKY_CATSERIAL_SET_BAUDRATE_TITLE}",
+        "args0": [
+          {
+            "type": "input_value",
+            "name": "NAME",
+            "check": "Number"
+          },
+          {
+            "type": "input_value",
+            "name": "VALUE",     
+            "check": "Number"
+          }
+        ],
+        "inputsInline": true,
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": "%{BKY_SERIAL_HUE}",
+        "tooltip":"",
+        "helpUrl": ""
+      },
+      {
+        "type": "serial_readstr",
+        "message0": "%{BKY_CATSERIAL_READSTR_TITLE}",
+        "args0": [
+          {
+            "type": "input_value",
+            "name": "NAME",
+            "check": "Number"
+          },
+          {
+            "type": "input_value",
+            "name": "VALUE",     
+            "check": "Number"
+          }
+        ],
+        "output": null,
+        "inputsInline": true,
         "colour": "%{BKY_SERIAL_HUE}",
         "tooltip":"",
         "helpUrl": ""

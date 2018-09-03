@@ -3,9 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="google" value="notranslate">
-  <title>Demo:</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="/storage.js"></script>
+  <title></title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png"/> 
+  <script src="javascript/storage.js"></script>
   <script src="../../blockly_compressed.js"></script>
   <script src="../../blocks_compressed.js"></script>
   <script src="../../javascript_compressed.js"></script>
@@ -13,7 +15,7 @@
   <script src="../../php_compressed.js"></script>
   <script src="../../lua_compressed.js"></script>
   <script src="../../dart_compressed.js"></script>
-  <script src="messages.js"></script>
+  <script src="msg/messages.js"></script>
   <script src="blocks/gpio.js"></script>
   <script src="blocks/pwm.js"></script>
   <script src="blocks/i2c.js"></script>
@@ -21,6 +23,8 @@
   <script src="blocks/sound.js"></script>
   <script src="blocks/serial.js"></script>
   <script src="blocks/analog.js"></script>
+  <script src="blocks/tcpip.js"></script>
+  <script src="blocks/print.js"></script>
   <script src="generator/python/gpio.js"></script>
   <script src="generator/python/pwm.js"></script>
   <script src="generator/python/i2c.js"></script>
@@ -28,13 +32,15 @@
   <script src="generator/python/sound.js"></script>
   <script src="generator/python/serial.js"></script>
   <script src="generator/python/analog.js"></script>
-  <script src="code.js"></script>
+  <script src="generator/python/tcpip.js"></script>
+  <script src="generator/python/print.js"></script>
+  <script src="javascript/code.js"></script>
 </head>
 <body>
   <table  width="100%" height="30px" align="center" class="titleSide">
     <tr >
-        <td width="30%" id="title" class="leftSide" ></td>
-        <td width="30%" class="centerSide"  align="center"><span id="copyright" style="font-family:arial;font-size:12px;color:#999;">copyright</span></td>
+        <td width="30%" id="title" class="leftSide" >dd</td>
+        <td width="50%" class="centerSide"  align="center"><span id="copyright" style="font-family:arial;font-size:12px;color:#999;">copyright</span></td>
         <td width="40%" class="rightSide"align="right"><select id="TemplateMenu"></select></td>
         <td width="40%" class="rightSide"align="right"><select id="languageMenu"></select></td>
       </tr>
@@ -49,16 +55,15 @@
             <td class="tabmin">&nbsp;</td>
             <td id="tab_python" class="taboff">Python</td>
             <td class="tabmin">&nbsp;</td>
+            <td id="tab_debug" class="taboff">Debug</td>
+            <td class="tabmin">&nbsp;</td>
             <td id="tab_javascript" class="taboff">JavaScript</td>
             <td class="tabmin">&nbsp;</td>
             <td id="tab_php" class="taboff">PHP</td>
             <td class="tabmin">&nbsp;</td>
             <td id="tab_lua" class="taboff">Lua</td>
             <td class="tabmin">&nbsp;</td>
-            <td id="tab_dart" class="taboff">Dart</td>
-            <td class="tabmin">&nbsp;</td>
             <td id="tab_xml" class="taboff">XML</td>
-  
             <td class="tabmax">        
                 <button id="trashButton" class="notext" title="...">
                 <img src='../../media/1x1.gif' class="trash icon21">
@@ -66,7 +71,7 @@
               <button id="likeButton" class="notext" title="...">
                 <img src='../../media/1x1.gif' class="like icon21">
               </button>
-              <button id="runButton" class="notext green" title="...">
+              <button id="runButton" class="notext primary" title="...">
                 <img src='../../media/1x1.gif' class="run icon21">
               </button>
             </td>
@@ -75,20 +80,22 @@
       </td>
     </tr>
     <tr>
-      <td height="99%" colspan=2 id="content_area">
+      <td height="100%" colspan=2 id="content_area">
       </td>
     </tr>
   </table>
   <div id="content_blocks" class="content"></div>
   <pre id="content_python" class="content"></pre>
+  <pre id="content_debug" class="content"></pre>
   <pre id="content_javascript" class="content"></pre>
   <pre id="content_php" class="content"></pre>
   <pre id="content_lua" class="content"></pre>
-  <pre id="content_dart" class="content"></pre>
   <textarea id="content_xml" class="content" wrap="off"></textarea>
-
   <xml id="toolbox" style="display: none">
-  <category name="%{BKY_CATGPIO}" colour="%{BKY_GPIO_HUE}">
+  <category name="%{BKY_CATGPIO}" colour="%{BKY_GPIO_HUE}" icon='css/icon.png'>
+      <block type="gpio_mode">
+          <value name="NAME"><shadow type="gpio_list"></shadow></value>
+      </block>
       <block type="gpio_write">
           <value name="NAME"><shadow type="gpio_list"></shadow></value>
           <value name="VALUE"><shadow type="gpio_value"></shadow></value>
@@ -96,23 +103,11 @@
       <block type="gpio_read">
           <value name="NAME"><shadow type="gpio_list"></shadow></value>
       </block>
-      <block type="gpio_mode">
-          <value name="NAME"><shadow type="gpio_list"></shadow></value>
-      </block>
       <block type="gpio_interrupt">
           <value name="NAME"><shadow type="gpio_list"></shadow></value>
       </block>
       <block type="gpio_value"></block>
       <block type="gpio_list"></block>
-    </category>
-    <category name="%{BKY_CATANALOG}" colour="%{BKY_ANALOG_HUE}">
-      <block type="analog_read_int">
-          <value name="NAME"><shadow type="analog_list"></shadow></value>
-      </block>
-      <block type="analog_read_float">
-          <value name="NAME"><shadow type="analog_list"></shadow></value>
-      </block>
-      <block type="analog_list"></block>
     </category>
     <category name="%{BKY_CATPWM}" colour="%{BKY_PWM_HUE}">
      <block type="pwm_period_ms">
@@ -146,24 +141,61 @@
       <block type="spi_list"></block>
     </category>
     <category name="%{BKY_CATSERIAL}" colour="%{BKY_SERIAL_HUE}">
-
-
+        <block type="serial_setbaudrate">
+            <value name="NAME"><shadow type="serial_list"></shadow></value>
+            <value name="VALUE"><shadow type="math_number"><field name="NUM">115200</field></value>
+          </block>
         <block type="serial_write">
          <value name="NAME"><shadow type="serial_list"></shadow></value>
-         <value name="VALUE"><shadow type="text"><field name="TEXT">abc</field>
+         <value name="VALUE"><shadow type="text"><field name="TEXT">abc</field></value>
         </block>
+        <block type="serial_writeline">
+          <value name="NAME"><shadow type="serial_list"></shadow></value>
+          <value name="VALUE"><shadow type="text"><field name="TEXT">abc</field></value>
+         </block>
          <block type="serial_writebyte">
          <value name="NAME"><shadow type="serial_list"></shadow></value>
-         <value name="VALUE"><shadow type="math_number"><field name="NUM">255</field>
+         <value name="VALUE"><shadow type="math_number"><field name="NUM">255</field></value>
+        </block>
+        <block type="serial_readstr">
+            <value name="NAME"><shadow type="serial_list"></shadow></value>
+            <value name="VALUE"><shadow type="math_number"><field name="NUM">1</field></value>
         </block>
         <block type="serial_list"></block>
       </category>
+    <category name="%{BKY_CATTCPIP}" colour="%{BKY_TCPIP_HUE}">
+      <block type="tcpip_ipaddress">
+         <value name="NAME"><shadow type="text"><field name="TEXT">193.112.211.120</field></value>
+         <value name="VALUE"><shadow type="math_number"><field name="NUM">8081</field></value>
+      </block>
+      <block type="tcpip_connect">
+         <value name="NAME"><shadow type="tcpip_ipaddress"></shadow></value>
+      </block>
+      <block type="tcpip_send">
+         <value name="NAME"><shadow type="tcpip_ipaddress"></shadow></value>
+         <value name="VALUE"><shadow type="text"><field name="TEXT">abc</field>
+      </block>
+      <block type="tcpip_recv">
+         <value name="NAME"><shadow type="tcpip_ipaddress"></shadow></value>
+         <value name="VALUE"><shadow type="math_number"><field name="NUM">1024</field></value>
+      </block>
+    </category>
     <category name="%{BKY_CATSOUND}" colour="%{BKY_SOUND_HUE}">
       <block type="sound_play"></block>
       <block type="sound_piano"></block>
       <block type="sound_melody"></block>
       <block type="sound_effect"></block>
+      <block type="sound_dance"></block>
     </category>
+     <category name="%{BKY_CATPRINT}" colour="%{BKY_PRINT_HUE}">
+      <block type="print_to">
+         <value name="NAME"><shadow type="text"><field name="TEXT">abc</field>
+      </block>
+     <block type="print_console"></block>
+      <block type="print_tcpip">
+      <value name="NAME"><shadow type="tcpip_ipaddress"></shadow></value>
+      </block>
+     </category>
     <sep></sep>
     <category name="%{BKY_CATLOGIC}" colour="%{BKY_LOGIC_HUE}">
       <block type="controls_if"></block>

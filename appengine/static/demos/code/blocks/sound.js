@@ -144,4 +144,27 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
         "tooltip": "",
         "helpUrl": ""
       },
+      {
+        "type": "sound_dance",
+        "message0": "%{BKY_CATSOUND_DANCE_TITLE}",
+        "args0": [
+          {
+            "type": "field_dropdown",
+            "name": "NAME",
+            "options": [["dance1","dance1.mp3"],
+                        ["dance2","dance2.mp3"],
+                        ["dance3","dance3.mp3"],
+                        ["dance4","dance4.mp3"],
+                        ["dance5","dance5.mp3"],
+                        ["dance6","dance6.mp3"],
+                       ]
+          }
+        ],
+        "inputsInline": true,
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour":  "%{BKY_SOUND_HUE}",
+        "tooltip": "",
+        "helpUrl": ""
+      },
 ]);

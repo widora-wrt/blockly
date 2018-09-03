@@ -45,7 +45,7 @@ Blockly.Python['spi_writeread'] = function(block) {
     var value_name = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC);
 
     // TODO: Assemble Python into code variable.
-    var code = "spi"+dropdown_name+".write("+value_name+")\n";
+    var code = "spi"+dropdown_name+".write(bytearray("+value_name+"))\n";
     var def ="spi"+dropdown_name+"=mraa.Spi("+dropdown_name+")";
     // TODO: Change ORDER_NONE to the correct strength.
     Blockly.Python.definitions_[def] = def;

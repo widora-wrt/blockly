@@ -579,6 +579,7 @@ Code.runJS = function() {
 };
 Code.likeJS = function() {
   var sname=localStorage.getItem("gide.select");
+  if(sname==undefined)sname="";
   var name=prompt(MSG['likeinputtitle'],sname.replace(".t","")); 
   var objSelect = document.getElementById("TemplateMenu");   
   var new_opt = new Option(name+".t");  
@@ -594,6 +595,7 @@ Code.likeJS = function() {
 
 Code.discard = function() {
   var sname=localStorage.getItem("gide.select");
+  if(sname==undefined)sname="";
   if(Code.selected=="debug")
   {
     var content = document.getElementById('content_debug');
