@@ -41,9 +41,17 @@ Blockly.Python['print_tcpip'] = function(block) {
   Blockly.Python.definitions_['import_socket'] = 'import socket';
   return [value, Blockly.Python.ORDER_NONE];
 };
-  Blockly.Python['print_to'] = function(block) {
-    var dropdown_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_NONE);
-    var value_name =Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_NONE);
-    var code =value_name+ "("+ dropdown_name +")\n";
-    return code;
-  };
+Blockly.Python['print_serial'] = function(block) {
+  var text_name =  block.getFieldValue('NAME');
+  var code ="serial"+text_name+".write";
+  var def ="serial"+text_name+"=mraa.Uart("+text_name+")";
+  Blockly.Python.definitions_['import_mraa'] = 'import mraa';
+  Blockly.Python.definitions_[def] =def;
+  return [code, Blockly.Python.ORDER_NONE];
+};
+Blockly.Python['print_to'] = function(block) {
+  var dropdown_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_NONE);
+  var value_name =Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_NONE);
+  var code =value_name+ "("+ dropdown_name +")\n";
+  return code;
+};

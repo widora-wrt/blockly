@@ -52,14 +52,14 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
       {
         "type": "field_dropdown",
         "name": "NAME",
-        "options": [["数据便签","DataMark"],
-                    ["Tlink","Tlink"],
-                    ["机智云","jzy"]]
+        "options": [["数据便签","DATAMARK"],
+                    ["Tlink","TLINK"],
+                    ["机智云","GIZWITS"]]
       },
       {
         "type": "field_input",
         "name": "ID",
-        "text": "xxxxxxx"
+        "text": "5jH6NKUy"
       }
     ],
     "inputsInline": true,

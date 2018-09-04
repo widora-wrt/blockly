@@ -53,7 +53,7 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
       {
         "type": "input_value",
         "name": "VALUE",
-        "check": ["Tcpip", "Console"],
+        "check": ["Tcpip", "Console","Serial"],
       }
     ],
     "inputsInline": true,
@@ -83,8 +83,25 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     ],
     "inputsInline": true,
     "output": "Tcpip",
-    "colour": "%{BKY_TCPIP_HUE}",
+    "colour": "%{BKY_PRINT_HUE}",
     "tooltip": "",
     "helpUrl": ""
   },
+  {
+    "type": "print_serial",
+    "message0": "%1",
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "NAME",
+        "options": [["Serial0","0"],
+                    ["Serial1","1"],
+                    ["Serial2","2"]]
+      }
+    ],
+    "output": "Serial",
+    "colour": "%{BKY_PRINT_HUE}",
+    "tooltip": "",
+    "helpUrl": ""
+},
 ]);

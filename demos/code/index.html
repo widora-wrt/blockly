@@ -184,6 +184,7 @@
     </category>
     <category name="%{BKY_CATIOT}" colour="%{BKY_IOT_HUE}">
       <block type="iot_send">
+      <value name="VALUE"><shadow type="text"><field name="TEXT">abc</field></value>
       </block>
     </category>
     <category name="%{BKY_CATSOUND}" colour="%{BKY_SOUND_HUE}">
@@ -199,8 +200,9 @@
       </block>
      <block type="print_console"></block>
       <block type="print_tcpip">
-      <value name="NAME"><shadow type="tcpip_ipaddress"></shadow></value>
+        <value name="NAME"><shadow type="tcpip_ipaddress"></shadow></value>
       </block>
+      <block type="print_serial"></block>
      </category>
     <sep></sep>
     <category name="%{BKY_CATLOGIC}" colour="%{BKY_LOGIC_HUE}">
