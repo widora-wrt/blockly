@@ -526,12 +526,13 @@ Code.changeTemplate = function() {
   Code.workspace.clear();
   var xml = Blockly.Xml.textToDom(valueLocal);
   Blockly.Xml.domToWorkspace(xml, Code.workspace);
-  
-  window.location = window.location.protocol + '//' +window.location.host + window.location.pathname;
+  Code.initTemplate();
+  //window.location = window.location.protocol + '//' +window.location.host + window.location.pathname;
 };
 Code.initTemplate = function() {
   var objSelect = document.getElementById("TemplateMenu");
   var sname=localStorage.getItem("gide.select");
+  objSelect.length=0;
   for(var i = 0; i < localStorage.length; i++)
   {
       if(localStorage.key(i).indexOf(".t")>0)
@@ -579,10 +580,11 @@ Code.runJS = function() {
   
 };
 Code.likeJS = function() {
+  var objSelect = document.getElementById("TemplateMenu");
   var sname=localStorage.getItem("gide.select");
-  if(sname==undefined)sname="";
-  var name=prompt(MSG['likeinputtitle'],sname.replace(".t","")); 
-  var objSelect = document.getElementById("TemplateMenu");   
+  if(sname==undefined)sname=objSelect.options[objSelect.selectedIndex].value
+  var name=prompt(MSG['likeinputtitle'],sname.replace(".t",""));
+  if(name==null)return; 
   var new_opt = new Option(name+".t");  
   objSelect.options.add(new_opt);
   var xml = Blockly.Xml.workspaceToDom(Code.workspace);
@@ -590,7 +592,8 @@ Code.likeJS = function() {
   localStorage.setItem("gide.select",name+".t");
   name="gide."+name+".t";
   localStorage.setItem(name,text); 
-  window.location = window.location.protocol + '//' +window.location.host + window.location.pathname;
+  //window.location = window.location.protocol + '//' +window.location.host + window.location.pathname;
+  Code.initTemplate();
 };
 /**
  * Discard all blocks from the workspace.
