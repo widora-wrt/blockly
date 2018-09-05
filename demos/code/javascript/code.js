@@ -582,7 +582,11 @@ Code.runJS = function() {
 Code.likeJS = function() {
   var objSelect = document.getElementById("TemplateMenu");
   var sname=localStorage.getItem("gide.select");
+  try{
   if(sname==undefined)sname=objSelect.options[objSelect.selectedIndex].value
+  }catch{
+    sname="";
+  }
   var name=prompt(MSG['likeinputtitle'],sname.replace(".t",""));
   if(name==null)return; 
   var new_opt = new Option(name+".t");  
