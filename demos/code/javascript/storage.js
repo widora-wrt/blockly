@@ -271,6 +271,28 @@ BlocklyStorage.loadXml_ = function(xml, workspace) {
 };
 
 /**
+ * 存储变量及文本
+ * Designed to be overridden if an app has custom dialogs, or a butter bar.
+ * @param {string} message Text to alert.
+ */
+
+BlocklyStorage.setItem = function(key, value) {
+  try{
+    window.localStorage.setItem(key,value);
+  }catch{}
+};
+BlocklyStorage.getItem = function(key) {
+  try{
+  return window.localStorage.getItem(key);
+  }catch(e){}
+};
+BlocklyStorage.removeItem = function(key) {
+  try{
+    window.localStorage.removeItem(key);
+  }catch(e){}
+};
+   
+/**
  * Present a text message to the user.
  * Designed to be overridden if an app has custom dialogs, or a butter bar.
  * @param {string} message Text to alert.

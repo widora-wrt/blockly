@@ -108,10 +108,10 @@ Code.getStringParamFromUrl = function(name, defaultValue) {
  */
 Code.getLang = function() {
  // var lang = Code.getStringParamFromUrl('lang', '');
-  var lang=localStorage.getItem("gide.lang");
+  var lang=BlocklyStorage.getItem("gide.lang");
   if (Code.LANGUAGE_NAME[lang] === undefined) {
     lang = 'en';
-    localStorage.setItem("gide.lang",lang);
+    BlocklyStorage.setItem("gide.lang",lang);
   }
   return lang;
 };
@@ -163,7 +163,7 @@ Code.changeLanguage = function() {
 
   var languageMenu = document.getElementById('languageMenu');
   var newLang = encodeURIComponent(languageMenu.options[languageMenu.selectedIndex].value);
-  localStorage.setItem("gide.lang",newLang);
+  BlocklyStorage.setItem("gide.lang",newLang);
   window.location = window.location.protocol + '//' +window.location.host + window.location.pathname;
 };
 
@@ -227,6 +227,7 @@ Code.LANG = Code.getLang();
 Code.TABS_ = ['blocks', 'javascript', 'php', 'python','debug', 'lua', 'xml'];
 
 Code.selected = 'blocks';
+Code.runSelected = 'python';
 
 /**
  * Switch the visible pane when a tab is clicked.
@@ -275,6 +276,8 @@ Code.tabClick = function(clickedName) {
     Code.workspace.setVisible(true);
   }
   Blockly.svgResize(Code.workspace);
+  if( Code.selected=="python")Code.runSelected="python";
+  if( Code.selected=="javascript")Code.runSelected="javascript";
 };
 
 /**
@@ -521,8 +524,8 @@ Code.changeTemplate = function() {
 
   var templateMenu = document.getElementById('TemplateMenu');
   var name=templateMenu.options[templateMenu.selectedIndex].value;
-  localStorage.setItem("gide.select",name);
-  var valueLocal = localStorage.getItem("gide."+name);
+  BlocklyStorage.setItem("gide.select",name);
+  var valueLocal = BlocklyStorage.getItem("gide."+name);
   Code.workspace.clear();
   var xml = Blockly.Xml.textToDom(valueLocal);
   Blockly.Xml.domToWorkspace(xml, Code.workspace);
@@ -531,7 +534,7 @@ Code.changeTemplate = function() {
 };
 Code.initTemplate = function() {
   var objSelect = document.getElementById("TemplateMenu");
-  var sname=localStorage.getItem("gide.select");
+  var sname=BlocklyStorage.getItem("gide.select");
   objSelect.length=0;
   for(var i = 0; i < localStorage.length; i++)
   {
@@ -554,17 +557,9 @@ Code.initTemplate = function() {
  * Execute the user's code.
  * Just a quick and dirty eval.  Catch infinite loops.
  */
-Code.runJS = function() {
-  Blockly.JavaScript.INFINITE_LOOP_TRAP = '  checkTimeout();\n';
-  var timeouts = 0;
-  var checkTimeout = function() {
-    if (timeouts++ > 1000000) {
-      throw MSG['timeout'];
-    }
-  };
-  var code="# -*- coding: utf-8 -*-\n"+Blockly.Python.workspaceToCode(Code.workspace); 
-  Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
+Code.RunPython=function(){
   try {
+    var code="# -*- coding: utf-8 -*-\n"+Blockly.Python.workspaceToCode(Code.workspace); 
     if(document.getElementById("runButton").innerHTML.indexOf("run") != -1 )
     {
       Code.tabClick("debug");
@@ -575,13 +570,33 @@ Code.runJS = function() {
     BlocklyStorage.makeGet("/cgi-bin/kill.lua","");
   } catch (e) {
     alert(MSG['badCode'].replace('%1', e));
-    
+
   }
-  
+}
+Code.RunJavascript=function(){
+  Blockly.JavaScript.INFINITE_LOOP_TRAP = '  checkTimeout();\n';
+  var timeouts = 0;
+  var checkTimeout = function() {
+    if (timeouts++ > 1000000) {
+      throw MSG['timeout'];
+    }
+  };
+  Code.tabClick("debug");
+  var code = Blockly.JavaScript.workspaceToCode(Code.workspace);
+  Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
+  try {
+    eval(code);
+  } catch (e) {
+    alert(MSG['badCode'].replace('%1', e));
+  }
+}
+Code.runJS = function() {
+  if(Code.runSelected=="python")Code.RunPython();
+  if(Code.runSelected=="javascript")Code.RunJavascript();
 };
 Code.likeJS = function() {
   var objSelect = document.getElementById("TemplateMenu");
-  var sname=localStorage.getItem("gide.select");
+  var sname=BlocklyStorage.getItem("gide.select");
   try{
   if(sname==undefined)sname=objSelect.options[objSelect.selectedIndex].value
   }catch{
@@ -593,9 +608,9 @@ Code.likeJS = function() {
   objSelect.options.add(new_opt);
   var xml = Blockly.Xml.workspaceToDom(Code.workspace);
   var text = Blockly.Xml.domToText(xml);
-  localStorage.setItem("gide.select",name+".t");
+  BlocklyStorage.setItem("gide.select",name+".t");
   name="gide."+name+".t";
-  localStorage.setItem(name,text); 
+  BlocklyStorage.setItem(name,text); 
   //window.location = window.location.protocol + '//' +window.location.host + window.location.pathname;
   Code.initTemplate();
 };
@@ -604,7 +619,7 @@ Code.likeJS = function() {
  */
 
 Code.discard = function() {
-  var sname=localStorage.getItem("gide.select");
+  var sname=BlocklyStorage.getItem("gide.select");
   if(sname==undefined)sname="";
   if(Code.selected=="debug")
   {
@@ -619,11 +634,17 @@ Code.discard = function() {
         if (window.location.hash) window.location.hash = '';
        var templateMenu = document.getElementById('TemplateMenu');
        var name="gide."+templateMenu.options[templateMenu.selectedIndex].value;
-       localStorage.removeItem("gide.select");
-       localStorage.removeItem(name);
-       window.location = window.location.protocol + '//' +window.location.host + window.location.pathname;
+       BlocklyStorage.removeItem("gide.select");
+       BlocklyStorage.removeItem(name);
+       Code.initTemplate();
+       Code.changeTemplate();
+      // window.location = window.location.protocol + '//' +window.location.host + window.location.pathname;
   }
   
+};
+Code.print= function(msg) {
+  var content = document.getElementById('content_debug');
+     content.textContent+=msg+"\r\n";
 };
 
 // Load the Code demo's language strings.

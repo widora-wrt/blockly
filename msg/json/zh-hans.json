@@ -242,7 +242,7 @@
 	"TEXT_TRIM_OPERATOR_BOTH": "消除其两侧的空白",
 	"TEXT_TRIM_OPERATOR_LEFT": "消除其左侧的空白",
 	"TEXT_TRIM_OPERATOR_RIGHT": "消除其右侧的空白",
-	"TEXT_PRINT_TITLE": "输出%1",
+	"TEXT_PRINT_TITLE": "打印%1",
 	"TEXT_PRINT_TOOLTIP": "输出指定的文字、数字或其他值。",
 	"TEXT_PROMPT_TYPE_TEXT": "要求输入文本，并显示提示消息",
 	"TEXT_PROMPT_TYPE_NUMBER": "要求输入数字，并显示提示消息",
