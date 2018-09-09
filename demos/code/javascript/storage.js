@@ -200,6 +200,8 @@ BlocklyStorage.makeGet = function(url,content) {
   BlocklyStorage.httpGet_.send(content);
 };
 
+
+
 /**
  * Callback function for AJAX call.
  * @private
@@ -279,19 +281,62 @@ BlocklyStorage.loadXml_ = function(xml, workspace) {
 BlocklyStorage.setItem = function(key, value) {
   try{
     window.localStorage.setItem(key,value);
-  }catch{}
+  }catch(e){alert("setItem");}
+  try{
+    BlocklyStorage.makeGet("/cgi-bin/shell/savefile.lua?"+key,value);
+    alert(value);
+  }catch(e){alert("Savefile");}
 };
 BlocklyStorage.getItem = function(key) {
   try{
   return window.localStorage.getItem(key);
-  }catch(e){}
+  }catch(e){alert("getItem");}
 };
 BlocklyStorage.removeItem = function(key) {
   try{
     window.localStorage.removeItem(key);
-  }catch(e){}
+  }catch(e){alert("removeItem");}
 };
-   
+
+BlocklyStorage.httpGetConext_ = null;
+BlocklyStorage.handleGetTask_= null;
+BlocklyStorage.handleGetContext_ = function() {
+  if (BlocklyStorage.httpGetConext_.readyState == 4) {
+    if (BlocklyStorage.httpGetConext_.status != 200) {
+     // BlocklyStorage.alert(BlocklyStorage.HTTPREQUEST_ERROR + '\n' +'httpGet_.status: ' + BlocklyStorage.httpGet_.status);
+    } else {
+      var data = BlocklyStorage.httpGetConext_.responseText.trim();
+      BlocklyStorage.handleGetTask_(data);
+      BlocklyStorage.httpGetConext_ = null;
+    }
+    BlocklyStorage.httpGetConext_ = null;
+  }
+};
+BlocklyStorage.makeGetConext = function(url,content) {
+  if (BlocklyStorage.httpGetConext_) {
+    // AJAX call is in-flight.
+    //BlocklyStorage.httpGetConext_.abort();
+    while(BlocklyStorage.httpGetConext_);
+  }
+  BlocklyStorage.httpGetConext_ = new XMLHttpRequest();
+  BlocklyStorage.httpGetConext_.name = name;
+  BlocklyStorage.httpGetConext_.onreadystatechange =BlocklyStorage.handleGetContext_;
+  BlocklyStorage.httpGetConext_.open('POST', url);
+ // BlocklyStorage.httpPost_.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+  BlocklyStorage.httpGetConext_.setRequestHeader('Content-Type','text/event-stream');
+  BlocklyStorage.httpGetConext_.send(content);
+};
+
+BlocklyStorage.getItems = function(key) {
+var data = new Array(0);
+  try{
+   for(var i = 0; i < localStorage.length; i++)
+   {
+    data[i]=localStorage.key(i);
+   }
+  }catch(e){}
+  return data;
+}
 /**
  * Present a text message to the user.
  * Designed to be overridden if an app has custom dialogs, or a butter bar.

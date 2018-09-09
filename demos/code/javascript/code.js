@@ -89,6 +89,7 @@ Code.LANGUAGE_RTL = ['ar', 'fa', 'he', 'lki'];
  * @type {Blockly.WorkspaceSvg}
  */
 Code.workspace = null;
+Code.selectname = null;
 
 /**
  * Extracts a parameter from the URL.
@@ -107,11 +108,10 @@ Code.getStringParamFromUrl = function(name, defaultValue) {
  * @return {string} User's language.
  */
 Code.getLang = function() {
- // var lang = Code.getStringParamFromUrl('lang', '');
-  var lang=BlocklyStorage.getItem("gide.lang");
+  var lang=window.sessionStorage.selectlang;
   if (Code.LANGUAGE_NAME[lang] === undefined) {
     lang = 'en';
-    BlocklyStorage.setItem("gide.lang",lang);
+    window.sessionStorage.selectlang=lang;
   }
   return lang;
 };
@@ -163,8 +163,12 @@ Code.changeLanguage = function() {
 
   var languageMenu = document.getElementById('languageMenu');
   var newLang = encodeURIComponent(languageMenu.options[languageMenu.selectedIndex].value);
-  BlocklyStorage.setItem("gide.lang",newLang);
-  window.location = window.location.protocol + '//' +window.location.host + window.location.pathname;
+  BlocklyStorage.handleGetTask_=function(text)
+  {
+    window.location = window.location.protocol + '//' +window.location.host + window.location.pathname;
+  }
+  window.sessionStorage.selectlang=newLang;
+  BlocklyStorage.makeGetConext("/cgi-bin/shell/setfile.lua?selectlang",newLang);
 };
 
 /**
@@ -347,32 +351,10 @@ Code.checkAllGeneratorFunctionsDefined = function(generator) {
   }
   return valid;
 };
-function checkStorageSupport()
-{
-   
- 
-    // localStorage
-    if (window.localStorage) {
-        return true;
-    } else {
-        alert("No suport localStorage");
-        return false;
-    }
-     // sessionStorage
-     if (window.sessionStorage) {
-
-      return true;
-  } else {
-      alert("No suport sessionStorage");
-      return false;
-  }
-}
 /**
  * Initialize Blockly.  Called on page load.
  */
 Code.init = function() {
-  checkStorageSupport();
-  Code.initLanguage();
   Code.initTemplate();
   var rtl = Code.isRtl();
   var container = document.getElementById('content_area');
@@ -521,35 +503,52 @@ Code.initLanguage = function() {
  * Save the blocks and reload with a different language.
  */
 Code.changeTemplate = function() {
-
   var templateMenu = document.getElementById('TemplateMenu');
-  var name=templateMenu.options[templateMenu.selectedIndex].value;
-  BlocklyStorage.setItem("gide.select",name);
-  var valueLocal = BlocklyStorage.getItem("gide."+name);
-  Code.workspace.clear();
-  var xml = Blockly.Xml.textToDom(valueLocal);
-  Blockly.Xml.domToWorkspace(xml, Code.workspace);
-  Code.initTemplate();
-  //window.location = window.location.protocol + '//' +window.location.host + window.location.pathname;
+  BlocklyStorage.handleGetTask_=function(text)
+  {
+    Code.workspace.clear();
+    var xml = Blockly.Xml.textToDom(text);
+    Blockly.Xml.domToWorkspace(xml, Code.workspace);
+  }
+  window.sessionStorage.selectname=templateMenu.options[templateMenu.selectedIndex].value;
+  BlocklyStorage.makeGetConext("/cgi-bin/shell/loadfile.lua?gide."+window.sessionStorage.selectname,"null");
 };
+
+
 Code.initTemplate = function() {
   var objSelect = document.getElementById("TemplateMenu");
-  var sname=BlocklyStorage.getItem("gide.select");
-  objSelect.length=0;
-  for(var i = 0; i < localStorage.length; i++)
+  objSelect.addEventListener('change', Code.changeTemplate, true);
+  BlocklyStorage.handleGetTask_=function(text)
   {
-      if(localStorage.key(i).indexOf(".t")>0)
+    var objSelect = document.getElementById("TemplateMenu");
+    objSelect.length=0;
+    var data = text.split('\n');
+    for(var i = 0; i < data.length; i++)
+    {
+      if(data[i].endsWith(".s"))
       {
-        var name=localStorage.key(i);
+        var temp=decodeURI(data[i]);
+        window.sessionStorage.selectname=temp.replace(".s","").replace("gide.","");
+      }else 
+      if(data[i].endsWith(".t"))
+      {
+        var name=decodeURI(data[i]);
         name=name.replace("gide.","");
         var new_opt = new Option(name);   
-        if (name ==sname) {
+        if (name ==window.sessionStorage.selectname) {
           new_opt.selected = true;
         }
         objSelect.options.add(new_opt);
+      }else
+      if(data[i].endsWith(".l"))
+      {
+        var temp=decodeURI(data[i]);
+        window.sessionStorage.selectlang=temp.replace(".l","");
       }
+    }
+    Code.initLanguage();
   }
-  objSelect.addEventListener('change', Code.changeTemplate, true);
+  BlocklyStorage.makeGetConext("/cgi-bin/shell/listfile.lua","null");
 }
 
 
@@ -565,9 +564,9 @@ Code.RunPython=function(){
       Code.tabClick("debug");
       var content = document.getElementById('content_debug');
       content.textContent=MSG["start"];
-      BlocklyStorage.makeGet("/cgi-bin/api.lua",code);
+      BlocklyStorage.makeGet("/cgi-bin/shell/api.lua",code);
     }else
-    BlocklyStorage.makeGet("/cgi-bin/kill.lua","");
+    BlocklyStorage.makeGet("/cgi-bin/shell/kill.lua","");
   } catch (e) {
     alert(MSG['badCode'].replace('%1', e));
 
@@ -596,30 +595,31 @@ Code.runJS = function() {
 };
 Code.likeJS = function() {
   var objSelect = document.getElementById("TemplateMenu");
-  var sname=BlocklyStorage.getItem("gide.select");
   try{
-  if(sname==undefined)sname=objSelect.options[objSelect.selectedIndex].value
-  }catch{
-    sname="";
+  if(window.sessionStorage.selectname==undefined)window.sessionStorage.selectname=objSelect.options[objSelect.selectedIndex].value
+  }catch(e){
+    window.sessionStorage.selectname="";
   }
-  var name=prompt(MSG['likeinputtitle'],sname.replace(".t",""));
+  var name=prompt(MSG['likeinputtitle'],window.sessionStorage.selectname.replace(".t",""));
   if(name==null)return; 
   var new_opt = new Option(name+".t");  
   objSelect.options.add(new_opt);
   var xml = Blockly.Xml.workspaceToDom(Code.workspace);
   var text = Blockly.Xml.domToText(xml);
-  BlocklyStorage.setItem("gide.select",name+".t");
-  name="gide."+name+".t";
-  BlocklyStorage.setItem(name,text); 
-  //window.location = window.location.protocol + '//' +window.location.host + window.location.pathname;
-  Code.initTemplate();
+  //BlocklyStorage.setItem("gide.select",name+".t");
+  window.sessionStorage.selectname=name+".t";
+  BlocklyStorage.handleGetTask_=function(text)
+  {
+    window.location = window.location.protocol + '//' +window.location.host + window.location.pathname;
+  }
+  BlocklyStorage.makeGetConext("/cgi-bin/shell/savefile.lua?gide."+window.sessionStorage.selectname,text);
 };
 /**
  * Discard all blocks from the workspace.
  */
 
 Code.discard = function() {
-  var sname=BlocklyStorage.getItem("gide.select");
+  var sname=window.sessionStorage.selectname;
   if(sname==undefined)sname="";
   if(Code.selected=="debug")
   {
@@ -630,15 +630,20 @@ Code.discard = function() {
   var count = Code.workspace.getAllBlocks().length;
   if (window.confirm(MSG['deletethiscontext'].replace('%1', sname).replace("%2",count))) 
       {
-        Code.workspace.clear();
+       /* Code.workspace.clear();
         if (window.location.hash) window.location.hash = '';
        var templateMenu = document.getElementById('TemplateMenu');
        var name="gide."+templateMenu.options[templateMenu.selectedIndex].value;
        BlocklyStorage.removeItem("gide.select");
        BlocklyStorage.removeItem(name);
        Code.initTemplate();
-       Code.changeTemplate();
-      // window.location = window.location.protocol + '//' +window.location.host + window.location.pathname;
+       Code.changeTemplate();*/
+       
+       BlocklyStorage.handleGetTask_=function(text)
+      {
+        window.location = window.location.protocol + '//' +window.location.host + window.location.pathname;
+      }
+      BlocklyStorage.makeGetConext("/cgi-bin/shell/deletefefile.lua?gide."+window.sessionStorage.selectname,"");
   }
   
 };
