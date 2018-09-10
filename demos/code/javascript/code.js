@@ -610,7 +610,7 @@ Code.likeJS = function() {
   window.sessionStorage.selectname=name+".t";
   BlocklyStorage.handleGetTask_=function(text)
   {
-    window.location = window.location.protocol + '//' +window.location.host + window.location.pathname;
+    zwindow.location = window.location.protocol + '//' +window.location.host + window.location.pathname;
   }
   BlocklyStorage.makeGetConext("/cgi-bin/shell/savefile.lua?gide."+window.sessionStorage.selectname,text);
 };

@@ -306,8 +306,8 @@ BlocklyStorage.handleGetContext_ = function() {
      // BlocklyStorage.alert(BlocklyStorage.HTTPREQUEST_ERROR + '\n' +'httpGet_.status: ' + BlocklyStorage.httpGet_.status);
     } else {
       var data = BlocklyStorage.httpGetConext_.responseText.trim();
-      BlocklyStorage.httpGetConext_ = null;
       BlocklyStorage.handleGetTask_(data);
+      BlocklyStorage.httpGetConext_ = null;
     }
     BlocklyStorage.httpGetConext_ = null;
   }
