@@ -159,6 +159,14 @@ pre.content {
   font-family: monospace;
   overflow: scroll;
 }
+#content_debug {
+  resize: none;
+  outline: none;
+  color:Green;
+  font-family:"隶书";
+  font-weight:bold;
+
+}
 #languageMenu {
   vertical-align: top;
   margin-left: 4px;

@@ -1,5 +1,5 @@
 var MSG = {
-  title: "极客虫 (v00.01.01)",
+  title: "极客虫 (v00.01.02)",
   blocks: "块",
   debug: "调试",
   code: "代码",

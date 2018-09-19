@@ -1,5 +1,5 @@
 var MSG = {
-  title: "GIDE (v00.01.01)",
+  title: "GIDE (v00.01.02)",
   blocks: "Blocks",
   debug: "Debug",
   code: "Code",
