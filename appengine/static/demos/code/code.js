@@ -89,7 +89,8 @@ Code.LANGUAGE_RTL = ['ar', 'fa', 'he', 'lki'];
  * @type {Blockly.WorkspaceSvg}
  */
 Code.workspace = null;
-
+Code.selectname = null;
+Code.targetdevice=null;
 /**
  * Extracts a parameter from the URL.
  * If the parameter is absent default_value is returned.
@@ -107,10 +108,10 @@ Code.getStringParamFromUrl = function(name, defaultValue) {
  * @return {string} User's language.
  */
 Code.getLang = function() {
-  var lang = Code.getStringParamFromUrl('lang', '');
+  var lang=window.sessionStorage.selectlang;
   if (Code.LANGUAGE_NAME[lang] === undefined) {
-    // Default to English.
     lang = 'en';
+    window.sessionStorage.selectlang=lang;
   }
   return lang;
 };
@@ -128,7 +129,6 @@ Code.isRtl = function() {
  * @param {string} defaultXml Text representation of default blocks.
  */
 Code.loadBlocks = function(defaultXml) {
- // alert( window.sessionStorage.loadOnceBlocks);
   try {
     var loadOnce = window.sessionStorage.loadOnceBlocks;
   } catch(e) {
@@ -136,9 +136,9 @@ Code.loadBlocks = function(defaultXml) {
     // Restarting Firefox fixes this, so it looks like a bug.
     var loadOnce = null;
   }
+  
   if ('BlocklyStorage' in window && window.location.hash.length > 1) {
     // An href with #key trigers an AJAX call to retrieve saved blocks.
-    
     BlocklyStorage.retrieveXml(window.location.hash.substring(1));
   } else if (loadOnce) {
     // Language switching stores the blocks during the reload.
@@ -160,27 +160,19 @@ Code.loadBlocks = function(defaultXml) {
  * Save the blocks and reload with a different language.
  */
 Code.changeLanguage = function() {
-  // Store the blocks for the duration of the reload.
-  // MSIE 11 does not support sessionStorage on file:// URLs.
-  if (window.sessionStorage) {
-    var xml = Blockly.Xml.workspaceToDom(Code.workspace);
-    
-    var text = Blockly.Xml.domToText(xml);
-    window.sessionStorage.loadOnceBlocks = text;
-  }
   var languageMenu = document.getElementById('languageMenu');
-  var newLang = encodeURIComponent(
-      languageMenu.options[languageMenu.selectedIndex].value);
-  var search = window.location.search;
-  if (search.length <= 1) {
-    search = '?lang=' + newLang;
-  } else if (search.match(/[?&]lang=[^&]*/)) {
-    search = search.replace(/([?&]lang=)[^&]*/, '$1' + newLang);
-  } else {
-    search = search.replace(/\?/, '?lang=' + newLang + '&');
+  var newLang = encodeURIComponent(languageMenu.options[languageMenu.selectedIndex].value);
+  window.sessionStorage.selectlang=newLang;
+  if(Code.targetdevice)
+  {
+    BlocklyStorage.handleGetTask_=function(text)
+    {
+      window.location = window.location.protocol + '//' +window.location.host + window.location.pathname;
+    }
+    BlocklyStorage.makeGetConext("/cgi-bin/shell/setfile.lua?selectlang",newLang);
+  }else{
+    window.location = window.location.protocol + '//' +window.location.host + window.location.pathname;
   }
-
-  window.location = window.location.protocol + '//' +window.location.host + window.location.pathname + search;
 };
 
 /**
@@ -240,9 +232,10 @@ Code.LANG = Code.getLang();
  * List of tab names.
  * @private
  */
-Code.TABS_ = ['blocks', 'javascript', 'php', 'python', 'dart', 'lua', 'xml'];
+Code.TABS_ = ['blocks', 'javascript', 'php', 'python','debug', 'lua', 'xml'];
 
 Code.selected = 'blocks';
+Code.runSelected = 'python';
 
 /**
  * Switch the visible pane when a tab is clicked.
@@ -291,6 +284,8 @@ Code.tabClick = function(clickedName) {
     Code.workspace.setVisible(true);
   }
   Blockly.svgResize(Code.workspace);
+  if( Code.selected=="python")Code.runSelected="python";
+  if( Code.selected=="javascript")Code.runSelected="javascript";
 };
 
 /**
@@ -311,8 +306,6 @@ Code.renderContent = function() {
     Code.attemptCodeGeneration(Blockly.Python, 'py');
   } else if (content.id == 'content_php') {
     Code.attemptCodeGeneration(Blockly.PHP, 'php');
-  } else if (content.id == 'content_dart') {
-    Code.attemptCodeGeneration(Blockly.Dart, 'dart');
   } else if (content.id == 'content_lua') {
     Code.attemptCodeGeneration(Blockly.Lua, 'lua');
   }
@@ -362,13 +355,12 @@ Code.checkAllGeneratorFunctionsDefined = function(generator) {
   }
   return valid;
 };
-
 /**
  * Initialize Blockly.  Called on page load.
  */
 Code.init = function() {
-  Code.initLanguage();
-  Code.initTemplate();
+  Code.targetdevice=false;
+  Code.initTarget();
   var rtl = Code.isRtl();
   var container = document.getElementById('content_area');
   var onresize = function(e) {
@@ -504,24 +496,101 @@ Code.initLanguage = function() {
   document.title += ' ' + MSG['title'];
   document.getElementById('title').textContent = MSG['title'];
   document.getElementById('tab_blocks').textContent = MSG['blocks'];
-
+  document.getElementById('tab_debug').textContent = MSG['debug'];
+  document.getElementById('tab_python').textContent = MSG['code'];
+  document.getElementById('copyright').textContent = MSG['copyright'];
  // document.getElementById('linkButton').title = MSG['linkTooltip'];
   document.getElementById('runButton').title = MSG['runTooltip'];
   document.getElementById('trashButton').title = MSG['trashTooltip'];
   document.getElementById('likeButton').title = MSG['likeTooltip'];
 };
-Code.initTemplate = function() {
-  var objSelect = document.getElementById("TemplateMenu");
-  for(var i=1;i<5;i++){
-    var new_opt = new Option("Template"+i);      
-    objSelect.options.add(new_opt);
-    }
+/**
+ * Save the blocks and reload with a different language.
+ */
+Code.changeTemplate = function() {
+  var templateMenu = document.getElementById('TemplateMenu');
+  BlocklyStorage.handleGetTask_=function(text)
+  {
+    Code.workspace.clear();
+    var xml = Blockly.Xml.textToDom(text);
+    Blockly.Xml.domToWorkspace(xml, Code.workspace);
   }
+  window.sessionStorage.selectname=templateMenu.options[templateMenu.selectedIndex].value;
+  BlocklyStorage.makeGetConext("/cgi-bin/shell/loadfile.lua?gide."+window.sessionStorage.selectname,"null");
+};
+
+Code.initTargetdevice = function() {
+  var objSelect = document.getElementById("TemplateMenu");
+  objSelect.addEventListener('change', Code.changeTemplate, true);
+  BlocklyStorage.handleGetTask_=function(text)
+  {
+    var objSelect = document.getElementById("TemplateMenu");
+    objSelect.length=0;
+    var data = text.split('\n');
+    for(var i = 0; i < data.length; i++)
+    {
+      if(data[i].endsWith(".s"))
+      {
+        var temp=decodeURI(data[i]);
+        window.sessionStorage.selectname=temp.replace(".s","").replace("gide.","");
+      }else 
+      if(data[i].endsWith(".t"))
+      {
+        var name=decodeURI(data[i]);
+        name=name.replace("gide.","");
+        var new_opt = new Option(name);   
+        if (name ==window.sessionStorage.selectname) {
+          new_opt.selected = true;
+        }
+        objSelect.options.add(new_opt);
+      }else
+      if(data[i].endsWith(".l"))
+      {
+        var temp=decodeURI(data[i]);
+        window.sessionStorage.selectlang=temp.replace(".l","");
+      }
+    }
+    Code.initLanguage();
+  }
+  BlocklyStorage.makeGetConext("/cgi-bin/shell/listfile.lua","null");
+}
+Code.initTargetserver = function() {
+
+  var storage = window.sessionStoragee; 
+  var objSelect = document.getElementById("TemplateMenu");
+  objSelect.length=0;
+
+  var new_opt = new Option("d");   
+  objSelect.options.add(new_opt);
+  Code.initLanguage();
+}
+Code.initTarget = function() {
+  if(Code.targetdevice)Code.initTargetdevice();
+  else Code.initTargetserver();
+}
+
+
 /**
  * Execute the user's code.
  * Just a quick and dirty eval.  Catch infinite loops.
  */
-Code.runJS = function() {
+Code.RunPython=function(){
+  try {
+    var code="# -*- coding: utf-8 -*-\n"+Blockly.Python.workspaceToCode(Code.workspace); 
+    if(document.getElementById("runButton").innerHTML.indexOf("run") != -1 )
+    {
+      Code.tabClick("debug");
+      var content = document.getElementById('content_debug');
+      content.textContent=MSG["start"];
+      BlocklyStorage.makeGet("/cgi-bin/shell/api.lua",code);
+    }else
+    BlocklyStorage.makeGet("/cgi-bin/shell/kill.lua","");
+  } catch (e) {
+    alert(MSG['badCode'].replace('%1', e));
+
+  }
+}
+Code.RunJavascript=function(){
   Blockly.JavaScript.INFINITE_LOOP_TRAP = '  checkTimeout();\n';
   var timeouts = 0;
   var checkTimeout = function() {
@@ -529,30 +598,76 @@ Code.runJS = function() {
       throw MSG['timeout'];
     }
   };
-  var code= Blockly.Python.workspaceToCode(Code.workspace); 
+  Code.tabClick("debug");
+  var code = Blockly.JavaScript.workspaceToCode(Code.workspace);
   Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
   try {
-    BlocklyStorage.makePost("/cgi-bin/test.lua",code);
+    eval(code);
   } catch (e) {
     alert(MSG['badCode'].replace('%1', e));
   }
+}
+Code.runJS = function() {
+  if(Code.runSelected=="python")Code.RunPython();
+  if(Code.runSelected=="javascript")Code.RunJavascript();
 };
 Code.likeJS = function() {
-  age=prompt(MSG['likeinputtitle']); 
-  alert(age)
+  var objSelect = document.getElementById("TemplateMenu");
+  try{
+  if(window.sessionStorage.selectname==undefined)window.sessionStorage.selectname=objSelect.options[objSelect.selectedIndex].value
+  }catch(e){
+    window.sessionStorage.selectname="";
+  }
+  var name=prompt(MSG['likeinputtitle'],window.sessionStorage.selectname.replace(".t",""));
+  if(name==null)return; 
+  var new_opt = new Option(name+".t");  
+  objSelect.options.add(new_opt);
+  var xml = Blockly.Xml.workspaceToDom(Code.workspace);
+  var text = Blockly.Xml.domToText(xml);
+  //BlocklyStorage.setItem("gide.select",name+".t");
+  window.sessionStorage.selectname=name+".t";
+  BlocklyStorage.handleGetTask_=function(text)
+  {
+    window.location = window.location.protocol + '//' +window.location.host + window.location.pathname;
+  }
+  BlocklyStorage.makeGetConext("/cgi-bin/shell/savefile.lua?gide."+window.sessionStorage.selectname,text);
 };
 /**
  * Discard all blocks from the workspace.
  */
+
 Code.discard = function() {
-  var count = Code.workspace.getAllBlocks().length;
-  if (count < 2 ||
-      window.confirm(Blockly.Msg['DELETE_ALL_BLOCKS'].replace('%1', count))) {
-    Code.workspace.clear();
-    if (window.location.hash) {
-      window.location.hash = '';
-    }
+  var sname=window.sessionStorage.selectname;
+  if(sname==undefined)sname="";
+  if(Code.selected=="debug")
+  {
+    var content = document.getElementById('content_debug');
+    content.textContent=null;
+    return;
   }
+  var count = Code.workspace.getAllBlocks().length;
+  if (window.confirm(MSG['deletethiscontext'].replace('%1', sname).replace("%2",count))) 
+      {
+       /* Code.workspace.clear();
+        if (window.location.hash) window.location.hash = '';
+       var templateMenu = document.getElementById('TemplateMenu');
+       var name="gide."+templateMenu.options[templateMenu.selectedIndex].value;
+       BlocklyStorage.removeItem("gide.select");
+       BlocklyStorage.removeItem(name);
+       Code.initTemplate();
+       Code.changeTemplate();*/
+       
+       BlocklyStorage.handleGetTask_=function(text)
+      {
+        window.location = window.location.protocol + '//' +window.location.host + window.location.pathname;
+      }
+      BlocklyStorage.makeGetConext("/cgi-bin/shell/deletefefile.lua?gide."+window.sessionStorage.selectname,"");
+  }
+  
+};
+Code.print= function(msg) {
+  var content = document.getElementById('content_debug');
+     content.textContent+=msg+"\r\n";
 };
 
 // Load the Code demo's language strings.

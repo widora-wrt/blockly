@@ -90,7 +90,7 @@ Code.LANGUAGE_RTL = ['ar', 'fa', 'he', 'lki'];
  */
 Code.workspace = null;
 Code.selectname = null;
-
+Code.targetdevice=null;
 /**
  * Extracts a parameter from the URL.
  * If the parameter is absent default_value is returned.
@@ -160,15 +160,19 @@ Code.loadBlocks = function(defaultXml) {
  * Save the blocks and reload with a different language.
  */
 Code.changeLanguage = function() {
-
   var languageMenu = document.getElementById('languageMenu');
   var newLang = encodeURIComponent(languageMenu.options[languageMenu.selectedIndex].value);
-  BlocklyStorage.handleGetTask_=function(text)
+  window.sessionStorage.selectlang=newLang;
+  if(Code.targetdevice)
   {
+    BlocklyStorage.handleGetTask_=function(text)
+    {
+      window.location = window.location.protocol + '//' +window.location.host + window.location.pathname;
+    }
+    BlocklyStorage.makeGetConext("/cgi-bin/shell/setfile.lua?selectlang",newLang);
+  }else{
     window.location = window.location.protocol + '//' +window.location.host + window.location.pathname;
   }
-  window.sessionStorage.selectlang=newLang;
-  BlocklyStorage.makeGetConext("/cgi-bin/shell/setfile.lua?selectlang",newLang);
 };
 
 /**
@@ -355,7 +359,8 @@ Code.checkAllGeneratorFunctionsDefined = function(generator) {
  * Initialize Blockly.  Called on page load.
  */
 Code.init = function() {
-  Code.initTemplate();
+  Code.targetdevice=true;
+  Code.initTarget();
   var rtl = Code.isRtl();
   var container = document.getElementById('content_area');
   var onresize = function(e) {
@@ -509,13 +514,13 @@ Code.changeTemplate = function() {
     Code.workspace.clear();
     var xml = Blockly.Xml.textToDom(text);
     Blockly.Xml.domToWorkspace(xml, Code.workspace);
+    Code.tabClick("blocks");
   }
   window.sessionStorage.selectname=templateMenu.options[templateMenu.selectedIndex].value;
   BlocklyStorage.makeGetConext("/cgi-bin/shell/loadfile.lua?gide."+window.sessionStorage.selectname,"null");
 };
 
-
-Code.initTemplate = function() {
+Code.initTargetdevice = function() {
   var objSelect = document.getElementById("TemplateMenu");
   objSelect.addEventListener('change', Code.changeTemplate, true);
   BlocklyStorage.handleGetTask_=function(text)
@@ -549,6 +554,20 @@ Code.initTemplate = function() {
     Code.initLanguage();
   }
   BlocklyStorage.makeGetConext("/cgi-bin/shell/listfile.lua","null");
+}
+Code.initTargetserver = function() {
+
+  var storage = window.sessionStoragee; 
+  var objSelect = document.getElementById("TemplateMenu");
+  objSelect.length=0;
+
+  var new_opt = new Option("d");   
+  objSelect.options.add(new_opt);
+  Code.initLanguage();
+}
+Code.initTarget = function() {
+  if(Code.targetdevice)Code.initTargetdevice();
+  else Code.initTargetserver();
 }
 
 
@@ -630,15 +649,6 @@ Code.discard = function() {
   var count = Code.workspace.getAllBlocks().length;
   if (window.confirm(MSG['deletethiscontext'].replace('%1', sname).replace("%2",count))) 
       {
-       /* Code.workspace.clear();
-        if (window.location.hash) window.location.hash = '';
-       var templateMenu = document.getElementById('TemplateMenu');
-       var name="gide."+templateMenu.options[templateMenu.selectedIndex].value;
-       BlocklyStorage.removeItem("gide.select");
-       BlocklyStorage.removeItem(name);
-       Code.initTemplate();
-       Code.changeTemplate();*/
-       
        BlocklyStorage.handleGetTask_=function(text)
       {
         window.location = window.location.protocol + '//' +window.location.host + window.location.pathname;

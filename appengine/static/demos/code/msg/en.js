@@ -1,5 +1,5 @@
 var MSG = {
-  title: "GIDE (v00.01.01)",
+  title: "GIDE (v00.01.02)",
   blocks: "Blocks",
   debug: "Debug",
   code: "Code",
@@ -14,6 +14,7 @@ var MSG = {
   timeout: "Maximum execution iterations exceeded.",
   trashTooltip: "Discard all blocks.",
   catGpio:"Gpio",
+  catIot:"Iot",
   catPwm:"Pwm",
   catAnalog:"Analog input",
   catI2c:"I2c",
@@ -72,5 +73,6 @@ var MSG = {
   catEthernet_revice_title: "revice %1 length %2",
   catPrint_to_title: "print %1 to %2",
   catPrint_console_title: "Console",
+  catIot_send_title:"send %1 to %2 id %3",
 
 };

@@ -1,5 +1,5 @@
 var MSG = {
-  title: "极客虫 (v00.01.01)",
+  title: "极客虫 (v00.01.02)",
   blocks: "块",
   debug: "调试",
   code: "代码",
@@ -14,6 +14,7 @@ var MSG = {
   timeout: "超过最大执行行数。",
   trashTooltip: "放弃所有块。",
   catGpio:"输入/输出",
+  catIot:"物联网",
   catPwm:"脉冲输出",
   catAnalog:"模拟输入",
   catI2c:"I2C总线",
@@ -72,4 +73,5 @@ var MSG = {
   catEthernet_revice_title: "接收 %1 长度 %2",
   catPrint_to_title: "打印 %1 到 %2",
   catPrint_console_title: "控制台",
+  catIot_send_title:"发送 %1 到 %2 标识 %3",
 };
