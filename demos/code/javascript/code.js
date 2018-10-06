@@ -232,7 +232,7 @@ Code.LANG = Code.getLang();
  * List of tab names.
  * @private
  */
-Code.TABS_ = ['blocks', 'javascript', 'php', 'python','debug', 'lua', 'xml'];
+Code.TABS_ = ['blocks', 'python','debug'];
 
 Code.selected = 'blocks';
 Code.runSelected = 'python';

@@ -22,6 +22,7 @@ var MSG = {
   catSerial:"Serial",
   catSound:"Sound",
   catTcpip:"Tcp/IP",
+  catLcd:"Lcd",
   catPrint:"Print",
   catLogic: "Logic",
   catLoops: "Loops",
@@ -74,5 +75,12 @@ var MSG = {
   catPrint_to_title: "print %1 to %2",
   catPrint_console_title: "Console",
   catIot_send_title:"send %1 to %2 id %3",
-
+  catLcd_writeline_title:"write %1 to lcd",
+  catLcd_drawdot_title:"drawdot location (x%1y%2)color%3",
+  catLcd_drawrect_title:"drawrect start (x1%1y1%2)end (x2%3y2%4)color%5",
+  catLcd_drawline_title:"drawline start (x1%1y1%2)end (x2%3y2%4)color%5",
+  catLcd_drawrectfill_title:"drawrectfill start (x1%1y1%2)end (x2%3y2%4)color%5",
+  catLcd_drawcircle_title:"drawcircle location (x%1y%2)radius%3color%4",
+  catLcd_drawcirclefill_title:"drawcirclefill location (x%1y%2)radius%3color%4",
+  catLcd_drawclear_title:"draw clear %1",
 };
