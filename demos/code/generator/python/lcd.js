@@ -32,7 +32,7 @@ goog.require('Blockly.Python');
 Blockly.Python['lcd_writeline'] = function(block) {
     var value_name = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
-    var code = 'lcd.writeline('+value_name+')\n';
+    var code = 'lcd.writeLine(str('+value_name+'))\n';
     Blockly.Python.definitions_['import_lcd'] = 'import lcd';
     return code;
   };
@@ -102,6 +102,19 @@ Blockly.Python['lcd_writeline'] = function(block) {
     var value_c = Blockly.Python.valueToCode(block, 'VALUE_C', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
     var code = 'lcd.drawCirclefill('+value_x1+','+value_y1+','+value_r+','+value_c+')\n';
+    Blockly.Python.definitions_['import_lcd'] = 'import lcd';
+    return code;
+  };
+  Blockly.Python['lcd_writestring'] = function(block) {
+    var value_value = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC);
+    var value_font =block.getFieldValue('VALUE_FONT');
+    var value_x = Blockly.Python.valueToCode(block, 'VALUE_X', Blockly.Python.ORDER_ATOMIC);
+    var value_y = Blockly.Python.valueToCode(block, 'VALUE_Y', Blockly.Python.ORDER_ATOMIC);
+    var value_fc = Blockly.Python.valueToCode(block, 'VALUE_FC', Blockly.Python.ORDER_ATOMIC);
+    var value_bc = Blockly.Python.valueToCode(block, 'VALUE_BC', Blockly.Python.ORDER_ATOMIC);
+    var value_ac = Blockly.Python.valueToCode(block, 'VALUE_AC', Blockly.Python.ORDER_ATOMIC);
+    // TODO: Assemble Python into code variable.
+    var code = 'lcd.writeString('+value_value+','+value_font+','+value_x+','+value_y+','+value_fc+','+value_bc+','+value_ac+')\n';
     Blockly.Python.definitions_['import_lcd'] = 'import lcd';
     return code;
   };

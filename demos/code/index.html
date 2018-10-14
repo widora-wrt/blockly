@@ -27,6 +27,7 @@
   <script src="blocks/print.js"></script>
   <script src="blocks/iot.js"></script>
   <script src="blocks/lcd.js"></script>
+  <script src="blocks/time.js"></script>
   <script src="generator/python/gpio.js"></script>
   <script src="generator/python/pwm.js"></script>
   <script src="generator/python/i2c.js"></script>
@@ -38,6 +39,7 @@
   <script src="generator/python/print.js"></script>
   <script src="generator/python/iot.js"></script>
   <script src="generator/python/lcd.js"></script>
+  <script src="generator/python/time.js"></script>
   <script src="javascript/code.js"></script>
 </head>
 <body>
@@ -184,10 +186,39 @@
       <block type="sound_effect"></block>
       <block type="sound_dance"></block>
     </category>
+    <category name="%{BKY_CATTIME}" colour="%{BKY_TIME_HUE}">
+      <block type="time_getnow"></block>
+      <block type="time_sleep">
+        <value name="VALUE"><shadow type="math_number"><field name="NUM">1</field></value>
+      </block>
+      <block type="time_nowdate"></block>
+      <block type="time_nowtime"></block>
+      <block type="time_timer">
+        <value name="NAME"><shadow type="timer_list"></shadow></value>
+        <value name="VALUE"><shadow type="math_number"><field name="NUM">10</field></value>
+      </block>
+      <block type="time_thread">
+        <value name="NAME"><shadow type="thread_list"></shadow></value>
+      </block>
+    </category>
     <category name="%{BKY_CATLCD}" colour="%{BKY_LCD_HUE}">
       <block type="lcd_writeline">
       <value name="VALUE"><shadow type="text"><field name="TEXT">abc</field></value>
       </block>
+      <block type="lcd_writestring">
+        <value name="VALUE"><shadow type="text"><field name="TEXT">abc</field></value>
+        <value name="VALUE_X"><shadow type="math_number"><field name="NUM">0</field></value>
+        <value name="VALUE_Y"><shadow type="math_number"><field name="NUM">0</field></value>
+        <value name="VALUE_FC">
+            <shadow type="colour_picker"><field name="COLOUR">#ffffff</field></shadow>
+          </value>
+        <value name="VALUE_BC">
+            <shadow type="colour_picker"><field name="COLOUR">#000000</field></shadow>
+          </value>
+        <value name="VALUE_AC">
+            <shadow type="colour_picker"><field name="COLOUR">#000000</field></shadow>
+          </value>
+        </block>
       <block type="lcd_drawdot">
         <value name="VALUE_X"><shadow type="math_number"><field name="NUM">0</field></value>
         <value name="VALUE_Y"><shadow type="math_number"><field name="NUM">0</field></value>
@@ -249,6 +280,7 @@
          <value name="NAME"><shadow type="text"><field name="TEXT">abc</field>
       </block>
      <block type="print_console"></block>
+     <block type="print_lcd"></block>
       <block type="print_tcpip">
         <value name="NAME"><shadow type="tcpip_ipaddress"></shadow></value>
       </block>

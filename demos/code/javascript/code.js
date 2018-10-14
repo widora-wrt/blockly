@@ -551,18 +551,24 @@ Code.initTarget = function() {
  */
 Code.RunPython=function(){
   try {
+    //alert(document.getElementById("runButton").innerHTML);
     var code="# -*- coding: utf-8 -*-\n"+Blockly.Python.workspaceToCode(Code.workspace); 
-    if(document.getElementById("runButton").innerHTML.indexOf("run") != -1 )
+    if(document.getElementById("runButton").innerHTML.indexOf("run")>0)
     {
+      if(confirm(MSG["reallyrun"]))
+      {
       Code.tabClick("debug");
       var content = document.getElementById('content_debug');
       content.textContent=MSG["start"];
       BlocklyStorage.makeGet("/cgi-bin/shell/api.lua",code);
-    }else
-    BlocklyStorage.makeGet("/cgi-bin/shell/kill.lua","");
+      }
+    }else 
+    if(document.getElementById("runButton").innerHTML.indexOf("stop")>0 )
+    {
+      BlocklyStorage.makeGet("/cgi-bin/shell/kill.lua","");
+    }
   } catch (e) {
     alert(MSG['badCode'].replace('%1', e));
-
   }
 }
 Code.RunJavascript=function(){

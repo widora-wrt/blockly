@@ -103,5 +103,13 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     "colour": "%{BKY_PRINT_HUE}",
     "tooltip": "",
     "helpUrl": ""
-},
+  },
+  {
+    "type": "print_lcd",
+    "message0": "%{BKY_CATPRINT_LCD_TITLE}",
+    "output": null,
+    "colour": "%{BKY_PRINT_HUE}",
+    "tooltip": "",
+    "helpUrl": ""
+  },
 ]);

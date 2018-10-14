@@ -34,6 +34,14 @@ Blockly.Python['print_console'] = function(block) {
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_NONE];
 };
+Blockly.Python['print_lcd'] = function(block) {
+  // TODO: Assemble Python into code variable.
+  var code = 'lcd';
+  var code = 'lcd.writeLine';
+  Blockly.Python.definitions_['import_lcd'] = 'import lcd';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_NONE];
+};
 Blockly.Python['print_tcpip'] = function(block) {
   var text_name =  Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
   var code = text_name;
@@ -52,6 +60,6 @@ Blockly.Python['print_serial'] = function(block) {
 Blockly.Python['print_to'] = function(block) {
   var dropdown_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_NONE);
   var value_name =Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_NONE);
-  var code =value_name+ "("+ dropdown_name +")\n";
+  var code =value_name+ "(str("+ dropdown_name +"))\n";
   return code;
 };
