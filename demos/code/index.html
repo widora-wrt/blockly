@@ -28,6 +28,7 @@
   <script src="blocks/iot.js"></script>
   <script src="blocks/lcd.js"></script>
   <script src="blocks/time.js"></script>
+  <script src="blocks/file.js"></script>
   <script src="generator/python/gpio.js"></script>
   <script src="generator/python/pwm.js"></script>
   <script src="generator/python/i2c.js"></script>
@@ -40,6 +41,7 @@
   <script src="generator/python/iot.js"></script>
   <script src="generator/python/lcd.js"></script>
   <script src="generator/python/time.js"></script>
+  <script src="generator/python/file.js"></script>
   <script src="javascript/code.js"></script>
 </head>
 <body>
@@ -141,11 +143,11 @@
           </block>
         <block type="serial_write">
          <value name="NAME"><shadow type="serial_list"></shadow></value>
-         <value name="VALUE"><shadow type="text"><field name="TEXT">abc</field></value>
+         <value name="VALUE"><shadow type="text"><field name="TEXT">pyly</field></value>
         </block>
         <block type="serial_writeline">
           <value name="NAME"><shadow type="serial_list"></shadow></value>
-          <value name="VALUE"><shadow type="text"><field name="TEXT">abc</field></value>
+          <value name="VALUE"><shadow type="text"><field name="TEXT">pyly</field></value>
          </block>
          <block type="serial_writebyte">
          <value name="NAME"><shadow type="serial_list"></shadow></value>
@@ -157,6 +159,27 @@
         </block>
         <block type="serial_list"></block>
       </category>
+    <category name="%{BKY_CATFILE}" colour="%{BKY_FILE_HUE}">
+        <block type="file_list"></block>
+        <block type="file_create">
+            <value name="NAME"><shadow type="file_list"></shadow></value>
+            <value name="VALUE"><shadow type="text"><field name="TEXT">pyly</field></value>
+         </block>
+       <block type="file_write">
+          <value name="NAME"><shadow type="file_list"></shadow></value>
+          <value name="VALUE"><shadow type="text"><field name="TEXT">pyly</field></value>
+       </block>
+       <block type="file_writeline">
+        <value name="NAME"><shadow type="file_list"></shadow></value>
+        <value name="VALUE"><shadow type="text"><field name="TEXT">pyly</field></value>
+     </block>
+     <block type="file_read">
+      <value name="NAME"><shadow type="file_list"></shadow></value>
+     </block>
+      <block type="file_readlines">
+        <value name="NAME"><shadow type="file_list"></shadow></value>
+      </block>
+    </category>
     <category name="%{BKY_CATTCPIP}" colour="%{BKY_TCPIP_HUE}">
       <block type="tcpip_ipaddress">
          <value name="NAME"><shadow type="text"><field name="TEXT">193.112.211.120</field></value>
@@ -167,7 +190,7 @@
       </block>
       <block type="tcpip_send">
          <value name="NAME"><shadow type="tcpip_ipaddress"></shadow></value>
-         <value name="VALUE"><shadow type="text"><field name="TEXT">abc</field>
+         <value name="VALUE"><shadow type="text"><field name="TEXT">pyly</field>
       </block>
       <block type="tcpip_recv">
          <value name="NAME"><shadow type="tcpip_ipaddress"></shadow></value>
@@ -176,7 +199,7 @@
     </category>
     <category name="%{BKY_CATIOT}" colour="%{BKY_IOT_HUE}">
       <block type="iot_send">
-      <value name="VALUE"><shadow type="text"><field name="TEXT">abc</field></value>
+      <value name="VALUE"><shadow type="text"><field name="TEXT">pyly</field></value>
       </block>
     </category>
     <category name="%{BKY_CATSOUND}" colour="%{BKY_SOUND_HUE}">
@@ -203,10 +226,10 @@
     </category>
     <category name="%{BKY_CATLCD}" colour="%{BKY_LCD_HUE}">
       <block type="lcd_writeline">
-      <value name="VALUE"><shadow type="text"><field name="TEXT">abc</field></value>
+      <value name="VALUE"><shadow type="text"><field name="TEXT">pyly</field></value>
       </block>
       <block type="lcd_writestring">
-        <value name="VALUE"><shadow type="text"><field name="TEXT">abc</field></value>
+        <value name="VALUE"><shadow type="text"><field name="TEXT">pyly</field></value>
         <value name="VALUE_X"><shadow type="math_number"><field name="NUM">0</field></value>
         <value name="VALUE_Y"><shadow type="math_number"><field name="NUM">0</field></value>
         <value name="VALUE_FC">
@@ -277,7 +300,7 @@
      </category>
      <category name="%{BKY_CATPRINT}" colour="%{BKY_PRINT_HUE}">
       <block type="print_to">
-         <value name="NAME"><shadow type="text"><field name="TEXT">abc</field>
+         <value name="NAME"><shadow type="text"><field name="TEXT">pyly</field>
       </block>
      <block type="print_console"></block>
      <block type="print_lcd"></block>
@@ -432,7 +455,7 @@
       <block type="text_length">
         <value name="VALUE">
           <shadow type="text">
-            <field name="TEXT">abc</field>
+            <field name="TEXT">pyly</field>
           </shadow>
         </value>
       </block>
@@ -451,7 +474,7 @@
         </value>
         <value name="FIND">
           <shadow type="text">
-            <field name="TEXT">abc</field>
+            <field name="TEXT">pyly</field>
           </shadow>
         </value>
       </block>
@@ -472,28 +495,28 @@
       <block type="text_changeCase">
         <value name="TEXT">
           <shadow type="text">
-            <field name="TEXT">abc</field>
+            <field name="TEXT">pyly</field>
           </shadow>
         </value>
       </block>
       <block type="text_trim">
         <value name="TEXT">
           <shadow type="text">
-            <field name="TEXT">abc</field>
+            <field name="TEXT">pyly</field>
           </shadow>
         </value>
       </block>
       <block type="text_print">
         <value name="TEXT">
           <shadow type="text">
-            <field name="TEXT">abc</field>
+            <field name="TEXT">pyly</field>
           </shadow>
         </value>
       </block>
       <block type="text_prompt_ext">
         <value name="TEXT">
           <shadow type="text">
-            <field name="TEXT">abc</field>
+            <field name="TEXT">pyly</field>
           </shadow>
         </value>
       </block>

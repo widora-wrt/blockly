@@ -132,6 +132,7 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
                     ["GPIO19(PWM19)","19"],
                     ["GPIO20(TX2/PWM20)","20"],
                     ["GPIO21(RX2/PWM21)","21"],
+                    ["GPIO38","38"],
                     ["GPIO39","39"],
                     ["GPIO40","40"],
                     ["GPIO41","41"],

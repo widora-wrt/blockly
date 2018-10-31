@@ -1,5 +1,5 @@
 var MSG = {
-  title: "PYLY (v00.01.02)",
+  title: "PYLY (v00.01.03)",
   blocks: "Blocks",
   debug: "Debug",
   code: "Code",
@@ -21,6 +21,7 @@ var MSG = {
   catI2c:"I2c",
   catSpi:"Spi",
   catSerial:"Serial",
+  catFile:"File",
   catSound:"Sound",
   catTcpip:"Tcp/IP",
   catTime:"Time",
@@ -100,4 +101,9 @@ var MSG = {
   catTime_timer_title:"timer %1 timing(s)%2 execution %3",
   catTime_timerstart_title:"timer %1 start",
   catTime_thread_title:"thread%1 %2",
+  catFile_write_title: "write %1 to %2",
+  catFile_create_title: "write %1 create %2",
+  catFile_writeline_title: "writeline %1 to %2",
+  catFile_read_title: "read %1",
+  catFile_readlines_title: "readlines %1",
 };

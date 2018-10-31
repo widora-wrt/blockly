@@ -40,16 +40,21 @@ Blockly.Python['lcd_writeline'] = function(block) {
     var value_x = Blockly.Python.valueToCode(block, 'VALUE_X', Blockly.Python.ORDER_ATOMIC);
     var value_y = Blockly.Python.valueToCode(block, 'VALUE_Y', Blockly.Python.ORDER_ATOMIC);
     var value_c = Blockly.Python.valueToCode(block, 'VALUE_C', Blockly.Python.ORDER_ATOMIC);
+    value_c="0x"+value_c.toString().replace(/[^0-9^a-z]/ig, "");
     // TODO: Assemble Python into code variable.
-    var code = 'lcd.drawDot('+value_x+','+value_y+','+value_c+')\n';
-    Blockly.Python.definitions_['import_lcd'] = 'import lcd';
+    var code = 'lcd0.drawDot('+value_x+','+value_y+','+value_c+')\n';
+    var def ="lcd0=mraa.Lcd(0)";
+    Blockly.Python.definitions_[def] = def;
+    Blockly.Python.definitions_['import_mraa'] = 'import mraa';
     return code;
   };
   Blockly.Python['lcd_clear'] = function(block) {
     var value_c = Blockly.Python.valueToCode(block, 'VALUE_C', Blockly.Python.ORDER_ATOMIC);
-    // TODO: Assemble Python into code variable.
-    var code = 'lcd.drawClear('+value_c+')\n';
-    Blockly.Python.definitions_['import_lcd'] = 'import lcd';
+    value_c="0x"+value_c.toString().replace(/[^0-9^a-z]/ig, "");
+    var def ="lcd0=mraa.Lcd(0)";
+    Blockly.Python.definitions_[def] = def;
+    var code = 'lcd0.drawClear('+value_c+')\n';
+    Blockly.Python.definitions_['import_mraa'] = 'import mraa';
     return code;
   };
   Blockly.Python['lcd_drawline'] = function(block) {
@@ -58,9 +63,11 @@ Blockly.Python['lcd_writeline'] = function(block) {
     var value_x2 = Blockly.Python.valueToCode(block, 'VALUE_X2', Blockly.Python.ORDER_ATOMIC);
     var value_y2 = Blockly.Python.valueToCode(block, 'VALUE_Y2', Blockly.Python.ORDER_ATOMIC);
     var value_c = Blockly.Python.valueToCode(block, 'VALUE_C', Blockly.Python.ORDER_ATOMIC);
-    // TODO: Assemble Python into code variable.
-    var code = 'lcd.drawLine('+value_x1+','+value_y1+','+value_x2+','+value_y2+','+value_c+')\n';
-    Blockly.Python.definitions_['import_lcd'] = 'import lcd';
+    value_c="0x"+value_c.toString().replace(/[^0-9^a-z]/ig, "");
+    var def ="lcd0=mraa.Lcd(0)";
+    Blockly.Python.definitions_[def] = def;
+    Blockly.Python.definitions_['import_mraa'] = 'import mraa';
+    var code = 'lcd0.drawLine('+value_x1+','+value_y1+','+value_x2+','+value_y2+','+value_c+')\n';
     return code;
   };
   Blockly.Python['lcd_drawrect'] = function(block) {
@@ -69,9 +76,11 @@ Blockly.Python['lcd_writeline'] = function(block) {
     var value_x2 = Blockly.Python.valueToCode(block, 'VALUE_X2', Blockly.Python.ORDER_ATOMIC);
     var value_y2 = Blockly.Python.valueToCode(block, 'VALUE_Y2', Blockly.Python.ORDER_ATOMIC);
     var value_c = Blockly.Python.valueToCode(block, 'VALUE_C', Blockly.Python.ORDER_ATOMIC);
-    // TODO: Assemble Python into code variable.
-    var code = 'lcd.drawRect('+value_x1+','+value_y1+','+value_x2+','+value_y2+','+value_c+')\n';
-    Blockly.Python.definitions_['import_lcd'] = 'import lcd';
+    value_c="0x"+value_c.toString().replace(/[^0-9^a-z]/ig, "");
+    var def ="lcd0=mraa.Lcd(0)";
+    Blockly.Python.definitions_[def] = def;
+    Blockly.Python.definitions_['import_mraa'] = 'import mraa';
+    var code = 'lcd0.drawRect('+value_x1+','+value_y1+','+value_x2+','+value_y2+','+value_c+')\n';
     return code;
   };
   Blockly.Python['lcd_drawrectfill'] = function(block) {
@@ -80,9 +89,11 @@ Blockly.Python['lcd_writeline'] = function(block) {
     var value_x2 = Blockly.Python.valueToCode(block, 'VALUE_X2', Blockly.Python.ORDER_ATOMIC);
     var value_y2 = Blockly.Python.valueToCode(block, 'VALUE_Y2', Blockly.Python.ORDER_ATOMIC);
     var value_c = Blockly.Python.valueToCode(block, 'VALUE_C', Blockly.Python.ORDER_ATOMIC);
-    // TODO: Assemble Python into code variable.
-    var code = 'lcd.drawRectfill('+value_x1+','+value_y1+','+value_x2+','+value_y2+','+value_c+')\n';
-    Blockly.Python.definitions_['import_lcd'] = 'import lcd';
+    value_c="0x"+value_c.toString().replace(/[^0-9^a-z]/ig, "");
+    var def ="lcd0=mraa.Lcd(0)";
+    Blockly.Python.definitions_[def] = def;
+    Blockly.Python.definitions_['import_mraa'] = 'import mraa';
+    var code = 'lcd0.drawRectfill('+value_x1+','+value_y1+','+value_x2+','+value_y2+','+value_c+')\n';
     return code;
   };
   Blockly.Python['lcd_drawcircle'] = function(block) {
@@ -90,9 +101,11 @@ Blockly.Python['lcd_writeline'] = function(block) {
     var value_y1 = Blockly.Python.valueToCode(block, 'VALUE_Y1', Blockly.Python.ORDER_ATOMIC);
     var value_r = Blockly.Python.valueToCode(block, 'VALUE_R', Blockly.Python.ORDER_ATOMIC);
     var value_c = Blockly.Python.valueToCode(block, 'VALUE_C', Blockly.Python.ORDER_ATOMIC);
-    // TODO: Assemble Python into code variable.
-    var code = 'lcd.drawCircle('+value_x1+','+value_y1+','+value_r+','+value_c+')\n';
-    Blockly.Python.definitions_['import_lcd'] = 'import lcd';
+    value_c="0x"+value_c.toString().replace(/[^0-9^a-z]/ig, "");
+    var def ="lcd0=mraa.Lcd(0)";
+    Blockly.Python.definitions_[def] = def;
+    Blockly.Python.definitions_['import_mraa'] = 'import mraa';
+    var code = 'lcd0.drawCircle('+value_x1+','+value_y1+','+value_r+','+value_c+')\n';
     return code;
   };
   Blockly.Python['lcd_drawcirclefill'] = function(block) {
@@ -100,9 +113,11 @@ Blockly.Python['lcd_writeline'] = function(block) {
     var value_y1 = Blockly.Python.valueToCode(block, 'VALUE_Y1', Blockly.Python.ORDER_ATOMIC);
     var value_r = Blockly.Python.valueToCode(block, 'VALUE_R', Blockly.Python.ORDER_ATOMIC);
     var value_c = Blockly.Python.valueToCode(block, 'VALUE_C', Blockly.Python.ORDER_ATOMIC);
-    // TODO: Assemble Python into code variable.
-    var code = 'lcd.drawCirclefill('+value_x1+','+value_y1+','+value_r+','+value_c+')\n';
-    Blockly.Python.definitions_['import_lcd'] = 'import lcd';
+    value_c="0x"+value_c.toString().replace(/[^0-9^a-z]/ig, "");
+    var def ="lcd0=mraa.Lcd(0)";
+    Blockly.Python.definitions_[def] = def;
+    Blockly.Python.definitions_['import_mraa'] = 'import mraa';
+    var code = 'lcd0.drawCirclefill('+value_x1+','+value_y1+','+value_r+','+value_c+')\n';
     return code;
   };
   Blockly.Python['lcd_writestring'] = function(block) {
@@ -113,8 +128,12 @@ Blockly.Python['lcd_writeline'] = function(block) {
     var value_fc = Blockly.Python.valueToCode(block, 'VALUE_FC', Blockly.Python.ORDER_ATOMIC);
     var value_bc = Blockly.Python.valueToCode(block, 'VALUE_BC', Blockly.Python.ORDER_ATOMIC);
     var value_ac = Blockly.Python.valueToCode(block, 'VALUE_AC', Blockly.Python.ORDER_ATOMIC);
-    // TODO: Assemble Python into code variable.
-    var code = 'lcd.writeString('+value_value+','+value_font+','+value_x+','+value_y+','+value_fc+','+value_bc+','+value_ac+')\n';
-    Blockly.Python.definitions_['import_lcd'] = 'import lcd';
+    value_fc="0x"+value_fc.toString().replace(/[^0-9^a-z]/ig, "");
+    value_bc="0x"+value_bc.toString().replace(/[^0-9^a-z]/ig, "");
+    value_ac="0x"+value_ac.toString().replace(/[^0-9^a-z]/ig, "");
+    var def ="lcd0=mraa.Lcd(0)";
+    Blockly.Python.definitions_[def] = def;
+    Blockly.Python.definitions_['import_mraa'] = 'import mraa';
+    var code = 'lcd0.drawString('+value_font+','+value_x+','+value_y+','+value_value+','+value_fc+','+value_bc+','+value_ac+')\n';
     return code;
   };

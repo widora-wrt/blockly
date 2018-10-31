@@ -334,6 +334,7 @@ Code.checkAllGeneratorFunctionsDefined = function(generator) {
  */
 Code.init = function() {
   Code.targetdevice=true;
+  Code.keyInit();
   Code.initTarget();
   var rtl = Code.isRtl();
   var container = document.getElementById('content_area');
@@ -555,7 +556,7 @@ Code.RunPython=function(){
     var code="# -*- coding: utf-8 -*-\n"+Blockly.Python.workspaceToCode(Code.workspace); 
     if(document.getElementById("runButton").innerHTML.indexOf("run")>0)
     {
-      if(confirm(MSG["reallyrun"]))
+     // if(confirm(MSG["reallyrun"]))
       {
       Code.tabClick("debug");
       var content = document.getElementById('content_debug');
@@ -563,9 +564,11 @@ Code.RunPython=function(){
       BlocklyStorage.makeGet("/cgi-bin/shell/api.lua",code);
       }
     }else 
-    if(document.getElementById("runButton").innerHTML.indexOf("stop")>0 )
     {
-      BlocklyStorage.makeGet("/cgi-bin/shell/kill.lua","");
+      if(document.getElementById("runButton").innerHTML.indexOf("stop")>0 )
+      {
+        BlocklyStorage.makeGet("/cgi-bin/shell/kill.lua","");
+      }
     }
   } catch (e) {
     alert(MSG['badCode'].replace('%1', e));
@@ -588,9 +591,45 @@ Code.RunJavascript=function(){
     alert(MSG['badCode'].replace('%1', e));
   }
 }
+Code.keyInit=function(){
+  document.onkeydown=function(event){
+    var e = event;
+    if(e && e.keyCode==27){ // 按 Esc 
+      BlocklyStorage.makeGet("/cgi-bin/shell/kill.lua","");
+     }
+    if(e && e.keyCode==13){ // 按 F2 
+      var code="# -*- coding: utf-8 -*-\n"+Blockly.Python.workspaceToCode(Code.workspace); 
+      var content = document.getElementById('content_debug');
+      content.textContent=MSG["start"];
+      BlocklyStorage.makeGet("/cgi-bin/shell/api.lua",code);
+    }
+    //alert(e.keyCode);
+  }; 
+};
+
 Code.runJS = function() {
-  if(Code.runSelected=="python")Code.RunPython();
-  if(Code.runSelected=="javascript")Code.RunJavascript();
+  try {
+    //alert(document.getElementById("runButton").innerHTML);
+    var code="# -*- coding: utf-8 -*-\n"+Blockly.Python.workspaceToCode(Code.workspace); 
+    if(document.getElementById("runButton").innerHTML.indexOf("run")>0)
+    {
+     // if(confirm(MSG["reallyrun"]))
+      {
+      Code.tabClick("debug");
+      var content = document.getElementById('content_debug');
+      content.textContent=MSG["start"];
+      BlocklyStorage.makeGet("/cgi-bin/shell/api.lua",code);
+      }
+    }else 
+    {
+      if(document.getElementById("runButton").innerHTML.indexOf("stop")>0 )
+      {
+        BlocklyStorage.makeGet("/cgi-bin/shell/kill.lua","");
+      }
+    }
+  } catch (e) {
+    alert(MSG['badCode'].replace('%1', e));
+  }
 };
 Code.likeJS = function() {
   var objSelect = document.getElementById("TemplateMenu");

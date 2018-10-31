@@ -262,7 +262,7 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
             "name": "VALUE_FONT",
             "options": [
                     ["12x12","1212"],
-                    ["16x16","1616"],
+                    ["16x16(中文)","1616"],
                     ["16x24","1624"],
                     ["24x24","2424"],
                     ["32x32","4848"],
