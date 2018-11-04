@@ -67,6 +67,14 @@ Blockly.Python['file_list'] = function(block) {
     Blockly.Python.definitions_['import_file'] = 'import file';
     return [code, Blockly.Python.ORDER_NONE];
   };
+  Blockly.Python['file_readline'] = function(block) {
+    var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_NONE);
+    var value_value = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_NONE);
+    // TODO: Assemble Python into code variable.
+    var code ="file.readline('"+value_name+".txt',"+value_value+")";
+    Blockly.Python.definitions_['import_file'] = 'import file';
+    return [code, Blockly.Python.ORDER_NONE];
+  };
   Blockly.Python['file_readlines'] = function(block) {
     var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_NONE);
     // TODO: Assemble Python into code variable.

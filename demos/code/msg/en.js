@@ -105,5 +105,6 @@ var MSG = {
   catFile_create_title: "write %1 create %2",
   catFile_writeline_title: "writeline %1 to %2",
   catFile_read_title: "read %1",
+  catFile_readline_title: "read %1 line %2",
   catFile_readlines_title: "readlines %1",
 };

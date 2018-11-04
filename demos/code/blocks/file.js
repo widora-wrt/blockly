@@ -144,6 +144,27 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
         "helpUrl": ""
       },
       {
+        "type": "file_readline",
+        "message0": "%{BKY_CATFILE_READLINE_TITLE}",
+        "args0": [
+          {
+            "type": "input_value",
+            "name": "NAME",
+            "check": "String",
+          },
+          {
+            "type": "input_value",
+            "name": "VALUE",
+            "check": "Number",
+          }
+        ],
+        "inputsInline": true,
+        "output": "String",
+        "colour": "%{BKY_FILE_HUE}",
+        "tooltip": "",
+        "helpUrl": ""
+      },
+      {
         "type": "file_readlines",
         "message0": "%{BKY_CATFILE_READLINES_TITLE}",
         "args0": [

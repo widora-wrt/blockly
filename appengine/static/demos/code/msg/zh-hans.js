@@ -1,5 +1,5 @@
 var MSG = {
-  title: "波狸 (v00.01.02)",
+  title: "波狸 (v00.01.03)",
   blocks: "块",
   debug: "调试",
   code: "代码",
@@ -21,6 +21,7 @@ var MSG = {
   catI2c:"I2C总线",
   catSpi:"SPI通信",
   catSerial:"串口",
+  catFile:"文件",
   catSound:"声音",
   catTcpip:"网络通信",
   catTime:"时间",
@@ -100,4 +101,10 @@ var MSG = {
   catTime_timer_title:"定时器%1 定时(秒)%2执行  %3",
   catTime_timerstart_title:"定时器%1 启动",
   catTime_thread_title:"线程%1 %2",
+  catFile_write_title: "写 %1 到 %2",
+  catFile_create_title: "写 %1 创建 %2",
+  catFile_writeline_title: "写行 %1 到 %2",
+  catFile_read_title: "读 %1",
+  catFile_readline_title: "读取 %1 第%2行",
+  catFile_readlines_title: "读取 %1 所有行",
 };

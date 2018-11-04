@@ -40,7 +40,6 @@ Blockly.Python['lcd_writeline'] = function(block) {
     var value_x = Blockly.Python.valueToCode(block, 'VALUE_X', Blockly.Python.ORDER_ATOMIC);
     var value_y = Blockly.Python.valueToCode(block, 'VALUE_Y', Blockly.Python.ORDER_ATOMIC);
     var value_c = Blockly.Python.valueToCode(block, 'VALUE_C', Blockly.Python.ORDER_ATOMIC);
-    value_c="0x"+value_c.toString().replace(/[^0-9^a-z]/ig, "");
     // TODO: Assemble Python into code variable.
     var code = 'lcd0.drawDot('+value_x+','+value_y+','+value_c+')\n';
     var def ="lcd0=mraa.Lcd(0)";
@@ -50,7 +49,7 @@ Blockly.Python['lcd_writeline'] = function(block) {
   };
   Blockly.Python['lcd_clear'] = function(block) {
     var value_c = Blockly.Python.valueToCode(block, 'VALUE_C', Blockly.Python.ORDER_ATOMIC);
-    value_c="0x"+value_c.toString().replace(/[^0-9^a-z]/ig, "");
+    //value_c="0x"+value_c.toString().replace(/[^0-9^a-z]/ig, "");
     var def ="lcd0=mraa.Lcd(0)";
     Blockly.Python.definitions_[def] = def;
     var code = 'lcd0.drawClear('+value_c+')\n';
@@ -63,7 +62,6 @@ Blockly.Python['lcd_writeline'] = function(block) {
     var value_x2 = Blockly.Python.valueToCode(block, 'VALUE_X2', Blockly.Python.ORDER_ATOMIC);
     var value_y2 = Blockly.Python.valueToCode(block, 'VALUE_Y2', Blockly.Python.ORDER_ATOMIC);
     var value_c = Blockly.Python.valueToCode(block, 'VALUE_C', Blockly.Python.ORDER_ATOMIC);
-    value_c="0x"+value_c.toString().replace(/[^0-9^a-z]/ig, "");
     var def ="lcd0=mraa.Lcd(0)";
     Blockly.Python.definitions_[def] = def;
     Blockly.Python.definitions_['import_mraa'] = 'import mraa';
@@ -76,7 +74,6 @@ Blockly.Python['lcd_writeline'] = function(block) {
     var value_x2 = Blockly.Python.valueToCode(block, 'VALUE_X2', Blockly.Python.ORDER_ATOMIC);
     var value_y2 = Blockly.Python.valueToCode(block, 'VALUE_Y2', Blockly.Python.ORDER_ATOMIC);
     var value_c = Blockly.Python.valueToCode(block, 'VALUE_C', Blockly.Python.ORDER_ATOMIC);
-    value_c="0x"+value_c.toString().replace(/[^0-9^a-z]/ig, "");
     var def ="lcd0=mraa.Lcd(0)";
     Blockly.Python.definitions_[def] = def;
     Blockly.Python.definitions_['import_mraa'] = 'import mraa';
@@ -89,7 +86,6 @@ Blockly.Python['lcd_writeline'] = function(block) {
     var value_x2 = Blockly.Python.valueToCode(block, 'VALUE_X2', Blockly.Python.ORDER_ATOMIC);
     var value_y2 = Blockly.Python.valueToCode(block, 'VALUE_Y2', Blockly.Python.ORDER_ATOMIC);
     var value_c = Blockly.Python.valueToCode(block, 'VALUE_C', Blockly.Python.ORDER_ATOMIC);
-    value_c="0x"+value_c.toString().replace(/[^0-9^a-z]/ig, "");
     var def ="lcd0=mraa.Lcd(0)";
     Blockly.Python.definitions_[def] = def;
     Blockly.Python.definitions_['import_mraa'] = 'import mraa';
@@ -101,7 +97,6 @@ Blockly.Python['lcd_writeline'] = function(block) {
     var value_y1 = Blockly.Python.valueToCode(block, 'VALUE_Y1', Blockly.Python.ORDER_ATOMIC);
     var value_r = Blockly.Python.valueToCode(block, 'VALUE_R', Blockly.Python.ORDER_ATOMIC);
     var value_c = Blockly.Python.valueToCode(block, 'VALUE_C', Blockly.Python.ORDER_ATOMIC);
-    value_c="0x"+value_c.toString().replace(/[^0-9^a-z]/ig, "");
     var def ="lcd0=mraa.Lcd(0)";
     Blockly.Python.definitions_[def] = def;
     Blockly.Python.definitions_['import_mraa'] = 'import mraa';
@@ -113,7 +108,6 @@ Blockly.Python['lcd_writeline'] = function(block) {
     var value_y1 = Blockly.Python.valueToCode(block, 'VALUE_Y1', Blockly.Python.ORDER_ATOMIC);
     var value_r = Blockly.Python.valueToCode(block, 'VALUE_R', Blockly.Python.ORDER_ATOMIC);
     var value_c = Blockly.Python.valueToCode(block, 'VALUE_C', Blockly.Python.ORDER_ATOMIC);
-    value_c="0x"+value_c.toString().replace(/[^0-9^a-z]/ig, "");
     var def ="lcd0=mraa.Lcd(0)";
     Blockly.Python.definitions_[def] = def;
     Blockly.Python.definitions_['import_mraa'] = 'import mraa';
@@ -128,9 +122,6 @@ Blockly.Python['lcd_writeline'] = function(block) {
     var value_fc = Blockly.Python.valueToCode(block, 'VALUE_FC', Blockly.Python.ORDER_ATOMIC);
     var value_bc = Blockly.Python.valueToCode(block, 'VALUE_BC', Blockly.Python.ORDER_ATOMIC);
     var value_ac = Blockly.Python.valueToCode(block, 'VALUE_AC', Blockly.Python.ORDER_ATOMIC);
-    value_fc="0x"+value_fc.toString().replace(/[^0-9^a-z]/ig, "");
-    value_bc="0x"+value_bc.toString().replace(/[^0-9^a-z]/ig, "");
-    value_ac="0x"+value_ac.toString().replace(/[^0-9^a-z]/ig, "");
     var def ="lcd0=mraa.Lcd(0)";
     Blockly.Python.definitions_[def] = def;
     Blockly.Python.definitions_['import_mraa'] = 'import mraa';

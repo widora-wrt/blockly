@@ -105,5 +105,6 @@ var MSG = {
   catFile_create_title: "写 %1 创建 %2",
   catFile_writeline_title: "写行 %1 到 %2",
   catFile_read_title: "读 %1",
-  catFile_readlines_title: "读取所有行 %1",
+  catFile_readline_title: "读取 %1 第%2行",
+  catFile_readlines_title: "读取 %1 所有行",
 };

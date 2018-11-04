@@ -670,6 +670,10 @@ Code.discard = function() {
       {
        BlocklyStorage.handleGetTask_=function(text)
       {
+        delete window.sessionStorage.loadOnceBlocks;
+        delete window.sessionStorage.selectname;
+      //  var xml = Blockly.Xml.textToDom(loadOnce);
+       // Blockly.Xml.domToWorkspace("", Code.workspace);
         window.location = window.location.protocol + '//' +window.location.host + window.location.pathname;
       }
       BlocklyStorage.makeGetConext("/cgi-bin/shell/deletefefile.lua?gide."+window.sessionStorage.selectname,"");
