@@ -110,7 +110,7 @@ Code.getStringParamFromUrl = function(name, defaultValue) {
 Code.getLang = function() {
   var lang=window.sessionStorage.selectlang;
   if (Code.LANGUAGE_NAME[lang] === undefined) {
-    lang = 'en';
+    lang = 'zh-hans';
     window.sessionStorage.selectlang=lang;
   }
   return lang;
