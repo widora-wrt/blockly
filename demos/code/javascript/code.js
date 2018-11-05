@@ -169,7 +169,7 @@ Code.changeLanguage = function() {
     {
       window.location = window.location.protocol + '//' +window.location.host + window.location.pathname;
     }
-    BlocklyStorage.makeGetConext("/cgi-bin/shell/setfile.lua?selectlang",newLang);
+    BlocklyStorage.makeGetConext("/cgi-bin/opt/shell/setfile.lua?selectlang",newLang);
   }else{
     window.location = window.location.protocol + '//' +window.location.host + window.location.pathname;
   }
@@ -492,7 +492,7 @@ Code.changeTemplate = function() {
     Code.tabClick("blocks");
   }
   window.sessionStorage.selectname=templateMenu.options[templateMenu.selectedIndex].value;
-  BlocklyStorage.makeGetConext("/cgi-bin/shell/loadfile.lua?gide."+window.sessionStorage.selectname,"null");
+  BlocklyStorage.makeGetConext("/cgi-bin/opt/shell/loadfile.lua?gide."+window.sessionStorage.selectname,"null");
 };
 
 Code.initTargetdevice = function() {
@@ -528,7 +528,7 @@ Code.initTargetdevice = function() {
     }
     Code.initLanguage();
   }
-  BlocklyStorage.makeGetConext("/cgi-bin/shell/listfile.lua","null");
+  BlocklyStorage.makeGetConext("/cgi-bin/opt/shell/listfile.lua","null");
 }
 Code.initTargetserver = function() {
 
@@ -561,13 +561,13 @@ Code.RunPython=function(){
       Code.tabClick("debug");
       var content = document.getElementById('content_debug');
       content.textContent=MSG["start"];
-      BlocklyStorage.makeGet("/cgi-bin/shell/api.lua",code);
+      BlocklyStorage.makeGet("/cgi-bin/opt/shell/api.lua",code);
       }
     }else 
     {
       if(document.getElementById("runButton").innerHTML.indexOf("stop")>0 )
       {
-        BlocklyStorage.makeGet("/cgi-bin/shell/kill.lua","");
+        BlocklyStorage.makeGet("/cgi-bin/opt/shell/kill.lua","");
       }
     }
   } catch (e) {
@@ -595,13 +595,13 @@ Code.keyInit=function(){
   document.onkeydown=function(event){
     var e = event;
     if(e && e.keyCode==27){ // 按 Esc 
-      BlocklyStorage.makeGet("/cgi-bin/shell/kill.lua","");
+      BlocklyStorage.makeGet("/cgi-bin/opt/shell/kill.lua","");
      }
     if(e && e.keyCode==13){ // 按 F2 
       var code="# -*- coding: utf-8 -*-\n"+Blockly.Python.workspaceToCode(Code.workspace); 
       var content = document.getElementById('content_debug');
       content.textContent=MSG["start"];
-      BlocklyStorage.makeGet("/cgi-bin/shell/api.lua",code);
+      BlocklyStorage.makeGet("/cgi-bin/opt/shell/api.lua",code);
     }
     //alert(e.keyCode);
   }; 
@@ -618,13 +618,13 @@ Code.runJS = function() {
       Code.tabClick("debug");
       var content = document.getElementById('content_debug');
       content.textContent=MSG["start"];
-      BlocklyStorage.makeGet("/cgi-bin/shell/api.lua",code);
+      BlocklyStorage.makeGet("/cgi-bin/opt/shell/api.lua",code);
       }
     }else 
     {
       if(document.getElementById("runButton").innerHTML.indexOf("stop")>0 )
       {
-        BlocklyStorage.makeGet("/cgi-bin/shell/kill.lua","");
+        BlocklyStorage.makeGet("/cgi-bin/opt/shell/kill.lua","");
       }
     }
   } catch (e) {
@@ -650,7 +650,7 @@ Code.likeJS = function() {
   {
     window.location = window.location.protocol + '//' +window.location.host + window.location.pathname;
   }
-  BlocklyStorage.makeGetConext("/cgi-bin/shell/savefile.lua?gide."+window.sessionStorage.selectname,text);
+  BlocklyStorage.makeGetConext("/cgi-bin/opt/shell/savefile.lua?gide."+window.sessionStorage.selectname,text);
 };
 /**
  * Discard all blocks from the workspace.
@@ -676,7 +676,7 @@ Code.discard = function() {
        // Blockly.Xml.domToWorkspace("", Code.workspace);
         window.location = window.location.protocol + '//' +window.location.host + window.location.pathname;
       }
-      BlocklyStorage.makeGetConext("/cgi-bin/shell/deletefefile.lua?gide."+window.sessionStorage.selectname,"");
+      BlocklyStorage.makeGetConext("/cgi-bin/opt/shell/deletefefile.lua?gide."+window.sessionStorage.selectname,"");
   }
   
 };

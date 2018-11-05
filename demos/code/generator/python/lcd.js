@@ -31,9 +31,10 @@ goog.require('Blockly.Python');
 
 Blockly.Python['lcd_writeline'] = function(block) {
     var value_name = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC);
-    // TODO: Assemble Python into code variable.
-    var code = 'lcd.writeLine(str('+value_name+'))\n';
-    Blockly.Python.definitions_['import_lcd'] = 'import lcd';
+    var code = 'lcd0.write(bytearray('+value_name+'))\n';
+    var def ="lcd0=mraa.Lcd(0)";
+    Blockly.Python.definitions_[def] = def;
+    Blockly.Python.definitions_['import_mraa'] = 'import mraa';
     return code;
   };
   Blockly.Python['lcd_drawdot'] = function(block) {
