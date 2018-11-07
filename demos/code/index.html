@@ -132,6 +132,7 @@
         <value name="NAME"><shadow type="i2c_list"></shadow></value>
       </block>
       <block type="i2c_list"></block>
+      <block type="i2c_mpu6050"></block>
     </category>
     <category name="%{BKY_CATSPI}" colour="%{BKY_SPI_HUE}">
       <block type="spi_writeread">
@@ -214,6 +215,9 @@
     </category>
     <category name="%{BKY_CATSOUND}" colour="%{BKY_SOUND_HUE}">
       <block type="sound_play"></block>
+      <block type="sound_playpath">
+        <value name="VALUE"><shadow type="text"><field name="TEXT">/www/pyly/sound/move1.mp3</field></value>
+        </block>
       <block type="sound_piano"></block>
       <block type="sound_melody"></block>
       <block type="sound_effect"></block>
@@ -342,13 +346,6 @@
           </shadow>
         </value>
       </block>
-      <block type="controls_sleep">
-          <value name="NAME">
-              <shadow type="math_number">
-                <field name="NUM">1</field>
-              </shadow>
-            </value>
-          </block>
       <block type="controls_whileUntil"></block>
       <block type="controls_for">
         <value name="FROM">

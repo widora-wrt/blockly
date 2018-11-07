@@ -543,6 +543,8 @@ Code.initTargetserver = function() {
 Code.initTarget = function() {
   if(Code.targetdevice)Code.initTargetdevice();
   else Code.initTargetserver();
+  var languageMenu = document.getElementById('languageMenu');
+  if(languageMenu.options.length == 0) Code.initLanguage();
 }
 
 

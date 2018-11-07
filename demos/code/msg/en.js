@@ -60,6 +60,7 @@ var MSG = {
   catI2c_address_title:"create %1 address %2",
   catI2c_readreg_title:"read %1 reg %2",
   catI2c_writereg_title:"write %1 reg %2 value %3",
+  catI2c_mpu6050_title:"gyroscope get %1",
   catSpi_readwrite_title:"read %1 write %2",
   catSerial_write_title:"send %1 context %2",
   catSerial_writeline_title:"send %1 line %2 ",
@@ -70,6 +71,7 @@ var MSG = {
   catSound_melody_title:"melody %1",
   catSound_effect_title:"effect %1",
   catSound_dance_title:"dance %1",
+  catSound_playpath_title:"play path %1",
   catAnalog_read_int_title:"read %1 analog",
   catAnalog_read_float_title:"read %1 voltage",
   catEthernet_ipaddress_title: "ipaddress %1 port %2",
@@ -110,4 +112,7 @@ var MSG = {
   catFile_readline_title: "read %1 line %2",
   catFile_readlines_title: "readlines %1",
   catFile_wget_title:"get resource %1",
+  catI2c_mpu6050_gyro:"Gyro",
+  catI2c_mpu6050_acc:"Acc",
+  catI2c_mpu6050_temp:"Temp",
 };
