@@ -87,7 +87,8 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
         "args0": [
             {
                 "type": "input_value",
-                "name": "VALUE_C"
+                "name": "VALUE_C",
+                "check": "Colour"
             },
         ],
         "inputsInline": true,
@@ -111,7 +112,8 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
           },
           {
             "type": "input_value",
-            "name": "VALUE_C"
+            "name": "VALUE_C",
+            "check": "Colour"
           },
         ],
         "inputsInline": true,
@@ -143,7 +145,8 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
           },
           {
             "type": "input_value",
-            "name": "VALUE_C"
+            "name": "VALUE_C",
+            "check": "Colour"
           },
         ],
         "inputsInline": true,
@@ -175,7 +178,8 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
           },
           {
             "type": "input_value",
-            "name": "VALUE_C"
+            "name": "VALUE_C",
+            "check": "Colour"
           },
         ],
         "inputsInline": true,
@@ -207,7 +211,8 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
           },
           {
             "type": "input_value",
-            "name": "VALUE_C"
+            "name": "VALUE_C",
+            "check": "Colour"
           },
         ],
         "inputsInline": true,
@@ -235,7 +240,8 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
           },
           {
             "type": "input_value",
-            "name": "VALUE_C"
+            "name": "VALUE_C",
+            "check": "Colour"
           },
         ],
         "inputsInline": true,
@@ -263,7 +269,8 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
           },
           {
             "type": "input_value",
-            "name": "VALUE_C"
+            "name": "VALUE_C",
+            "check": "Colour"
           },
         ],
         "inputsInline": true,
@@ -302,15 +309,18 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
           },
           {
             "type": "input_value",
-            "name": "VALUE_FC"
+            "name": "VALUE_FC",
+            "check": "Colour"
           },
           {
             "type": "input_value",
-            "name": "VALUE_BC"
+            "name": "VALUE_BC",
+            "check": "Colour"
           },
           {
             "type": "input_value",
-            "name": "VALUE_AC"
+            "name": "VALUE_AC",
+            "check": "Colour"
           },
         ],
         "inputsInline": true,
@@ -319,5 +329,386 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
         "colour": "%{BKY_LCD_HUE}",
         "tooltip": "",
         "helpUrl": ""
-      }
+      },
+      {
+        "type": "lcd_dotarray",
+        "message0": "%{BKY_CATLCD_DOTARRAY_TITLE}",
+        "args0": [
+          {
+            "type": "field_checkbox",
+            "name": "aa",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "ab",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "ac",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "ad",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "ae",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "af",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "ag",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "ah",
+            "checked": false
+          },
+          {
+            "type": "input_dummy"
+          },
+          {
+            "type": "field_checkbox",
+            "name": "ba",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "bb",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "bc",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "bd",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "be",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "bf",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "bg",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "bh",
+            "checked": false
+          },
+          {
+            "type": "input_dummy"
+          },
+          {
+            "type": "field_checkbox",
+            "name": "ca",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "cb",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "cc",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "cd",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "ce",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "cf",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "cg",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "ch",
+            "checked": false
+          },
+          {
+            "type": "input_dummy"
+          },
+          {
+            "type": "field_checkbox",
+            "name": "da",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "db",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "dc",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "dd",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "de",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "df",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "dg",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "dh",
+            "checked": false
+          },
+          {
+            "type": "input_dummy"
+          },
+          {
+            "type": "field_checkbox",
+            "name": "ea",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "eb",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "ec",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "ed",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "ee",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "ef",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "eg",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "eh",
+            "checked": false
+          },
+          {
+            "type": "input_dummy"
+          },
+          {
+            "type": "field_checkbox",
+            "name": "fa",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "fb",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "fc",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "fd",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "fe",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "ff",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "fg",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "fh",
+            "checked": false
+          },
+          {
+            "type": "input_dummy"
+          },
+          {
+            "type": "field_checkbox",
+            "name": "ga",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "gb",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "gc",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "gd",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "ge",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "gf",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "gg",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "gh",
+            "checked": false
+          },
+          {
+            "type": "input_dummy"
+          },
+          {
+            "type": "field_checkbox",
+            "name": "ha",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "hb",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "hc",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "hd",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "he",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "hf",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "hg",
+            "checked": false
+          },
+          {
+            "type": "field_checkbox",
+            "name": "hh",
+            "checked": false
+          }
+        ],
+        "output":"Array",
+        "colour": "%{BKY_LCD_HUE}",
+        "tooltip": "",
+        "helpUrl": ""
+      },
+      {
+        "type": "lcd_drawdotarray",
+        "message0":"%{BKY_CATLCD_DRAWDOTARRAY_TITLE}",
+        "args0": [
+          {
+            "type": "input_value",
+            "name": "VALUE_X1"
+          },
+          {
+            "type": "input_value",
+            "name": "VALUE_Y1"
+          },
+          {
+            "type": "input_value",
+            "name": "VALUE",
+            "check": "Array"
+          },
+          {
+            "type": "input_value",
+            "name": "VALUE_C",
+            "check": "Colour"
+          },
+        ],
+        "inputsInline": true,
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": "%{BKY_LCD_HUE}",
+        "tooltip": "",
+        "helpUrl": ""
+      },
 ]);
