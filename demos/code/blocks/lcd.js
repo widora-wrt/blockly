@@ -58,6 +58,30 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
         "helpUrl": ""
       },
       {
+        "type": "lcd_drawimage",
+        "message0":"%{BKY_CATLCD_DRAWIMAGE_TITLE}",
+        "args0": [
+          {
+            "type": "input_value",
+            "name": "PATH"
+          },
+          {
+            "type": "input_value",
+            "name": "VALUE_X"
+          },
+          {
+            "type": "input_value",
+            "name": "VALUE_Y"
+          },
+        ],
+        "inputsInline": true,
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": "%{BKY_LCD_HUE}",
+        "tooltip": "",
+        "helpUrl": ""
+      },
+      {
         "type": "lcd_clear",
         "message0":"%{BKY_CATLCD_DRAWCLEAR_TITLE}",
         "args0": [

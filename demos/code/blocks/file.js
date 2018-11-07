@@ -180,4 +180,19 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
         "tooltip": "",
         "helpUrl": ""
       },
+      {
+        "type": "file_wget",
+            "message0": "%{BKY_CATFILE_WGET_TITLE}",
+            "args0": [
+              {
+                "type": "input_value",
+                "name": "VALUE",
+              },
+            ],
+            "inputsInline": true,
+            "output":"String",
+            "colour": "%{BKY_FILE_HUE}",
+            "tooltip": "",
+            "helpUrl": ""
+        }
 ]);

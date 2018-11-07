@@ -67,11 +67,9 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
             "check": "Number"
           },
           {
-            "type": "field_number",
+            "type": "field_input",
             "name": "VALUE",
-            "value": 52,
-            "min": 0,
-            "max": 255
+            "text": "0x69"
           }
         ],
         "inputsInline": true,
@@ -88,17 +86,41 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
           {
             "type": "input_value",
             "name": "NAME",
-            "check": "Number"
           },
           {
-            "type": "field_number",
-            "name": "VALUE",
-            "value": 0,
-            "min": 0,
-            "max": 255
+            "type": "field_input",
+            "name": "REG",
+            "text": "0x00"
           }
         ],
         "output": "Number",
+        "inputsInline": true,
+        "colour": "%{BKY_I2C_HUE}",
+        "tooltip": "",
+        "helpUrl": ""
+      },
+      {
+        "type": "i2c_writereg",
+        "message0":"%{BKY_CATI2C_WRITEREG_TITLE}",
+        "args0": [
+          {
+            "type": "input_value",
+            "name": "NAME",
+          },
+          {
+            "type": "field_input",
+            "name": "REG",
+            "text": "0x00"
+          },
+          {
+            "type": "field_input",
+            "name": "VALUE",
+            "text": "0xff"
+          }
+        ],
+        "previousStatement": null,
+        "nextStatement": null,
+        "inputsInline": true,
         "colour": "%{BKY_I2C_HUE}",
         "tooltip": "",
         "helpUrl": ""

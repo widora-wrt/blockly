@@ -1,5 +1,5 @@
 var MSG = {
-  title: "PYLY (v00.01.03)",
+  title: "PYLY (v00.01.04)",
   blocks: "Blocks",
   debug: "Debug",
   code: "Code",
@@ -59,6 +59,7 @@ var MSG = {
   catSound_play_title:"play %1",
   catI2c_address_title:"create %1 address %2",
   catI2c_readreg_title:"read %1 reg %2",
+  catI2c_writereg_title:"write %1 reg %2 value %3",
   catSpi_readwrite_title:"read %1 write %2",
   catSerial_write_title:"send %1 context %2",
   catSerial_writeline_title:"send %1 line %2 ",
@@ -80,6 +81,7 @@ var MSG = {
   catPrint_lcd_title: "Lcd",
   catIot_send_title:"send %1 to %2 id %3",
   catLcd_writeline_title:"write %1 to lcd",
+  catLcd_drawimage_title:"draw image %1 location (x%2y%3)",
   catLcd_drawdot_title:"drawdot location (x%1y%2)color%3",
   catLcd_drawrect_title:"drawrect start (x1%1y1%2)end (x2%3y2%4)color%5",
   catLcd_drawline_title:"drawline start (x1%1y1%2)end (x2%3y2%4)color%5",
@@ -107,4 +109,5 @@ var MSG = {
   catFile_read_title: "read %1",
   catFile_readline_title: "read %1 line %2",
   catFile_readlines_title: "readlines %1",
+  catFile_wget_title:"get resource %1",
 };

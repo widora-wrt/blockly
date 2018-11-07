@@ -129,3 +129,13 @@ Blockly.Python['lcd_writeline'] = function(block) {
     var code = 'lcd0.drawString('+value_font+','+value_x+','+value_y+','+value_value+','+value_fc+','+value_bc+','+value_ac+')\n';
     return code;
   };
+  Blockly.Python['lcd_drawimage'] = function(block) {
+    var value_value = Blockly.Python.valueToCode(block, 'PATH', Blockly.Python.ORDER_ATOMIC);
+    var value_x = Blockly.Python.valueToCode(block, 'VALUE_X', Blockly.Python.ORDER_ATOMIC);
+    var value_y = Blockly.Python.valueToCode(block, 'VALUE_Y', Blockly.Python.ORDER_ATOMIC);
+    var def ="lcd0=mraa.Lcd(0)";
+    Blockly.Python.definitions_[def] = def;
+    Blockly.Python.definitions_['import_mraa'] = 'import mraa';
+    var code = 'lcd0.drawJpg('+value_x+','+value_y+','+value_value+')\n';
+    return code;
+  };

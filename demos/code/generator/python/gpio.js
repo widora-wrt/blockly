@@ -95,8 +95,19 @@ Blockly.Python['gpio_interrupt'] = function(block) {
     }catch(exception) {
       dropdown_name="0";
     }
-  var statements_func = Blockly.Python.statementToCode(block, 'FUNC');
-  // TODO: Assemble Python into code variable.
+  
+  var variables = this.workspace.getAllVariables();
+  var global="  global ";
+  for (var i = 0; i < variables.length; i++) {
+  //alert(variables[i].name);
+  var varName = Blockly.Python.variableDB_.getName(variables[i].name,
+      Blockly.Variables.NAME_TYPE);
+  global+=varName;
+  if(i<(variables.length-1))global+=',';
+  else global+="\n";
+  }
+  if(variables.length==0)global="";
+  var statements_func =global+Blockly.Python.statementToCode(block, 'FUNC')+"  pass";
   Blockly.Python.definitions_['import_mraa'] = 'import mraa';
   var func="def gpio"+dropdown_name+"_callback(userdata):\n"+statements_func;
   Blockly.Python.definitions_[func] = func;

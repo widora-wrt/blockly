@@ -82,3 +82,11 @@ Blockly.Python['file_list'] = function(block) {
     Blockly.Python.definitions_['import_file'] = 'import file';
     return [code, Blockly.Python.ORDER_NONE];
   };
+  Blockly.Python['file_wget'] = function(block) {
+    var input_value = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_NONE);
+    // TODO: Assemble Python into code variable.
+    var code ="file.wget("+input_value+")";
+     Blockly.Python.definitions_['import_file'] = 'import file';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.Python.ORDER_NONE];
+  };

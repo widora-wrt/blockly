@@ -1,5 +1,5 @@
 var MSG = {
-  title: "波狸 (v00.01.03)",
+  title: "波狸 (v00.01.04)",
   blocks: "块",
   debug: "调试",
   code: "代码",
@@ -59,6 +59,7 @@ var MSG = {
   catSound_play_title:"播放 %1",
   catI2c_address_title:"创建设备 %1 地址 %2",
   catI2c_readreg_title:"读取 %1 寄存器 %2",
+  catI2c_writereg_title:"写 %1 寄存器 %2 值 %3",
   catSpi_readwrite_title:"读 %1 写 %2",
   catSerial_write_title:"发送 %1 内容 %2",
   catSerial_write_array_title:"发送 %1 数组 %2",
@@ -81,6 +82,7 @@ var MSG = {
   catIot_send_title:"发送 %1 到 %2 标识 %3",
   catLcd_writeline_title:"写字符 %1 到屏幕",
   catLcd_drawdot_title:"画点  坐标 (x%1y%2) 颜色:%3",
+  catLcd_drawimage_title:"打印图像 %1 位置 (x%2y%3) ",
   catLcd_drawrect_title:"画矩形 左上角 (x1%1y1%2)右下角 (x2%3y2%4)颜色%5",
   catLcd_drawline_title:"画线 起点 (x1%1y1%2)终点 (x2%3y2%4)颜色%5",
   catLcd_drawrectfill_title:"填充矩形 左上角 (x1%1y1%2)右下角 (x2%3y2%4)颜色%5",
@@ -107,4 +109,5 @@ var MSG = {
   catFile_read_title: "读 %1",
   catFile_readline_title: "读取 %1 第%2行",
   catFile_readlines_title: "读取 %1 所有行",
+  catFile_wget_title:"获取资源 %1",
 };
