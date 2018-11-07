@@ -81,6 +81,7 @@ var MSG = {
   catPrint_to_title: "print %1 to %2",
   catPrint_console_title: "Console",
   catPrint_lcd_title: "Lcd",
+  catPrint_file_title: "File",
   catIot_send_title:"send %1 to %2 id %3",
   catLcd_writeline_title:"write %1 to lcd",
   catLcd_drawimage_title:"draw image %1 location (x%2y%3)",

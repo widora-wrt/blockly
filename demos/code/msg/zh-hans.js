@@ -81,6 +81,7 @@ var MSG = {
   catPrint_to_title: "打印 %1 到 %2",
   catPrint_console_title: "控制台",
   catPrint_lcd_title: "屏幕",
+  catPrint_file_title: "文件",
   catIot_send_title:"发送 %1 到 %2 标识 %3",
   catLcd_writeline_title:"写字符 %1 到屏幕",
   catLcd_drawdot_title:"画点  坐标 (x%1y%2) 颜色:%3",
