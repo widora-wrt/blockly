@@ -132,6 +132,7 @@
         <value name="NAME"><shadow type="i2c_list"></shadow></value>
       </block>
       <block type="i2c_list"></block>
+      <block type="i2c_mpu6050"></block>
     </category>
     <category name="%{BKY_CATSPI}" colour="%{BKY_SPI_HUE}">
       <block type="spi_writeread">
@@ -214,6 +215,9 @@
     </category>
     <category name="%{BKY_CATSOUND}" colour="%{BKY_SOUND_HUE}">
       <block type="sound_play"></block>
+      <block type="sound_playpath">
+        <value name="VALUE"><shadow type="text"><field name="TEXT">/www/pyly/sound/move1.mp3</field></value>
+        </block>
       <block type="sound_piano"></block>
       <block type="sound_melody"></block>
       <block type="sound_effect"></block>
@@ -235,6 +239,11 @@
       </block>
     </category>
     <category name="%{BKY_CATLCD}" colour="%{BKY_LCD_HUE}">
+      <block type="lcd_clear">
+        <value name="VALUE_C">
+          <shadow type="colour_picker"><field name="COLOUR">#000000</field></shadow>
+       </value>
+      </block>
       <block type="lcd_writeline">
       <value name="VALUE"><shadow type="text"><field name="TEXT">pyly</field></value>
       </block>
@@ -307,9 +316,19 @@
           <value name="VALUE_X"><shadow type="math_number"><field name="NUM">10</field></value>
           <value name="VALUE_Y"><shadow type="math_number"><field name="NUM">10</field></value>
         </block>
-      <block type="lcd_clear">
-          <value name="VALUE_C">
-              <shadow type="colour_picker"><field name="COLOUR">#000000</field></shadow>
+      <block type="lcd_drawdotarray">
+        <value name="NAME">
+          <shadow type="colour_picker"><field name="COLOUR">#00ff00</field></shadow>
+        </value>
+        <value name="VALUE_X1"><shadow type="math_number"><field name="NUM">10</field></value>
+        <value name="VALUE_Y1"><shadow type="math_number"><field name="NUM">10</field></value>
+        <value name="VALUE_C">
+            <shadow type="colour_picker"><field name="COLOUR">#ff0000</field></shadow>
+          </value>
+      </block>
+      <block type="lcd_dotarray">
+          <value name="NAME">
+            <shadow type="colour_picker"><field name="COLOUR">#00ff00</field></shadow>
           </value>
       </block>
      </category>
@@ -323,6 +342,7 @@
         <value name="NAME"><shadow type="tcpip_ipaddress"></shadow></value>
       </block>
       <block type="print_serial"></block>
+      <block type="print_file"></block>
      </category>
     <sep></sep>
     <category name="%{BKY_CATLOGIC}" colour="%{BKY_LOGIC_HUE}">
@@ -342,13 +362,6 @@
           </shadow>
         </value>
       </block>
-      <block type="controls_sleep">
-          <value name="NAME">
-              <shadow type="math_number">
-                <field name="NUM">1</field>
-              </shadow>
-            </value>
-          </block>
       <block type="controls_whileUntil"></block>
       <block type="controls_for">
         <value name="FROM">

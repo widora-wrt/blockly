@@ -124,5 +124,24 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
         "colour": "%{BKY_I2C_HUE}",
         "tooltip": "",
         "helpUrl": ""
+      },
+      {
+        "type": "i2c_mpu6050",
+        "message0": "%{BKY_CATI2C_MPU6050_TITLE}",
+        "args0": [
+          {
+            "type": "field_dropdown",
+            "name": "VALUE",
+            "options": [
+              ["%{BKY_CATI2C_MPU6050_GYRO}","getGyro"],
+              ["%{BKY_CATI2C_MPU6050_ACC}","getAcc"],
+              ["%{BKY_CATI2C_MPU6050_TEMP}","getTemp"],
+            ]
+          }
+        ],
+        "output": "Array",
+        "colour": "%{BKY_I2C_HUE}",
+        "tooltip": "返回列表形式",
+        "helpUrl": ""
       }
 ]);

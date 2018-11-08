@@ -77,10 +77,20 @@ Blockly.Python['i2c_address'] = function(block) {
         dropdown_name="0";
       }
     var address_name =block.getFieldValue('VALUE');
-    var code = "i2c"+dropdown_name+".writeReg("+dropdown_reg+","+dropdown_value+")";
+    var code = "i2c"+dropdown_name+".writeReg("+dropdown_reg+","+dropdown_value+")\n";
     var def ="i2c"+dropdown_name+"=mraa.I2c("+dropdown_name+")";
     // TODO: Change ORDER_NONE to the correct strength.
     Blockly.Python.definitions_[def] = def;
     Blockly.Python.definitions_['import_mraa'] = 'import mraa';
+    return code;
+  };
+  Blockly.Python['i2c_mpu6050'] = function(block) {
+    var dropdown_value = block.getFieldValue('VALUE');
+    // TODO: Assemble Python into code variable.
+    var code ="i2c_mpu6050."+dropdown_value+"()";
+    var def ="i2c_mpu6050=i2c.mpu6050()";
+    Blockly.Python.definitions_[def] = def;
+    Blockly.Python.definitions_['import_i2c'] = 'import i2c';
+    // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.Python.ORDER_NONE];
   };

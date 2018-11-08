@@ -167,4 +167,21 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
         "tooltip": "",
         "helpUrl": ""
       },
+      {
+        "type": "sound_playpath",
+        "message0": "%{BKY_CATSOUND_PLAYPATH_TITLE}",
+        "args0": [
+          {
+            "type": "input_value",
+            "name": "VALUE",
+            "check": "String"
+          }
+        ],
+        "previousStatement": null,
+        "nextStatement": null,
+        "inputsInline": true,
+        "colour": "%{BKY_SOUND_HUE}",
+        "tooltip": "",
+        "helpUrl": ""
+      }
 ]);

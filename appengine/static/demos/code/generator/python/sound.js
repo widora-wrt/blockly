@@ -60,3 +60,10 @@ Blockly.Python['sound_play'] = function(block) {
     var code ="sound.play('"+dropdown_name+"')\n";
     return code;
   };
+  Blockly.Python['sound_playpath'] = function(block) {
+    var text_value =Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_NONE);
+    // TODO: Assemble Python into code variable.
+    var code ="sound.playPath("+text_value+")\n";
+    Blockly.Python.definitions_['import_sound'] = 'import sound';
+    return code;
+  };
