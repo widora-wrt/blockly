@@ -67,6 +67,45 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
 
   },
   {
+    "type": "text_convert_string",
+    "message0": "%{BKY_TEXT_CONVERT_STRING_TITLE} %1",
+    "args0": [{
+        "type": "input_value",
+        "name": "VALUE",
+    }
+    ],
+    "output": "String",
+    "colour": "%{BKY_TEXTS_HUE}",
+    "helpUrl": "",
+    "tooltip": "",
+  },
+  {
+    "type": "text_convert_int",
+    "message0": "%{BKY_TEXT_CONVERT_INT_TITLE} %1",
+    "args0": [{
+        "type": "input_value",
+        "name": "VALUE",
+    }
+    ],
+    "output": "Number",
+    "colour": "%{BKY_TEXTS_HUE}",
+    "helpUrl": "",
+    "tooltip": "",
+  },
+  {
+    "type": "text_convert_float",
+    "message0": "%{BKY_TEXT_CONVERT_FLOAT_TITLE} %1",
+    "args0": [{
+        "type": "input_value",
+        "name": "VALUE",
+    }
+    ],
+    "output": "Number",
+    "colour": "%{BKY_TEXTS_HUE}",
+    "helpUrl": "",
+    "tooltip": "",
+  },
+  {
     "type": "text_create_join_container",
     "message0": "%{BKY_TEXT_CREATE_JOIN_TITLE_JOIN} %1 %2",
     "args0": [{

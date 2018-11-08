@@ -59,7 +59,7 @@ Blockly.Python['tcpip_ipaddress'] = function(block) {
     var value_name = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
     var value = dropdown_name.replace(/[^0-9]/ig,""); 
-    var code ="connect_"+value+".recv("+value_name+")\n";
+    var code ="connect_"+value+".recv("+value_name+")";
     Blockly.Python.definitions_['import_socket'] = 'import socket';
     return [code, Blockly.Python.ORDER_NONE];
   };
