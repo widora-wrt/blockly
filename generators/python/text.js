@@ -79,19 +79,22 @@ Blockly.Python['text_append'] = function(block) {
   return varName + ' = str(' + varName + ') + str(' + value + ')\n';
 };
 Blockly.Python['text_convert_string'] = function(block) {
-  // Append to a variable in place.
-  var input_value = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_NONE);
-  return 'str(' + input_value + ')\n';
+  // Is the string null or array empty?
+  var text = Blockly.Python.valueToCode(block, 'VALUE',
+      Blockly.Python.ORDER_NONE) || '\'\'';
+  return ['str(' + text + ')', Blockly.Python.ORDER_FUNCTION_CALL];
 };
 Blockly.Python['text_convert_int'] = function(block) {
-  // Append to a variable in place.
-  var input_value = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_NONE);
-  return 'int(' + input_value + ')\n';
+  // Is the string null or array empty?
+  var text = Blockly.Python.valueToCode(block, 'VALUE',
+  Blockly.Python.ORDER_NONE) || '\'\'';
+  return ['int(' + text + ')', Blockly.Python.ORDER_FUNCTION_CALL];
 };
 Blockly.Python['text_convert_float'] = function(block) {
-  // Append to a variable in place.
-  var input_value = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_NONE);
-  return 'float(' + input_value + ')\n';
+  // Is the string null or array empty?
+  var text = Blockly.Python.valueToCode(block, 'VALUE',
+  Blockly.Python.ORDER_NONE) || '\'\'';
+  return ['float(' + text + ')', Blockly.Python.ORDER_FUNCTION_CALL];
 };
 Blockly.Python['text_length'] = function(block) {
   // Is the string null or array empty?
