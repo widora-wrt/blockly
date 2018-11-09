@@ -31,7 +31,7 @@ goog.require('Blockly.Python');
 
 Blockly.Python['lcd_writeline'] = function(block) {
     var value_name = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC);
-    var code = 'lcd0.write(bytearray('+value_name+'))\n';
+    var code = 'lcd0.write(bytearray(str('+value_name+')))\n';
     var def ="lcd0=mraa.Lcd(0)";
     Blockly.Python.definitions_[def] = def;
     Blockly.Python.definitions_['import_mraa'] = 'import mraa';
@@ -148,38 +148,20 @@ Blockly.Python['lcd_writeline'] = function(block) {
     {
       var str=String.fromCharCode(offseta+x)+String.fromCharCode(offseta+y);
       var checkbox_hh = block.getFieldValue(str) == 'TRUE';
-      if(checkbox_hh)dataIntArr[y]|=(1<<x);
+      if(checkbox_hh)dataIntArr[x]|=(1<<y);
       
     }
     var code="["+dataIntArr+"]";
     return [code, Blockly.Python.ORDER_ATOMIC];
   };
   Blockly.Python['lcd_drawdotarray'] = function(block) {
-    var value_x1 = Blockly.Python.valueToCode(block, 'VALUE_X1', Blockly.Python.ORDER_ATOMIC);
-    var value_y1 = Blockly.Python.valueToCode(block, 'VALUE_Y1', Blockly.Python.ORDER_ATOMIC);
     var value_value = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC);
+    var value_f = Blockly.Python.valueToCode(block, 'VALUE_F', Blockly.Python.ORDER_ATOMIC);
     var value_c = Blockly.Python.valueToCode(block, 'VALUE_C', Blockly.Python.ORDER_ATOMIC);
-
-    var offseta='a'.charCodeAt();
-    var dataIntArr=[0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00];  
-    for(var x=0;x<8;x++)
-    for(var y=0;y<8;y++)
-    {
-      var str=String.fromCharCode(offseta+x)+String.fromCharCode(offseta+y);
-      var checkbox_hh = block.getFieldValue(str) == 'TRUE';
-      if(checkbox_hh)dataIntArr[y]|=(1<<x);
-      
-    }
-    var arraydata="";
-    for(var x=0;x<8;x++)
-    {
-      if(dataIntArr[x]<=0x0f)arraydata+='0';
-      arraydata+=dataIntArr[x].toString(16);
-    }
     var def ="lcd0=mraa.Lcd(0)";
     Blockly.Python.definitions_[def] = def;
     Blockly.Python.definitions_['import_mraa'] = 'import mraa';
-    var code = "lcd0.drawDotarray("+value_x1+","+value_y1+","+value_value+","+value_c+")\n";
+    var code = "lcd0.drawDotarray(bytearray("+value_value+"),"+value_f+","+value_c+")\n";
     return code;
   };
   

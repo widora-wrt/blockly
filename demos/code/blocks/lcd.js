@@ -687,16 +687,12 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
         "args0": [
           {
             "type": "input_value",
-            "name": "VALUE_X1"
-          },
-          {
-            "type": "input_value",
-            "name": "VALUE_Y1"
-          },
-          {
-            "type": "input_value",
             "name": "VALUE",
-            "check": "Array"
+          },
+          {
+            "type": "input_value",
+            "name": "VALUE_F",
+            "check": "Colour"
           },
           {
             "type": "input_value",

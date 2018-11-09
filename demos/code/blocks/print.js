@@ -120,10 +120,10 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
         "type": "field_dropdown",
         "name": "NAME",
         "options": [
-          ["Text0.txt","test0"],
-          ["Text1.txt","text1"],
-          ["Text2.txt","text2"],
-          ["Text3.txt","text3"],
+          ["Text0.txt","/www/pyly/file/text0.txt"],
+          ["Text1.txt","/www/pyly/file/text1.txt"],
+          ["Text2.txt","/www/pyly/file/text2.txt"],
+          ["Text3.txt","/www/pyly/file/text3.txt"],
           ]
       }
     ],

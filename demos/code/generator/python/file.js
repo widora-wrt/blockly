@@ -39,8 +39,7 @@ Blockly.Python['file_list'] = function(block) {
     var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_NONE);
     var value_value= Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
-    alert(value_name);
-    var code ="file.write("+value_name+".txt,str("+value_value+'))\n';
+    var code ="file.write("+value_name+",str("+value_value+'))\n';
     Blockly.Python.definitions_['import_file'] = 'import file';
     return code;
   };
@@ -48,7 +47,7 @@ Blockly.Python['file_list'] = function(block) {
     var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_NONE);
     var value_value= Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
-    var code ="file.create('"+value_name+".txt',str("+value_value+'))\n';
+    var code ="file.create("+value_name+",str("+value_value+'))\n';
     Blockly.Python.definitions_['import_file'] = 'import file';
     return code;
   };
@@ -56,14 +55,14 @@ Blockly.Python['file_list'] = function(block) {
     var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_NONE);
     var value_value= Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_ATOMIC);
     // TODO: Assemble Python into code variable.
-    var code ="file.writeline('"+value_name+".txt',str("+value_value+'))\n';
+    var code ="file.writeline("+value_name+",str("+value_value+'))\n';
     Blockly.Python.definitions_['import_file'] = 'import file';
     return code;
   };
   Blockly.Python['file_read'] = function(block) {
     var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_NONE);
     // TODO: Assemble Python into code variable.
-    var code ="file.read('"+value_name+".txt')";
+    var code ="file.read("+value_name+")";
     Blockly.Python.definitions_['import_file'] = 'import file';
     return [code, Blockly.Python.ORDER_NONE];
   };
@@ -71,14 +70,14 @@ Blockly.Python['file_list'] = function(block) {
     var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_NONE);
     var value_value = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_NONE);
     // TODO: Assemble Python into code variable.
-    var code ="file.readline('"+value_name+".txt',"+value_value+")";
+    var code ="file.readline("+value_name+","+value_value+")";
     Blockly.Python.definitions_['import_file'] = 'import file';
     return [code, Blockly.Python.ORDER_NONE];
   };
   Blockly.Python['file_readlines'] = function(block) {
     var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_NONE);
     // TODO: Assemble Python into code variable.
-    var code ="file.readlines('"+value_name+".txt')";
+    var code ="file.readlines("+value_name+")";
     Blockly.Python.definitions_['import_file'] = 'import file';
     return [code, Blockly.Python.ORDER_NONE];
   };

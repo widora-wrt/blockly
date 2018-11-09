@@ -62,12 +62,12 @@ Blockly.Python['print_serial'] = function(block) {
 };
 Blockly.Python['print_file'] = function(block) {
   var text_name =  block.getFieldValue('NAME');
-  var code ="file.write('"+text_name+".txt',";
+  var code ="file.write('"+text_name+"',";
  // var def ="file.write()";
   Blockly.Python.definitions_['import_file'] = 'import file';
  // Blockly.Python.definitions_[def] =def;
   if(block.getParent()==null)code="";
-  return [code, Blockly.Python.ORDER_NONE];
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
 Blockly.Python['print_to'] = function(block) {
   var dropdown_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_NONE);
