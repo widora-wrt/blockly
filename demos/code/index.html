@@ -29,6 +29,7 @@
   <script src="blocks/lcd.js"></script>
   <script src="blocks/time.js"></script>
   <script src="blocks/file.js"></script>
+  <script src="blocks/camera.js"></script>
   <script src="generator/python/gpio.js"></script>
   <script src="generator/python/pwm.js"></script>
   <script src="generator/python/i2c.js"></script>
@@ -42,6 +43,7 @@
   <script src="generator/python/lcd.js"></script>
   <script src="generator/python/time.js"></script>
   <script src="generator/python/file.js"></script>
+  <script src="generator/python/camera.js"></script>
   <script src="javascript/code.js"></script>
 </head>
 <body>
@@ -238,6 +240,11 @@
         <value name="NAME"><shadow type="thread_list"></shadow></value>
       </block>
     </category>
+    <category name="%{BKY_CATCAMERA}" colour="%{BKY_CAMERA_HUE}">
+      <block type="camera_take">
+        <value name="DELAY"><shadow type="math_number"><field name="NUM">0</field></value>
+      </block>
+    </category>
     <category name="%{BKY_CATLCD}" colour="%{BKY_LCD_HUE}">
       <block type="lcd_clear">
         <value name="VALUE_C">
@@ -323,6 +330,17 @@
         <value name="VALUE_C">
             <shadow type="colour_picker"><field name="COLOUR">#060606</field></shadow>
         </value>
+      </block>
+      <block type="lcd_drawdotarraybit">
+          <value name="VALUE_X"><shadow type="math_number"><field name="NUM">0</field></value>
+          <value name="VALUE_Y"><shadow type="math_number"><field name="NUM">0</field></value>
+          <value name="VALUE_C">
+             <shadow type="logic_boolean"><field name="BOOLEAN">True</field></shadow>
+          </value>
+      </block>
+      <block type="lcd_drawdotarraymove">
+        <value name="VALUE_X"><shadow type="math_number"><field name="NUM">0</field></value>
+        <value name="VALUE_Y"><shadow type="math_number"><field name="NUM">0</field></value>
       </block>
       <block type="lcd_dotarray">
           <value name="NAME">

@@ -545,6 +545,7 @@ Code.initTarget = function() {
   else Code.initTargetserver();
   var languageMenu = document.getElementById('languageMenu');
   if(languageMenu.options.length == 0) Code.initLanguage();
+  BlocklyStorage.makeGet("/cgi-bin/opt/shell/kill.lua","");
 }
 
 
@@ -626,7 +627,7 @@ Code.runJS = function() {
     {
       if(document.getElementById("runButton").innerHTML.indexOf("stop")>0 )
       {
-        BlocklyStorage.makeGet("/cgi-bin/opt/shell/kill.lua","");
+      //  BlocklyStorage.makeGet("/cgi-bin/opt/shell/kill.lua","");
       }
     }
   } catch (e) {

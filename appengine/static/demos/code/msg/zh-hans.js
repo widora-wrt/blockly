@@ -26,6 +26,7 @@ var MSG = {
   catTcpip:"网络通信",
   catTime:"时间",
   catLcd:"显示屏",
+  catCamera:"摄像头",
   catPrint:"打印",
   catLogic: "逻辑",
   catLoops: "循环",
@@ -118,4 +119,7 @@ var MSG = {
   catI2c_mpu6050_temp:"温度",
   catLcd_dotarray_title:"%1 %2 %3 %4 %5 %6 %7 %8 %9 %10 %11 %12 %13 %14 %15 %16 %17 %18 %19 %20 %21 %22 %23 %24 %25 %26 %27 %28 %29 %30 %31 %32 %33 %34 %35 %36 %37 %38 %39 %40 %41 %42 %43 %44 %45 %46 %47 %48 %49 %50 %51 %52 %53 %54 %55 %56 %57 %58 %59 %60 %61 %62 %63 %64 %65 %66 %67 %68 %69 %70 %71",
   catLcd_drawdotarray_title:"打印点阵 数据 %1 颜色 %2 背景 %3",
+  catLcd_drawdotarraybit_title:"点阵 打印点 (x%1 y%2) 点亮 %3",
+  catLcd_drawdotarraymove_title:"点阵 移动(x %1 y%2)",
+  catCamera_take_title:"拍照 延时 %1 秒"
 };

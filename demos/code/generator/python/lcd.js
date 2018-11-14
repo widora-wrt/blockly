@@ -164,4 +164,23 @@ Blockly.Python['lcd_writeline'] = function(block) {
     var code = "lcd0.drawDotarray(bytearray("+value_value+"),"+value_f+","+value_c+")\n";
     return code;
   };
+  Blockly.Python['lcd_drawdotarraybit'] = function(block) {
+    var value_x = Blockly.Python.valueToCode(block, 'VALUE_X', Blockly.Python.ORDER_ATOMIC);
+    var value_y = Blockly.Python.valueToCode(block, 'VALUE_Y', Blockly.Python.ORDER_ATOMIC);
+    var value_v = Blockly.Python.valueToCode(block, 'VALUE_C', Blockly.Python.ORDER_ATOMIC);
+    var def ="lcd0=mraa.Lcd(0)";
+    Blockly.Python.definitions_[def] = def;
+    Blockly.Python.definitions_['import_mraa'] = 'import mraa';
+    var code = "lcd0.drawDotarraybit("+value_x+","+value_y+","+value_v+")\n";
+    return code;
+  };
+  Blockly.Python['lcd_drawdotarraymove'] = function(block) {
+    var value_x = Blockly.Python.valueToCode(block, 'VALUE_X', Blockly.Python.ORDER_ATOMIC);
+    var value_y = Blockly.Python.valueToCode(block, 'VALUE_Y', Blockly.Python.ORDER_ATOMIC);
+    var def ="lcd0=mraa.Lcd(0)";
+    Blockly.Python.definitions_[def] = def;
+    Blockly.Python.definitions_['import_mraa'] = 'import mraa';
+    var code = "lcd0.drawDotarraymove("+value_x+","+value_y+")\n";
+    return code;
+  };
   
