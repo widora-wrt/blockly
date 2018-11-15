@@ -303,7 +303,8 @@ BlocklyStorage.handleGetTask_= null;
 BlocklyStorage.handleGetContext_ = function() {
   if (BlocklyStorage.httpGetConext_.readyState == 4) {
     if (BlocklyStorage.httpGetConext_.status != 200) {
-     // BlocklyStorage.alert(BlocklyStorage.HTTPREQUEST_ERROR + '\n' +'httpGet_.status: ' + BlocklyStorage.httpGet_.status);
+      Code.getchoke=false;
+     BlocklyStorage.alert(BlocklyStorage.HTTPREQUEST_ERROR + '\n' +'httpGet_.status: ' + BlocklyStorage.httpGetConext_.status);
     } else {
       var data = BlocklyStorage.httpGetConext_.responseText.trim();
       BlocklyStorage.handleGetTask_(data);

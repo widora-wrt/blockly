@@ -1,5 +1,7 @@
 var MSG = {
   title: "PYLY (v00.01.04)",
+  targetserver: "Server",
+  targetdevice: "Device",
   blocks: "Blocks",
   debug: "Debug",
   code: "Code",

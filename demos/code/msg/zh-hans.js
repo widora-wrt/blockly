@@ -1,5 +1,7 @@
 var MSG = {
   title: "波狸 (v00.01.04)",
+  targetserver: "服务器",
+  targetdevice: "设备",
   blocks: "块",
   debug: "调试",
   code: "代码",

@@ -91,6 +91,7 @@ Code.LANGUAGE_RTL = ['ar', 'fa', 'he', 'lki'];
 Code.workspace = null;
 Code.selectname = null;
 Code.targetdevice=null;
+Code.getchoke=true;
 /**
  * Extracts a parameter from the URL.
  * If the parameter is absent default_value is returned.
@@ -468,7 +469,6 @@ Code.initLanguage = function() {
   languageMenu.addEventListener('change', Code.changeLanguage, true);
 
   // Inject language strings.
-  document.title += ' ' + MSG['title'];
   document.getElementById('title').textContent = MSG['title'];
   document.getElementById('tab_blocks').textContent = MSG['blocks'];
   document.getElementById('tab_debug').textContent = MSG['debug'];
@@ -494,7 +494,6 @@ Code.changeTemplate = function() {
   window.sessionStorage.selectname=templateMenu.options[templateMenu.selectedIndex].value;
   BlocklyStorage.makeGetConext("/cgi-bin/opt/shell/loadfile.lua?gide."+window.sessionStorage.selectname,"null");
 };
-
 Code.initTargetdevice = function() {
   var objSelect = document.getElementById("TemplateMenu");
   objSelect.addEventListener('change', Code.changeTemplate, true);
@@ -526,26 +525,33 @@ Code.initTargetdevice = function() {
         window.sessionStorage.selectlang=temp.replace(".l","");
       }
     }
-    Code.initLanguage();
+    Code.getchoke=false;
+    Code.targetdevice=true;
   }
+  Code.getchoke=true;
+  Code.targetdevice=false;
   BlocklyStorage.makeGetConext("/cgi-bin/opt/shell/listfile.lua","null");
+  while(Code.getchoke);
+  Code.initLanguage();
 }
 Code.initTargetserver = function() {
 
   var storage = window.sessionStoragee; 
   var objSelect = document.getElementById("TemplateMenu");
   objSelect.length=0;
-
-  var new_opt = new Option("d");   
+  var new_opt = new Option("default.t");   
   objSelect.options.add(new_opt);
   Code.initLanguage();
 }
 Code.initTarget = function() {
-  if(Code.targetdevice)Code.initTargetdevice();
-  else Code.initTargetserver();
-  var languageMenu = document.getElementById('languageMenu');
-  if(languageMenu.options.length == 0) Code.initLanguage();
-  BlocklyStorage.makeGet("/cgi-bin/opt/shell/kill.lua","");
+  Code.initTargetdevice();
+  if(Code.targetdevice==false)
+  {
+    document.title = MSG['title']+MSG['targetserver'];
+    Code.initTargetserver();
+  }else{
+    document.title = MSG['title']+MSG['targetdevice'];
+  }
 }
 
 
@@ -627,14 +633,18 @@ Code.runJS = function() {
     {
       if(document.getElementById("runButton").innerHTML.indexOf("stop")>0 )
       {
-      //  BlocklyStorage.makeGet("/cgi-bin/opt/shell/kill.lua","");
+        BlocklyStorage.makeGet("/cgi-bin/opt/shell/kill.lua","");
       }
     }
   } catch (e) {
     alert(MSG['badCode'].replace('%1', e));
   }
 };
+
+
+
 Code.likeJS = function() {
+
   var objSelect = document.getElementById("TemplateMenu");
   try{
   if(window.sessionStorage.selectname==undefined)window.sessionStorage.selectname=objSelect.options[objSelect.selectedIndex].value
