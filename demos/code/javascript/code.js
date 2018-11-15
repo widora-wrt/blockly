@@ -494,6 +494,15 @@ Code.changeTemplate = function() {
   window.sessionStorage.selectname=templateMenu.options[templateMenu.selectedIndex].value;
   BlocklyStorage.makeGetConext("/cgi-bin/opt/shell/loadfile.lua?gide."+window.sessionStorage.selectname,"null");
 };
+Code.endWith=function(str,end){
+  
+  if(end==null||end==""||str.length==0||end.length>str.length)
+      return false;
+  if(str.substring(str.length-end.length)==end)
+      return true;
+  else
+      return false;
+}
 
 Code.initTargetdevice = function() {
   var objSelect = document.getElementById("TemplateMenu");
@@ -505,12 +514,13 @@ Code.initTargetdevice = function() {
     var data = text.split('\n');
     for(var i = 0; i < data.length; i++)
     {
-      if(data[i].endsWith(".s"))
+      
+      if(Code.endWith(data[i],".s"))
       {
         var temp=decodeURI(data[i]);
         window.sessionStorage.selectname=temp.replace(".s","").replace("gide.","");
       }else 
-      if(data[i].endsWith(".t"))
+      if(Code.endWith(data[i],".t"))
       {
         var name=decodeURI(data[i]);
         name=name.replace("gide.","");
@@ -520,7 +530,7 @@ Code.initTargetdevice = function() {
         }
         objSelect.options.add(new_opt);
       }else
-      if(data[i].endsWith(".l"))
+      if(Code.endWith(data[i],".s"))
       {
         var temp=decodeURI(data[i]);
         window.sessionStorage.selectlang=temp.replace(".l","");
