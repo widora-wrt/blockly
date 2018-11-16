@@ -407,10 +407,9 @@ Code.init = function() {
 
   Code.tabClick(Code.selected);
 
-  Code.bindClick('trashButton',
-      function() {Code.discard(); Code.renderContent();});
-  Code.bindClick('runButton', Code.runJS);
-  Code.bindClick('likeButton', Code.likeJS);
+  //Code.bindClick('trashButton',function() {Code.discard(); Code.renderContent();});
+  //Code.bindClick('runButton', Code.runJS);
+  //Code.bindClick('likeButton', Code.likeJS);
   // Disable the link button if page isn't backed by App Engine storage.
   //var linkButton = document.getElementById('linkButton');
   if ('BlocklyStorage' in window) {
@@ -518,7 +517,7 @@ Code.initTargetdevice = function() {
       if(Code.endWith(data[i],".s"))
       {
         var temp=decodeURI(data[i]);
-        window.sessionStorage.selectname=temp.replace(".s","").replace("gide.","");
+        if(window.sessionStorage.selectname==null)window.sessionStorage.selectname=temp.replace(".s","").replace("gide.","");
       }else 
       if(Code.endWith(data[i],".t"))
       {
@@ -533,7 +532,7 @@ Code.initTargetdevice = function() {
       if(Code.endWith(data[i],".s"))
       {
         var temp=decodeURI(data[i]);
-        window.sessionStorage.selectlang=temp.replace(".l","");
+        if(window.sessionStorage.selectlang==null)window.sessionStorage.selectlang=temp.replace(".l","");
       }
     }
     Code.initLanguage();
@@ -555,7 +554,6 @@ Code.initTarget = function() {
   else Code.initTargetserver();
   var languageMenu = document.getElementById('languageMenu');
   if(languageMenu.options.length == 0) Code.initLanguage();
-  BlocklyStorage.makeGet("/cgi-bin/opt/shell/kill.lua","");
 }
 
 
@@ -619,7 +617,6 @@ Code.keyInit=function(){
     //alert(e.keyCode);
   }; 
 };
-
 Code.runJS = function() {
   try {
     //alert(document.getElementById("runButton").innerHTML);
@@ -637,7 +634,7 @@ Code.runJS = function() {
     {
       if(document.getElementById("runButton").innerHTML.indexOf("stop")>0 )
       {
-      //  BlocklyStorage.makeGet("/cgi-bin/opt/shell/kill.lua","");
+       BlocklyStorage.makeGet("/cgi-bin/opt/shell/kill.lua","");
       }
     }
   } catch (e) {
@@ -646,12 +643,9 @@ Code.runJS = function() {
 };
 Code.likeJS = function() {
   var objSelect = document.getElementById("TemplateMenu");
-  try{
-  if(window.sessionStorage.selectname==undefined)window.sessionStorage.selectname=objSelect.options[objSelect.selectedIndex].value
-  }catch(e){
-    window.sessionStorage.selectname="";
-  }
-  var name=prompt(MSG['likeinputtitle'],window.sessionStorage.selectname.replace(".t",""));
+  var index = objSelect.selectedIndex; // 选中索引
+  var text = objSelect.options[index].text; // 选中文本
+  var name=prompt(MSG['likeinputtitle'],text.replace(".t",""));
   if(name==null)return; 
   var new_opt = new Option(name+".t");  
   objSelect.options.add(new_opt);

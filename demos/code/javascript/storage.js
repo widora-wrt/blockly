@@ -167,7 +167,7 @@ BlocklyStorage.handleGet_ = function() {
   var content = document.getElementById('content_debug');
   if (BlocklyStorage.httpGet_.readyState == 4) {
     if (BlocklyStorage.httpGet_.status != 200) {
-     // BlocklyStorage.alert(BlocklyStorage.HTTPREQUEST_ERROR + '\n' +'httpGet_.status: ' + BlocklyStorage.httpGet_.status);
+   //   BlocklyStorage.alert(BlocklyStorage.HTTPREQUEST_ERROR + '\n' +'httpGet_.status: ' + BlocklyStorage.httpGet_.status);
      document.getElementById("runButton").innerHTML="<img src='../../media/1x1.gif' class='run icon21'>";
      content.textContent+=MSG["fail"];
     } else {
@@ -195,8 +195,8 @@ BlocklyStorage.makeGet = function(url,content) {
   BlocklyStorage.httpGet_.name = name;
   BlocklyStorage.httpGet_.onreadystatechange =BlocklyStorage.handleGet_;
   BlocklyStorage.httpGet_.open('POST', url);
- // BlocklyStorage.httpPost_.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
-  BlocklyStorage.httpGet_.setRequestHeader('Content-Type','text/event-stream');
+  BlocklyStorage.httpGet_.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+ // BlocklyStorage.httpGet_.setRequestHeader('Content-Type','text/event-stream');
   BlocklyStorage.httpGet_.send(content);
 };
 
