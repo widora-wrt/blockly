@@ -249,7 +249,11 @@
     </category>
     <category name="%{BKY_CATCAMERA}" colour="%{BKY_CAMERA_HUE}">
       <block type="camera_take">
-        <value name="DELAY"><shadow type="math_number"><field name="NUM">0</field></value>
+      <value name="NAME"><shadow type="camera_list"></shadow></value>
+      </block>
+      <block type="camera_takesize">
+       <value name="NAME"><shadow type="camera_list"></shadow></value>
+        <value name="SIZE"><shadow type="math_number"><field name="NUM">0</field></value>
       </block>
     </category>
     <category name="%{BKY_CATLCD}" colour="%{BKY_LCD_HUE}">

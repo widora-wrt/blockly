@@ -48,11 +48,51 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     "args0": [
       {
         "type": "input_value",
-        "name": "DELAY",
+        "name": "NAME",
       }
     ],
     "output":"String",
     "colour": "%{BKY_CAMERA_HUE}",
+    "tooltip": "",
+    "helpUrl": ""
+  },
+  {
+    "type": "camera_takesize",
+    "message0": "%{BKY_CATCAMERA_TAKESIZE_TITLE}",
+    "args0": [
+      {
+        "type": "input_value",
+        "name": "NAME",
+      },
+      {
+        "type": "field_dropdown",
+        "name": "SIZE",
+        "options": [
+                    ["320x240","14"],
+                    ["160x120","15"],
+                    ]
+      }
+    ],
+    "output":"String",
+    "colour": "%{BKY_CAMERA_HUE}",
+    "tooltip": "",
+    "helpUrl": ""
+  },
+  {
+    "type": "camera_list",
+    "message0": "%1",
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "NAME",
+        "options": [
+                    ["video0","/dev/video0"],
+                    ["video1","/dev/video1"],
+                    ]
+      }
+    ],
+    "output": "Number",
+    "colour": "%{BKY_GPIO_HUE}",
     "tooltip": "",
     "helpUrl": ""
   },

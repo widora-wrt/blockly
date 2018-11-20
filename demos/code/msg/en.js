@@ -123,5 +123,6 @@ var MSG = {
   catLcd_drawdotarray_title:"draw dotarray data%1 color%2 backcolor%3",
   catLcd_drawdotarraybit_title:"draw array bit(x %1 y%2) show %3",
   catLcd_drawdotarraymove_title:"draw array move(x %1 y%2)",
-  catCamera_take_title:"take picture delay %1 s",
+  catCamera_take_title:"take %1 photo",
+  catCamera_takesize_title:"take %1 size  %2 picture",
 };

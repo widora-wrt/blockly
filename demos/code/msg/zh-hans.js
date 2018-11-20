@@ -123,5 +123,6 @@ var MSG = {
   catLcd_drawdotarray_title:"打印点阵 数据 %1 颜色 %2 背景 %3",
   catLcd_drawdotarraybit_title:"点阵 打印点 (x%1 y%2) 点亮 %3",
   catLcd_drawdotarraymove_title:"点阵 移动(x %1 y%2)",
-  catCamera_take_title:"拍照 延时 %1 秒"
+  catCamera_take_title:"使用 %1 拍照",
+  catCamera_takesize_title:"使用 %1 大小 %2 拍照",
 };
