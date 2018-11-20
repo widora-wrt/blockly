@@ -48,5 +48,5 @@ Blockly.Python['iot_set'] = function(block) {
   var text_value =Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_NONE);
   var varName ="iotv_"+Blockly.Python.variableDB_.getName(text_name,Blockly.Variables.NAME_TYPE);
   Blockly.Python.definitions_['import_iot'] = 'import iot';
-  return ["iot.set('" + varName + "',"+text_value+")", Blockly.Python.ORDER_FUNCTION_CALL];
+  return "iot.set('" + varName + "',"+text_value+")\n";
 };
