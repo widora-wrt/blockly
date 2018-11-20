@@ -84,6 +84,8 @@ var MSG = {
   catPrint_lcd_title: "屏幕",
   catPrint_file_title: "文件",
   catIot_send_title:"发送 %1 到 %2 标识 %3",
+  catIot_get_title:"获取网络变量 %1",
+  catIot_set_title:"设置网络变量 %1 为 %2",
   catLcd_writeline_title:"写字符 %1 到屏幕",
   catLcd_drawdot_title:"画点  坐标 (x%1y%2) 颜色:%3",
   catLcd_drawimage_title:"打印图像 %1 位置 (x%2y%3) ",

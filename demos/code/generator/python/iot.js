@@ -37,4 +37,16 @@ Blockly.Python['iot_send'] = function(block) {
      Blockly.Python.definitions_['import_iot'] = 'import iot';
     // TODO: Change ORDER_NONE to the correct strength.
     return code;
-  };
+};
+Blockly.Python['iot_get'] = function(block) {
+  var text_name = block.getFieldValue('NAME');
+  var varName ="iotv_"+Blockly.Python.variableDB_.getName(text_name,Blockly.Variables.NAME_TYPE);
+  return ["iot.get('" + varName + "')", Blockly.Python.ORDER_FUNCTION_CALL];
+};
+Blockly.Python['iot_set'] = function(block) {
+  var text_name = block.getFieldValue('NAME');
+  var text_value =Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_NONE);
+  var varName ="iotv_"+Blockly.Python.variableDB_.getName(text_name,Blockly.Variables.NAME_TYPE);
+  Blockly.Python.definitions_['import_iot'] = 'import iot';
+  return ["iot.set('" + varName + "',"+text_value+")", Blockly.Python.ORDER_FUNCTION_CALL];
+};

@@ -35,7 +35,7 @@ goog.provide('Blockly.Constants.Iot');  // deprecated, 2018 April 5
 goog.require('Blockly.Blocks');
 goog.require('Blockly');
 
-Blockly.Msg.IOT_HUE = '188';
+Blockly.Msg.IOT_HUE = '28';
 /**
  * Unused constant for the common HSV hue for all blocks in this category.
  * @deprecated Use Blockly.Msg['COLOUR_HUE']. (2018 April 5)
@@ -68,5 +68,44 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     "colour": "%{BKY_IOT_HUE}",
     "tooltip": "",
     "helpUrl": ""
-}
+},
+  {
+    "type": "iot_get",
+    "message0": "%{BKY_CATIOT_GET_TITLE}",
+    "args0": [
+      {
+        "type": "field_input",
+        "name": "NAME",
+        "text": "pyly",
+        "check":"String"
+      }
+    ],
+    "output": null,
+    "inputsInline": true,
+    "colour": "%{BKY_IOT_HUE}",
+    "tooltip": "",
+    "helpUrl": ""
+  },
+  {
+    "type": "iot_set",
+    "message0": "%{BKY_CATIOT_SET_TITLE}",
+    "args0": [
+      {
+        "type": "field_input",
+        "name": "NAME",
+        "text": "pyly",
+        "check":"String"
+      },
+      {
+        "type": "input_value",
+        "name": "VALUE",
+      },
+    ],
+    "inputsInline": true,
+    "previousStatement": null,
+    "nextStatement": null,
+    "colour": "%{BKY_IOT_HUE}",
+    "tooltip": "",
+    "helpUrl": ""
+  }
 ]);
