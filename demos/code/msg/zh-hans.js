@@ -26,6 +26,8 @@ var MSG = {
   catTcpip:"网络通信",
   catTime:"时间",
   catLcd:"显示屏",
+  catLcdBase:"基础",
+  catLcdHigh:"高级",
   catCamera:"摄像头",
   catPrint:"打印",
   catLogic: "逻辑",

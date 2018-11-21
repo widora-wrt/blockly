@@ -257,107 +257,111 @@
       </block>
     </category>
     <category name="%{BKY_CATLCD}" colour="%{BKY_LCD_HUE}">
-      <block type="lcd_clear">
-        <value name="VALUE_C">
-          <shadow type="colour_picker"><field name="COLOUR">#000000</field></shadow>
-       </value>
-      </block>
-      <block type="lcd_writeline">
-      <value name="VALUE"><shadow type="text"><field name="TEXT">pyly</field></value>
-      </block>
-      <block type="lcd_writestring">
-        <value name="VALUE"><shadow type="text"><field name="TEXT">pyly</field></value>
-        <value name="VALUE_X"><shadow type="math_number"><field name="NUM">0</field></value>
-        <value name="VALUE_Y"><shadow type="math_number"><field name="NUM">0</field></value>
-        <value name="VALUE_FC">
-            <shadow type="colour_picker"><field name="COLOUR">#ffffff</field></shadow>
-          </value>
-        <value name="VALUE_BC">
+      <category name="%{BKY_CATLCDBASE}" colour="%{BKY_LCD_HUE}">
+        <block type="lcd_clear">
+          <value name="VALUE_C">
             <shadow type="colour_picker"><field name="COLOUR">#000000</field></shadow>
-          </value>
-        <value name="VALUE_AC">
-            <shadow type="colour_picker"><field name="COLOUR">#000000</field></shadow>
-          </value>
-        </block>
-      <block type="lcd_drawdot">
-        <value name="VALUE_X"><shadow type="math_number"><field name="NUM">0</field></value>
-        <value name="VALUE_Y"><shadow type="math_number"><field name="NUM">0</field></value>
-         <value name="VALUE_C">
-            <shadow type="colour_picker"><field name="COLOUR">#ff0000</field></shadow>
-         </value>
-      </block>
-      <block type="lcd_drawline">
-          <value name="VALUE_X1"><shadow type="math_number"><field name="NUM">0</field></value>
-          <value name="VALUE_Y1"><shadow type="math_number"><field name="NUM">0</field></value>
-          <value name="VALUE_X2"><shadow type="math_number"><field name="NUM">10</field></value>
-          <value name="VALUE_Y2"><shadow type="math_number"><field name="NUM">10</field></value>
-           <value name="VALUE_C">
-              <shadow type="colour_picker"><field name="COLOUR">#ff0000</field></shadow>
-           </value>
-        </block>
-      <block type="lcd_drawrect">
-          <value name="VALUE_X1"><shadow type="math_number"><field name="NUM">0</field></value>
-          <value name="VALUE_Y1"><shadow type="math_number"><field name="NUM">0</field></value>
-          <value name="VALUE_X2"><shadow type="math_number"><field name="NUM">10</field></value>
-          <value name="VALUE_Y2"><shadow type="math_number"><field name="NUM">10</field></value>
-            <value name="VALUE_C">
-              <shadow type="colour_picker"><field name="COLOUR">#ff0000</field></shadow>
-            </value>
-        </block>
-      <block type="lcd_drawrectfill">
-          <value name="VALUE_X1"><shadow type="math_number"><field name="NUM">0</field></value>
-          <value name="VALUE_Y1"><shadow type="math_number"><field name="NUM">0</field></value>
-          <value name="VALUE_X2"><shadow type="math_number"><field name="NUM">10</field></value>
-          <value name="VALUE_Y2"><shadow type="math_number"><field name="NUM">10</field></value>
-            <value name="VALUE_C">
-              <shadow type="colour_picker"><field name="COLOUR">#ff0000</field></shadow>
-            </value>
-        </block>
-      <block type="lcd_drawcircle">
-          <value name="VALUE_X1"><shadow type="math_number"><field name="NUM">10</field></value>
-          <value name="VALUE_Y1"><shadow type="math_number"><field name="NUM">10</field></value>
-          <value name="VALUE_R"><shadow type="math_number"><field name="NUM">10</field></value>
-            <value name="VALUE_C">
-              <shadow type="colour_picker"><field name="COLOUR">#ff0000</field></shadow>
-            </value>
-        </block>
-      <block type="lcd_drawcirclefill">
-          <value name="VALUE_X1"><shadow type="math_number"><field name="NUM">10</field></value>
-          <value name="VALUE_Y1"><shadow type="math_number"><field name="NUM">10</field></value>
-          <value name="VALUE_R"><shadow type="math_number"><field name="NUM">10</field></value>
-            <value name="VALUE_C">
-              <shadow type="colour_picker"><field name="COLOUR">#ff0000</field></shadow>
-            </value>
-        </block>
-        <block type="lcd_drawimage">
-          <value name="PATH"><shadow type="text"><field name="TEXT">/www/pyly/image/code.jpg</field></value>
-          <value name="VALUE_X"><shadow type="math_number"><field name="NUM">10</field></value>
-          <value name="VALUE_Y"><shadow type="math_number"><field name="NUM">10</field></value>
-        </block>
-      <block type="lcd_drawdotarray">
-        <value name="VALUE_F">
-            <shadow type="colour_picker"><field name="COLOUR">#ff0000</field></shadow>
-          </value>
-        <value name="VALUE_C">
-            <shadow type="colour_picker"><field name="COLOUR">#060606</field></shadow>
         </value>
-      </block>
-      <block type="lcd_drawdotarraybit">
+        </block>
+        <block type="lcd_writeline">
+        <value name="VALUE"><shadow type="text"><field name="TEXT">pyly</field></value>
+        </block>
+        <block type="lcd_writestring">
+          <value name="VALUE"><shadow type="text"><field name="TEXT">pyly</field></value>
+          <value name="VALUE_X"><shadow type="math_number"><field name="NUM">0</field></value>
+          <value name="VALUE_Y"><shadow type="math_number"><field name="NUM">0</field></value>
+          <value name="VALUE_FC">
+              <shadow type="colour_picker"><field name="COLOUR">#ffffff</field></shadow>
+            </value>
+          <value name="VALUE_BC">
+              <shadow type="colour_picker"><field name="COLOUR">#000000</field></shadow>
+            </value>
+          <value name="VALUE_AC">
+              <shadow type="colour_picker"><field name="COLOUR">#000000</field></shadow>
+            </value>
+          </block>
+        <block type="lcd_drawdot">
           <value name="VALUE_X"><shadow type="math_number"><field name="NUM">0</field></value>
           <value name="VALUE_Y"><shadow type="math_number"><field name="NUM">0</field></value>
           <value name="VALUE_C">
-             <shadow type="logic_boolean"><field name="BOOLEAN">True</field></shadow>
+              <shadow type="colour_picker"><field name="COLOUR">#ff0000</field></shadow>
           </value>
-      </block>
-      <block type="lcd_drawdotarraymove">
-        <value name="VALUE_X"><shadow type="math_number"><field name="NUM">0</field></value>
-        <value name="VALUE_Y"><shadow type="math_number"><field name="NUM">0</field></value>
-      </block>
-      <block type="lcd_dotarray">
-          <value name="NAME">
-            <shadow type="colour_picker"><field name="COLOUR">#00ff00</field></shadow>
+        </block>
+        <block type="lcd_drawline">
+            <value name="VALUE_X1"><shadow type="math_number"><field name="NUM">0</field></value>
+            <value name="VALUE_Y1"><shadow type="math_number"><field name="NUM">0</field></value>
+            <value name="VALUE_X2"><shadow type="math_number"><field name="NUM">10</field></value>
+            <value name="VALUE_Y2"><shadow type="math_number"><field name="NUM">10</field></value>
+            <value name="VALUE_C">
+                <shadow type="colour_picker"><field name="COLOUR">#ff0000</field></shadow>
+            </value>
+          </block>
+        <block type="lcd_drawrect">
+            <value name="VALUE_X1"><shadow type="math_number"><field name="NUM">0</field></value>
+            <value name="VALUE_Y1"><shadow type="math_number"><field name="NUM">0</field></value>
+            <value name="VALUE_X2"><shadow type="math_number"><field name="NUM">10</field></value>
+            <value name="VALUE_Y2"><shadow type="math_number"><field name="NUM">10</field></value>
+              <value name="VALUE_C">
+                <shadow type="colour_picker"><field name="COLOUR">#ff0000</field></shadow>
+              </value>
+          </block>
+        <block type="lcd_drawrectfill">
+            <value name="VALUE_X1"><shadow type="math_number"><field name="NUM">0</field></value>
+            <value name="VALUE_Y1"><shadow type="math_number"><field name="NUM">0</field></value>
+            <value name="VALUE_X2"><shadow type="math_number"><field name="NUM">10</field></value>
+            <value name="VALUE_Y2"><shadow type="math_number"><field name="NUM">10</field></value>
+              <value name="VALUE_C">
+                <shadow type="colour_picker"><field name="COLOUR">#ff0000</field></shadow>
+              </value>
+          </block>
+        <block type="lcd_drawcircle">
+            <value name="VALUE_X1"><shadow type="math_number"><field name="NUM">10</field></value>
+            <value name="VALUE_Y1"><shadow type="math_number"><field name="NUM">10</field></value>
+            <value name="VALUE_R"><shadow type="math_number"><field name="NUM">10</field></value>
+              <value name="VALUE_C">
+                <shadow type="colour_picker"><field name="COLOUR">#ff0000</field></shadow>
+              </value>
+          </block>
+        <block type="lcd_drawcirclefill">
+            <value name="VALUE_X1"><shadow type="math_number"><field name="NUM">10</field></value>
+            <value name="VALUE_Y1"><shadow type="math_number"><field name="NUM">10</field></value>
+            <value name="VALUE_R"><shadow type="math_number"><field name="NUM">10</field></value>
+              <value name="VALUE_C">
+                <shadow type="colour_picker"><field name="COLOUR">#ff0000</field></shadow>
+              </value>
+          </block>
+          <block type="lcd_drawimage">
+            <value name="PATH"><shadow type="text"><field name="TEXT">/www/pyly/image/code.jpg</field></value>
+            <value name="VALUE_X"><shadow type="math_number"><field name="NUM">10</field></value>
+            <value name="VALUE_Y"><shadow type="math_number"><field name="NUM">10</field></value>
+          </block>
+        </category>
+        <category name="%{BKY_CATLCDHIGH}" colour="%{BKY_LCD_HUE}">
+        <block type="lcd_drawdotarray">
+          <value name="VALUE_F">
+              <shadow type="colour_picker"><field name="COLOUR">#ff0000</field></shadow>
+            </value>
+          <value name="VALUE_C">
+              <shadow type="colour_picker"><field name="COLOUR">#060606</field></shadow>
           </value>
-      </block>
+        </block>
+        <block type="lcd_drawdotarraybit">
+            <value name="VALUE_X"><shadow type="math_number"><field name="NUM">0</field></value>
+            <value name="VALUE_Y"><shadow type="math_number"><field name="NUM">0</field></value>
+            <value name="VALUE_C">
+              <shadow type="logic_boolean"><field name="BOOLEAN">True</field></shadow>
+            </value>
+        </block>
+        <block type="lcd_drawdotarraymove">
+          <value name="VALUE_X"><shadow type="math_number"><field name="NUM">0</field></value>
+          <value name="VALUE_Y"><shadow type="math_number"><field name="NUM">0</field></value>
+        </block>
+        <block type="lcd_dotarray">
+            <value name="NAME">
+              <shadow type="colour_picker"><field name="COLOUR">#00ff00</field></shadow>
+            </value>
+        </block>
+      </category>
      </category>
      <category name="%{BKY_CATPRINT}" colour="%{BKY_PRINT_HUE}">
       <block type="print_to">

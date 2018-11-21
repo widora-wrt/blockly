@@ -26,6 +26,8 @@ var MSG = {
   catTcpip:"Tcp/IP",
   catTime:"Time",
   catLcd:"Lcd",
+  catLcdBase:"Base",
+  catLcdHigh:"High",
   catCamera:"Camera",
   catPrint:"Print",
   catLogic: "Logic",
