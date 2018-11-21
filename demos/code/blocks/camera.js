@@ -49,6 +49,7 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
       {
         "type": "input_value",
         "name": "NAME",
+        "check":"camera_list",
       }
     ],
     "output":"String",
@@ -63,13 +64,14 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
       {
         "type": "input_value",
         "name": "NAME",
+        "check":"camera_list",
       },
       {
         "type": "field_dropdown",
         "name": "SIZE",
         "options": [
-                    ["320x240","14"],
-                    ["160x120","15"],
+                    ["320x240","[320,240]"],
+                    ["160x120","[160,120]"],
                     ]
       }
     ],
@@ -91,7 +93,7 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
                     ]
       }
     ],
-    "output": "Number",
+    "output": "camera_list",
     "colour": "%{BKY_GPIO_HUE}",
     "tooltip": "",
     "helpUrl": ""

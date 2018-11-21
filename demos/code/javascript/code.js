@@ -617,9 +617,13 @@ Code.keyInit=function(){
     //alert(e.keyCode);
   }; 
 };
+Code.Test=function(){
+  var a=document.getElementById("demo1").value;
+  alert(a);
+}
 Code.runJS = function() {
   try {
-    //alert(document.getElementById("runButton").innerHTML);
+
     var code="# -*- coding: utf-8 -*-\n"+Blockly.Python.workspaceToCode(Code.workspace); 
     if(document.getElementById("runButton").innerHTML.indexOf("run")>0)
     {
@@ -640,8 +644,12 @@ Code.runJS = function() {
   } catch (e) {
     alert(MSG['badCode'].replace('%1', e));
   }
+  var content = document.getElementById('content_debug');
+    content.innerHTML+="<br><img src='http://bbs.elecfans.com/uc_server/data/avatar/002/18/04/95_avatar_middle.jpg'  alt='上海鲜花港 - 郁金香' />";
+    content.innerHTML+="<br> <input type='text' name='fname' id='demo1'/><br><button type='button' onclick='Code.Test()';>Click Me!</button>";
 };
 Code.likeJS = function() {
+
   var objSelect = document.getElementById("TemplateMenu");
   var index = objSelect.selectedIndex; // 选中索引
   var text = objSelect.options[index].text; // 选中文本

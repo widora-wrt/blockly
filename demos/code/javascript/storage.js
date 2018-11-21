@@ -169,21 +169,21 @@ BlocklyStorage.handleGet_ = function() {
     if (BlocklyStorage.httpGet_.status != 200) {
    //   BlocklyStorage.alert(BlocklyStorage.HTTPREQUEST_ERROR + '\n' +'httpGet_.status: ' + BlocklyStorage.httpGet_.status);
      document.getElementById("runButton").innerHTML="<img src='../../media/1x1.gif' class='run icon21'>";
-     content.textContent+=MSG["fail"];
+     content.innerHTML+=MSG["fail"];
     } else {
       var data = BlocklyStorage.httpGet_.responseText.trim();
-      content.textContent+=MSG["stop"];
+      content.innerHTML+=MSG["stop"];
       document.getElementById("runButton").innerHTML="<img src='../../media/1x1.gif' class='run icon21'>";
     }
     BlocklyStorage.httpGet_ = null;
   }else
   if (BlocklyStorage.httpGet_.readyState == 3) {
     var data = BlocklyStorage.httpGet_.responseText.trim();
-      content.textContent=MSG["start"]+data;
+      content.innerHTML=MSG["start"]+data;
   }else
   {
       document.getElementById("runButton").innerHTML="<img src='../../media/1x1.gif' class='stop icon21'>";
-      content.textContent=MSG["start"];
+      content.innerHTML=MSG["start"];
   }
 };
 BlocklyStorage.makeGet = function(url,content) {
