@@ -84,6 +84,8 @@ var MSG = {
   catPrint_lcd_title: "Lcd",
   catPrint_file_title: "File",
   catIot_send_title:"send %1 to %2 id %3",
+  catIot_get_title:"get net variable %1",
+  catIot_set_title:"set net variable %1 to %2",
   catLcd_writeline_title:"write %1 to lcd",
   catLcd_drawimage_title:"draw image %1 location (x%2y%3)",
   catLcd_drawdot_title:"drawdot location (x%1y%2)color%3",
@@ -121,5 +123,6 @@ var MSG = {
   catLcd_drawdotarray_title:"draw dotarray data%1 color%2 backcolor%3",
   catLcd_drawdotarraybit_title:"draw array bit(x %1 y%2) show %3",
   catLcd_drawdotarraymove_title:"draw array move(x %1 y%2)",
-  catCamera_take_title:"take picture delay %1 s",
+  catCamera_take_title:"take %1 photo",
+  catCamera_takesize_title:"take %1 size  %2 picture",
 };

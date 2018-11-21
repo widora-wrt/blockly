@@ -398,7 +398,7 @@ Code.init = function() {
   // and the infinite loop detection function.
   Blockly.JavaScript.addReservedWords('code,timeouts,checkTimeout');
 
-  //Code.loadBlocks('');
+  Code.loadBlocks('');
 
   if ('BlocklyStorage' in window) {
     // Hook a save function onto unload.

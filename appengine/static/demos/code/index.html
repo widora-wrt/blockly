@@ -214,6 +214,13 @@
       <block type="iot_send">
       <value name="VALUE"><shadow type="text"><field name="TEXT">pyly</field></value>
       </block>
+      <block type="iot_get">
+      <value name="NAME"><shadow type="text"><field name="TEXT">pyly</field></value>
+      </block>
+        <block type="iot_set">
+      <value name="NAME"><shadow type="text"><field name="TEXT">pyly</field></value>
+      <value name="VALUE"><shadow type="text"><field name="TEXT">pyly</field></value>
+      </block>
     </category>
     <category name="%{BKY_CATSOUND}" colour="%{BKY_SOUND_HUE}">
       <block type="sound_play"></block>
@@ -242,7 +249,11 @@
     </category>
     <category name="%{BKY_CATCAMERA}" colour="%{BKY_CAMERA_HUE}">
       <block type="camera_take">
-        <value name="DELAY"><shadow type="math_number"><field name="NUM">0</field></value>
+      <value name="NAME"><shadow type="camera_list"></shadow></value>
+      </block>
+      <block type="camera_takesize">
+       <value name="NAME"><shadow type="camera_list"></shadow></value>
+        <value name="SIZE"><shadow type="math_number"><field name="NUM">0</field></value>
       </block>
     </category>
     <category name="%{BKY_CATLCD}" colour="%{BKY_LCD_HUE}">

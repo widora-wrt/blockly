@@ -84,6 +84,8 @@ var MSG = {
   catPrint_lcd_title: "屏幕",
   catPrint_file_title: "文件",
   catIot_send_title:"发送 %1 到 %2 标识 %3",
+  catIot_get_title:"获取网络变量 %1",
+  catIot_set_title:"设置网络变量 %1 为 %2",
   catLcd_writeline_title:"写字符 %1 到屏幕",
   catLcd_drawdot_title:"画点  坐标 (x%1y%2) 颜色:%3",
   catLcd_drawimage_title:"打印图像 %1 位置 (x%2y%3) ",
@@ -121,5 +123,6 @@ var MSG = {
   catLcd_drawdotarray_title:"打印点阵 数据 %1 颜色 %2 背景 %3",
   catLcd_drawdotarraybit_title:"点阵 打印点 (x%1 y%2) 点亮 %3",
   catLcd_drawdotarraymove_title:"点阵 移动(x %1 y%2)",
-  catCamera_take_title:"拍照 延时 %1 秒"
+  catCamera_take_title:"使用 %1 拍照",
+  catCamera_takesize_title:"使用 %1 大小 %2 拍照",
 };
