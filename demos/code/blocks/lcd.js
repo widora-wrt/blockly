@@ -756,5 +756,13 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
         "tooltip": "",
         "helpUrl": ""
       },
+      {
+        "type": "lcd_screenshot",
+        "message0":"%{BKY_CATLCD_SCREENSHOT_TITLE}",
+        "output":"String",
+        "colour": "%{BKY_LCD_HUE}",
+        "tooltip": "",
+        "helpUrl": ""
+      },
       
 ]);

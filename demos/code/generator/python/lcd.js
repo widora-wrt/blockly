@@ -183,4 +183,10 @@ Blockly.Python['lcd_writeline'] = function(block) {
     var code = "lcd0.drawDotarraymove("+value_x+","+value_y+")\n";
     return code;
   };
-  
+  Blockly.Python['lcd_screenshot'] = function(block) {
+    var def ="lcd0=mraa.Lcd(0)";
+    Blockly.Python.definitions_[def] = def;
+    Blockly.Python.definitions_['import_mraa'] = 'import mraa';
+    var code = "lcd0.screenShot()";
+    return [code, Blockly.Python.ORDER_FUNCTION_CALL];
+  };

@@ -98,6 +98,7 @@ var MSG = {
   catLcd_drawcirclefill_title:"填充圆 坐标 (x%1y%2)半径%3颜色%4",
   catLcd_drawclear_title:"清除 屏幕 %1",
   catLcd_writestring_title:"写 字符串 %1 字体%2位置(x%3y%4)字体颜色%5 背景颜色%6 透明颜色%7",
+  catLcd_screenshot_title:"截屏",
   catTime_timeoption_year:"年",
   catTime_timeoption_month:"月",
   catTime_timeoption_day:"日",

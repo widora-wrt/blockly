@@ -98,6 +98,7 @@ var MSG = {
   catLcd_drawcirclefill_title:"drawcirclefill location (x%1y%2)radius%3color%4",
   catLcd_drawclear_title:"draw clear %1",
   catLcd_writestring_title:"write string %1 font %2 location(x%3y%4) fontcolor%5 backcolor%6 alpacolor %7 ",
+  catLcd_screenshot_title:"screen shot",
   catTime_timeoption_year:"year",
   catTime_timeoption_month:"month",
   catTime_timeoption_day:"day",
