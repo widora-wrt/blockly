@@ -148,6 +148,65 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     "helpUrl": ""
   },
   {
+    "type": "gpio_ledlist",
+    "message0": "%1",
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "NAME",
+        "options": [
+                    ["LED0(GPIO24)","24"],
+                    ["LED1(GPIO22)","22"],
+                    ]
+      }
+    ],
+    "output": "Number",
+    "colour": "%{BKY_GPIO_HUE}",
+    "tooltip": "",
+    "helpUrl": ""
+  },
+  {
+    "type": "gpio_joklist",
+    "message0": "%1",
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "NAME",
+        "options": [
+                    ["K4↑(GPIO26)","26"],
+                    ["K6←(GPIO23)","23"],
+                    ["K8→(GPIO28)","28"],
+                    ["K5↓(GPIO25)","25"],
+                    ["K1↩(GPIO29)","29"],
+                    ["K2↪(GPIO27)","27"],
+                    ]
+      }
+    ],
+    "output": "Number",
+    "colour": "%{BKY_GPIO_HUE}",
+    "tooltip": "",
+    "helpUrl": ""
+  },
+  {
+    "type": "gpio_buttonlist",
+    "message0": "%1",
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "NAME",
+        "options": [
+                    ["BUTTON0(GPIO38)","38"],
+                    ["BUTTON1(GPIO39)","39"],
+                    ["BUTTON2(GPIO40)","40"],
+                    ]
+      }
+    ],
+    "output": "Number",
+    "colour": "%{BKY_GPIO_HUE}",
+    "tooltip": "",
+    "helpUrl": ""
+  },
+  {
     "type": "gpio_interrupt",
     "message0": "%{BKY_CATGPIO_INTERRUPT_TITLE}",
     "args0": [

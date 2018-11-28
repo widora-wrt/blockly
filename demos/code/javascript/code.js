@@ -296,7 +296,7 @@ Code.attemptCodeGeneration = function(generator, prettyPrintType) {
   if (Code.checkAllGeneratorFunctionsDefined(generator)) {
     var code = generator.workspaceToCode(Code.workspace);
 
-    content.textContent = code;
+    content.textContent = code+"<br><br><br>";
     if (typeof PR.prettyPrintOne == 'function') {
       code = content.textContent;
       code = PR.prettyPrintOne(code, prettyPrintType);
@@ -645,8 +645,6 @@ Code.runJS = function() {
     alert(MSG['badCode'].replace('%1', e));
   }
   var content = document.getElementById('content_debug');
-    content.innerHTML+="<br><img src='http://bbs.elecfans.com/uc_server/data/avatar/002/18/04/95_avatar_middle.jpg'  alt='上海鲜花港 - 郁金香' />";
-    content.innerHTML+="<br> <input type='text' name='fname' id='demo1'/><br><button type='button' onclick='Code.Test()';>Click Me!</button>";
 };
 Code.likeJS = function() {
 

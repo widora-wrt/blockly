@@ -73,7 +73,7 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
   },
   {
   "type": "print_tcpip",
-    "message0": "网络 %1",
+    "message0": "%{BKY_CATPRINT_NET_TITLE}",
     "args0": [
       {
         "type": "input_value",
