@@ -179,11 +179,12 @@ BlocklyStorage.handleGet_ = function() {
   }else
   if (BlocklyStorage.httpGet_.readyState == 3) {
     var data = BlocklyStorage.httpGet_.responseText.trim();
-      content.innerHTML=MSG["start"]+data;
+      content.innerHTML=MSG["start"]+data+"<hr color=#dddddd>\r\n";
+      content.scrollTop = content.scrollHeight;
   }else
   {
       document.getElementById("runButton").innerHTML="<img src='../../media/1x1.gif' class='stop icon21'>";
-      content.innerHTML=MSG["start"];
+      content.innerHTML=MSG["start"]+"<hr color=#dddddd>\r\n";
   }
 };
 BlocklyStorage.makeGet = function(url,content) {
