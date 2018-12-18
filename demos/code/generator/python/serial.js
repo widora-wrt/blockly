@@ -24,7 +24,7 @@
  */
 'use strict';
 
-goog.provide('Blockly.Python.sound');
+goog.provide('Blockly.Python.serial');
 
 goog.require('Blockly.Python');
 

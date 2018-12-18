@@ -296,6 +296,33 @@ class Gen_compressed(threading.Thread):
     remove = "var Blockly={Blocks:{}};"
     self.do_compile(params, target_filename, filenames, remove)
 
+  def gen_myblocks(self):
+    target_filename = "myblocks_compressed.js"
+    # Define the parameters for the POST request.
+    params = [
+        ("compilation_level", "SIMPLE_OPTIMIZATIONS"),
+        ("output_format", "json"),
+        ("output_info", "compiled_code"),
+        ("output_info", "warnings"),
+        ("output_info", "errors"),
+        ("output_info", "statistics"),
+        ("warning_level", "DEFAULT"),
+      ]
+
+    # Read in all the source files.
+    # Add Blockly.Blocks to be compatible with the compiler.
+    params.append(("js_code", "goog.provide('Blockly');goog.provide('Blockly.Blocks');"))
+    filenames = glob.glob(os.path.join("demos/code/blocks", "*.js"))
+    filenames.sort()  # Deterministic build.
+    for filename in filenames:
+      f = open(filename)
+      params.append(("js_code", "".join(f.readlines())))
+      f.close()
+
+    # Remove Blockly.Blocks to be compatible with Blockly.
+    remove = "var Blockly={Blocks:{}};"
+    self.do_compile(params, target_filename, filenames, remove)
+
   def gen_generator(self, language):
     target_filename = language + "_compressed.js"
     # Define the parameters for the POST request.

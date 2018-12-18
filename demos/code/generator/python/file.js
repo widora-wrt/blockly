@@ -24,7 +24,7 @@
  */
 'use strict';
 
-goog.provide('Blockly.Python.lcd');
+goog.provide('Blockly.Python.file');
 
 goog.require('Blockly.Python');
 

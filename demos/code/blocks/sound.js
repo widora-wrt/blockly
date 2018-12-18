@@ -29,7 +29,7 @@
  */
 'use strict';
 
-goog.provide('Blockly.Blocks.pwm');  // Deprecated
+goog.provide('Blockly.Blocks.sound');  // Deprecated
 goog.provide('Blockly.Constants.Sound');  // deprecated, 2018 April 5
 
 goog.require('Blockly.Blocks');
