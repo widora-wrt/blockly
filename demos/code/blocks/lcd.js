@@ -735,6 +735,54 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
         "helpUrl": ""
       },
       {
+        "type": "lcd_selectarrarydot",
+        "message0":"%{BKY_CATLCD_SELECTARRAYDOT_TITLE}",
+        "args0": [
+          {
+            "type": "input_value",
+            "name": "VALUE_X",
+            "check": "Number"
+          },
+          {
+            "type": "input_value",
+            "name": "VALUE_Y",
+            "check": "Number"
+          },
+          {
+            "type": "input_value",
+            "name": "VALUE_C",
+            "check": "Colour"
+          },
+        ],
+        "inputsInline": true,
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": "%{BKY_LCD_HUE}",
+        "tooltip": "",
+        "helpUrl": ""
+      },
+      {
+        "type": "lcd_getdotarraybit",
+        "message0":"%{BKY_CATLCD_GETDOTARRAYBIT_TITLE}",
+        "args0": [
+          {
+            "type": "input_value",
+            "name": "VALUE_X",
+            "check": "Number"
+          },
+          {
+            "type": "input_value",
+            "name": "VALUE_Y",
+            "check": "Number"
+          },
+        ],
+        "inputsInline": true,
+        "output": "Boolean",
+        "colour": "%{BKY_LCD_HUE}",
+        "tooltip": "",
+        "helpUrl": ""
+      },
+      {
         "type": "lcd_drawdotarraymove",
         "message0":"%{BKY_CATLCD_DRAWDOTARRAYMOVE_TITLE}",
         "args0": [
@@ -773,5 +821,14 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
         "tooltip": "",
         "helpUrl": ""
       },
+      {
+      "type": "lcd_screenprevie",
+      "message0":"%{BKY_CATLCD_SCREENPREVIE_TITLE}",
+      "previousStatement": null,
+      "nextStatement": null,
+      "colour": "%{BKY_LCD_HUE}",
+      "tooltip": "",
+      "helpUrl": ""
+    },
       
 ]);
