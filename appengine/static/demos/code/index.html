@@ -9,13 +9,13 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png"/> 
   <script src="javascript/storage.js"></script>
   <script src="../../blockly_compressed.js"></script>
-  <script src="../../blocks_compressed.js"></script>
+  <script src="../../allblocks_compressed.js"></script>
   <script src="../../javascript_compressed.js"></script>
-  <script src="../../python_compressed.js"></script>
+  <script src="../../allpython_compressed.js"></script>
   <script src="../../php_compressed.js"></script>
   <script src="../../lua_compressed.js"></script>
   <script src="../../dart_compressed.js"></script>
-  <script src="msg/messages.js"></script>
+
   <script src="blocks/gpio.js"></script>
   <script src="blocks/pwm.js"></script>
   <script src="blocks/i2c.js"></script>
@@ -369,6 +369,9 @@
         <block type="lcd_selectarrarydot">
           <value name="VALUE_X"><shadow type="math_number"><field name="NUM">0</field></value>
           <value name="VALUE_Y"><shadow type="math_number"><field name="NUM">0</field></value>
+          <value name="VALUE_C">
+            <shadow type="colour_picker"><field name="COLOUR">#00ff00</field></shadow>
+          </value>
         </block>
         
         <block type="lcd_drawdotarraymove">
