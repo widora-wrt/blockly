@@ -358,7 +358,7 @@ class Gen_compressed(threading.Thread):
     # Send the request to Google.
     headers = {"Content-type": "application/x-www-form-urlencoded"}
     #conn = httplib.HTTPSConnection("closure-compiler.appspot.com")
-    conn = httplib.HTTPSConnection('10.0.75.1',1080)
+    conn = httplib.HTTPSConnection('192.168.31.2',1080)
     conn.set_tunnel("closure-compiler.appspot.com")
     conn.request("POST", "/compile", urllib.urlencode(params), headers)
     response = conn.getresponse()

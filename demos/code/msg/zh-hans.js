@@ -7,7 +7,7 @@ var MSG = {
   start: ":启动\r\n",
   reallyrun: "是否运行?",
   stop: "\r\n:停止",
-  copyright:"Copyright © 叁百教育科技  www.trtos.com",
+  copyright:"Copyright © 苏州雄孩子科技  www.trtos.com",
   likeTooltip: "保存为样本。",
   likeinputtitle:"新样本名字:",
   runTooltip: "于目标板运行工作区的程序。",
